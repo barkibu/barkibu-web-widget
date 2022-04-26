@@ -1,0 +1,28 @@
+<div class="recipe-container" [class.li-back-image]="recipe.backImage.full != null">
+  <label>
+    <input type="radio" name="recipe" (click)="recipeSelect(recipe.productId)" checked/>
+    <img [src]="recipe.mainImage.full" [alt]="recipe.productName">
+    <img *ngIf="recipe.backImage.full != null" [src]="recipe.backImage.full" [alt]="">
+    <div class="product-name">{{recipe.productName}}</div>
+  </label>
+</div>
+
+<div class="treats-container" *ngIf="treats.isNotEmpty">
+  <div class="treats-header-container">
+    <h5 class="treats-header">
+      {{messages.nutribotMessages.treatHeader}}:
+    </h5>
+  </div>
+  <ul>
+    <template ngFor let-treat [ngForOf]="treats">
+      <li [class.li-back-image]="treat.backImage.full != null">
+        <label>
+          <input type="radio" name="recipe" (click)="recipeSelect(treat.productId)"/>
+          <img [src]="treat.mainImage.full" [alt]="treat.productName">
+          <img *ngIf="treat.backImage.full != null" [src]="treat.backImage.full" [alt]="">
+          <div class="product-name">{{treat.productName}}</div>
+        </label>
+      </li>
+    </template>
+  </ul>
+</div>

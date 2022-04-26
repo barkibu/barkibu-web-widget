@@ -1,0 +1,3 @@
+<input type="checkbox" [attr.id]="id" (change)="toggleChecked($event)" [(ngModel)]="checked">
+<widget-icon iconType="check-round" *ngIf="!checked"></widget-icon>
+<widget-icon iconType="check-round-selected" *ngIf="checked"></widget-icon>

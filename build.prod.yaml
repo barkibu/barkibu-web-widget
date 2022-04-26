@@ -1,0 +1,92 @@
+targets:
+  $default:
+    sources:
+      include: ["lib/**", "web/**"]
+      exclude: ["lib/builders/**"]
+    builders:
+      web_widget|config_builder:
+        options:
+          # Authentication options
+          authByEmailEnabled: true
+          authByPhoneEnabled: false
+          useLegacyAuthDatasource: false
+          authServiceUserPoolId: eu-west-1_H4xzKR9HJ
+          authServiceAppClientId: gf56eck91o5o80mbo3h05nve5
+          externalProfileDataEnabled: false
+
+          # Basic features
+          telehealthEnabled: false
+          telehealthVideoCapabilityEnabled: false
+          telehealthMediaSharingEnabled: false
+          nutribotEnabled: false
+          findAClinicEnabled: false
+          findAClinicAddressApiEnabled: false
+          askAVetDirectlyEnabled: false
+          aivetEnabled: true
+          conciergeUrl: null
+
+          # Customisation
+          externalPetDataEnabled: false
+          externalLinksEventsEnabled: false
+          embeddedEmailClientEnabled: false
+          nutribotRecommendationShortJourneyEnabled: false
+          addPetOptionEnabled: true
+          extendedFeedbackEnabled: true
+          closeButtonEnabled: true
+          backButtonEnabled: true
+          goHomeLinkEnabled: true
+          footerChatCreditsEnabled: false
+          aivetUrgencyOrderEnabled: false
+          skipPrimarySymptomEnabled: false
+          termsOfServiceHomeEnabled: false
+          lastNameRequired: false
+          petBreedEnabled: false
+          assessmentDateFormat: dd/MM/yyyy
+          defaultPhonePrefix: null
+          appName: 'Barkibu Assistant'
+          brandName: 'Barkibu'
+          brandLogo: 'barkibu-logo.svg'
+          brandLogoWidth: '165px'
+          headerWithoutLogo: false
+          botPreMessageDelay: 2000
+          botPostMessageDelay: 1200
+          useSpecialTranslations: 'default'
+          virtualVetInfoEnabled: false
+          externalToSEnabled: true
+
+          # Fallback theme & client_id
+          fallbackTheme: 'default'
+          fallbackClientId: 'barkibu'
+
+          # Contanct vet options
+          chatWithVetEnabled: false
+          chatOnPhoneCallUrl: null
+          emailAccount: null
+
+          # System configuration
+          envName: 'production'
+          apiUrl: 'https://barkibu-app.herokuapp.com/v2'
+          segmentWriteKey: 'fD7e4eRCw3qUHSBn2Npy5juD4s8xGuIn'
+
+          # Overriden configuration for each client id
+          clientIdConfigOverride:
+            peluditos:
+              useLegacyAuthDatasource: true
+            dogo:
+              useLegacyAuthDatasource: true
+
+      build_web_compilers|entrypoint:
+        options:
+          compiler: dart2js
+          dart2js_args:
+          - -O4
+      build_web_compilers|dart_source_cleanup:
+        release_options:
+          enabled: false
+
+builders:
+  config_builder:
+    import: "package:web_widget/builders/config_builder.dart"
+    builder_factories: ["configBuilder"]
+    build_extensions:
+      "$lib$": ["config.g.dart"]

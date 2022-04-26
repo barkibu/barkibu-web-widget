@@ -1,0 +1,14 @@
+appBar:
+  subtitle: 'Vaccination and Deworming'
+  title: 'Calendar'
+section:
+  title(String type): 'Next $type'
+  card:
+    warning:
+      invalidDate: 'Not correct?'
+      action: 'Correct the date'
+    lastDate(String date): 'Previous: $date'
+list:
+  nextVaccines: 'Next vaccines'
+  error: 'There has been a problem loading your calendar'
+  empty: 'Your vaccination calendar is empty'

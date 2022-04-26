@@ -1,0 +1,35 @@
+@import "package:web_widget/src/scss/themes";
+
+.card-body {
+  padding: $spacing * 2;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+widget-button {
+  margin-top: $widget-window-spacing;
+  flex-basis: 100%;
+}
+
+.profile-card-username {
+  font-size: $h3-font-size;
+  margin-bottom: $spacing * 1.5;
+}
+
+.profile-card-email {
+  margin: 0;
+}
+
+.profile-card-avatar {
+  margin-right: $widget-window-spacing;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  border-radius: 50%;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2em;
+  @include themify($themes) {
+    border: 1px solid themed('primary-color');
+  }
+}

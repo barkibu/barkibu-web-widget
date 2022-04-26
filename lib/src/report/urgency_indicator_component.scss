@@ -1,0 +1,51 @@
+@import "package:web_widget/src/scss/themes";
+
+.urgency-indicator {
+  display: flex;
+  align-items: center;
+
+  &.urgent {
+    .urgency-filled-scale {
+      @include themify($themes) {
+        background-color: themed('danger-color');
+      }
+    }
+
+    .urgency-message {
+      @include themify($themes) {
+        color: themed('danger-color');
+      }
+      font-weight: bold;
+    }
+  }
+}
+
+.urgency-scale {
+  display: flex;
+  margin-right: $spacing;
+}
+
+.urgency-filled-scale, .urgency-empty-scale {
+  width: 4px;
+  height: 12px;
+  border-radius: 2px;
+  margin-right: 2px;
+}
+
+.urgency-empty-scale {
+  @include themify($themes) {
+    background-color: rgba(themed('secondary-color'), 0.2);
+  }
+}
+.urgency-filled-scale {
+  @include themify($themes) {
+    background-color: themed('secondary-color');
+  }
+}
+.urgency-message {
+  @include themify($themes) {
+    color: themed('secondary-color');
+  }
+  font-size: $smaller-font-size;
+  margin: 0;
+}

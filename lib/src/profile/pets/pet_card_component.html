@@ -1,0 +1,24 @@
+<widget-card>
+  <a class="card-body" [routerLink]="petProfilePath">
+    <div class="pet-link-content" role="text">
+      <div class="pet-name">
+        <h3 class="card-title">
+          <span role="img" [attr.aria-label]="petSpecies">{{pet | petIcon}}</span><span class="pet-name-title">{{pet.name}}</span>
+          <span class="sr-only">.</span>
+        </h3>
+        <dl>
+          <dt>{{messages.sharedMessages.sex}}: </dt>
+          <dd>{{petSex}}<span class="sr-only">.</span></dd>
+
+          <dt>{{neuteredLabel}}: </dt>
+          <dd>{{petNeutered}}<span class="sr-only">.</span></dd>
+        </dl>
+      </div>
+
+      <div class="pet-action">
+        <widget-icon iconType="arrow-right" [title]="messages.petProfileMessages.petDetailsSubtitle">
+        </widget-icon>
+      </div>
+    </div>
+  </a>
+</widget-card>

@@ -1,0 +1,54 @@
+<widget-layout>
+  <widget-header>
+    <go-back [title]="messages.clinicsFinderMessages.title"></go-back>
+  </widget-header>
+
+  <widget-body [noBottomSpacing]="false">
+    <spinner-overlay *ngIf="isSearchingClinics"></spinner-overlay>
+    <div *ngIf="!isSearchingClinics">
+      <!-- Search option -->
+      <template [ngIf]="findAClinicAddressApiEnabled && !state.geolocationAllowed">
+        <div class="start-assessment-form-input-wrapper">
+          <input
+            id="searchAddress"
+            type="text"
+            name="searchAddress"
+            [(ngModel)]="searchAddress"
+            [placeholder]="messages.clinicsFinderMessages.searchAddress"
+            [attr.aria-label]="messages.clinicsFinderMessages.searchLabel"
+          />
+          <button type="submit" (click)="getClinicsFromAddress()">
+            <img
+              src="assets/images/arrow-right.svg"
+              [alt]="messages.sharedMessages.altImageText.next"
+            />
+          </button>
+        </div>
+      </template>
+
+      <!-- Empty/Error message -->
+      <template [ngIf]="!areClinicsLoaded">
+        <div class="geolocation-notallowed">
+          <widget-icon iconType="empty-pets"></widget-icon>
+          <div class="geolocation-notallowed-hint">
+            <span *ngIf="!findAClinicAddressApiEnabled">
+              {{messages.clinicsFinderMessages.geolocationRequired}}
+            </span>
+            <span *ngIf="findAClinicAddressApiEnabled"> 
+              {{messages.clinicsFinderMessages.enterYourAddress}}
+            </span>
+            </div>
+        </div>
+      </template>
+
+      <!-- Clinics List -->
+      <template [ngIf]="areClinicsLoaded">
+        <ul class="clinics-list" *ngIf="!state.clinics.isEmpty">
+          <li *ngFor="let clinic of state.clinics">
+            <clinic-card [clinic]="clinic"></clinic-card>
+          </li>
+        </ul>
+      </template>
+    </div>
+  </widget-body>
+</widget-layout>

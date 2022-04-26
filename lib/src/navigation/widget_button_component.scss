@@ -1,0 +1,123 @@
+@import "package:web_widget/src/scss/themes";
+
+a, button {
+  border: none;
+  width: 100%;
+  border-radius: $border-radius * 2;
+  padding: $spacing;
+  text-decoration: none;
+  transition: 0.2s ease;
+  user-select: none;
+  font-size: $base-font-size;
+  cursor: pointer;
+  line-height: 1.5;
+  font-weight: 600;
+  font-family: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.large {
+    font-size: $larger-font-size;
+    padding: $widget-window-spacing;
+  }
+
+  &.small {
+    line-height: 1;
+    border-radius: $border-radius * 1.5;
+  }
+
+  spinner {
+    margin-right: $spacing / 2;
+  }
+
+  .icon-wrapper:not(:empty) {
+    margin-right: $spacing;
+    font-size: 0;
+  }
+}
+
+a.secondary, button.secondary {
+  border: 1px solid;
+
+  @include themify($themes) {
+    background-color: themed('white-color');
+    color: themed('button-color');
+    border-color: themed('button-color');
+    box-shadow: 0 1px 4px 0 rgba(themed('button-color'), 0.32);
+  }
+
+  @mixin secondary-active-styles {
+    @include themify($themes) {
+      color: darken(themed('button-color'), 10%);
+      border-color: darken(themed('button-color'), 10%);
+      box-shadow: themed('focus-shadow');
+    }
+  }
+
+  &:active, &:focus {
+    @include secondary-active-styles;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      @include secondary-active-styles;
+    }
+  }
+}
+
+a.primary, button.primary {
+  @include themify($themes) {
+    background-color: themed('button-color');
+    box-shadow: 0 2px 6px 0 rgba(themed('button-color'), 0.24), 0 1px 4px 0 rgba(themed('button-color'),0.32);
+    color: themed('white-color');
+  }
+
+  @mixin primary-active-styles {
+    @include themify($themes) {
+      background-color: darken(themed('button-color'), 10%);
+      box-shadow: themed('focus-shadow');
+    }
+  }
+
+  &:active, &:focus {
+    @include primary-active-styles;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      @include primary-active-styles;
+    }
+  }
+}
+
+button[disabled], button[disabled]:hover, button[disabled]:active, button[disabled]:focus {
+  &.primary {
+    cursor: default;
+
+    @include themify($themes) {
+      background-color: rgba(themed('button-color'), 0.5);
+    }
+
+    &:hover, &:active, &:focus {
+      @include themify($themes) {
+        box-shadow: none;
+        background-color: rgba(themed('button-color'), 0.5);
+      }
+    }
+  }
+
+  &.secondary {
+    @include themify($themes) {
+      box-shadow: none;
+      color: rgba(themed('button-color'), 0.5);
+      border-color: rgba(themed('button-color'), 0.5);
+      background-color: themed('white-color');
+
+      &:hover, &:active, &:focus {
+        color: rgba(themed('button-color'), 0.5);
+        border: 1px solid rgba(themed('button-color'), 0.5);
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import "package:web_widget/src/scss/themes";
+
+:host {
+  flex: 1 1 auto;
+  padding: $widget-window-spacing;
+  padding-bottom: 0;
+  overflow-x: auto;
+
+  // Overcome firefox scroll issue
+  //https://bugzilla.mozilla.org/show_bug.cgi?id=748518
+  &:after {
+    content: "";
+    height: $widget-window-spacing;
+    display: block;
+  }
+
+  &.no-bottom-spacing:after {
+    display: none;
+  }
+
+  &.white-bg {
+    @include themify-regular($themes) {
+      background-color: themed('white-color');
+    }
+  }
+}

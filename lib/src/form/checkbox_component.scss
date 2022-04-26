@@ -1,0 +1,30 @@
+@import "package:web_widget/src/scss/themes";
+
+:host {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+widget-icon {
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:focus + widget-icon {
+  @include themify($themes) {
+    box-shadow: themed('focus-shadow');
+  }
+}

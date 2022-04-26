@@ -1,0 +1,36 @@
+@import "package:web_widget/src/scss/themes";
+@import "package:web_widget/src/scss/form";
+
+form {
+  @extend %widget-form;
+}
+
+.age-input-form-group {
+  display: flex;
+  align-items: center;
+}
+
+widget-age-input {
+  flex: 1;
+}
+
+.learn-more {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  margin-left: $spacing;
+  margin-top: $base-font-size;
+  @include themify($themes) {
+    color: themed('primary-color');
+  }
+
+  widget-icon {
+    margin-right: $spacing / 2;
+    width: 1em;
+    height: 1em;
+  }
+}

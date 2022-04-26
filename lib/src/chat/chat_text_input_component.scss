@@ -1,0 +1,87 @@
+@import "package:web_widget/src/scss/themes";
+@import "package:web_widget/src/scss/accessibility";
+
+@mixin contains-chat-text-input-component() {
+  position: relative;
+
+  label {
+    @extend %sr-only;
+  }
+
+  input[type="text"] {
+    font-family: inherit;
+    width: 100%;
+    height: $input-height;
+    border-radius: $border-radius;
+    padding: $spacing $widget-window-spacing;
+    padding-right: $input-button-size + 1rem + $input-button-offset;
+    transition: 0.2s ease;
+    font-size: $larger-font-size;
+
+    @include themify($themes) {
+      color: themed("secondary-color");
+      border: 1px solid themed("border-color");
+      box-shadow: 0 1px 4px 0 rgba(themed("secondary-color"),0.04);
+    }
+
+    &::placeholder {
+      font-size: $base-font-size;
+    }
+
+    &:focus, &:active {
+      @include themify($themes) {
+        border: 1px solid themed("primary-color");
+        box-shadow: themed("focus-shadow");
+      }
+    }
+  }
+
+  .image-upload {
+    display: block;
+    position: absolute;
+    height: 2.5rem;
+    width: 2.5rem;
+    top: 0.5rem;
+    right: 3.5rem;
+    padding: .5rem;
+    img,
+    label {
+        width: 1.5rem !important;
+        height: 1.5rem  !important;
+        clip: unset !important;
+        clip-path: none !important;
+    }
+}
+
+  button[type="submit"] {
+    height: $input-button-size;
+    width: $input-button-size;
+    border-radius: $border-radius;
+    position: absolute;
+    top: $input-button-offset;
+    right: $input-button-offset;
+    padding: 0;
+    border: none;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include themify($themes) {
+      background-color: themed("assistant-color");
+      color: themed("white-color");
+    }
+
+    &[disabled] {
+      @include themify($themes) {
+        background-color: rgba(themed("assistant-color"), 0.4);
+      }
+      cursor: default;
+    }
+  }
+}
+
+form {
+  @include contains-chat-text-input-component();
+}

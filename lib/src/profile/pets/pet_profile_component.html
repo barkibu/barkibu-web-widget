@@ -1,0 +1,31 @@
+<widget-layout>
+  <widget-header>
+    <go-back *ngIf="pet != null" [path]="RoutePaths.myPets.toUrl()">
+      <h1 class="pet-title"><pet-title [pet]="pet"></pet-title></h1>
+    </go-back>
+  </widget-header>
+
+  <widget-body>
+    <spinner-overlay *ngIf="pet == null"></spinner-overlay>
+    <div *ngIf="pet != null">
+      <pet-history [pet]="pet"></pet-history>
+
+      <template [ngIf]="!externalPetDataEnabled">
+        <h2>
+          <widget-icon iconType="med-square"></widget-icon>
+          {{messages.petProfileMessages.petDetails}}
+        </h2>
+
+        <ul class="pet-medical-data">
+          <li>
+            <a class="pet-medical-data-link" [routerLink]="petEditPath">
+              {{messages.petProfileMessages.petDetailsSubtitle}}
+              <widget-icon iconType="arrow-right" [title]="messages.sharedMessages.edit">
+              </widget-icon>
+            </a>
+          </li>
+        </ul>
+      </template>
+    </div>
+  </widget-body>
+</widget-layout>

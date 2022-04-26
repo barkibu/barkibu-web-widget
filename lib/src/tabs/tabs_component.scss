@@ -1,0 +1,25 @@
+@import "package:web_widget/src/scss/themes";
+
+.tab-button {
+  border: none;
+  background: transparent;
+  padding: $spacing $spacing * 2;
+  font-size: $larger-font-size;
+  cursor: pointer;
+  min-width: 80px;
+
+  @include themify($themes) {
+    color: rgba(themed('secondary-color'), 0.4);
+    border-bottom: 2px solid rgba(themed('secondary-color'), 0.4);
+
+    &.active {
+      border-color: themed('primary-color');
+      color: themed('primary-color');
+    }
+
+    &:hover, &:focus, &:active {
+      color: themed('primary-color');
+      box-shadow: none;
+    }
+  }
+}

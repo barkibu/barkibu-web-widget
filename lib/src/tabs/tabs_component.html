@@ -1,0 +1,7 @@
+<div role="tablist" *ngIf="showTabButtons">
+  <button *ngFor="let label of tabLabels; let i=index" role="tab" class="tab-button"
+          [class.active]="isActive(i)" (click)="activateTabIndex(i)" >
+    {{label}}
+  </button>
+</div>
+<ng-content></ng-content>

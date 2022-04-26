@@ -1,0 +1,28 @@
+askAVetEmailTemplate:
+  outro: 'Ich freue mich darauf, von dir zu hören'
+  intro: 'Hallo, ich sende eine E-Mail über mein Haustier, um zu sehen, ob Sie Ratschläge und Hilfe anbieten können.'
+  petDefinition(String petSpecies, String petName, String petSex, String breed, String age, String neutered): 'Meine $petSpecies ist $petName ($petSex)\nZucht: $breed\nAlter: $age\nKastriert: $neutered'
+  symptoms(String symptomsPresent): 'Symptome vorhanden:\n$symptomsPresent'
+  symptomsWithDurationAndFrequency(String symptomsPresent, String symptomDuration, String symptomFrequency): 'Symptome vorhanden:\n$symptomsPresent'
+  subject: 'Frage zu meinem Haustier'
+virtualVetEmailTemplate:
+  subject: 'Frage zu meinem Haustier'
+  symptoms(String symptomsPresent, String symptomsNotPresent): 'Symptome vorhanden:\n$symptomsPresent\n\nSymptome nicht vorhanden:\n$symptomsNotPresent'
+  conditions(String possibleConditions): 'Mögliche Bedingungen:\n$possibleConditions'
+  intro: 'Hallo, ich sende eine E-Mail über mein Haustier, um zu sehen, ob Sie Ratschläge und Hilfe anbieten können.'
+  petDefinition(String petSpecies, String petName, String petSex, String breed, String age): 'Meine $petSpecies ist $petName ($petSex)\nZucht: $breed\nAlter: $age'
+  outro: 'Ich freue mich darauf, von dir zu hören'
+inputs:
+  prefix: 'Präfix'
+  phone: 'Telefon'
+actions:
+  sendEmail: 'E-Mail senden'
+  schedulePhoneCall: 'Anruf planen'
+  writeMail: 'Write your mail below:'
+  reply: 'Our experts will reply to:'
+nutribotEmailTemplate:
+  outro: 'Ich freue mich darauf, von dir zu hören'
+  foodSensitivies(String foodSensitivies): 'Nahrungsmittelempfindlichkeiten:\n$foodSensitivies'
+  subject: 'Frage zu meinem Haustier'
+  intro: 'Hallo, ich sende eine E-Mail über mein Haustier, um zu sehen, ob Sie Ratschläge und Hilfe anbieten können.'
+  petDefinition(String petSpecies, String petName, String petSex): 'Meine $petSpecies ist $petName ($petSex)'

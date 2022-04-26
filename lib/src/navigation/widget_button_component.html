@@ -1,0 +1,18 @@
+<a *ngIf="link && !externalLink" [ngClass]="cssClass()" [routerLink]="linkHref">
+  <spinner size="small" *ngIf="loading"></spinner>
+  {{text}}
+</a>
+<a *ngIf="link && externalLink" [ngClass]="cssClass()" [href]="linkHref" target="_blank">
+  <spinner size="small" *ngIf="loading"></spinner>
+  <span class="icon-wrapper">
+    <ng-content select=".link-icon"></ng-content>
+  </span>
+  {{text}}
+</a>
+<button *ngIf="button" [disabled]="disabled" [ngClass]="cssClass()" [type]="buttonType">
+  <spinner size="small" *ngIf="loading"></spinner>
+  <span class="icon-wrapper">
+    <ng-content select=".button-icon"></ng-content>
+  </span>
+  {{text}}
+</button>

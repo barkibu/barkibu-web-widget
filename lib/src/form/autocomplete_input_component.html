@@ -1,0 +1,17 @@
+<form>
+    <div class="form-group">
+        <material-auto-suggest-input 
+        id="material-auto-suggest-input" class="form-control"
+        [loading]="loading"
+        [ngModel]="breed" 
+        [filterSuggestions]="false"
+        [emptyPlaceholder]="emptyPlaceholder"
+        [label]="label" 
+        (keydown)="onKey($event)" 
+        [itemRenderer]="itemRenderer" 
+        [selectionOptions]="(autoCompleteBloc | bloc).items" 
+        (selectionChange)="selectionChange($event)" 
+        [(inputText)]="breed">
+        </material-auto-suggest-input>
+    </div>
+</form>

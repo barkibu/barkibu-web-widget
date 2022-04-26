@@ -1,0 +1,12 @@
+<div class="urgency-indicator" [class.urgent]="isUrgent">
+  <div class="urgency-scale">
+    <div class="urgency-filled-scale" *ngFor="let _ of filledScale">
+    </div>
+
+    <div class="urgency-empty-scale" *ngFor="let _ of emptyScale">
+    </div>
+  </div>
+  <p class="urgency-message">
+    {{urgencyMessage}}
+  </p>
+</div>

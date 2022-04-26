@@ -1,0 +1,7 @@
+<ol role="log" aria-live="polite" aria-atomic="false" aria-relevant="additions">
+  <li *ngFor="let viewModel of messagesList; let i=index">
+    <chat-message [viewModel]="viewModel" [isMyMessage]="isMyMessage(viewModel)"
+                  [showMessageSource]="hasMessageSourceChanged(i)">
+    </chat-message>
+  </li>
+</ol>

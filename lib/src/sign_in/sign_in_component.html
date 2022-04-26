@@ -1,0 +1,25 @@
+<widget-layout>
+  <widget-header>
+    <go-back [title]="messages.authMessages.auth_home.sign_in"></go-back>
+  </widget-header>
+  <widget-body>
+    <auth-redirect></auth-redirect>
+    <widget-tabs [showTabButtons]="!(isCodeFormShown || hideEmailForm)">
+      <widget-tab (onActivate)="setEmailForm($event)" [label]="messages.authMessages.sign_up.email_tab" *ngIf="!hideEmailForm">
+        <email-sign-in *ngIf="!isPhoneFormActive"></email-sign-in>
+      </widget-tab>
+      <widget-tab (onActivate)="setPhoneForm($event)" [label]="messages.authMessages.sign_up.phone_tab" *ngIf="!hidePhoneForm">
+        <phone-sign-in *ngIf="isPhoneFormActive"></phone-sign-in>
+      </widget-tab>
+    </widget-tabs>
+  </widget-body>
+
+  <widget-footer>
+    <div class="form-buttons">
+      <widget-button button (click)="submitForm()" [disabled]="isLoading" [text]="messages.authMessages.sign_in.log_in">
+      </widget-button>
+      <widget-button link type="secondary" [linkHref]="RoutePaths.signUp.toUrl()" [text]="messages.authMessages.sign_in.go_to_sign_up" >
+      </widget-button>
+    </div>
+  </widget-footer>
+</widget-layout>

@@ -1,0 +1,60 @@
+@import "package:web_widget/src/chat/chat_text_input_component.scss";
+@import "package:web_widget/src/scss/accessibility";
+@import "package:web_widget/src/scss/themes";
+
+form {
+  @include contains-chat-text-input-component();
+
+  label {
+    @extend %sr-only;
+  }
+
+  .input-group {
+    display: flex;
+    border-radius: $border-radius;
+
+    @include themify($themes) {
+      color: themed("secondary-color");
+      border: 1px solid themed("border-color");
+      box-shadow: 0 1px 4px 0 rgba(themed("secondary-color"), 0.04);
+    }
+
+    > input::placeholder {
+      font-size: $base-font-size;
+    }
+
+    > input:focus,
+    input:active {
+      @include themify($themes) {
+        border: 1px solid themed("primary-color");
+        box-shadow: themed("focus-shadow");
+      }
+    }
+
+    > input {
+      height: $input-height;
+      padding: $spacing $spacing;
+      background: none;
+      border: none;
+      flex: 0 1 auto;
+      font-family: inherit;
+      font-size: $larger-font-size;
+
+      &:not(:placeholder-shown):invalid {
+        @include themify($themes) {
+          border: 1px solid themed("danger-color");
+          box-shadow: focus-shadow-value(themed("danger-color"));
+        }
+      }
+
+      &.prefix {
+        width: $input-height * 1.5;
+        border-radius: $border-radius 0 0 $border-radius;
+      }
+      &.phone {
+        flex: 1 1 auto;
+        border-radius: 0 $border-radius $border-radius 0;
+      }
+    }
+  }
+}

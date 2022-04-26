@@ -1,0 +1,20 @@
+@import "package:web_widget/src/chat/chat_text_input_component.scss";
+@import "package:web_widget/src/scss/accessibility";
+form {
+    @include contains-chat-text-input-component();
+    input[type="text"] {
+        padding-right: 6rem !important;
+    }
+}
+
+.clip-icon {
+    height: 2rem;
+    width: 2rem;
+}
+
+input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 1rem;
+    height: 1rem;
+}

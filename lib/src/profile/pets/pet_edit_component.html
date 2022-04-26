@@ -1,0 +1,24 @@
+<widget-layout [hidden]="!infoIsEmpty">
+  <widget-header>
+    <go-back *ngIf="pet != null" [title]="pet | petTitle" [path]="petProfilePath">
+    </go-back>
+  </widget-header>
+
+  <widget-body [noBottomSpacing]="true">
+    <h2>{{messages.petProfileMessages.petDetails}}</h2>
+    <spinner-overlay *ngIf="pet == null"></spinner-overlay>
+    <pet-form *ngIf="pet != null" [pet]="pet"
+              (validSubmit)="onValidFormSubmitted($event)"></pet-form>
+  </widget-body>
+  <widget-footer>
+    <widget-button type="secondary" link [linkHref]="petProfilePath"
+                   [text]="messages.sharedMessages.cancel">
+    </widget-button>
+    <widget-button type="secondary" button (click)="onSaveClicked()"
+                   [loading]="loading" [disabled]="loading"
+                   [text]="messages.sharedMessages.save">
+    </widget-button>
+  </widget-footer>
+</widget-layout>
+
+<info-screen *ngIf="!infoIsEmpty" [infoState]="infoState"></info-screen>

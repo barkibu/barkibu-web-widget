@@ -1,0 +1,35 @@
+askAVetEmailTemplate:
+  outro: 'Please add any additional info here:'
+  intro: 'Hi,'
+  petDefinition(String petSpecies, String petName, String petSex, String breed, String age, String neutered): 'My $petSpecies is $petName ($petSex)\nBreed: $breed\nAge: $age\nNeutered: $neutered'
+  symptoms(String symptomsPresent): 'Symptoms present:\n$symptomsPresent'
+  symptomsWithDurationAndFrequency(String symptomsPresent, String symptomDuration, String symptomFrequency): 'Symptoms present:\n$symptomsPresent (Duration: $symptomDuration Frequency: $symptomFrequency)'
+
+  subject: 'Question about my pet'
+  subjectWithInfo(String petSpecies, String petName): 'Question about my $petSpecies, $petName'
+  subjectCopy: 'Copy of your email to the vets'
+virtualVetEmailTemplate:
+  subject: 'Question about my pet'
+  symptoms(String symptomsPresent, String symptomsNotPresent): 'Symptoms present:\n$symptomsPresent\n\nSymptoms not present:\n$symptomsNotPresent'
+  conditions(String possibleConditions): 'Possible conditions:\n$possibleConditions'
+  intro: 'Hi there, I’m emailing about my pet to see if you can offer some advice and help.'
+  petDefinition(String petSpecies, String petName, String petSex, String breed, String age): 'My $petSpecies is $petName ($petSex)\nBreed: $breed\nAge: $age'
+  outro: 'Please add any additional info here:'
+inputs:
+  prefix: 'Prefix'
+  phone: 'Phone'
+actions:
+  sendEmail: 'Send Email'
+  writeMail: 'Write your email below:'
+  reply: 'Our experts will reply to:'
+  schedulePhoneCall: 'Schedule Call'
+info:
+  success: 'Your email has been sent ✅\n\nWe’ll be in touch soon'
+  error: 'Ouch! Looks like we’re having some issues to send your email 😭\n\nTry again later'
+
+nutribotEmailTemplate:
+  outro: 'Please add any additional info here:'
+  foodSensitivies(String foodSensitivies): 'Food sensitivies:\n$foodSensitivies'
+  subject: 'Question about my pet'
+  intro: 'Hi there, I’m emailing about my pet to see if you can offer some advice and help.'
+  petDefinition(String petSpecies, String petName, String petSex): 'My $petSpecies is $petName ($petSex)'

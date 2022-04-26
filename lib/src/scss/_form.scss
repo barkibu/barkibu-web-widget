@@ -1,0 +1,86 @@
+@import "package:web_widget/src/scss/themes";
+
+%widget-form {
+  .form-group {
+    margin-bottom: $spacing * 1.5;
+
+    label {
+      display: inline-block;
+      margin-bottom: $spacing / 2;
+      @include themify($themes) {
+        color: themed('secondary-color');
+      }
+    }
+
+    .form-check-label {
+      margin-bottom: 0;
+    }
+
+    .form-control {
+      display: block;
+      width: 100%;
+      font-family: inherit;
+      height: $form-input-height;
+      padding: $spacing;
+      font-size: $larger-font-size;
+      font-weight: 400;
+      line-height: 1.5;
+      background-clip: padding-box;
+      border-radius: $border-radius / 2;
+      transition: box-shadow .15s ease-in-out;
+      @include themify($themes) {
+        color: themed('secondary-color');
+        background-color: themed('white-color');
+        border: 1px solid themed('border-color');
+
+        &::placeholder {
+          color: rgba(themed('secondary-color'), 0.68);
+        }
+
+        &:focus {
+          border-color: rgba(themed('primary-color'), 0.68);
+        }
+
+        &.is-invalid {
+          border-color: themed('danger-color');
+        }
+
+        &.is-invalid:focus {
+          box-shadow: 0 0 0 0.2rem rgba(themed('danger-color'), 0.25);
+        }
+      }
+    }
+
+    select.form-control {
+      padding: 0 $spacing;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("assets/images/dropdown-arrow.svg");
+      background-repeat: no-repeat;
+      background-position-x: 98%;
+      background-position-y: $spacing * 1.5;
+
+      @include themify($themes) {
+        &.placeholder {
+          color: rgba(themed('secondary-color'), 0.68);
+        }
+      }
+    }
+
+    .invalid-feedback {
+      width: 100%;
+      margin-top: $spacing / 2;
+      font-size: 80%;
+      @include themify($themes) {
+        color: themed('danger-color');
+      }
+    }
+  }
+
+
+  input[type="checkbox"] {
+    padding: 0;
+    margin: 0;
+    margin-right: $spacing / 2;
+  }
+}

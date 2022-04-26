@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>BE1C2A5E-D95A-4DB6-A434-D5C0CAF26143</title>
+    <g id="Barkibu-Widget-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="00---02---Extra-Option" transform="translate(-1332.000000, -365.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Card" transform="translate(1005.000000, 347.000000)">
+                <g id="Conversation-Popup">
+                    <g id="NavBar">
+                        <g id="TopBar" transform="translate(24.000000, 18.000000)">
+                            <g id="close-icon" transform="translate(303.000000, 0.000000)">
+                                <path d="M19,11 L13,11 L13,5 L13,5 C13,4.447715 12.5522851,4 12,4 C11.4477151,4 11,4.447715 11,5 L11,11 L5,11 L5,11 C4.447715,11 4,11.4477149 4,12 C4,12.5522849 4.447715,13 5,13 L11,13 L11,19 L11,19 C11,19.552285 11.447715,20 12,20 C12.552285,20 13,19.552285 13,19 L13,13 L19,13 L19,13 C19.552285,13 20,12.5522851 20,12 C20,11.4477151 19.552285,11 19,11 L19,11 Z" id="Path" transform="translate(12.000000, 12.000000) rotate(-315.000000) translate(-12.000000, -12.000000) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

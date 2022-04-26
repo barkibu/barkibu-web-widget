@@ -1,0 +1,24 @@
+<div class="assessment-date">{{assessment.createdAt | date:dateFormat}}</div>
+<h2 class="assessment-title">{{assessmentTitle}}</h2>
+<template [ngIf]="!isConditionsEmpty">
+  <h2>{{messages.assessmentReportMessages.possibleCauses}}</h2>
+
+  <ol class="conditions-list">
+    <li *ngFor="let condition of conditions; let i=index">
+      <assessment-card [name]="conditionName(condition)" [index]="i + 1"
+        [shortDescription]="conditionShortDescription(condition)" [description]="conditionDescription(condition)"
+        [urgencyLevel]="conditionUrgencyLevel(condition)">
+      </assessment-card>
+    </li>
+  </ol>
+</template>
+
+<h2>{{messages.assessmentReportMessages.symptoms}}</h2>
+
+<ol class="symptoms-list">
+  <li *ngFor="let symptom of symptoms; let i=index">
+    <assessment-card [name]="symptomName(symptom)" [index]="i + 1" [shortDescription]="symptomShortDescription(symptom)"
+      [description]="symptomDescription(symptom)" [urgencyLevel]="symptomUrgencyLevel(symptom)">
+    </assessment-card>
+  </li>
+</ol>

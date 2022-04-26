@@ -1,0 +1,12 @@
+<spinner-overlay *ngIf="isAuthLoading()">
+</spinner-overlay>
+
+<div [ngClass]="{'is-aivet-enabled': aivetEnabled, 'home-container': true}" class="home-container" *ngIf="!isAuthLoading()">
+  <template [ngIf]="isUserSignedIn()">
+    <main-menu [currentUser]="currentUser"></main-menu>
+  </template>
+
+  <template [ngIf]="!isUserSignedIn() && !externalProfileDataEnabled">
+    <sign></sign>
+  </template>
+</div>

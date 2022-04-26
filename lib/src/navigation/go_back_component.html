@@ -1,0 +1,18 @@
+<div class="go-back-container">
+    <a *ngIf="navigate && !useBlackArrow" [routerLink]="path ?? referer ?? RoutePaths.home.toUrl()" class="go-back-link">
+        <img src="assets/images/arrow-left.svg" role="img" [alt]="messages.sharedMessages.altImageText.back" />
+    </a>
+
+    <button *ngIf="!navigate && !useBlackArrow" class="go-back-button" (click)="goBackButtonClicked()">
+    <img src="assets/images/arrow-left.svg" [alt]="messages.sharedMessages.altImageText.back"/>
+  </button>
+
+    <button *ngIf="!navigate && useBlackArrow" class="go-back-button" (click)="goBackButtonClicked()">
+    <img src="assets/images/arrow-left-black.svg" [alt]="messages.sharedMessages.altImageText.back"/>
+  </button>
+
+    <h1 class="go-back-title" *ngIf="title != null">{{title}}</h1>
+    <ng-content></ng-content>
+</div>
+
+<p class="subtitle" *ngIf="subtitle != null">{{subtitle}}</p>

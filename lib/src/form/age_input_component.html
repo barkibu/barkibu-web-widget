@@ -1,0 +1,16 @@
+<div class="age-input-wrapper">
+  <div class="form-group">
+    <label>
+      {{messages.sharedMessages.years}}
+      <input class="form-control" id="years" type="number" min="0" max="99" placeholder="00" 
+             [ngModel]="years" (ngModelChange)="onYearsChanged($event)" [class.is-invalid]="isInvalid"/>
+    </label>
+    <label>
+      {{messages.sharedMessages.months}}
+      <input class="form-control" id="months" type="number" min="0" max="11" placeholder="00" 
+             [ngModel]="months" (ngModelChange)="onMonthsChanged($event)" [class.is-invalid]="isInvalid"/>
+    </label>
+  </div>
+</div>
+
+

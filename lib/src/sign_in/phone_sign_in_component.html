@@ -1,0 +1,54 @@
+<form (ngSubmit)="onSubmit()" [ngFormModel]="signInForm" novalidate autocomplete="off">
+  <phone-sign-in-error [state]="signInBloc | bloc"></phone-sign-in-error>
+
+  <template [ngIf]="isCodeFormShown">
+    <div class="form-group">
+      <label for="code">{{messages.authMessages.code.code}}</label>
+      <input type="text" class="form-control" id="code" #code="ngForm"
+             maxLength="6" ngControl="code" [(ngModel)]="model.code"
+             [class.is-invalid]="shouldShowCodeError(code)"
+             [placeholder]="messages.authMessages.code.hint"/>
+      <div *ngIf="shouldShowCodeError(code)" class="invalid-feedback">
+        <div *ngFor="let key of code.errors.keys">{{code.errors[key]}}</div>
+      </div>
+    </div>
+
+    <div class="code-resend-hint">
+      {{messages.authMessages.code.resendHint}}
+    </div>
+
+    <div class="code-resend-action">
+      <button (click)="resendCode()" type="button">
+        {{messages.authMessages.code.resendAction}}
+      </button>
+    </div>
+  </template>
+
+  <template [ngIf]="!isCodeFormShown">
+    <div class="form-group">
+      <label for="phoneNumberPrefix">{{messages.authMessages.sign_up.prefix}}*</label>
+      <input type="text" class="form-control" id="phoneNumberPrefix" #phoneNumberPrefix="ngForm"
+              maxLength="4"
+              ngControl="phoneNumberPrefix" [(ngModel)]="model.phoneNumberPrefix"
+              [class.is-invalid]="shouldShowError(phoneNumberPrefix)"
+              placeholder="+00"/>
+
+      <div *ngIf="shouldShowError(phoneNumberPrefix)" class="invalid-feedback">
+        <div *ngFor="let key of phoneNumberPrefix.errors.keys">{{phoneNumberPrefix.errors[key]}}</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">{{messages.authMessages.sign_up.phone_number}}*</label>
+      <input type="text" class="form-control" id="phoneNumber" #phoneNumber="ngForm"
+              ngControl="phoneNumber" [(ngModel)]="model.phoneNumber"
+              [class.is-invalid]="shouldShowError(phoneNumber)"
+              [placeholder]="messages.authMessages.sign_up.phone_number_hint"/>
+
+      <div *ngIf="shouldShowError(phoneNumber)" class="invalid-feedback">
+        <div *ngFor="let key of phoneNumber.errors.keys">{{phoneNumber.errors[key]}}</div>
+      </div>
+    </div>
+  </template>
+  <input type="submit"/>
+</form>

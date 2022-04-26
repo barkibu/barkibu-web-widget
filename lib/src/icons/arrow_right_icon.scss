@@ -1,0 +1,7 @@
+@import "package:web_widget/src/scss/themes";
+
+#Arrow {
+  @include themify($themes) {
+    fill: themed('secondary-icon-color');
+  }
+}

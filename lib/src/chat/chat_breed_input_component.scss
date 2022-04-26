@@ -1,0 +1,19 @@
+@import "package:web_widget/src/chat/chat_text_input_component.scss";
+@import "package:web_widget/src/scss/themes";
+::ng-deep autocomplete-input {
+  form {
+    position: relative;
+
+    #material-auto-suggest-input.form-control {
+      padding: $spacing $widget-window-spacing;
+      height: $input-height;
+      line-height: 2;
+      &[disabled] {
+        @include themify($themes) {
+          background-color: rgba(themed("assistant-color"), 0.4);
+        }
+        cursor: default;
+      }
+    }
+  }
+}

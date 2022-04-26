@@ -1,0 +1,40 @@
+@import "package:web_widget/src/scss/themes";
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  display:flex;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  @include themify($themes) {
+    background-color: themed('white-color');
+    color: themed('secondary-color');
+  }
+  margin: auto;
+  justify-content: center;
+  padding: $widget-window-spacing;
+  box-shadow: $box-shadow;
+  width: 70%;
+  border-radius: $border-radius;
+  text-align: center;
+}
+
+.modal-buttons {
+  display: flex;
+  margin: -$widget-window-spacing;
+  margin-top: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: $spacing * 2 0;
+}

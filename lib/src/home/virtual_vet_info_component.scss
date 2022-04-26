@@ -1,0 +1,17 @@
+@import "package:web_widget/src/scss/themes";
+
+.virtual-vet-info-title {
+  @include themify($themes) {
+    color: themed('secondary-color');
+    border-bottom: 1px solid themed('border-color');
+  }
+  margin-bottom: $spacing * 2;
+  padding-bottom: $spacing * 2;
+}
+
+.virtual-vet-info-description {
+  @include themify($themes) {
+    color: themed('secondary-color');
+    white-space: break-spaces;
+  }
+}

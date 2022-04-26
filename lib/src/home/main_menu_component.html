@@ -1,0 +1,230 @@
+<restore-active-chat></restore-active-chat>
+<widget-layout>
+  <widget-header homeHeader>
+    <div class="home-header">
+      <h2>
+        <span role="text"
+          >{{messages.homeMessages.messages.hello(currentUser.firstName)}}!</span
+        >
+      </h2>
+      <div class="header-subtitle">
+        {{messages.homeMessages.messages.subtitle}}
+      </div>
+    </div>
+  </widget-header>
+
+  <widget-body noBottomSpacing>
+    <div *ngIf="aivetEnabled" class="home-body-island">
+      <form (ngSubmit)="openChat()" class="start-assessment-form">
+        <div class="start-assessment-form-title-wrapper">
+          <div class="start-assessment-form-title">
+            <span>
+              {{messages.homeMessages.messages.makeConsultation}}
+              <span
+                *ngIf="!virtualVetInfoEnabled"
+                aria-hidden="true"
+                class="start-assessment-form-icon"
+                >+</span
+              >
+            </span>
+            <a
+              [routerLink]="RoutePaths.virtualVetInfo.toUrl()"
+              [attr.aria-label]="virtualVetInfoAltText"
+              *ngIf="virtualVetInfoEnabled"
+            >
+              <widget-icon iconType="info-secondary"></widget-icon>
+            </a>
+          </div>
+          <div class="start-assessment-form-subtitle">
+            {{messages.homeMessages.messages.help}}
+          </div>
+        </div>
+        <div class="start-assessment-form-input-wrapper">
+          <input
+            id="question"
+            type="text"
+            name="question"
+            [(ngModel)]="question"
+            [placeholder]="messages.homeMessages.messages.symptomInputHint"
+            [attr.aria-label]="messages.homeMessages.messages.symptomInputLabel"
+          />
+          <button type="submit">
+            <img
+              src="assets/images/arrow-right.svg"
+              [alt]="messages.sharedMessages.altImageText.next"
+            />
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <nav>
+      <ul>
+        <li
+          class="home-body-island"
+          *ngIf="askAVetDirectlyEnabled || nutribotEnabled"
+        >
+          <ul>
+            <li class="home-menu-item" *ngIf="askAVetDirectlyEnabled">
+              <template [ngIf]="aivetEnabled">
+                <div class="home-menu-item-image">
+                  <widget-icon iconType="vet" aria-hidden="true"></widget-icon>
+                </div>
+                <a
+                  [routerLink]="askAVetUrl"
+                  (click)="logAskAVetStarts()"
+                  class="home-menu-item-link"
+                >
+                  <span role="text">
+                    <span class="home-menu-item-link-text">
+                      {{messages.homeMessages.messages.askAVet.title}}<span
+                        class="sr-only"
+                        >.</span
+                      >
+                    </span>
+                    <span class="home-menu-item-link-subtext">
+                      {{messages.homeMessages.messages.askAVet.subtitle}}
+                    </span>
+                  </span>
+                </a>
+                <widget-icon iconType="arrow-right"></widget-icon>
+              </template>
+              <template [ngIf]="!aivetEnabled">
+                <div class="home-menu-item-image">
+                  <widget-icon iconType="vet" aria-hidden="true"></widget-icon>
+                </div>
+                <div class="home-menu-item-link-text-wrapper" role="text">
+                  <span class="home-menu-item-link-text">
+                    {{messages.homeMessages.messages.askAVet.title}}<span
+                      class="sr-only"
+                      >.</span
+                    >
+                  </span>
+                  <span class="home-menu-item-link-subtext">
+                    {{messages.homeMessages.messages.askAVet.subtitle}}
+                  </span>
+                </div>
+                <widget-button
+                  link
+                  [linkHref]="askAVetUrl"
+                  [text]="messages.homeMessages.messages.askAVet.title"
+                >
+                </widget-button>
+              </template>
+            </li>
+            <li class="home-menu-item" *ngIf="nutribotEnabled">
+              <span class="badge"></span>
+              <div class="home-menu-item-image">
+                <widget-icon iconType="food" aria-hidden="true"></widget-icon>
+              </div>
+              <a
+                [routerLink]="RoutePaths.nutribot.toUrl()"
+                class="home-menu-item-link"
+              >
+                <span role="text">
+                  <span class="home-menu-item-link-text">
+                    {{messages.homeMessages.messages.nutrition.title}}<span
+                      class="sr-only"
+                      >.</span
+                    >
+                  </span>
+                  <span class="home-menu-item-link-subtext">
+                    {{messages.homeMessages.messages.nutrition.subtitle}}
+                  </span>
+                </span>
+              </a>
+              <widget-icon iconType="arrow-right"></widget-icon>
+            </li>
+          </ul>
+        </li>
+
+        <li class="home-body-island">
+          <div class="home-menu-item">
+            <div class="home-menu-item-image">
+              <widget-icon iconType="my-pets" aria-hidden="true"></widget-icon>
+            </div>
+            <a
+              [routerLink]="RoutePaths.myPets.toUrl()"
+              class="home-menu-item-link"
+            >
+              <span role="text">
+                <span class="home-menu-item-link-text">
+                  {{messages.petProfileMessages.title}}<span class="sr-only"
+                    >.</span
+                  >
+                </span>
+                <span class="home-menu-item-link-subtext">
+                  {{messages.petProfileMessages.subtitle}}
+                </span>
+              </span>
+            </a>
+            <widget-icon iconType="arrow-right"></widget-icon>
+          </div>
+        </li>
+
+        <li class="home-body-island" *ngIf="findAClinicEnabled">
+          <div class="home-menu-item">
+            <div class="home-menu-item-image">
+              <widget-icon iconType="find-clinic" aria-hidden="true"></widget-icon>
+            </div>
+            <a
+              [routerLink]="RoutePaths.clinicsFinder.toUrl()"
+              class="home-menu-item-link"
+            >
+              <span role="text">
+                <span class="home-menu-item-link-text">
+                  {{messages.homeMessages.messages.findClinics.title}}<span
+                    class="sr-only"
+                    >.</span
+                  >
+                </span>
+                <span class="home-menu-item-link-subtext">
+                  {{messages.homeMessages.messages.findClinics.subtitle}}
+                </span>
+              </span>
+            </a>
+            <widget-icon iconType="arrow-right"></widget-icon>
+          </div>
+        </li>
+
+        <li class="home-body-island" *ngIf="!externalProfileDataEnabled">
+          <div class="home-menu-item">
+            <div class="home-menu-item-image">
+              <widget-icon iconType="profile" aria-hidden="true"></widget-icon>
+            </div>
+            <a
+              [routerLink]="RoutePaths.profileHome.toUrl()"
+              class="home-menu-item-link"
+            >
+              <span role="text">
+                <span class="home-menu-item-link-text">
+                  {{messages.homeMessages.messages.profile}}<span
+                    class="sr-only"
+                    >.</span
+                  >
+                </span>
+                <span class="home-menu-item-link-subtext">
+                  {{currentUser.fullName}}
+                </span>
+              </span>
+            </a>
+            <a
+              [routerLink]="RoutePaths.signOut.toUrl()"
+              class="home-menu-item-logout-link"
+            >
+              <span class="home-menu-item-logout-link-text">
+                {{messages.homeMessages.messages.logout}}
+              </span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </widget-body>
+  <widget-footer class="terms-of-service" *ngIf="termsOfServiceHomeEnabled">
+    {{messages.homeMessages.termsOfService.ctaText}}
+    <a [routerLink]="RoutePaths.termsOfService.toUrl()">
+      {{messages.homeMessages.termsOfService.termsOfService}}
+    </a>
+  </widget-footer>
+</widget-layout>

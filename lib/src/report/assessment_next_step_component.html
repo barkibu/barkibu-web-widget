@@ -1,0 +1,17 @@
+<article [class.urgent]="isUrgent">
+  <div class="next-step-image-wrapper" *ngIf="isUrgent">
+    <img src="assets/images/alert.svg" [alt]="" />
+  </div>
+
+  <div class="next-step-image-wrapper" *ngIf="isConditionsEmpty && !isUrgent">
+    <img src="assets/images/question-circle.svg" [alt]="" />
+  </div>
+
+  <h3 class="next-step-title" *ngIf="nextStepTitle != null">
+    {{nextStepTitle}}
+  </h3>
+
+  <div class="next-step-content">
+    {{nextStepContent}}
+  </div>
+</article>

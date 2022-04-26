@@ -1,0 +1,10 @@
+@import "package:web_widget/src/scss/themes";
+
+.chat-messages-container {
+  margin-right: -($widget-window-spacing);
+  padding-right: $widget-window-spacing;
+}
+
+.chat-controls-container {
+  min-height: $chat-controls-min-height;
+}

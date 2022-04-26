@@ -1,0 +1,11 @@
+@import "package:web_widget/src/scss/themes";
+
+.filler {
+  @include themify($themes) {
+    fill: themed('primary-icon-color');
+
+    &.secondary {
+      fill: rgba(themed('secondary-color'),0.4);      
+    }
+  }
+}

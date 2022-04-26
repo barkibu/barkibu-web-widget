@@ -1,0 +1,26 @@
+name: CI Block Translation Changes
+on:
+  pull_request:
+    branches: [develop]
+    types: [opened, labeled, unlabeled, synchronize]
+    paths: 
+      - '**/*.i18n.dart'
+
+jobs:
+  warn:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Add Info Comment
+      uses: peter-evans/create-or-update-comment@v1
+      with:
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          **⚠️ This PR seems to touch the translation files. ⚠️**
+          
+          The usual flow is to add/edit keys and translations on AirTable and then trigger the Translation Bascule workflow which takes care of creating a PR focused on translations.
+
+          If the usual flow does not fit your need and you know what you are doing then you can shut me down adding a `translation` label.
+    - uses: jesusvasquez333/verify-pr-label-action@v1.4.0
+      with:
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          valid-labels: 'translation'

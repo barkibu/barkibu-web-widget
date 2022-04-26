@@ -1,0 +1,66 @@
+<div aria-live="polite" [attr.aria-busy]="inputViewModel == null">
+  <template [ngIf]="inputViewModel == null">
+    <spinner></spinner>
+  </template>
+  <template [ngIf]="inputViewModel != null">
+    <div [ngSwitch]="inputModelType">
+      <template [ngSwitchCase]="'single_options_select'">
+        <chat-select [optionsViewModel]="inputViewModel" (controlEvents)="addEventToContolStream($event)">
+        </chat-select>
+      </template>
+
+      <template [ngSwitchCase]="'multiple_options_select'">
+        <chat-multiple-select [optionsViewModel]="inputViewModel" (controlEvents)="addEventToContolStream($event)">
+        </chat-multiple-select>
+      </template>
+
+      <template [ngSwitchCase]="'text_input'">
+        <chat-text-input [simpleTextViewModel]="inputViewModel" (controlEvents)="addEventToContolStream($event)">
+        </chat-text-input>
+      </template>
+
+
+      <template [ngSwitchCase]="'yes_no_unkown'">
+        <chat-yes-no [yesNoUnkownViewModel]="inputViewModel" (controlEvents)="addEventToContolStream($event)">
+        </chat-yes-no>
+      </template>
+
+      <template [ngSwitchCase]="'yes_no'">
+        <chat-yes-no [yesNoViewModel]="inputViewModel" (controlEvents)="addEventToContolStream($event)">
+        </chat-yes-no>
+      </template>
+
+      <template [ngSwitchCase]="'text_input_and_options'">
+        <chat-select [textAndOptionsViewModel]="inputViewModel" (controlEvents)="addEventToContolStream($event)">
+        </chat-select>
+        
+        <chat-text-input [textAndOptionsViewModel]="inputViewModel" (controlEvents)="addEventToContolStream($event)">
+        </chat-text-input>
+      </template>
+
+      <template [ngSwitchCase]="'buttons_input'">
+        <chat-buttons-input [chatViewModel]="inputViewModel" (controlEvents)="addEventToContolStream($event)">
+        </chat-buttons-input>
+      </template>
+
+      <template [ngSwitchCase]="'button_input'">
+        <chat-button-input [chatViewModel]="inputViewModel" (controlEvents)="addEventToContolStream($event)">
+        </chat-button-input>
+      </template>
+
+      <template [ngSwitchCase]="'phone_input'">
+        <chat-phone-input [viewModel]="inputViewModel" (controlEvents)="addEventToContolStream($event)">
+        </chat-phone-input>
+      </template>
+
+      <template [ngSwitchCase]="'age_input'">
+        <chat-age-input [chatViewModel]="inputViewModel" (controlEvents)="addEventToContolStream($event)">
+        </chat-age-input>
+      </template>
+      <template [ngSwitchCase]="'breed_input'">
+        <chat-breed-input [chatViewModel]="inputViewModel" (controlEvents)="addEventToContolStream($event)">
+        </chat-breed-input>
+      </template>
+    </div>
+  </template>
+</div>

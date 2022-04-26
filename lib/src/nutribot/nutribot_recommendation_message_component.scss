@@ -1,0 +1,106 @@
+@import "package:web_widget/src/scss/themes";
+
+:host {
+  display: block;
+  width: 100%;
+  @include themify-regular($themes) {
+    color: themed('secondary-color');
+  }
+}
+
+widget-card {
+  display: grid;
+  grid-template-columns: 3rem auto;
+  padding: $spacing * 2;
+  column-gap: $spacing;
+  row-gap: $spacing;
+}
+
+.recipe-image {
+  img {
+    vertical-align: top;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.recipe-description {
+  p {
+    @include themify($themes) {
+      color: rgba(themed('secondary-color'), 0.6);
+    }
+    line-height: $larger-font-size;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: $smaller-font-size;
+    margin-bottom: $spacing;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.treats-description {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  font-size: $smaller-font-size;
+  line-height: $base-font-size;
+  padding-top: $spacing;
+  @include themify($themes) {
+    color: rgba(themed('secondary-color'), 0.4);
+    border-top: 1px solid themed('border-color');
+  }
+
+  ul {
+    padding: 0;
+    padding-top: $spacing;
+    margin: 0;
+    list-style: none;
+    font-weight: bold;
+    li:not(:last-child) {
+      padding-bottom: $spacing;
+    }
+  }
+}
+
+.learn-more-container {
+  grid-column-end: 3;
+  grid-column-start: 1;
+  @include themify($themes) {
+    border-top: 1px solid themed('border-color');
+  }
+}
+
+.toggle-container{
+  display: flex;
+  align-content: space-around;
+  padding-top: $spacing
+}
+
+.collapsible {
+  text-align: left;
+  font-size: $larger-font-size;
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  @include themify($themes) {
+    color: themed('link-color');
+  }
+}
+
+.content {
+  padding: $spacing 0;
+  text-align: justify;
+  display: block;
+  overflow: hidden;
+}
+
+.buy-button{
+  width: 12em;
+  padding-top: $spacing;
+  padding-bottom: $spacing;
+}
+

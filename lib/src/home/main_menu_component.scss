@@ -1,0 +1,161 @@
+@import "package:web_widget/src/scss/themes";
+@import "package:web_widget/src/chat/chat_text_input_component.scss";
+@import "package:web_widget/src/home/home_component.scss";
+@import "package:web_widget/src/scss/accessibility";
+$menu-item-image-size: 50px;
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h2 {
+    margin-bottom: $spacing;
+    margin-top: 0;
+}
+
+.header-subtitle {
+    @extend %header-subtitle;
+}
+
+.home-header {
+    @extend %home-header;
+}
+
+.home-body-island {
+    @extend %home-body-island
+}
+
+.start-assessment-form-title {
+    font-weight: bold;
+    font-size: $larger-font-size;
+    margin-top: $spacing;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include themify($themes) {
+        color: themed('link-color');
+    }
+    a {
+        width: 1.5rem;
+        height: 1.5rem;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        border-radius: 50%;
+        padding: 0;
+    }
+}
+
+.start-assessment-form-subtitle {
+    margin-bottom: $spacing;
+    @include themify($themes) {
+        color: rgba(themed('secondary-color'), 0.8);
+    }
+}
+
+.start-assessment-form-icon {
+    @include themify($themes) {
+        background-color: rgba(themed('primary-color'), 0.3);
+        color: themed('white-color');
+    }
+    font-weight: bold;
+    height: 16px;
+    width: 16px;
+    border-radius: 4.03px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 16px;
+    text-align: center;
+    margin-left: $spacing / 2;
+}
+
+.start-assessment-form-input-wrapper {
+    margin-bottom: $spacing;
+    margin-top: $widget-window-spacing;
+    @include contains-chat-text-input-component();
+}
+
+.home-menu-item {
+    display: flex;
+    position: relative;
+}
+
+
+.home-menu-item:not(:first-child) {
+    padding-top: $spacing * 2;
+    margin-top: 0;
+}
+
+.home-menu-item:not(:last-child) {
+    padding-bottom: $spacing * 2;
+    margin-bottom: 0;
+    @include themify($themes) {
+        border-bottom: 1px solid themed('border-color');
+    }
+}
+
+.home-menu-item .badge {
+    position: absolute;
+    top: 12px;
+    left: -2px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: $smaller-font-size - 2;
+    @include themify($themes) {
+        background: themed("assistant-color");
+        color: themed("white-color");
+    }
+}
+
+.home-menu-item-link {
+    flex-grow: 1;
+    text-decoration: none;
+}
+
+.home-menu-item-logout-link {
+    @include themify($themes) {
+        color: rgba(themed('danger-color'), 0.4);
+    }
+    align-self: flex-end;
+    text-decoration: none;
+}
+
+.home-menu-item-link-text {
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: $larger-font-size;
+    @include themify($themes) {
+        color: rgba(themed('link-color'), 0.8);
+    }
+}
+
+.home-menu-item-link-subtext,
+.home-action-hint {
+    display: block;
+    background: none;
+    @include themify($themes) {
+        color: rgba(themed('secondary-color'), 0.4);
+    }
+}
+
+.home-action-hint {
+    text-align: center;
+    margin: $widget-window-spacing;
+}
+
+.terms-of-service {
+    text-align: center;
+    @include themify($themes) {
+        color: rgba(themed('secondary-color'), 0.4);
+    }
+    a {
+        font-weight: bold;
+        @include themify($themes) {
+            color: themed('primary-color');
+        }
+    }
+}

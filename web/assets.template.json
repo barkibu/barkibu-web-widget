@@ -1,0 +1,5 @@
+{
+  "loader.js": "{{digest loader.js}}",
+  "loader.css": "{{digest loader.css}}",
+  "main.js": "{{digest main.dart.js}}"
+}

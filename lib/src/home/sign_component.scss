@@ -1,0 +1,47 @@
+@import "package:web_widget/src/scss/themes";
+@import "package:web_widget/src/chat/chat_text_input_component.scss";
+@import "package:web_widget/src/home/home_component.scss";
+@import "package:web_widget/src/scss/accessibility";
+$menu-item-image-size: 40px;
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h2 {
+    margin-bottom: $spacing;
+    margin-top: 0;
+}
+
+.spinner-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-subtitle {
+    @extend %header-subtitle;
+}
+
+.home-header {
+    @extend %home-header;
+}
+
+.home-body-island {
+    @extend %home-body-island
+}
+
+.home-action-hint {
+    display: block;
+    background: none;
+    @include themify($themes) {
+        color: rgba(themed('secondary-color'), 0.4);
+    }
+}
+
+.home-action-hint {
+    text-align: center;
+    margin: $widget-window-spacing;
+}

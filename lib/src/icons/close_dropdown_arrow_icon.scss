@@ -1,0 +1,7 @@
+@import "package:web_widget/src/scss/themes";
+
+#Close-Dropdown {
+  @include themify($themes) {
+    fill: themed('primary-icon-color');
+  }
+}

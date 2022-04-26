@@ -1,0 +1,3 @@
+termsAndPolicy(String url, String appName): $appName <a href=$url target=_blank>Terms and Conditions and Privacy Policy</a>
+title: 'Profile'
+update: 'Update profile'

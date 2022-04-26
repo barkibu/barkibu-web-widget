@@ -1,0 +1,36 @@
+<h5 class="product-name">{{recipeOrTreat.productName}}</h5>
+
+<widget-button link [linkHref]="recipeOrTreat.buyUrl" [externalLink]="true" (click)="logNutribotClickBuy()"
+               [text]="messages.nutribotMessages.buyTreat" *ngIf="!isNutribotLinkExternalEvent">
+</widget-button>
+<widget-button button (click)="notifyNutribotProductRequested()"
+               [text]="messages.nutribotMessages.buyTreat" *ngIf="isNutribotLinkExternalEvent && isProductIdPresent">
+</widget-button>
+
+<h5>{{messages.nutribotMessages.treatInfo}}</h5>
+
+<p class="product-description">
+  <template [ngIf]="!descriptionExpanded">
+    {{recipeOrTreat.description | ellipsis: cutOff}}
+  </template>
+  <template [ngIf]="descriptionExpanded">
+    {{recipeOrTreat.description}}
+  </template>
+</p>
+<button class="read-more-button" (click)="toggleDescriptionExpanded()" *ngIf="isDescriptionTruncated">
+  {{descriptionToggleText}}
+</button>
+
+<h5>{{messages.nutribotMessages.treatIngredients}}</h5>
+
+<p class="product-ingridients">
+  <template [ngIf]="!ingredientsExpanded">
+    {{recipeOrTreat.ingredients | ellipsis: cutOff}}
+  </template>
+  <template [ngIf]="ingredientsExpanded">
+    {{recipeOrTreat.ingredients}}
+  </template>
+</p>
+<button class="read-more-button" (click)="toggleIngredientsExpanded()" *ngIf="isIngredientsTruncated">
+  {{ingredientsToggleText}}
+</button>

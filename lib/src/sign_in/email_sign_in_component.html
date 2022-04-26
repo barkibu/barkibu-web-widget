@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()" [ngFormModel]="signInForm" novalidate autocomplete="off">
+  <sign-in-error [state]="signInBloc | bloc"></sign-in-error>
+  <div class="form-group">
+    <label for="email">{{messages.authMessages.sign_in.mail}}</label>
+    <input type="email" class="form-control" id="email" #email="ngForm"
+            ngControl="email" [(ngModel)]="model.email"
+            [class.is-invalid]="shouldShowError(email)" [placeholder]="messages.authMessages.sign_in.mail_hint"/>
+
+    <div *ngIf="shouldShowError(email)" class="invalid-feedback">
+      <div *ngFor="let key of email.errors.keys">{{email.errors[key]}}</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">{{messages.authMessages.sign_in.password}}</label>
+    <input type="password" class="form-control" id="password" #password="ngForm"
+            ngControl="password" [(ngModel)]="model.password"
+            [class.is-invalid]="shouldShowError(password)" autocomplete="new-password"
+            [placeholder]="messages.authMessages.sign_in.password_hint" />
+
+    <div *ngIf="shouldShowError(password)" class="invalid-feedback">
+      <div *ngFor="let key of password.errors.keys">{{password.errors[key]}}</div>
+    </div>
+    <div class="sign-in-form-recover-password">
+      <a [routerLink]="RoutePaths.recoverPassword.toUrl()">{{messages.authMessages.password_recovery.passwordForgotten}}</a>
+    </div>
+  </div>
+  <input type="submit"/>
+</form>

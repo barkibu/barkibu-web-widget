@@ -1,0 +1,49 @@
+@import "package:web_widget/src/scss/themes";
+
+.assessment-date {
+  font-size: $smaller-font-size;
+
+  @include themify($themes) {
+    color: rgba(themed('secondary-color'), 0.4);
+  }
+}
+
+h2, h3 {
+  font-weight: bold;
+  @include themify($themes) {
+    color: themed('secondary-color');
+  }
+}
+
+.assessment-title {
+  margin-bottom: $spacing;
+}
+
+.assessment-symtom {
+  font-weight: normal;
+  font-size: $base-font-size;;
+  padding-bottom: $spacing * 2;
+  margin-bottom: $spacing * 2;
+
+  @include themify($themes) {
+    border-bottom: 1px solid themed('border-color');
+    color: rgba(themed('secondary-color'), 0.4);
+  }
+
+  .symptom-name {
+    font-weight: bold;
+    @include themify($themes) {
+      color: themed('secondary-color');
+    }
+  }
+}
+
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+assessment-card, assessment-next-step {
+  margin-bottom: $spacing * 2;
+}

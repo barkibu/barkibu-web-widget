@@ -1,0 +1,35 @@
+@import "package:web_widget/src/scss/themes";
+
+.widget-window-header-topbar {
+  padding-bottom: $widget-window-spacing;
+  margin-bottom: $widget-window-spacing;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 1.5rem;
+  box-sizing: content-box;
+}
+
+.widget-window-header-topbar-wihtout-logo {
+  padding-top: $widget-window-spacing;
+  min-height: 1.5rem;
+  box-sizing: content-box;
+}
+
+.widget-window-header {
+  @include themify($themes) {
+    background-color: themed('primary-color');
+    color: themed('white-color');
+  }
+  padding: $widget-window-spacing;
+  border-radius: $border-radius $border-radius 0 0;
+
+  &.home-page-modifier {
+    margin-bottom: -$home-body-overlap-size - $widget-window-spacing;
+  }
+}
+
+.widget-window-header-close {
+  float: right;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}

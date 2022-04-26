@@ -1,0 +1,35 @@
+prevention:
+  notExact: 'You don''t need to know the exact date'
+  before: 'Before'
+  rabies(String petName): 'When did you last vaccinate $petName against rabies?'
+  multivalent(String petName): 'When did you give $petName the annual booster?'
+  date: 'Select date'
+  de_worming(String petName): 'When did you last give $petName internal deworming?'
+  never: 'Never'
+success:
+  creatingProfile(String petName): 'We are preparing the  Veterinary Profile of $petName'
+  assessments: 'Veterinary consultations'
+petCreation:
+  selectBreedTitle: Select your pet's breed
+  intro: 'Welcome to Barkibu. We are going to create a profile for your pet. If you have more than one, you can add them later on.'
+  searchBreed: 'Search breeds'
+  neuteredQuestion(String petName): 'Has $petName been spayed/neutered?'
+  selectBreed: 'Select breed'
+  ageHint: How to estimate my pet's age
+  sexQuestion(String petName): 'What sex is $petName?'
+  nameQuestion: What's your pet name?
+  nameHint: 'Name'
+  ageQuestion(String petName): 'How old is $petName?'
+  breedQuestion(String petName): 'What breed is $petName?'
+  ageQuestionHint: 'Date of birth'
+  speciesQuestion(String petName): 'Is $petName a dog or a cat?'
+healthStatus:
+  yes: 'My pet is in good shape'
+  no: 'Now my pet isn''t at its best'
+  question(String petName): 'Is your pet in good health?'
+appUsage:
+  finance: 'Save health related spendings'
+  question: 'What do you need from an online vet?'
+  prevention: 'Prevent disease to my pet'
+  vetOnDemand: 'Speak with a vet whenever I need to'
+almost: 'Almost there!'

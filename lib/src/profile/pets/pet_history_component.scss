@@ -1,0 +1,55 @@
+@import "package:web_widget/src/scss/themes";
+
+h2 {
+  display: flex;
+  font-weight: bold;
+  text-transform: capitalize;
+
+  @include themify($themes) {
+    color: themed('secondary-color');
+  }
+
+  widget-icon {
+    margin-right: $spacing;
+  }
+}
+
+.history-link {
+  font-weight: bold;
+  display: block;
+  padding: $spacing * 2;
+  border-radius: $border-radius;
+  text-decoration: none;
+  font-size: $larger-font-size;
+  margin-bottom: $spacing * 2;
+  box-shadow: $card-box-shadow;
+
+  @include themify($themes) {
+    background-color: themed('white-color');
+    color: rgba(themed('secondary-color'), 0.6);
+  }
+
+  .history-link-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .count {
+    padding: 0 $spacing / 2;
+    @include themify($themes) {
+      color: themed('assistant-color');
+    }
+  }
+
+  .title {
+    padding: 0 $spacing / 2;
+    @include themify($themes) {
+      color: themed('secondary-color');
+    }
+  }
+
+  .description {
+    flex-grow: 1;
+  }
+}

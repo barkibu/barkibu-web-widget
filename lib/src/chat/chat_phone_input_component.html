@@ -1,0 +1,14 @@
+<form (submit)="confirmTextEntered()">
+    <div class="input-group">
+        <label for="prefix">{{prefixInputLabel}}</label>
+        <input type="tel" id="prefix" class="prefix" [(ngModel)]="prefix" [placeholder]="placeholderPrefix" [pattern]="patternPrefix.pattern" />
+        <label for="phone">{{phoneInputLabel}}</label>
+        <input type="tel" id="phone" class="phone" [(ngModel)]="phone" [placeholder]="placeholderPhone" [pattern]="patternPhone.pattern" />
+    </div>
+    <button type="submit" [disabled]="!isPhoneValid || !isPrefixValid" *ngIf="!externalLinksEventsEnabled">
+    <img src="assets/images/arrow-right.svg" [alt]="submitAltText">
+  </button>
+    <button type="submit" (click)="notifyPhoneNumberAdded" [disabled]="!isPhoneValid || !isPrefixValid" *ngIf="externalLinksEventsEnabled">
+    <img src="assets/images/arrow-right.svg" [alt]="submitAltText">
+  </button>
+</form>

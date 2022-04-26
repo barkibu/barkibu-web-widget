@@ -1,0 +1,38 @@
+<h2>
+  <widget-icon iconType="history" aria-hidden="true">
+  </widget-icon>
+  {{messages.petProfileMessages.history.title}}
+</h2>
+
+<a class="history-link" *ngIf="aivetEnabled" [routerLink]="petAssessmentsPath">
+  <span class="history-link-content" role="text">
+    <span class="count" data-test-id="virtual-vet-count" *ngIf="aivetAssessmentCount != null">{{aivetAssessmentCount}}</span>
+    <spinner size="small" *ngIf="aivetAssessmentCount == null"></spinner>
+    <span class="title">{{messages.petProfileMessages.history.virtualVet.title}}</span>
+    <span class="description">{{messages.petProfileMessages.history.virtualVet.subtitle}}</span>
+    <widget-icon iconType="arrow-right" aria-hidden="true">
+    </widget-icon>
+  </span>
+</a>
+
+<a class="history-link" *ngIf="askAVetDirectlyEnabled" [routerLink]="petAskAVetHistoryPath">
+  <span class="history-link-content" role="text">
+    <span class="count"  data-test-id="ask-a-vet-count" *ngIf="askAVetAssessmentCount != null">{{askAVetAssessmentCount}}</span>
+    <spinner size="small" *ngIf="askAVetAssessmentCount == null"></spinner>
+    <span class="title">{{messages.petProfileMessages.history.askAVetDirectly.title}}</span>
+    <span class="description">{{messages.petProfileMessages.history.askAVetDirectly.subtitle}}</span>
+    <widget-icon iconType="arrow-right" aria-hidden="true">
+    </widget-icon>
+  </span>
+</a>
+
+<a class="history-link" *ngIf="nutribotEnabled" [routerLink]="petNutritionHistoryPath">
+  <span class="history-link-content" role="text">
+    <span class="count" data-test-id="nutribot-count" *ngIf="nutribotConsultationsCount != null">{{nutribotConsultationsCount}}</span>
+    <spinner size="small" *ngIf="nutribotConsultationsCount == null"></spinner>
+    <span class="title">{{messages.petProfileMessages.history.nutrition.title}}</span>
+    <span class="description">{{messages.petProfileMessages.history.nutrition.subtitle}}</span>
+    <widget-icon iconType="arrow-right" aria-hidden="true">
+    </widget-icon>
+  </span>
+</a>

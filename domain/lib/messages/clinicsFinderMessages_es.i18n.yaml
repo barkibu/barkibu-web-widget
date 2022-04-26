@@ -1,0 +1,7 @@
+title: 'Busca una clínica cercana'
+geolocationRequired: 'Necesitamos tu posición para encontrar las clínicas más cercanas a ti'
+searchAddress: 'Introduce tu dirección, código postal o ciudad...'
+enterYourAddress: 'Introduce tu dirección para buscar las clínicas más cercanas'
+searchLabel: 'Introduce tu dirección, código postal o ciudad...'
+card: 
+ hoursTitle: 'Horario'

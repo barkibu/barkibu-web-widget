@@ -1,0 +1,66 @@
+@import "package:web_widget/src/scss/themes";
+
+.pet-title {
+  margin-bottom: 0;
+}
+
+h2 {
+  font-weight: bold;
+  padding-bottom: $spacing * 2;
+  margin-bottom: 0;
+  @include themify($themes) {
+    color: themed('secondary-color');
+    border-bottom: 1px solid themed('border-color');
+  }
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  button {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    padding: $spacing * 2 0;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    @include themify($themes) {
+      border-bottom: 1px solid themed('border-color');
+    }
+  }
+
+  .consultation-date {
+    font-size: $larger-font-size;
+    font-weight: bold;
+
+    @include themify($themes) {
+      color: themed('secondary-color');
+    }
+  }
+
+  .recommendation-item:not(:first-child) {
+    padding-top: $spacing * 2;
+  }
+}
+
+.selected-consultation-date {
+  font-size: $smaller-font-size;
+  @include themify($themes) {
+    color: rgba(themed('secondary-color'), 0.4);
+  }
+}
+
+.selected-consultation-title {
+  padding-bottom: $spacing * 2;
+  margin-bottom: $spacing * 2;
+  @include themify($themes) {
+    border-bottom: 1px solid themed('border-color');
+  }
+}

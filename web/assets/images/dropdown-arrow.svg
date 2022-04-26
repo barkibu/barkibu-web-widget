@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>09A5FD07-C918-4BA8-BA5B-C98E3D338DFC</title>
+    <g id="Barkibu-Widget-Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.400000006">
+        <g id="01---00---HomeScreen---My-Pets---Add-a-Pet" transform="translate(-1333.000000, -609.000000)">
+            <g id="Card" transform="translate(1005.000000, 347.000000)">
+                <g id="Input-Copy" transform="translate(16.000000, 221.000000)">
+                    <g id="CollapseButton" transform="translate(320.000000, 49.000000) rotate(-180.000000) translate(-320.000000, -49.000000) translate(312.000000, 41.000000)">
+                        <rect id="safe-area" x="1.80000007" y="4.09272632e-13" width="12.6000005" height="15.3000006"></rect>
+                        <path d="M10.5075383,0.957590484 C10.9175888,0.530803206 11.5824121,0.530803206 11.9924626,0.957590484 C12.3709708,1.35154797 12.4000868,1.97145051 12.0798106,2.40016877 L11.9924626,2.50312394 L6.43575026,8.28750033 L11.9924626,14.0718767 C12.3709708,14.4658342 12.4000868,15.0857367 12.0798106,15.514455 L11.9924626,15.6174102 C11.6139544,16.0113677 11.0183618,16.0416721 10.606456,15.7083234 L10.5075383,15.6174102 L4.20753805,9.06026706 C3.82902987,8.66630957 3.79991386,8.04640703 4.12019001,7.61768877 L4.20753805,7.5147336 L10.5075383,0.957590484 Z" id="Path-2" fill="#0A274A" fill-rule="nonzero" transform="translate(8.100000, 8.287500) rotate(-270.000000) translate(-8.100000, -8.287500) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

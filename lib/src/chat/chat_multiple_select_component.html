@@ -1,0 +1,15 @@
+<ul>
+  <li *ngFor="let item of selectViewModel.items" class="select-option">
+    <label [attr.for]="itemDescription(item)" class="option-wrapper">
+      <widget-checkbox [id]="itemDescription(item)" [checked]="isSelected(item)"
+                       (change)="toggleSelectedOption($event.target.checked, item)">
+      </widget-checkbox>
+      <div class="option-title">
+        {{itemDescription(item)}}
+      </div>
+    </label>
+  </li>
+</ul>
+<widget-button button (click)="confirmSelectedOptions()" [disabled]="selectedItems.isEmpty"
+               [text]="messages.sharedMessages.carryOn">
+</widget-button>

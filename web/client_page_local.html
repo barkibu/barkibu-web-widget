@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Client page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    function eventHandler(eventName, payload) {
+      console.log('EventName: ' + eventName);
+      console.log(payload);
+    }
+    (/**
+     * @param {object} window - Reference to window object to make method shorter.
+     * @param {object} document - Reference to the element that will contain the script tag and to make method shorter.
+     * @param {string} scriptTagName - Contains the word 'script' to make method shorter.
+     * @param {string} hostName - The host name of the server with all the assets.
+     * @param {string} globalName - This allows dynamically define global variable name to avoid conflicts with other SDKs.
+     */
+      function (window, document, scriptTagName, hostName, globalName) {
+        // store the name of the global variable
+        window['vetChatWidgetName'] = globalName;
+
+        fetch('//' + hostName + '/assets.json')
+          .then(function(res) { return res.json() })
+          .then(function(assetsMap) {
+            window[globalName].assets = assetsMap
+            // dynamically create a script tag element with async execution,
+            var scriptElement = document.createElement(scriptTagName);
+            var otherScriptElement = document.getElementsByTagName(scriptTagName)[0];
+            scriptElement.async = true;
+            scriptElement.src = '//' + hostName + '/loader.js' + '?v=' + assetsMap['loader.js'];
+            // inject the script tag before first script tag found within document
+            otherScriptElement.parentNode.insertBefore(scriptElement, otherScriptElement);
+          });
+
+        // creates a global variable to delegate, so it will be available before script loaded
+        window[globalName] = window[globalName] || {
+          send: function() {
+            // pushes arguments that were passed to delegate into queue
+            // so they can be accessed later from the main script
+            (window[globalName].q = window[globalName].q || []).push(arguments)
+          },
+          hostName: hostName
+        };
+      })(window, document, 'script', 'localhost:8080', 'vetChatWidget');
+
+    vetChatWidget.send('init', { client_id: 'CLIENT_ID', country: 'CO', eventHandler: eventHandler, path: 'chat' });
+  </script>
+</head>
+<body>
+  <h1> Dummy client page with inject script </h1>
+  <button onclick='vetChatWidget.send("open")'>Open widget</button>
+  <button onclick='vetChatWidget.send("close")'>Close widget</button>
+</body>
+</html>

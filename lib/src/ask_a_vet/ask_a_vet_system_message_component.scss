@@ -1,0 +1,10 @@
+@import "package:web_widget/src/scss/themes";
+
+.message-container {
+  text-align: center;
+  margin: $spacing * 2;
+
+  @include themify($themes) {
+    color: themed('secondary-color');
+  }
+}

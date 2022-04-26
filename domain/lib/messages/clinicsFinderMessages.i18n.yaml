@@ -1,0 +1,8 @@
+title: 'Find A Clinic'
+geolocationRequired: 'We need your location to find the clinics closest to you'
+searchAddress: 'Enter address, city or zipcode...'
+enterYourAddress: 'Enter your address to find the closest clincs'
+searchLabel: 'Enter address, city or zipcode...'
+card: 
+ hoursTitle: 'Hours'
+

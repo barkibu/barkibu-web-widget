@@ -1,0 +1,27 @@
+@import "package:web_widget/src/scss/themes";
+@import "package:web_widget/src/scss/form";
+
+form {
+    @extend %widget-form;
+}
+
+::ng-deep material-auto-suggest-input {
+    @extend %widget-form;
+
+    &:focus-within, &:active {
+      @include themify($themes) {
+        border: 1px solid themed("primary-color");
+        box-shadow: themed("focus-shadow");
+      }
+    }
+
+    material-input.themeable {
+      display: initial;
+    }
+
+    .baseline {
+        .underline {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+<ul>
+  <li *ngFor="let item of chatViewModel.items" (click)="onButtonClicked(item)">
+    <widget-button type="secondary" button [text]="messages.chatMessages.botMessages.optionAskAnotherQuestionTitle"
+                   *ngIf="isAskAnotherQuestionOption(item)">
+    </widget-button>
+
+    <widget-button type="secondary" button [text]="messages.chatMessages.botMessages.optionTalkWithAVetTitle"
+                   *ngIf="isTalkToAVetOption(item)">
+    </widget-button>
+
+    <widget-button type="secondary" button [text]="messages.chatMessages.botMessages.optionPersonalRecommendationsTitle"
+                   *ngIf="isPersonalRecommendationsOption(item)">
+    </widget-button>
+
+    <widget-button type="secondary" button [text]="messages.chatMessages.botMessages.optionBackHomeTitle"
+                   *ngIf="isBackHomeOption(item) && isBackButtonEnabled">
+    </widget-button>
+
+    <widget-button type="secondary" button [text]="messages.chatMessages.botMessages.optionGoBackTitle"
+                   *ngIf="isGoBackOption(item)">
+    </widget-button>
+
+    <widget-button type="secondary" button [text]="messages.chatMessages.openReport"
+                   *ngIf="isOpenReport(item)">
+    </widget-button>
+
+    <widget-button type="secondary" button [text]="messages.sharedMessages.noThanks"
+                   *ngIf="isNoThanks(item)">
+    </widget-button>
+
+    <widget-button type="secondary" link externalLink [text]="messages.sharedMessages.ok" [linkHref]="chatViewModel.data['appointment_url']"
+                   *ngIf="isSchedulePhoneCall(item) && !externalLinksEventsEnabled">
+    </widget-button>
+
+    <widget-button type="secondary" link externalLink [text]="messages.sharedMessages.ok" [linkHref]="chatViewModel.data['link']"
+                   *ngIf="isSendEmail(item) && !externalLinksEventsEnabled && !embeddedEmailClientEnabled">
+    </widget-button>
+
+    <widget-button type="secondary" button [text]="messages.sharedMessages.ok" (click)="notifyPhoneOption()"
+                   *ngIf="isSchedulePhoneCall(item) && externalLinksEventsEnabled">
+    </widget-button>
+
+    <widget-button type="secondary" button [text]="messages.sharedMessages.ok" (click)="notifyEmailOption()"
+                   *ngIf="isSendEmail(item) && externalLinksEventsEnabled">
+    </widget-button>
+    
+    <widget-button type="secondary" button [text]="messages.sharedMessages.ok"
+                   *ngIf="isSendEmail(item) && !externalLinksEventsEnabled && embeddedEmailClientEnabled">
+    </widget-button>
+  </li>
+</ul>

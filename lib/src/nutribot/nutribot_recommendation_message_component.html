@@ -1,0 +1,49 @@
+<widget-card>
+    <div class="recipe-image">
+        <img src="{{recipe.mainImage.full}}" [alt]="recipe.productName" />
+        <img *ngIf="isBackImageNotEmpty" src="{{recipe.backImage.full}}" [alt]="recipe.productName" />
+    </div>
+    <div class="recipe-description">
+        <h3>
+            <widget-icon *ngIf="isTopRecommendation" iconType="star">
+            </widget-icon>
+            {{cardTitle}}
+        </h3>
+        <p [innerHtml]="cardDescription"></p>
+    </div>
+
+    <widget-button class="buy-button" link [linkHref]="recipe.buyUrl" [externalLink]="true" (click)="logNutribotClickBuy()" [text]="messages.nutribotMessages.buyTreat" *ngIf="!isNutribotLinkExternalEvent && isShortenNutribotJourneyEnabled">
+    </widget-button>
+
+    <div class="treats-description" *ngIf="treats.isNotEmpty">
+        {{messages.nutribotMessages.botMessages.foodTreatsDescription}}
+        <ul class="treats-list">
+            <li *ngFor="let treat of treats">{{treat.productName}}</li>
+        </ul>
+    </div>
+
+    <div class="learn-more-container">
+        <widget-button *ngIf="!isShortenNutribotJourneyEnabled" (click)="selectCard()" button size="small" [text]="messages.chatMessages.botMessages.showResultsAction">
+        </widget-button>
+
+        <div *ngIf="isShortenNutribotJourneyEnabled">
+            <div class="toggle-container" (click)="toggleContent()" *ngIf="!isContentOpened">
+                <span class="collapsible">Learn More</span>
+                <widget-icon iconType="dropdown"></widget-icon>
+            </div>
+
+            <div class="toggle-container" (click)="isContentOpened = false" *ngIf="isContentOpened">
+                <span class="collapsible">Show less</span>
+                <widget-icon iconType="close-dropdown"></widget-icon>
+            </div>
+
+            <div class="content" [hidden]="!isContentOpened">
+                <h3>{{messages.nutribotMessages.treatInfo}}</h3>
+                <p>{{recipeDescription}}</p>
+                <h2>{{messages.nutribotMessages.treatIngredients}}</h2>
+                <p>{{recipeIngredients}}</p>
+            </div>
+        </div>
+
+    </div>
+</widget-card>

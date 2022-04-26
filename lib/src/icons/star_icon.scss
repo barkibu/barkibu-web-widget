@@ -1,0 +1,7 @@
+@import "package:web_widget/src/scss/themes";
+
+.filler {
+  @include themify($themes) {
+    fill: themed('primary-icon-color');
+  }
+}

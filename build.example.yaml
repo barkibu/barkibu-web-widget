@@ -1,0 +1,91 @@
+# Just for local development. If you're looking for example file to create a new widget deployment
+# You can copy `./build.dev.yaml`(or any other that is closer to the desired config) and adjust config values
+
+targets:
+  $default:
+    builders:
+      web_widget|config_builder:
+        options:
+          # Authentication options
+          authByEmailEnabled: true
+          authByPhoneEnabled: false
+          useLegacyAuthDatasource: true
+          authServiceAppClientId: null
+          authServiceUserPoolId: null
+          externalProfileDataEnabled: false
+
+          # Basic features
+          telehealthEnabled: true
+          telehealthVideoCapabilityEnabled: false
+          telehealthMediaSharingEnabled: false
+          nutribotEnabled: true
+          findAClinicEnabled: false
+          findAClinicAddressApiEnabled: false
+          askAVetDirectlyEnabled: true
+          aivetEnabled: true
+          conciergeUrl: null
+
+          # Customisation
+          externalPetDataEnabled: false
+          externalLinksEventsEnabled: false
+          embeddedEmailClientEnabled: false
+          nutribotRecommendationShortJourneyEnabled: false
+          addPetOptionEnabled: true
+          extendedFeedbackEnabled: true
+          closeButtonEnabled: true
+          backButtonEnabled: true
+          goHomeLinkEnabled: true
+          footerChatCreditsEnabled: false
+          aivetUrgencyOrderEnabled: false
+          skipPrimarySymptomEnabled: false
+          termsOfServiceHomeEnabled: false
+          lastNameRequired: false
+          petBreedEnabled: false
+          assessmentDateFormat: dd/MM/yyyy
+          defaultPhonePrefix: null
+          appName: 'Barkibu Assistant'
+          brandName: 'Barkibu'
+          brandLogo: 'barkibu-logo.svg'
+          brandLogoWidth: '165px'
+          headerWithoutLogo: false
+          botPreMessageDelay: 2000
+          botPostMessageDelay: 1200
+          useSpecialTranslations: 'default'
+          virtualVetInfoEnabled: false
+          externalToSEnabled: false
+
+          # Fallback theme & client_id
+          fallbackTheme: 'default'
+          fallbackClientId: null
+
+          # Contanct vet options
+          chatWithVetEnabled: true
+          chatOnPhoneCallUrl: https://my-calendly-url?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}
+          emailAccount: vet.help@mail.barkibu.com
+
+          # System configuration
+          envName: 'development'
+          apiUrl: 'https://barkibu-app-staging.herokuapp.com/v2'
+          segmentWriteKey: 'segmentWriteKey'
+
+          # Overriden configuration for each client id
+
+          clientIdConfigOverride:
+            # Open widget with ?client_id=some_client_id_1 query to apply custom config
+            some_client_id_1:
+              nutribotEnabled: false
+              aivetEnabled: false
+              appName: 'Some client ID 1'
+              brandName: 'Some client ID 1'
+            # Open widget with ?client_id=some_client_id_2 query to apply custom config
+            some_client_id_2:
+              fallbackTheme: default
+              appName: 'Some client ID 2'
+              brandName: 'Some client ID 2'
+
+builders:
+  config_builder:
+    import: "package:web_widget/builders/config_builder.dart"
+    builder_factories: ["configBuilder"]
+    build_extensions:
+      "$lib$": ["config.g.dart"]

@@ -1,0 +1,15 @@
+<widget-card>
+  <div class="card-body">
+    <div class="profile-card-avatar">
+      {{profileInitials()}}
+    </div>
+    <div class="profile-card-info">
+      <h3 class="profile-card-username">{{user.fullName}}</h3>
+      <p class="profile-card-email">{{user.email}}</p>
+    </div>
+
+    <widget-button link [linkHref]="RoutePaths.profileEdit.toUrl()"
+                        [text]="messages.profileMessages.update">
+    </widget-button>
+  </div>
+</widget-card>

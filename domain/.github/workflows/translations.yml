@@ -1,0 +1,54 @@
+name: Translation Bascule ⚖️
+on: 
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Message to set on the Commit' 
+        default: 'Barkibu Translation bot bascule' 
+
+jobs:
+  pullTranslations:
+    runs-on: ubuntu-latest
+
+    container:
+      image:  google/dart:2.10
+
+    steps:
+    - name: python dependencies
+      run: |
+        apt-get update 
+        apt-get install -y python3 python3-pip
+        pip3 install ruamel.yaml
+        pip3 install requests
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: pub get
+    
+    - name: whoami
+      run: |
+        git config user.name 'Barkibot'
+        git config user.email 'dev+bot@barkibu.com'
+
+    - name: Pull translations from Airtable
+      run: |
+        cd translations_tool
+        python3  airtable_to_local_translations.py
+        python3  airtable_faq_to_local_translations.py
+      env: 
+        AIRTABLE_API_KEY: ${{secrets.AIRTABLE_API_KEY}}
+    - name: Generate dart translation files
+      run: pub run build_runner build --delete-conflicting-outputs
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        title: Barkibu Translations Update
+        body: |
+          Automatic Translation PR
+
+          - [x] Pulled translations from Airtable
+          - [x] Ran the i18.dart file generation
+          - [x] Committed all that as part of this PR 🎉
+        labels: 'translation'
+        committer: Barkibot <dev+bot@barkibu.com>
+        commit-message: ${{github.event.inputs.message }}

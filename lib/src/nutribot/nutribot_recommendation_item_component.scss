@@ -1,0 +1,31 @@
+@import "package:web_widget/src/scss/themes";
+
+h5 {
+  font-size: $larger-font-size;
+  font-weight: bold;
+  margin: $spacing 0;
+  @include themify($themes) {
+    color: themed('secondary-color');
+  }
+}
+
+p {
+  line-height: 1.5em;
+  margin: $spacing 0;
+  @include themify($themes) {
+    color: themed('secondary-color');
+  }
+}
+
+.read-more-button {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  box-shadow: none !important;
+  @include themify($themes) {
+    color: themed('link-color');
+  }
+}

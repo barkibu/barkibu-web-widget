@@ -1,0 +1,61 @@
+<widget-layout>
+  <widget-header>
+    <go-back [path]="RoutePaths.profileHome.toUrl()" [title]="messages.profileMessages.update"></go-back>
+  </widget-header>
+
+  <widget-body>
+    <snackbar [message]="errorMessage"></snackbar>
+    <spinner-overlay *ngIf="!isProfileLoaded()"></spinner-overlay>
+    <template [ngIf]="isProfileLoaded()">
+      <form (ngSubmit)="onSubmit()" [ngFormModel]="profileForm" novalidate>
+        <div class="form-group">
+          <label for="firstName">{{messages.authMessages.sign_up.name}}</label>
+          <input type="text" class="form-control" id="firstName" #firstName="ngForm" ngControl="firstName" [(ngModel)]="model.firstName" maxLength="30" [class.is-invalid]="!firstName.valid" />
+
+          <div *ngIf="!firstName.valid" class="invalid-feedback">
+            <div *ngFor="let key of firstName.errors.keys">{{firstName.errors[key]}}</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">{{messages.authMessages.sign_up.lastname}}</label>
+          <input type="text" class="form-control" id="lastName" #lastName="ngForm" ngControl="lastName" [(ngModel)]="model.lastName" [class.is-invalid]="!lastName.valid" />
+
+          <div *ngIf="!lastName.valid" class="invalid-feedback">
+            <div *ngFor="let key of lastName.errors.keys">{{lastName.errors[key]}}</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">{{messages.authMessages.sign_up.email}}</label>
+          <input type="email" class="form-control" id="email" #email="ngForm" ngControl="email" [(ngModel)]="model.email" [class.is-invalid]="!email.valid" />
+
+          <div *ngIf="!email.valid" class="invalid-feedback">
+            <div *ngFor="let key of email.errors.keys">{{email.errors[key]}}</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumberPrefix">{{messages.authMessages.sign_up.phone_number_prefix}}</label>
+          <input type="text" class="form-control" id="phoneNumberPrefix" #phoneNumberPrefix="ngForm" ngControl="phoneNumberPrefix" [(ngModel)]="model.phoneNumberPrefix" [class.is-invalid]="!phoneNumberPrefix.valid" />
+
+          <div *ngIf="!phoneNumberPrefix.valid" class="invalid-feedback">
+            <div *ngFor="let key of phoneNumberPrefix.errors.keys">{{phoneNumberPrefix.errors[key]}}</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumber">{{messages.authMessages.sign_up.phone_number}}</label>
+          <input type="text" class="form-control" id="phoneNumber" #phoneNumber="ngForm" ngControl="phoneNumber" [(ngModel)]="model.phoneNumber" [class.is-invalid]="!phoneNumber.valid" />
+
+          <div *ngIf="!phoneNumber.valid" class="invalid-feedback">
+            <div *ngFor="let key of phoneNumber.errors.keys">{{phoneNumber.errors[key]}}</div>
+          </div>
+        </div>
+
+        <widget-button type="secondary" button buttonType="submit" [text]="messages.profileMessages.update" [disabled]="!profileForm.dirty || !profileForm.valid">
+        </widget-button>
+      </form>
+    </template>
+  </widget-body>
+</widget-layout>

@@ -1,0 +1,16 @@
+button {
+  border: none;
+  background: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0;
+  vertical-align: top;
+
+  img {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}

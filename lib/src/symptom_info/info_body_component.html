@@ -1,0 +1,36 @@
+<template [ngIf]="isGenericSymptomInfo">
+  <h2 class="symptom-info-title">{{infoState.name}}</h2>
+  <article class="symptom-info-article" [innerHtml]="infoState.description"></article>
+</template>
+
+<template [ngIf]="isAgeInfo">
+  <h2 class="symptom-info-title">{{ageEstimationTitle}}</h2>
+  <table class="symptom-info-article">
+    <tbody>
+      <tr>
+        <td>{{isDog ? petProfileMessages.petRange.puppy : petProfileMessages.petRange.kitten}}</td>
+        <td class="age-range">0-1</td>
+        <td>{{childDescription}}</td>
+      </tr>
+      <tr>
+        <td>{{petProfileMessages.petRange.young}}</td>
+        <td class="age-range">1-4</td>
+        <td>{{youngDescription}}</td>
+      </tr>
+      <tr>
+        <td>{{petProfileMessages.petRange.adult}}</td>
+        <td class="age-range">5-10</td>
+        <td>{{adultDescription}}</td>
+      </tr>
+      <tr>
+        <td>{{petProfileMessages.petRange.senior}}</td>
+        <td class="age-range">10+</td>
+        <td>{{isDog ? seniorDogDescription : seniorCatDescription}}</td>
+      </tr>
+    </tbody>
+  </table>
+</template>
+
+<template [ngIf]="isTermsAndConditionsInfo">
+  <terms-of-service></terms-of-service>
+</template>

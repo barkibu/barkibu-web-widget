@@ -1,0 +1,8 @@
+@import "package:web_widget/src/icons/icon_component.scss";
+
+#Find-Clinic {
+  @include themify($themes) {
+    stroke: themed('primary-icon-color');
+  }
+}
+

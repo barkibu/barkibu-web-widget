@@ -1,0 +1,110 @@
+@import "package:web_widget/src/scss/themes";
+@import "package:web_widget/src/navigation/spinner_component.scss";
+@import "package:web_widget/src/scss/accessibility";
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100vw;
+  font-size: $base-font-size;
+}
+
+body {
+  padding: $widget-window-spacing;
+  background: transparent;
+  overflow: hidden;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+a {
+  @include themify-regular($themes) {
+    color: themed('link-color');
+  }
+  text-decoration: none;
+  background-color: transparent;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button:focus, a:focus, input:focus, select:focus {
+  outline: none;
+  @include themify-regular($themes) {
+    box-shadow: themed('focus-shadow');
+  }
+}
+
+app {
+  display: block;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  height: 100%;
+  @include themify-regular($themes) {
+    background-color: themed('bg-color');
+    font-family: themed('font-family');
+  }
+}
+
+@font-face{
+  font-family: "FKGrotesk-medium";
+  src: url('/assets/fonts/FKGrotesk-medium/FKGrotesk.woff') format('woff'),
+       url('/assets/fonts/FKGrotesk-medium/FKGrotesk.woff2') format('woff2'), 
+       url('/assets/fonts/FKGrotesk-medium/FKGrotesk.ttf') format('truetype'), 
+       url('/assets/fonts/FKGrotesk-medium/FKGrotesk.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: "Bogle-regular";
+  src: url('/assets/fonts/Bogle-regular/Bogle-Regular.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+.spinner-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @extend %spinner-container;
+}
+
+.sr-only {
+  @extend %sr-only;
+}
+
+[hidden] {
+  display: none !important;
+}

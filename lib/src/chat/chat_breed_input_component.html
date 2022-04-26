@@ -1,0 +1,6 @@
+<form (submit)="onBreedConfirmed()">
+    <autocomplete-input [species]="species" (loadBreedData)="breedData = $event" [(ngModel)]="breed"></autocomplete-input>
+    <button type="submit" [disabled]="!isBreedDataNotEmpty">
+      <img src="assets/images/arrow-right.svg " [alt]="messages.sharedMessages.altImageText.submit ">
+    </button>
+</form>

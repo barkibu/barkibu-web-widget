@@ -1,0 +1,67 @@
+@import "package:web_widget/src/sign_up/email_sign_up_component.scss";
+@import "package:web_widget/src/scss/form";
+@import "package:web_widget/src/scss/themes";
+.textarea-content {
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    height: 400px;
+    padding: $spacing;
+    font-size: $larger-font-size;
+    font-weight: 400;
+    line-height: 1.5;
+    background-clip: padding-box;
+    border-radius: $border-radius / 2;
+    transition: box-shadow .15s ease-in-out;
+    @include themify($themes) {
+        color: themed('secondary-color');
+        background-color: themed('white-color');
+        border: 1px solid themed('border-color');
+        &::placeholder {
+            color: rgba(themed('secondary-color'), 0.68);
+        }
+        &:focus {
+            outline: none !important;
+            border-color: rgba(themed('primary-color'), 0.68);
+            box-shadow: 0 0 0 0.2rem rgba(themed('primary-color'), 0.25);
+        }
+    }
+}
+
+.email-container {
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    height: $form-input-height;
+    padding: $spacing;
+    font-size: $larger-font-size;
+    font-weight: 400;
+    line-height: 1.5;
+    background-clip: padding-box;
+    border-radius: $border-radius / 2;
+    transition: box-shadow .15s ease-in-out;
+    @include themify($themes) {
+        color: rgba(themed('secondary-color'), 0.68);
+        background-color: themed('white-color');
+        border: 1px solid themed('border-color');
+        &::placeholder {
+            color: rgba(themed('secondary-color'), 0.68);
+        }
+        &:disabled {
+            background-color: transparent;
+        }
+    }
+}
+
+.message-container {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    .message {
+        text-align: center;
+        white-space: pre;
+        font-size: $larger-font-size;
+    }
+}

@@ -1,0 +1,34 @@
+askAVetEmailTemplate:
+  outro: 'Espero recibir noticias tuyas pronto'
+  intro: 'Hola, escribo este email para ver si podrías ofrecerme consejo y ayuda sobre mi mascota'
+  petDefinition(String petSpecies, String petName, String petSex, String breed, String age, String neutered): 'Mi $petSpecies es $petName ($petSex)\nRaza: $breed\nEdad: $age\nCastrado: $neutered'
+  symptoms(String symptomsPresent): 'Síntomas que presenta:\n$symptomsPresent'
+  symptomsWithDurationAndFrequency(String symptomsPresent, String symptomDuration, String symptomFrequency): 'Síntomas que presenta:\n$symptomsPresent (Duración: $symptomDuration Frecuencia: $symptomFrequency)'
+  subject: 'Consulta sobre mi mascota'
+  subjectWithInfo(String petSpecies, String petName): 'Consulta sobre mi $petSpecies, $petName'
+  subjectCopy: 'Copia de tu email a nuestros veterinarios'
+virtualVetEmailTemplate:
+  subject: 'Consulta sobre mi mascota'
+  symptoms(String symptomsPresent, String symptomsNotPresent): 'Síntomas presentes:\n$symptomsPresent\n\nSíntomas no presentes:\n$symptomsNotPresent'
+  conditions(String possibleConditions): 'Posibles condiciones:\n$possibleConditions'
+  intro: 'Hola, escribo este email para ver si podrías ofrecerme consejo y ayuda sobre mi mascota'
+  petDefinition(String petSpecies, String petName, String petSex, String breed, String age): 'Mi $petSpecies es $petName ($petSex)\nRaza: $breed\nEdad: $age'
+  outro: 'Espero recibir noticias tuyas pronto'
+inputs:
+  prefix: 'Prefijo'
+  phone: 'Teléfono'
+actions:
+  sendEmail: 'Enviar email'
+  schedulePhoneCall: 'Programar llamada'
+  writeMail: 'Escribe tu email debajo:'
+  reply: 'Nuestros expertos responderan a:'
+info:
+  success: 'Tu email se ha enviado correctamente✅\n\nNos pondremos en contacto pronto'
+  error: 'Ouch! Parece que estamos teniendo algunos problemas para enviar tu email 😭\n\nIntentalo mas tarde'
+
+nutribotEmailTemplate:
+  outro: 'Espero recibir noticias tuyas pronto'
+  foodSensitivies(String foodSensitivies): 'Sensibilidad alimentaria:\n$foodSensitivies'
+  subject: 'Consulta sobre mi mascota'
+  intro: 'Hola, escribo este email para ver si podrías ofrecerme consejo y ayuda sobre mi mascota'
+  petDefinition(String petSpecies, String petName, String petSex): 'Mi $petSpecies es $petName ($petSex)'

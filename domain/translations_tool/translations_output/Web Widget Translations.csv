@@ -1,0 +1,507 @@
+File;Category;SubCategory;SubSubCategory;Key;En;Es
+nutribotMessages;;;;title;Food and Nutrition Finder;Ayudante de nutrición
+nutribotMessages;;;;recommendedFor(String petName);Recommended for $petName;# MISSING: Recommended for $petName
+nutribotMessages;;;;primaryFood;Primary food;# MISSING: Primary food
+nutribotMessages;;;;treat;Treat;# MISSING: Treat
+nutribotMessages;;;;buyTreat;Buy now;# MISSING: Buy now
+nutribotMessages;;;;treatInfo;Product Information;# MISSING: Product Information
+nutribotMessages;;;;treatIngredients;Ingredients;# MISSING: Ingredients
+nutribotMessages;;;;reportTitle;Nutrition recommendation;Nutrición recomendación
+nutribotMessages;;;;readFullDescription;Read More;Leer más
+nutribotMessages;;;;readShortDescription;Read Less;Leer menos
+nutribotMessages;botMessages;;;init(String userName);Hello <b>$userName</b>! I’m the Nutrition Helper.\nBefore I can help you I’ll need a little info.;¡Hola, <b>$userName</b>! Soy el ayudante de nutrición.\nAntes de poder ayudarte, necesitaré un poco de información.
+nutribotMessages;botMessages;;;askQuestionsProbeStart(String petName);Ok, for <b>$petName</b>. Great. Let’s start by exploring some key nutrition areas.;Vale, para <b>$petName</b>. Excelente. Comencemos explorando algunas áreas clave de nutrición.
+nutribotMessages;botMessages;;;askCeliac(String petName);More specifically, does <b>$petName</b> need a wheat-free or corn-free diet?;Más específicamente, ¿<b>$petName</b> necesita una dieta libre de trigo o maíz?
+nutribotMessages;botMessages;;;askHypoallergenic(String petName);Have you been told that <b>$petName</b> needs a limited ingredient (hypoallergenic) diet?;¿Te han dicho si <b>$petName</b> necesita una dieta de ingredientes limitados (hipoalergénico)?
+nutribotMessages;botMessages;;;askDullCoatOrDrySkin(String petName);Does <b>$petName</b> have dry skin and/or a dull coat?;¿$petName tiene la piel seca y / o el pelaje opaco?
+nutribotMessages;botMessages;;;askHipJointsIssues(String petName);Does <b>$petName</b> have joint issues/arthritis?;¿<b>$petName</b> tiene problemas de articulaciones o artritis?
+nutribotMessages;botMessages;;;askFoodSensitivity(String petName);Does <b>$petName</b> have sensitivities to any of these foods?;¿Sabes si <b>$petName</b> tiene alguna de las siguientes sensibilidades alimentarias?
+nutribotMessages;botMessages;;;askPreferedFoodType(String petName);Lastly, do you prefer Canned or Dry food for <b>$petName</b>? (choose one of the options below);¿Prefieres alimentos enlatados o secos para <b>$petName</b>? (elige una de las siguientes opciones)
+nutribotMessages;botMessages;;;askFeedback;Was my answer <b>helpful</b>?;¿Fue mi respuesta <b>útil</b>?
+nutribotMessages;botMessages;;;unexpectedError;;
+nutribotMessages;botMessages;;;responseNoFoodSensitivity(String petName);<b>$petName</b> does <b>not</b> have any food sensitivities;<b>$petName no</b> tiene ninguna sensibilidad alimentaria
+nutribotMessages;botMessages;;;responseFoodSensitivity(String petName, String foodSensitivity);<b>$petName</b> has a sensitivity to <b>$foodSensitivity</b>;<b>$petName</b> tiene una sensibilidad a <b>$foodSensitivity</b>
+nutribotMessages;botMessages;;;responseFoodSensitivities(String petName, String foodSensitivities, String lastFood);<b>$petName</b> has a sensitivity to <b>$foodSensitivities</b> and <b>$lastFood</b>;<b>$petName</b> tiene sensibilidad a <b>$foodSensitivities</b> y <b>$lastFood</b>
+nutribotMessages;botMessages;;;resultsSummary(String petName);Ok, based on <b>$petName</b> (their age, size, etc.) and the answers you just gave us here, we’ve put together a couple of recommended diets for you to consider.;Vale, basado en <b>$petName</b> (su edad, tamaño, etc.) y las respuestas que nos acabas de dar aquí, hemos reunido un par de dietas recomendadas para que lo consideres.
+nutribotMessages;botMessages;;;resultsWarning;Remember that <b>these results are not intended to replace professional veterinary advice.</b>;Recuerda que <b>estos resultados no están destinados a reemplazar el consejo veterinario profesional.</b>
+nutribotMessages;botMessages;;;noFoodRecommended(String petName);We don’t have a recommendation based on what you’ve told us about <b>$petName</b>.\n\nThe Vet team provides complimentary advice to help you choose the best food options for <b>$petName</b>.\n\nClick below to get started.;No tenemos una recomendación basada en lo que nos has dicho sobre <b>$petName</b>.\n\nEl equipo brinda consejos gratuitos para ayudarte a elegir el mejor opciones de alimentos para <b>$petName</b>.\n\nHaz clic a continuación para comenzar.
+nutribotMessages;botMessages;;;foodTopRecommended;Top Recommendation;Top Recomendado
+nutribotMessages;botMessages;;;foodOtherOptions;Other options;Otras opciones
+nutribotMessages;botMessages;;;foodTopRecommendedDescription(String productName);Based on what you have said, we would recommend <b>$productName</b>;Según lo que has dicho, te recomendaríamos <b>$productName</b>
+nutribotMessages;botMessages;;;foodOtherOptionDescription(String productName);Another recommendation that fits your criteria for food is <b>$productName</b>;Otra recomendación que se ajusta a tus criterios para la comida es <b>$productName</b>
+nutribotMessages;botMessages;;;foodTreatsDescription;Here are some recommended treats:;Aquí hay algunas golosinas recomendadas:
+nutribotMessages;botMessages;;;feedbackPositive;<b>Great!</b> Come back any time you have a question about <b>your pet.</b>;<b>¡Genial!</b> Regresa cuando tengas una pregunta sobre <b>tu mascota</b>
+nutribotMessages;botMessages;;;feedbackNegative;<b>Sorry to hear that.</b> Would you like to <b>speak with a vet</b> about this?;<b>Lamento escuchar eso.</b> ¿Te gustaría <b>hablar con un veterinario</b> sobre esto?
+nutribotMessages;botMessages;;;helpNext;What would you like to do next?;¿Qué te gustaría hacer a continuación?
+nutribotMessages;botMessages;;;channelChoice;Ok, how would you like to connect to a member of our team?;Vale, ¿cómo te gustaría conectarte con un miembro de nuestro equipo?
+insuranceMessages;;;;barkibuInsurance;Barkibu Health Plans;Planes de Salud Barkibu
+insuranceMessages;;;;currentPlan(String plan);Current Plan: <b>$plan</b>;Plan actual: <b>$plan</b>
+insuranceMessages;;;;myPetInsurance;Your Plan;Tu Plan
+insuranceMessages;;;;knowMoreAboutInsurance;Learn more about Barkibu Health Plans;Saber más sobre el Seguro Barkibu
+insuranceMessages;;;;reimbursmentHeader;Claims;Solicitar reembolso
+insuranceMessages;;;;reimbursmentSubtitle(String petName);Request reimbursement for <b>$petName</b>;Solicita el reembolso para <b>$petName</b>
+insuranceMessages;;;;secondaryOption;Or you can also;O también puedes
+insuranceMessages;;;;startClaim;Start a claim;Iniciar reclamo
+insuranceMessages;;;;calculateInsurance;Calculate insurance quote;Calcular precio del seguro
+insuranceMessages;;;;knowLabel;Learn about;Conoce
+insuranceMessages;;;;barkibuHealthInsurance1;Barkibu;Barkibu Seguro
+insuranceMessages;;;;barkibuHealthInsurance2;Pet Health Insurance;de Salud Animal
+insuranceMessages;;;;barkibuInsuranceSubtitle1;Vet insurance of the future;El seguro veterinario del futuro
+insuranceMessages;;;;barkibuInsuranceSubtitle2;simple, digital and with fast reimbursements;sencillo, digital y con reembolsos rápidos
+insuranceMessages;;;;goToBarkibuInsurance;Go to Barkibu Insurance;Ir a Barkibu Seguro
+insuranceMessages;;;;showHealthPlans;Show Health Plans;Ver Planes de Salud
+authMessages;auth_home;;;presentation;Hi, I'm your pet health assistant;Hola, soy tu asistente de salud animal
+authMessages;auth_home;;;welcome_title(String appName);Welcome to $appName;Bienvenido a $appName
+authMessages;auth_home;;;welcome_subtitle(String appName);$appName will help you with any doubt or problem you may have about your pet’s health;$appName te ayudará con cualquier duda o problema sobre la salud de tus animales
+authMessages;auth_home;;;sign_in;Sign in;Entrar
+authMessages;auth_home;;;sign_in_hint(String brandName);If you already have an account with $brandName;Si ya tienes una cuenta en $brandName
+authMessages;auth_home;;;sign_up;Sign up;Registrarse
+authMessages;auth_home;;;sign_up_hint;If this is your first time with us;Si es tu primera vez aquí
+authMessages;auth_home;;;help_question(String appName);How can $appName help me?;¿Cómo me puede ayudar $appName?
+authMessages;sign_up;;;email_tab;Email;# MISSING: Email
+authMessages;sign_up;;;phone_tab;Phone;# MISSING: Phone
+authMessages;sign_up;;;sign_up;Sign up;Registro
+authMessages;sign_up;;;create_account;Create your account;Crea tu cuenta
+authMessages;sign_up;;;create_account_email_phone;Create an account using your email address or mobile number;# MISSING: Create an account using your email address or mobile number
+authMessages;sign_up;;;name;Name;Nombre
+authMessages;sign_up;;;name_hint;Enter your first name;Escribe tu nombre
+authMessages;sign_up;;;name_error;Enter a valid name;Escribe un nombre válido
+authMessages;sign_up;;;lastname;Last Name;Apellidos
+authMessages;sign_up;;;lastname_hint;Enter your last name;Escribe tus apellidos
+authMessages;sign_up;;;lastname_error;Enter a valid last name;Escribe un apellido válido
+authMessages;sign_up;;;email;E-mail;Email
+authMessages;sign_up;;;email_hint;Enter your e-mail address;Escribe tu email
+authMessages;sign_up;;;email_error;Enter a valid e-mail address;Escribe un email válido
+authMessages;sign_up;;;prefix;Country code;Código de país
+authMessages;sign_up;;;phone_number_prefix;Phone number country code;Código de país
+authMessages;sign_up;;;phone_number_prefix_hint;Enter your phone number country code;Escribe tu código de país
+authMessages;sign_up;;;phone_number_prefix_error;Enter a valid phone number country code;Escribe un código de país válido
+authMessages;sign_up;;;phone_number;Phone number;Teléfono
+authMessages;sign_up;;;phone_number_hint;Enter your phone number;Escribe tu teléfono
+authMessages;sign_up;;;phone_number_error;Enter a valid phone number;Escribe un teléfono válido
+authMessages;sign_up;;;password;Password;Contraseña
+authMessages;sign_up;;;password_hint;Enter your password;Escribe tu contraseña
+authMessages;sign_up;;;password_error;Enter a valid password;Escribe una contraseña válida
+authMessages;sign_up;;;confirm_password;Confirm;Confirmación
+authMessages;sign_up;;;confirm_password_hint;Confirm your password;Confirma tu contraseña
+authMessages;sign_up;;;confirm_password_error;Passwords doesn’t match;Las contraseñas no coinciden
+authMessages;sign_up;;;accept_terms;Accept terms;Acepta los términos
+authMessages;sign_up;;;accept_terms_error;You must accept our terms;Debes aceptar los términos
+authMessages;sign_up;;;go_to_sign_in;Or Sign In if you already have an account;O entra si ya estás registrado
+authMessages;sign_up;;;go_back;Return;Volver
+authMessages;sign_up;;;launch_terms_and_conditions;Terms and Conditions;Términos y Condiciones
+authMessages;sign_up;;;terms_and_condition_url;https://www.barkibu.com/en-us/legal-notice;https://www.barkibu.com/es/aviso-legal
+authMessages;sign_up;;;invalid_phone_error;The phone number you entered is invalid;El teléfono introducido es inválido
+authMessages;sign_up;;;incorrect_code_error;Code didn’t match;Los códigos no coinciden
+authMessages;sign_up;;;code_not_sent_error;There was an error while sending verification code;Hubo un error al mandar el código
+authMessages;sign_up;;;phone_not_verified_error;There was an error while verifying your phone number;Hubo un error al verificar el teléfono
+authMessages;sign_up;;;phone_not_found;This phone number isn’t registered yet;Este número de teléfono todavía no está registrado
+authMessages;sign_up;;;general_error;An error occured;Ha sucedido un error
+authMessages;sign_up;;;code;Enter your code;Introduce tu código
+authMessages;sign_up;;;code_hint;000 000;000 000
+authMessages;sign_up;;;code_error;Enter a valid 6-digit code;Introduce un código de 6 dígitos válido
+authMessages;sign_up;;;code_resend_hint;We sent an SMS to your Phone with a verification code. Didn’t receive it?;Te enviamos un SMS a tu teléfono con un código de verificación. ¿Lo recibiste?
+authMessages;sign_up;;;code_resend_question;Didn't receive it?;¿No lo has recibido?
+authMessages;sign_up;;;code_resend_action;Tap here to resend the code;Enviar nuevo código
+authMessages;sign_up;;;phone_number_verification_message;We will use the phone number you provide to send you a verification SMS.;Usaremos el número que nos proporciones para mandarte un SMS de verificación.
+authMessages;sign_up;;;code_resend_confirmation(String fullPhoneNumber);Your code was sent to $fullPhoneNumber;Te hemos enviado un código a $fullPhoneNumber
+authMessages;sign_up;;;code_resend_problem;Still having trouble? Please;¿Tienes problemas? Ponte en
+authMessages;sign_up;;;code_resend_contact_us;contact us;contacto con nosotros
+authMessages;sign_in;;;log_in;Log in;Entrar
+authMessages;sign_in;;;welcome_back;Welcome back!;Bienvenido
+authMessages;sign_in;;;mail;E-mail;Email
+authMessages;sign_in;;;mail_hint;Enter your e-mail;Escribe tu email
+authMessages;sign_in;;;mail_error;Invalid e-mail;Email inválido
+authMessages;sign_in;;;password;Password;Contraseña
+authMessages;sign_in;;;password_hint;Enter your password;Introduce tu contraseña
+authMessages;sign_in;;;password_error;Invalid password;Contraseña inválida
+authMessages;sign_in;;;go_to_sign_up;Don’t have an account yet? Sign up here;Regístrate
+authMessages;sign_in;;;credential_error;Email or password invalid;Email o contraseña inválidos
+authMessages;sign_in;;;phone_number_verification_message;We will use the phone number you provide to send you a verification SMS.;Usaremos el número que nos proporciones para mandarte un SMS de verificación.
+authMessages;password_recovery;;;passwordForgotten;Have you forgotten your password?;Olvidaste la contraseña
+authMessages;password_recovery;;;title;Reset password;Resetea tu contraseña
+authMessages;password_recovery;;;subtitle;Enter a new password;Escribe una nueva contraseña
+authMessages;password_recovery;;;codeSentDescription(String email);We have emailed a reset code to your e-mail address: $email;Te hemos enviado un código de reseteo a tu dirección de email: $email
+authMessages;password_recovery;;;inputEmail;E-mail;Email
+authMessages;password_recovery;;;inputCode;Code Received in Email;Código recibido en el email
+authMessages;password_recovery;;;inputNewPassword;New Password;Nueva contraseña
+authMessages;password_recovery;;;inputConfirmNewPassword;Confirm New Password;Confirma la nueva contraseña
+authMessages;password_recovery;;;buttonsSendEmail;Send reset email;Mandar email de restablecimiento
+authMessages;password_recovery;;;buttonsResetPassword;Reset password & log in;Restablecer contraseña y log in
+authMessages;password_recovery;;;buttonsResendCode;Not received anything? Resend code;¿No recibiste nada? Te volvemos a mandar el código
+authMessages;password_recovery;;;alertsSuccess;The email has been sent correctly;El email se ha mandado correctamente
+authMessages;password_recovery;;;alertError;An error has occurred;Ha sucedido un error
+authMessages;password_recovery;;;emailHint;Enter your e-mail;Introduce tu email
+authMessages;password_recovery;;;codeHint;000 000;000 000
+authMessages;password_recovery;;;newPasswordHint;Type your new password;Escribe tu contraseña
+authMessages;password_recovery;;;confirmNewPasswordHint;Confirm your new password;Confirma tu nueva contraseña
+authMessages;password_recovery;;;resetPasswordButton;Reset my password;Resetea mi contraseña
+authMessages;phonelessDialog;;;title;Heads up!;Atención
+authMessages;phonelessDialog;;;content;To improve your security and protect your pet health data, we need you to sign up again using a phone number. We're really sorry for the trouble!;Para mejorar tu seguridad y proteger los datos de salud de tu mascota, necesitamos que te des de alta de nuevo usando un número de teléfono. ¡Perdona las molestias!
+authMessages;phonelessDialog;;;action;Ok;Ok
+workingFeatureMessages;;;;appbarTitle;Woops...;Oops...
+workingFeatureMessages;;;;title;We're working on this feature;Estamos trabajando en esto
+workingFeatureMessages;;;;subtitle;We will launch this very soon. As soon as we launch it you'll be the first to know;Lanzaremos esto muy pronto. Tan pronto como lo lancemos serás el primero en enterarte
+petProfileMessages;;;;title;My Pets;Mis mascotas
+petProfileMessages;;;;subtitle;Your pet’s profiles;# MISSING: Your pet’s profiles
+petProfileMessages;;;;emptyPets;There are no registered pets yet.\nTo add one, start an assessment.;Aún no has registrado ninguna mascota\nPara añadir una, inicia una consulta.
+petProfileMessages;;;;createPetHint;Create a profile for your Pet here!;# MISSING: Create a profile for your Pet here!
+petProfileMessages;;;;assessment;Assessment;Evaluación
+petProfileMessages;;;;assessments;Assessments;Evaluaciones
+petProfileMessages;;;;newAssessment;New assessment;Nueva evaluación
+petProfileMessages;;;;assessmentHistory;Assessment history;# MISSING: Assessment history
+petProfileMessages;;;;reports;Reports;Informes
+petProfileMessages;;;;details;Details;Detalles
+petProfileMessages;;;;petDetails;Pet Details;Detalles de la mascota
+petProfileMessages;;;;petProfileCompletion(int percentage);$percentage% Completed;$percentage% Completado
+petProfileMessages;;;;unknown;Unknown;Desconocido
+petProfileMessages;;;;petDetailsSubtitle;Pet profile;Perfil de la mascota
+petProfileMessages;;;;exportData;Export Health Data;Exportar Datos Médicos
+petProfileMessages;;;;clinicalHistory;Clinical History;Historial clínico
+petProfileMessages;;;;clinicalHistoryTitle(String petName);See $petName’s History;Ver el historial de $petName
+petProfileMessages;;;;clinicalHistorySubtitle(String date);Last update: <b>$date</b>;Última actualización: <b>$date</b>
+petProfileMessages;;;;clinicalHistoryNoConsultations;No consultations available;No ha realizado ninguna consulta
+petProfileMessages;buttonsNavigation;;;assistant;Assistant;Asistente
+petProfileMessages;;;;deletePetButton;Delete this Pet Profile;Borrar este perfil de mascota
+petProfileMessages;deletePetDialog;;;title;Do you want to delete your pet data?;¿Deseas borrar los datos de tu mascota?
+petProfileMessages;deletePetDialog;;;body;This action will permanently delete your pet information;Esta acción borrará permanentemente los datos de tu mascota
+petProfileMessages;history;;;title;history;Historial
+petProfileMessages;history;virtualVet;;title;Virtual Vet;Virtual Vet
+petProfileMessages;history;virtualVet;;subtitle;Consultations;Informes
+petProfileMessages;history;askAVetDirectly;;title;Ask a Vet;Habla con un Vet
+petProfileMessages;history;askAVetDirectly;;subtitle;Conversations;
+petProfileMessages;history;nutrition;;title;Nutrition;Nutrición
+petProfileMessages;history;nutrition;;subtitle;Recommendations;Recommendaciones
+petProfileMessages;formFieldsTitle;;;name;Name;Nombre
+petProfileMessages;formFieldsTitle;;;species;Species;Especie
+petProfileMessages;formFieldsTitle;;;breed;Breed;Raza
+petProfileMessages;formFieldsTitle;;;sex;Sex;Sexo
+petProfileMessages;formFieldsTitle;;;castrated;Castrated;Castrado
+petProfileMessages;formFieldsTitle;;;neutered;Neutered;# MISSING: Neutered
+petProfileMessages;formFieldsTitle;;;spayed;Spayed;Castrada
+petProfileMessages;formFieldsTitle;;;age;Age;Edad
+petProfileMessages;formFieldsTitle;;;size;Size;Tamaño
+petProfileMessages;formFieldsTitle;;;chipNumber;Chip number;Número de chip
+petProfileMessages;formFieldsHint;;;name;Type your pet's name;Introduce el nombre de tu mascota
+petProfileMessages;formFieldsHint;;;species;Select your pet species;Selecciona la especie
+petProfileMessages;formFieldsHint;;;breed;Select its breed;Selecciona su raza
+petProfileMessages;formFieldsHint;;;sex;Select your pet’s sex;Selecciona el sexo
+petProfileMessages;formFieldsHint;;;age;Set your pet’s age;Selecciona la edad
+petProfileMessages;formFieldsHint;;;size;What size is your pet;Tamaño de la mascota
+petProfileMessages;formFieldsHint;;;castrated;Is castrated?;¿Está castrado?
+petProfileMessages;formFieldsHint;;;spayed;Is spayed?;¿Está castrada?
+petProfileMessages;formFieldsHint;;;chipNumber;Introduce your pet chip number;Introduce el número de chip de tu mascota
+petProfileMessages;clinicalHistorySection;;;consultations;Consultations;Consultas
+petProfileMessages;clinicalHistorySection;;;consultation;Consultation;Consulta
+petProfileMessages;clinicalHistorySection;;;selectorType;Type;Tipo
+petProfileMessages;clinicalHistorySection;;;selectorDate;Date;Fecha
+petProfileMessages;clinicalHistorySection;;;description;Reports of your consultations;Informes de tus consultas
+petProfileMessages;myClinicSection;;;myClinic;My clinic;Mi clínica
+petProfileMessages;myClinicSection;;;myClinicAdd;Add a clinic;Añadir una clínica
+petProfileMessages;myClinicSection;;;myClinicSubtitle;Add your main clinic;Añade los datos de tu clínica habitual
+petProfileMessages;myClinicSection;;;myClinicSubtitleEdit;Edit your main clinic;Edita los datos de tu clínica habitual
+petProfileMessages;myClinicSection;;;myClinicHint;Select;Selecciona
+petProfileMessages;myClinicSection;;;myClinicSheetHeader;Select your clinic;Selecciona tu clínica
+petProfileMessages;myClinicSection;;;myClinicSheetInputHint;Search your clinic;Busca tu clínica
+petProfileMessages;myClinicSection;;;myClinicSheetButton;Add custom clinic;Añade tu clínica
+petProfileMessages;myClinicSection;;;myClinicAddress;Address;Dirección
+petProfileMessages;myClinicSection;;;verify;We will personaly verify your clinic;Verificaremos personalmente tu clínica
+petProfileMessages;myClinicSection;;;customClinicHint;Write your clinic details;Escribe los detalles de tu clínica
+petProfileMessages;ageEstimation;;;title(String species);How do I find out my $species's age?;¿Cómo averiguar la edad de mi $species?
+petProfileMessages;petRange;;;puppy;Puppy;Cachorro
+petProfileMessages;petRange;;;kitten;Kitten;Gatito
+petProfileMessages;petRange;;;young;Young;Joven
+petProfileMessages;petRange;;;adult;Adult;Adulto
+petProfileMessages;petRange;;;senior;Senior;Senior
+petProfileMessages;petCharacteristicsNewborn;;;cute;Very cute baby-like expression on their face;Expresión facial dulce, como un bebé
+petProfileMessages;petCharacteristicsNewborn;;;bigBodyParts;Their legs, paws and ears seem a bit too large;Patas y orejas que parecen o muy pequeñas o muy grandes
+petProfileMessages;petCharacteristicsNewborn;;;playfull;Very playful and very curious;Muy juguetón y muy curioso
+petProfileMessages;petCharacteristicsYoung;;;brightEyes;Bright eyes and always inquisitive;Ojos brillantes y siempre curiosos
+petProfileMessages;petCharacteristicsYoung;;;brightTeeth;Very bright white teeth;Dientes muy brillantes y blancos
+petProfileMessages;petCharacteristicsYoung;;;playfull;Very playful;Muy juguetón
+petProfileMessages;petCharacteristicsYoung;;;neverTired;Doesn’t seem to get tired when out for a run;Parece que nunca se cansa cuando sale a correr
+petProfileMessages;petCharacteristicsAdult;;;energetic;Energetic and playful;Energético y juguetón
+petProfileMessages;petCharacteristicsAdult;;;likesToRest;Likes to have rest time;Le gusta descansar
+petProfileMessages;petCharacteristicsAdult;;;balancedBehaviour;Balanced behavior;Comportamiento equilibrado
+petProfileMessages;petCharacteristicsSenior;;;missTeeth;Missing or loose teeth;Falta de dientes o debilidad dental 'dientes flojos'
+petProfileMessages;petCharacteristicsSenior;;;muscleWastage;Muscle wastage, creaky or stiff joints;Desgaste muscular, articulaciones que crujen o rígidas
+petProfileMessages;dogCharacteristicsSenior;;;greyHair;Grey hairs around the muzzle and eyebrows;Canas alrededor del hocico y las cejas
+petProfileMessages;dogCharacteristicsSenior;;;forgetfull;May seem forgetful, pace around or bark for no reason;Puede parecer olvidadizo, deambular o ladrar sin ninguna razón
+petProfileMessages;dogCharacteristicsSenior;;;slow;Slow to stand up, lie down and/or walk;Lento para levantarse, acostarse y/o caminar
+petProfileMessages;catCharacteristicsSenior;;;notBrightSkin;Coat and skin are not so bright, a little dull, matted or greasy;El pelaje y la piel no son tan brillantes, un poco opacos, enmarañados o grasosos
+petProfileMessages;catCharacteristicsSenior;;;forgetfull;May seem forgetful, pace around or vocalize for no reason;Puede parecer olvidadizo, deambular o maullar sin ninguna razón
+petProfileMessages;catCharacteristicsSenior;;;relucantToJump;Reluctant to jump to places where they used to be able to;Lento para levantarse, acostarse y/o caminar
+profileMessages;;;;title;Profile;Perfil
+profileMessages;;;;termsAndPolicy(String url, String appName);$appName <a href=$url target=_blank>Terms and Conditions and Privacy Policy</a>;<a href=$url target=_blank>Términos y Condiciones y Política de privacidad</a> de $appName
+profileMessages;;;;update;Update profile;Actualizar perfil
+homeMessages;messages;;;hello(String name);Hi $name;Hola $name
+homeMessages;messages;;;help;Is there anything I can help your pet with?;¿Hay algo que pueda hacer para ayudar a tu mascota?
+homeMessages;messages;;;makeConsultation;Start an assessment;Evalúa síntomas
+homeMessages;messages;;;startConcierge;Start;Comenzar
+homeMessages;messages;;;logout;Log out;Desconectarse
+homeMessages;messages;;;title(String name);Hi $name,;Hola $name,
+homeMessages;messages;;;subtitle;I’m your personal Pet Health Assistant;Soy tu asistente personal de salud para mascotas
+homeMessages;messages;;;profile;Profile;Perfil
+homeMessages;messages;;;symptomInputLabel;Main symptom;Síntoma principal
+homeMessages;messages;;;symptomInputHint;Type your pet’s main symptom here;Describe el síntoma principal de tu mascota
+homeMessages;messages;;;appDownloadLinks(String appName, String iphoneLink, String androidLink);You can also download <b>$appName</b> for $iphoneLink and $androidLink;También puedes descargar $appName para $iphoneLink y $androidLink
+homeMessages;messages;;;virtualVetLearnMoreQuestion;What is the Virtual Vet?;# MISSING: What is the Virtual Vet?
+homeMessages;messages;;;virtualVetLearnMoreTitle;Virtual Vet;# MISSING: Virtual Vet
+homeMessages;messages;;;virtualVetLearnMoreDescription(String brandName);Have a question about your pet’s health? Type it here and get immediate guidance from our Virtual Vet, which uses an advanced AI knowledge base of symptoms and conditions to provide the answers you’re looking for. If you’d like, you can speak with one of our veterinarians by phone, chat, or email after using the Virtual Vet.;# MISSING: Have a question about your pet’s health? Type it here and get immediate guidance from our Virtual Vet, which uses an advanced AI knowledge base of symptoms and conditions to provide the answers you’re looking for. If you’d like, you can speak with one of our veterinarians by phone, chat, or email after using the Virtual Vet.
+homeMessages;messages;askAVet;;title;Ask A Vet;Habla con un veterinario
+homeMessages;messages;askAVet;;subtitle;Speak with a licensed vet by phone, chat, or email;Recibe ayuda y consejo de un equipo veterinario profesional
+homeMessages;messages;nutrition;;title;Food and Nutrition Finder;Comida y Nutrición
+homeMessages;messages;nutrition;;subtitle;Get food suggestions personalized to your pet;Consigue la mejor recomendación de comida y snacks para tu mascota
+homeMessages;termsOfService;;;ctaText;See our;Consulte nuestros
+homeMessages;termsOfService;;;termsOfService;Terms of Service;Términos de Servicio
+assessmentReportMessages;;;;title;Assessment Report;Informe de la Evaluación
+assessmentReportMessages;;;;askAVetTitle;Ask A Vet Report;Ask A Vet Informe
+assessmentReportMessages;;;;mainSymptom;Main Symptom;Síntoma principal
+assessmentReportMessages;;;;nextSteps;Next Steps;Siguientes Pasos
+assessmentReportMessages;;;;summary;Summary;Resumen
+assessmentReportMessages;;;;possibleCauses;Possible Causes;Posibles Causas
+assessmentReportMessages;;;;symptoms;Symptoms;Síntomas
+assessmentReportMessages;;;;diagnosis;Diagnosis;Diagnóstico
+assessmentReportMessages;;;;treatment;Treatment;Tratamiento
+assessmentReportMessages;;;;prevention;Prevention;Prevención
+assessmentReportMessages;;;;firstAid;First aid;Primeros auxilios
+assessmentReportMessages;;;;predispositionFactors;Predisposition factors;Factores de riesgo
+assessmentReportMessages;;;;urgentTitle;Immediate Vet Attention Recommended;Se requiere atención veterinaria urgente
+assessmentReportMessages;;;;urgentBodyCondition;Based on the symptoms you have highlighted I recommend that you get in touch with a Vet as there may be some urgent issues that need to be looked at for {pet}.;Los posibles resultados contienen enfermedades consideradas urgentes, te recomiendo que acudas urgentemente con {pet} a una clínica veterinaria
+assessmentReportMessages;;;;urgentBodySymptom;The symptoms described could be dangerous for {pet}, I recommend that you go urgently with {pet} to a veterinary clinic;Los síntomas descritos pueden ser peligrosos para {pet}, te recomiendo que acudas urgentemente con {pet} a una clínica veterinaria
+assessmentReportMessages;;;;notUrgentBody;I’ve not detected any urgent condition. If the symptoms persist or you are worried about {pet}’s state, I recommend to ask a vet.;No he detectado ningún resultado urgente, aún así, si los síntomas persisten o el estado de {pet} te parece preocupante, te recomiendo que consultes con un veterinario
+assessmentReportMessages;;;;noConditionsTitle;Sorry, I couldn’t find the right advice;Lo siento, no he podido encontrar un resultado apropiado
+assessmentReportMessages;;;;noConditionsBody;Some of the symptoms you highlighted may be potentially dangerous. You should get in touch with a vet as soon as possible.;Algunos de los síntomas que describes pueden ser considerados urgentes, te recomiendo que acudas a un veterinario rápidamente
+assessmentReportMessages;;;;treatedAtHome;It may resolve naturally, contact your veterinarian if the symptoms persist or worsen over time;Puede resolverse de manera natural, contacta con tu veterinario si los síntomas persisten o empeoran
+assessmentReportMessages;;;;vetCheckRecommended;Contact your veterinarian for advice;Contacta con tu veterinario
+assessmentReportMessages;;;;urgent;Seek urgent veterinary attention;Busca ayuda veterinaria urgente
+assessmentReportMessages;;;;export;Export;Exportar
+assessmentReportMessages;;;;askAVet;Ask a vet;Habla con un veterinario
+assessmentReportMessages;askAVetMenu;;;title;Get in touch with a vet;Ponte en contacto con un veterinario
+assessmentReportMessages;askAVetMenu;;;subtitle;Select an option to get in touch with one of our Veterinaries;Selecciona una opción para ponerte en contacto con uno de nuestros veterinarios
+assessmentReportMessages;askAVetMenu;;;chatWithAVet;Chat with a Vet now;Hablar con un veterinario ahora
+assessmentReportMessages;askAVetMenu;;;callWithAVet;Call a Vet now;Llamar a un veterinario ahora
+assessmentReportMessages;askAVetMenu;;;callHoursTip;Mon to Fri 9 am to 7 pm;Lun a Vie 9 am a 7 pm
+assessmentReportMessages;askAVetMenu;;;emailTip;Average response time less than 12h;Tiempo medio de respuesta menor a 12h
+chatMessages;botMessages;;;initBot;I’ll help you figure out what’s happening;Te ayudaré a descubrir qué está pasando.
+chatMessages;botMessages;;;noPetsProfile;Oh, before we start here, we need to add a Pet to your profile so we can know a bit about them to be able to help.\nGo <b>Add a Pet</b> to your account and then come back and we can continue.;Ah sí, antes de empezar, necesitamos añadir una mascota a tu perfil para saber un poco más sobre ella y poder ayudarte mejor. \n Vete <b>Añade una mascota</b> a tu cuenta y luego vuelve aquí para continuar.
+chatMessages;botMessages;;;addPet;Add a pet;Agrega una mascota
+chatMessages;botMessages;;;askPetName;What is your pet’s <b>name</b>?;¿Cuál es el <b>nombre</b> de tu mascota?
+chatMessages;botMessages;;;askPetCastrated(String petName);Is <b>$petName</b> castrated?;¿<b>$petName</b> está castrado?
+chatMessages;botMessages;;;askPetSpayed(String petName);Is <b>$petName</b> spayed?;¿<b>$petName</b> está castrada?
+chatMessages;botMessages;;;selectPet;Which <b>pet</b> would you like to talk about?;¿Puedes decirme sobre qué <b>mascota</b> quieres hablar?
+chatMessages;botMessages;;;selectSpecies(String petName);Is $petName a <b>Dog</b> or a <b>Cat</b>?;¿Es $petName un <b>Perro</b> o un <b>Gato</b>?
+chatMessages;botMessages;;;selectSex(String petName);Is $petName a <b>he</b> or <b>she</b>?;¿Cuál es el <b>sexo</b> de $petName?
+chatMessages;botMessages;;;selectAgeRange(String petName);How old is <b>$petName</b>?;¿Cuántos años tiene <b>$petName</b>?
+chatMessages;botMessages;;;askSymptomStart(String petName);Let’s start the <b>symptoms checker</b>.;Ok, <b>$petName</b>. Empecemos revisando los <b>síntomas</b>.
+chatMessages;botMessages;;;askSymptomQuestion(String petName);What is the <b>primary symptom</b> $petName is experiencing?;¿Cuál es el <b>síntoma principal</b> que notas en $petName?
+chatMessages;botMessages;;;askOtherSymptomQuestion(String petName);What <b>other symptom</b> $petName has?;¿Qué <b>otro síntoma</b> tiene $petName?
+chatMessages;botMessages;;;askSymptomConfirmation(String petName);Ok. Is <b>$petName</b> experiencing any of these symptoms?;Ok. ¿El síntoma que notas en <b>$petName</b> es alguno de estos?
+chatMessages;botMessages;;;askSymptomQuestionWithSpecie(String species);Ok, can you type a word, a phrase or a question so I can understand the primary symptom your <b>$species</b> is having?;Ok, ¿puedes escribir una palabra, una frase o una pregunta para que pueda entender el síntoma principal de tu <b>$species</b>?
+chatMessages;botMessages;;;addMoreSymptoms(String petName);Does $petName have any <b>other symptoms</b> you’d like to add?;¿Tiene $petName <b>algún otro síntoma</b> que te gustaría decirme?
+chatMessages;botMessages;;;symptomIsEmpty;Sorry, I don’t understand the symptom. Could you write it in another way?;Lo siento, no entiendo el síntoma. ¿Podrías escribirlo de otra manera?
+chatMessages;botMessages;;;symptomHasError;There was an error trying to understand the symptom... Could you repeat it again?;Se produjo un error al intentar entender el síntoma... ¿Podrías repetirlo otra vez?
+chatMessages;botMessages;;;symptomIncorrect;Could you write it again?;¿Podrías escribirlo de nuevo?
+chatMessages;botMessages;;;symptomFound(String symptom);Got it. Symptom is <b>$symptom</b>;Entendido. El síntoma es <b>$symptom</b>
+chatMessages;botMessages;;;symptomConfirmation;Is that correct?;¿Es correcto?
+chatMessages;botMessages;;;symptomDurationQuestion;<b>How long</b> has this symptom been going on?;¿<b>Cuánto tiempo</b> lleva este síntoma sucediendo?
+chatMessages;botMessages;;;symptomFrequencyQuestion;<b>How many times</b> has it been happening?;¿<b>Cuántas veces</b> ha ocurrido?
+chatMessages;botMessages;;;relatedSymptomsQuestion(String petName);Got it. Does $petName have <b>any of these symptoms too</b>?;Entendido. ¿Tiene también $petName <b>alguno de estos síntomas</b>?
+chatMessages;botMessages;;;withRelatedSymptoms(String petName, String relatedSymptoms);$petName also has: <b>$relatedSymptoms</b>;$petName también tiene: <b>$relatedSymptoms</b>
+chatMessages;botMessages;;;withoutRelatedSymptoms(String petName);$petName does <b>not</b> have other symptoms;$petName <b>no</b> tiene otros síntomas
+chatMessages;botMessages;;;anamnesisResultCondition;Got it! Below are some <b>possible issues</b> that match the symptoms you provided. Click on each of them to learn more and consider speaking with a vet.;¡Entendido! Abajo puedes ver algunos <b>posibles problemas</b> que coinciden con los síntomas que proporcionaste. Haz click en cada uno de ellos para obtener más información y considera hablar con un veterinario.
+chatMessages;botMessages;;;anamnesisResultSymptom;Hmmm... I can't find the right advice. I'm not that intelligent yet, but here you have some useful information.;Hmmm... parece que <b>no puedo encontrar</b> la recomendación correcta. Todavía no soy tan inteligente, pero aquí tienes información útil.
+chatMessages;botMessages;;;anamnesisResultWarning;Remember that <b>these results are not intended to replace professional veterinary advice, diagnosis or treatment.</b>;Recuerda que <b>estos resultados no pretenden reemplazar el consejo, diagnóstico o tratamiento de un veterinario profesional.</b>
+chatMessages;botMessages;;;anamnesisEmptyNotUrgent(String petName);I'm sorry, but I'm not sure about the issues $petName may have. I'm learning new things every day but, right now, my only advice based on what you shared is that you should probably contact a vet.;Lo siento, pero no estoy seguro de qué problemas puede tener $petName. Estoy aprendiendo cosas nuevas cada día pero, ahora mismo y basado en la información que me has dado, mi único consejo es que probablemente debas contactar con un veterinario.
+chatMessages;botMessages;;;anamnesisEmptyUrgent;Hmmm... I can't find the right advice. I'm not that intelligent yet, but I'm sure that some of the symptoms you introduced are potentially dangerous. You should get in touch with a vet as soon as possible.;Hmmm... parece que <b>no puedo encontrar</b> la recomendación correcta basada en lo que nos has contado. Todavía no soy tan inteligente, pero estoy seguro de que algunos de los síntomas que has introducido son potencialmente peligrosos. Deberías contactar con un veterinario cuanto antes.
+chatMessages;botMessages;;;anamnesisEmptyProposal;If you’d like, you can click to <b>speak with a Vet</b> now.;Si quieres, puedes hacer click para <b>hablar con un veterinario</b> ahora.
+chatMessages;botMessages;;;anamnesisEmptyAnotherOption;Or you can <b>answer the questions again</b> to help us get you the best advice. Adding more detail or rephrasing can sometimes help.;O puedes <b>responder las preguntas de nuevo</b> para ayudarnos a darte la mejor recomendación. Si añades más detalles o rehaces las frases a veces puede ayudar.
+chatMessages;botMessages;;;showResultsAction;Learn more;Saber más
+chatMessages;botMessages;;;askFeedback;Has my answer been <b>helpful</b>?;¿Ha sido mi respuesta <b>útil</b>?
+chatMessages;botMessages;;;feedbackOk;<b>Great!</b> Come back any time you have a question about <b>your pet.</b>;<b>¡Bien!</b> Vuelve siempre que tengas una pregunta sobre <b>tu mascota.</b>
+chatMessages;botMessages;;;feedbackNotOk;<b>Sorry to hear that.</b>;<b>Lamento oír eso.</b>
+chatMessages;botMessages;;;nextHelpQuestion;What can I <b>help you</b> with next?;¿Con qué te puedo <b>ayudar</b>?
+chatMessages;botMessages;;;optionAskAnotherQuestionTitle;Ask another question;Realiza otra pregunta
+chatMessages;botMessages;;;optionTalkWithAVetTitle;Talk with a vet;Habla con un veterinario
+chatMessages;botMessages;;;optionPersonalRecommendationsTitle;See your personalized recommendations;Mira tus recomendaciones personalizadas
+chatMessages;botMessages;;;optionBackHomeTitle;Go back home;Vuelve a Inicio
+chatMessages;botMessages;;;optionGoBackTitle;Go back;Vueve atrás
+chatMessages;botMessages;;;channelChoice;OK, how would you like us to contact you?;Ok, ¿cómo quieres que te contactemos?
+chatMessages;botMessages;;;checkPhoneNumber(String phoneNumber);Alright, we will get in touch via Phone Call. Can you confirm that <b>$phoneNumber</b> is your current phone number?;Bien, nos pondremos en contacto contigo mediante una llamada telefónica. ¿Puedes confirmar que el <b>$phoneNumber</b> es tu número de teléfono actual?
+chatMessages;botMessages;;;emptyPhoneNumber;Ok, it seems like we don’t have a Phone Number to get in touch with you. Enter your phone number so we can schedule a call.;Ok, parece que no tenemos un número de teléfono para ponernos en contacto contigo. Introduce tu número de teléfono para poder contactar contigo.
+chatMessages;botMessages;;;changePhoneNumber;Can you tell us what phone number should we get in touch with?;¿Puedes decirnos a qué número de teléfono podemos llamarte?
+chatMessages;botMessages;;;changePhoneNumberSuccess;Okay, so let’s schedule a Phone Call.;Vale, entonces programemos una llamada telefónica.
+chatMessages;botMessages;;;changePhoneNumberError;Sorry, we could not update your phone number.;Lo siento, no hemos podido actualizar tu número de teléfono.
+chatMessages;botMessages;;;labelPhoneNumber;Enter your mobile number;Introduce tu número de teléfono
+chatMessages;botMessages;;;urgent;Immediate Vet Attention Recommended;Atención inmediata de un veterinario recomendada
+chatMessages;botMessages;;;urgentBody(String petName);Hmmm I’m a little concerned for $petName based on the symptoms you have highlighted. We recommend that you should get in touch with a vet as there may be some urgent issues that need to be looked at for $petName;Estoy un poco preocupado por los síntomas de $petName . Te recomiendo que hables con un veterinario lo antes posible ya que podría haber algún problema urgente.
+chatMessages;botMessages;;;nextQuestionBackendIssue;Sorry, we are having internal problems and cannot continue with the process. We’re aware of the problem and working hard to fix it. You can try it again after few minutes and check if the problem is solved.;Lo sentimos, estamos teniendo problemas en este momento y no podemos continuar con el proceso. Hemos visto el problema y ya estamos trabajando para resolverlo. Vuelve a intentarlo en unos minutos para ver si el problema está resuelto.
+chatMessages;botMessages;;;assessmentFinished;All done! I have put together a report that outlines possible causes for those symptoms;¡Hemos terminado las preguntas! He elaborado un informe que identifica las posibles causas de estos síntomas
+chatMessages;botMessages;;;assessmentAdvise;Don't forget that this is <b>not a medical diagnosis</b>. If in doubt, it is always best to <b>seek advice from a veterinarian</b>;No olvides que esto <b>no es un diagnóstico</b>. En caso de tener dudas, siempre es mejor <b>realizar una consulta con un veterinario</b>
+chatMessages;botMessages;;;assessmentProfileReminder(String petName);Remember that you can always come back to $petName's profile to check the assessment report again;Recuerda que puedes volver a consultar la evaluación desde el perfil de $petName
+chatMessages;chatWithVet;;;title;Ask A Vet;Habla con un veterinario
+chatMessages;chatWithVet;;;initVet;We’ll connect you with a vet in a moment, but first we have a few quick questions to help our team give you the best guidance.;Podemos conectarte con un veterinario para obtener excelentes consejos y soporte. Primero, y para ayudarles, necesito hacerte un par de preguntas para que el veterinario tenga algo de información sobre tu consulta...
+chatMessages;chatWithVet;;;closedChat;The Vet has <b>closed the chat.</b>;El veterinario ha <b>cerrado el chat.</b>
+chatMessages;chatWithVet;;;vetJoined(String identity);You are connected with $identity from the Vet Team;Estás conectado con $identity del equipo veterinario
+chatMessages;chatWithVet;;;petParentLeftChat;The pet parent <b>is abstent.</b>;El padre de la mascota <b>está austente.</b>
+chatMessages;chatWithVet;;;petParentLeftPermanently;The pet parent definitely left the chat;El padre de la mascota <b>ha dejado el chat.</b>
+chatMessages;chatWithVet;;;findingAVet;Great. Wait a few seconds while <b>I find a vet.</b>;Bien. Espera unos segundos mientras <b>busco un veterinario.</b>
+chatMessages;chatWithVet;;;connectedToAVet;Ok, you are now <b>connected</b>.;Ok, ahora estás <b>conectado</b>.
+chatMessages;chatWithVet;;;askFeedback;Was your chat with the vet helpful?;¿El veterinario te ha ayudado con tu pregunta?
+chatMessages;chatWithVet;;;positiveFeedback;<b>Great!</b> Come back any time you have a question about <b>your pet.</b>;<b>¡Bien!</b> Vuelve siempre que tengas una pregunta sobre <b>tu mascota.</b>
+chatMessages;chatWithVet;;;negativeFeedback;<b>Sorry to hear that.</b> Your feedback will help us improve.;<b>Lamento oír eso.</b>
+chatMessages;chatWithVet;;;noVetsAvailable;"Sorry, we don’t have any <b>vets available</b> at this time. Their opening hours are Monday to Friday from 9:00 to 16:00 hours without interruption. Within these hours, you can try to contact them again in a few minutes; you can also send them an email or schedule a phone call.";"Lo siento, no tenemos nigún <b>veterinario disponible</b> en este momento. Su horario de atención es de Lunes a Viernes de 9.00 a 16.00 horas ininterrumpidamente. Dentro de estos horarios, puedes volver a intentar contactarles en unos minutos; también puedes enviarles un correo electrónico o agendar una llamada telefónica."
+chatMessages;chatWithVet;;;errorConnectionToAVet;Sorry, there was an <b>issue</b> connecting with a vet.;Lo siento, ha ocurrido un <b>problema</b> conectándose con el veterinario.
+chatMessages;chatWithVet;;;letsConnectChat;Ok, let’s <b>connect</b> you to a vet right now...;Bien, vamos a <b>conectarte</b> con un veterinario ahora...
+chatMessages;chatWithVet;;;letsConnectVideoOrPhone(String brandName, String channel);You’ll now be taken to $brandName’s appointment calendar to schedule your <b>$channel</b> call.;Te llevo al calendario de citas de $brandName para concertar tu llamada por <b>$channel</b>.
+chatMessages;chatWithVet;;;letsConnectVideoOrPhoneInformation;"After you’ve set your appointment, tap the \""Done\"" or \""Back\"" button to return to this screen.";"Después de seleccionar tu cita, pulsa el botón \""Hecho\"" o \""Atrás\"" para volver a esta pantalla."
+chatMessages;chatWithVet;;;letsConnectEmail(String brandName);We’ll get the email started for you but please add as much info as you can to help the $brandName team give you the best guidance. Click <b>OK</b> to begin.;Empezaremos el email para ti pero, por favor, añade tanta información como puedas para ayudar al equipo de $brandName a darte la mejor guía. Pulsa <b>Enviar email</b> para empezar.
+chatMessages;chatWithVet;;;videoIsNotAvailable(String brandName);Video chat is coming soon. Please choose another way to connect with the $brandName vets.;El chat con video funcionará pronto. Por favor, escoja otra manera para contactar con los veterinarios de $brandName.
+chatMessages;chatWithVet;;;vetChatTriagePartner(String partner);Partner: $partner;Compañero: $partner
+chatMessages;chatWithVet;;;vetChatTriagePet(String petName, String gender, String species, String breed, bool neutered, bool mixedBreed, String size);Pet name: $petName\nGender: $gender\nSpecie: $species\nBreed: $breed\nNeutered: $neutered\nMixed Breed: $mixedBreed\nSize: $size;Nombre de la mascota: $petName\nGénero: $gender\nEspecie: $species\nRaza: $breed\nCastrado: $neutered\nRaza mixta: $mixedBreed\nTamaño: $size
+chatMessages;chatWithVet;;;vetChatTriageSpecies(String species);Species: $species;Especie: $species
+chatMessages;chatWithVet;;;vetChatTriageSymptom(String mainSymptom, String duration);Main symptom: $mainSymptom\nDuration: $duration;Síntoma principal: $mainSymptom\nDuración: $duration
+chatMessages;chatWithVet;;;vetChatTriageAllSymptoms(String mainSymptom, String duration, String relatedSymptoms, String possibleDiseases);Main symptom: $mainSymptom\nDuration: $duration\nRelated symptoms: $relatedSymptoms\nPossible diseases: $possibleDiseases;Síntoma principal: $mainSymptom\nDuración: $duration\nSíntomas relacionados: $relatedSymptoms\nPosibles enfermedades: $possibleDiseases
+chatMessages;chatWithVet;;;userIsTyping(String user);$user is typing;$user está escribiendo
+chatMessages;chatWithVet;recoverChat;;title;Continue previous chat;Continúa con el chat anterior
+chatMessages;chatWithVet;recoverChat;;detail;You were in the middle of a chat with a vet, do you want to continue ?;Estabas hablando con un veterinario, ¿quieres continuar?
+chatMessages;chatWithVet;recoverChat;;yes;Yes, continue;Sí, continuar
+chatMessages;chatWithVet;recoverChat;;no;No;No
+chatMessages;chatWithVet;;;videoChatUnavailable;Video Chat is currently unavailable 😱;El servicio de video llamada no se encuentra disponible por ahora 😱
+chatMessages;chatWithVet;videoSharing;;startButton;Start video stream sharing;Empezar la video consulta
+chatMessages;chatWithVet;videoSharing;;loading(String vet);Calling $vet;Llamada con $vet
+chatMessages;chatWithVet;videoSharing;;errorTitle;Oops;Ups
+chatMessages;chatWithVet;videoSharing;;closedByPetParent;Pet Parent closed the video Stream Sharing;El dueño del animal ha cerrado la video consulta
+chatMessages;chatWithVet;videoSharing;;roomRequestInProgress;Preparing a video consulting room;Preparando la video consulta
+chatMessages;chatWithVet;videoSharing;;roomRequestFailure;Something unexpected happened while preparing the video consulting room 🤯. Please try again!;Algo ha pasado mientras se preparaba la video consulta 🤯. ¡Inténtalo de nuevo!
+chatMessages;chatWithVet;videoSharing;;roomRequestSuccess;Video Consulting room successfully created;La video consulta se ha creado
+chatMessages;chatWithVet;videoSharing;;callRequestInProgress;Waiting on Vet to join the room;Esperando a que el veterinario se una
+chatMessages;chatWithVet;videoSharing;;callRequestFailure;The vet declined the video stream share;El veterinario ha rechazado la video consulta
+chatMessages;chatWithVet;videoSharing;;terminateSuccess;The video stream share terminated;La video consulta ha terminado
+chatMessages;chatWithVet;videoSharing;;switchCamera;Switch camera;Cambiar la cámara
+chatMessages;chatWithVet;videoSharing;;endCall;End call;Terminar la video consulta
+chatMessages;chatWithVet;videoSharing;;vetJoined(String vet);$vet joined the video consulting room;$vet se ha unido a la video consulta
+chatMessages;chatWithVet;videoSharing;;streamSharingFailure;Something went wrong while trying to share the video Stream, please try again;Ocurrió un error al intentar compartir el video. Inténtalo de nuevo.
+chatMessages;chatWithVet;videoSharing;permissions;title;Video Sharing Feature;Información sobre la video consulta
+chatMessages;chatWithVet;videoSharing;permissions;body;This feature requires video capability turned on;Para usar la video consulta necesitas dar permisos a la cámara
+chatMessages;chatWithVet;videoSharing;permissions;warning;The app might restart, you'll be able to continue chatting;Es posible que la aplicación se reinicie, aún así podrás seguir chateando
+chatMessages;;;;chipSkipPrimarySymptom;Skip: Connect me with a vet now instead;Saltar: conéctame con un veterinario
+chatMessages;;;;you;You;Tú
+chatMessages;;;;knowMore;Know more;Saber más
+chatMessages;symptomDuration;;;short;less than 1 day;menos de 1 día
+chatMessages;symptomDuration;;;medium;1-3 days;1-3 días
+chatMessages;symptomDuration;;;long;4 days or more;4 días o más
+chatMessages;symptomFrequency;;;low;once or less per day;1 vez o menos al día
+chatMessages;symptomFrequency;;;medium;2 to 5 times per day;de 2 a 5 veces al día
+chatMessages;symptomFrequency;;;high;6 or more times per day;6 o más veces al día
+chatMessages;;;;title;New Assessment;Nueva consulta
+chatMessages;helperTexts;;;doubleTapToSelect;Double tap to select;Toca dos veces para seleccionar
+chatMessages;helperTexts;;;petParentSays;I say:;Yo digo:
+chatMessages;helperTexts;;;botSays(String botName);$botName says:;$botName dice:
+chatMessages;;;;openReport;Open report;Abrir el informe
+chatMessages;;;;symptomInputHint;Type your pet’s main symptom here;Describe el síntoma principal de tu mascota
+chatMessages;;;;petNameInputHint;Type your pet’s name here;Escribe aquí el nombre de tu mascota
+chatMessages;;;;chatMessageInputHint;Type your message here;Escribe tu mensaje aquí
+contactMessages;nutribotEmailTemplate;;;subject;Question about my pet;Consulta sobre mi mascota
+contactMessages;nutribotEmailTemplate;;;intro;Hi there, I’m emailing about my pet to see if you can offer some advice and help.;Hola, escribo este email para ver si podrías ofrecerme consejo y ayuda sobre mi mascota
+contactMessages;nutribotEmailTemplate;;;petDefinition(String petSpecies, String petName, String petSex);My $petSpecies is $petName ($petSex);Mi $petSpecies es $petName ($petSex)
+contactMessages;nutribotEmailTemplate;;;foodSensitivies(String foodSensitivies);Food sensitivies:\n$foodSensitivies;Sensibilidad alimentaria:\n$foodSensitivies
+contactMessages;nutribotEmailTemplate;;;outro;I look forward to hearing from you;Espero recibir noticias tuyas pronto
+contactMessages;askAVetEmailTemplate;;;subject;Question about my pet;Consulta sobre mi mascota
+contactMessages;askAVetEmailTemplate;;;intro;Hi there, I’m emailing about my pet to see if you can offer some advice and help.;Hola, escribo este email para ver si podrías ofrecerme consejo y ayuda sobre mi mascota
+contactMessages;askAVetEmailTemplate;;;petDefinition(String petSpecies, String petName, String petSex);My $petSpecies is $petName ($petSex);Mi $petSpecies es $petName ($petSex)
+contactMessages;askAVetEmailTemplate;;;symptoms(String symptomsPresent);Symptoms present:\n$symptomsPresent;Síntomas que presenta:\n$symptomsPresent
+contactMessages;askAVetEmailTemplate;;;outro;I look forward to hearing from you;Espero recibir noticias tuyas pronto
+contactMessages;virtualVetEmailTemplate;;;subject;Question about my pet;Consulta sobre mi mascota
+contactMessages;virtualVetEmailTemplate;;;intro;Hi there, I’m emailing about my pet to see if you can offer some advice and help.;Hola, escribo este email para ver si podrías ofrecerme consejo y ayuda sobre mi mascota
+contactMessages;virtualVetEmailTemplate;;;petDefinition(String petSpecies, String petName, String petSex);My $petSpecies is $petName ($petSex);Mi $petSpecies es $petName ($petSex)
+contactMessages;virtualVetEmailTemplate;;;symptoms(String symptomsPresent, String symptomsNotPresent);Symptoms present:\n$symptomsPresent\n\nSymptoms not present:\n$symptomsNotPresent;Síntomas presentes:\n$symptomsPresent\n\nSíntomas no presentes:\n$symptomsNotPresent
+contactMessages;virtualVetEmailTemplate;;;conditions(String possibleConditions);Possible conditions:\n$possibleConditions;Posibles condiciones:\n$possibleConditions
+contactMessages;virtualVetEmailTemplate;;;outro;I look forward to hearing from you;Espero recibir noticias tuyas pronto
+contactMessages;inputs;;;phone;Phone;Teléfono
+contactMessages;inputs;;;prefix;Prefix;Prefijo
+contactMessages;actions;;;schedulePhoneCall;Schedule Call;Programar llamada
+contactMessages;actions;;;sendEmail;Send Email;Enviar email
+healthPlanMessages;;;;title;Health Plans;Planes de Salud
+healthPlanMessages;;;;subTitle;The veterinary insurance of the future, without complications;El seguro veterinario del futuro, sin complicaciones
+healthPlanMessages;;;;showMoreBenefits;See all benefits;Ver todos los beneficios
+healthPlanMessages;;;;barkibuPlansMoreInfo;What are Barkibu health plans?;¿Qué son los Planes de Salud Barkibu?
+healthPlanMessages;;;;buy;Buy;Comprar
+healthPlanMessages;;;;currentPlan;Current Plan;Plan Actual
+healthPlanMessages;;;;free;Free;Gratis
+healthPlanMessages;;;;buyHealthPlan;<p>To talk with a Vet you need our <b>Digital Vet Premium</b> Health Plan</p><p>Find our offers at <a>Barkibu Health Plans</a> and find all the functionalities of Barkibu Assistant</p>;<p>Para hablar con un veterinario necesitas nuestro Plan de Salud <b>Digital Vet Premium</b></p><p>Descubre nuestras ofertas en <a>Planes de Salud Barkibu</a> y descubre todas las funcionalidades de Barkibu Assistant</p>
+healthPlanMessages;;;;from;From;Desde
+healthPlanMessages;petHealthPlan;;;title;Your Plan;Tu Plan
+healthPlanMessages;petHealthPlan;;;subTitle(String petName);Manage the Plan you have for $petName;Gestiona el Plan que tienes para $petName
+healthPlanMessages;petHealthPlan;;;showPlans;Show Plans;Ver Planes
+healthPlanMessages;petHealthPlan;;;expirationDate;Valid Until;Válido Hasta
+healthPlanMessages;petHealthPlan;;;help;Help and Plan details;Ayuda y detalles del Plan
+healthPlanMessages;petHealthPlan;;;forever;Forever;Para siempre
+healthPlanMessages;petHealthPlan;;;createClaim;Create new claim;Crear nueva reclamación
+healthPlanMessages;healthPlanDetails;;;title;Benefits;Beneficios
+healthPlanMessages;healthPlanDetails;;;infoHeader;A vet will answer all your questions without leaving your home;Un veterinario colegiado responderá a todas tus preguntas sin salir de tu casa
+validationMessages;validate;;;withPattern(String field, String pattern);The $field must be $pattern;El campo $field debe ser de la forma $pattern
+validationMessages;validate;;;required(String field);The $field is required;El campo $field es obligatorio
+validationMessages;validate;;;emailPasswordIncorrect;The e-mail or the password are incorrect;El email o la contraseña son incorrectos
+sharedMessages;errors;;;isRequired;This field is required;Este campo es requerido
+sharedMessages;errors;;;screenLoad;There was an error loading the screen;Se produjo un error al cargar la pantalla
+sharedMessages;errors;;;connectionWarningTitle;You need internet connection;Necesita conexión a internet
+sharedMessages;errors;;;connectionWarningBody;Looks like we are having some issues right now try again later;Parece que estamos teniendo algunos problemas, inténtalo más tarde
+sharedMessages;;;;yes;Yes;Sí
+sharedMessages;;;;no;No;No
+sharedMessages;;;;unknown;Unknown;No estoy seguro
+sharedMessages;;;;ok;Ok;Ok
+sharedMessages;;;;email;Email;Email
+sharedMessages;;;;phoneCall;Phone Call;Llamada telefónica
+sharedMessages;;;;video;Video;Video
+sharedMessages;;;;chat;Chat;Chat
+sharedMessages;;;;noThanks;No thanks;No, gracias
+sharedMessages;;;;google;Google.com;Google.com
+sharedMessages;;;;amazon;Amazon.com;Amazon.com
+sharedMessages;;;;isTyping(String brandName);$brandName is typing;$brandName está escribiendo
+sharedMessages;;;;years;Years;Años
+sharedMessages;;;;months;Months;Meses
+sharedMessages;;;;noneOfThese;None of these;Ninguno de ellos
+sharedMessages;;;;carryOn;Continue;Continuar
+sharedMessages;;;;add;Add;Añadir
+sharedMessages;;;;done;Done;Aceptar
+sharedMessages;;;;save;Save;Guardar
+sharedMessages;;;;send;Send;Enviar
+sharedMessages;;;;cancel;Cancel;Cancelar
+sharedMessages;;;;edit;Edit;Editar
+sharedMessages;;;;newAlert;New;Nuevo
+sharedMessages;;;;dateFormat;MM-dd-yyyy;dd-MM-yyyy
+sharedMessages;;;;name;Name;Nombre
+sharedMessages;;;;breed;Breed;Raza
+sharedMessages;;;;sex;Sex;Sexo
+sharedMessages;;;;castrated;Castrated;Castrado
+sharedMessages;;;;spayed;Spayed;Castrada
+sharedMessages;;;;age;Age;Edad
+sharedMessages;;;;weight;Weight;Peso
+sharedMessages;;;;activityLevel;Activity level;Nivel de actividad
+sharedMessages;;;;size;Size;Tamaño
+sharedMessages;;;;bodyCondition;Body condition;Condición corporal
+sharedMessages;;;;healthPlan;Plan;Plan
+sharedMessages;species;;;species;Species;Especie
+sharedMessages;species;;;dog;Dog;Perro
+sharedMessages;species;;;cat;Cat;Gato
+sharedMessages;sexOption;;;male;Male;Macho
+sharedMessages;sexOption;;;female;Female;Hembra
+sharedMessages;deworming;;;internal;Internal deworming;Desparasitación interna
+sharedMessages;deworming;;;external;External deworming;Desparasitación externa
+sharedMessages;ageRange;;;junior;Less than 1 year old;Menos de un año
+sharedMessages;ageRange;;;young;Between 1 and 4 years old;Entre 1 y 4 años
+sharedMessages;ageRange;;;adult;Between 4 and 10 years old;Entre 4 y 10 años
+sharedMessages;ageRange;;;senior;More than 10 years old;Más de 10 años
+sharedMessages;;;;fullAge(String years, String months);$years years $months months;# MISSING: $years years $months months
+sharedMessages;ageInputLabel;;;years;years;años
+sharedMessages;ageInputLabel;;;months;months;meses
+sharedMessages;ageInputLabel;;;year;year;año
+sharedMessages;ageInputLabel;;;month;month;mes
+sharedMessages;altImageText;;;next;Next;Siguiente
+sharedMessages;altImageText;;;back;Back;Volver
+sharedMessages;altImageText;;;close;Close;Cerrar
+sharedMessages;altImageText;;;cancel;Cancel;Cancelar
+sharedMessages;altImageText;;;submit;Submit;Enviar
+sharedMessages;permissions;;;goToAppSettings;Go to App Settings;Ir a los parámetros de la App
+sharedMessages;permissions;;;cancel;Cancel;Cancelar

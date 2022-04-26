@@ -1,0 +1,26 @@
+<widget-layout>
+    <ng-content select="widget-header"></ng-content>
+    <widget-body>
+        <form>
+            <div class="form-group">
+                <label for="email">{{messages.contactMessages.actions.reply}}</label>
+                <input type="email" class="email-container" id="email" #email="ngForm" value="{{userEmail}}" [placeholder]="messages.authMessages.sign_in.mail_hint" disabled/>
+            </div>
+            <div class="form-group" [hidden]="isEmailSended">
+                <label for="message">{{messages.contactMessages.actions.writeMail}}</label>
+                <textarea class="textarea-content" name="message" id="message" rows="3" [(ngModel)]="emailFinalBody" ngMaxlength="500">{{emailFinalBody}}</textarea>
+            </div>
+            <div id="info" class="message-container" [hidden]="isInfoMessageEmpty">
+                <div class="message">{{infoMessage}}</div>
+            </div>
+            <div id="error" class="message-container" [hidden]="isErrorMessageEmpty">
+                <div class="message">{{errorMessage}}</div>
+            </div>
+        </form>
+        <widget-footer>
+            <widget-button id="send_email_button" [hidden]="isEmailSended" [disabled]="isEmailSending" type="secondary" button (click)="emailSendPressed()" [text]="modalSendEmailText">
+            </widget-button>
+        </widget-footer>
+        <ng-content select="widget-footer"></ng-content>
+    </widget-body>
+</widget-layout>

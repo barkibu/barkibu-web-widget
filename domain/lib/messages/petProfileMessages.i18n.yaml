@@ -1,0 +1,157 @@
+dogCharacteristicsSenior:
+  greyHair: 'Grey hairs around the muzzle and eyebrows'
+  forgetfull: 'May seem forgetful, pace around or bark for no reason'
+  slow: 'Slow to stand up, lie down and/or walk'
+formFieldsHint:
+  age: 'Set your pet’s age'
+  chipNumber: 'Introduce your pet chip number'
+  spayed: 'Is spayed?'
+  sex: 'Select your pet’s sex'
+  species: 'Select your pet species'
+  size: 'What size is your pet'
+  castrated: 'Is castrated?'
+  breed: 'Select its breed'
+  name: Type your pet's name
+history:
+  virtualVet:
+    subtitle: 'Consultations'
+    title: 'Virtual Vet'
+  title: 'history'
+  nutrition:
+    title: 'Nutrition'
+    subtitle: 'Recommendations'
+  askAVetDirectly:
+    title: 'Ask a Vet'
+    subtitle: 'Conversations'
+petRange:
+  kitten: 'Kitten'
+  adult: 'Adult'
+  senior: 'Senior'
+  young: 'Young'
+  puppy: 'Puppy'
+claims:
+  hasClaimState:
+    mainText: 'Claim received'
+    secondaryText: 'We will get in touch with you soon'
+  emptyState:
+    mainText: 'You did not request any refund yet'
+    secondaryText: 'You will be able to see and review the status of the refunds of your veterinary expenses'
+    hint: '80% of cover up to 3000€ per year\n100% en clinics Kivet'
+  upsell:
+    buyHealthPlan(String petName): '<p>You can request a refund if you contracted <a>the health plan for  $petName</a></p>'
+  title: 'Claims'
+  requestNewRefund: 'Request a new refund'
+formFieldsTitle:
+  neutered: 'Neutered'
+  name: 'Name'
+  breed: 'Breed'
+  species: 'Species'
+  size: 'Size'
+  birthdate: 'Date of birth'
+  castrated: 'Castrated'
+  chipNumber: 'Chip number'
+  spayed: 'Spayed'
+  sex: 'Sex'
+petCharacteristicsYoung:
+  playfull: 'Very playful'
+  brightEyes: 'Bright eyes and always inquisitive'
+  neverTired: 'Doesn’t seem to get tired when out for a run'
+  brightTeeth: 'Very bright white teeth'
+clinicalHistorySection:
+  emptyState:
+    hint: 'Always there when you need it'
+    secondaryText: 'You will be able to do a free quick and easy check-up on your pet'
+    mainText: 'You don''t have any consultations yet'
+  description: 'Reports of your consultations'
+  selectorDate: 'Date'
+  report: 'Assessment Report'
+  consultation: 'Consultation'
+  title: 'Consultations'
+  consultations: 'Consultations'
+  selectorType: 'Type'
+gallery: 'Gallery'
+myClinicSection:
+  myClinic: 'My clinic'
+  myClinicSubtitle: 'Add your main clinic'
+  myClinicAdd: 'Add a clinic'
+  verify: 'We will personaly verify your clinic'
+  customClinicHint: 'Write your clinic details'
+  myClinicSheetHeader: 'Select your clinic'
+  myClinicSubtitleEdit: 'Edit your main clinic'
+  myClinicHint: 'Select'
+  myClinicSheetInputHint: 'Search your clinic'
+  myClinicSheetButton: 'Add custom clinic'
+  myClinicAddress: 'Address'
+assessments: 'Assessments'
+petCharacteristicsSenior:
+  muscleWastage: 'Muscle wastage, creaky or stiff joints'
+  missTeeth: 'Missing or loose teeth'
+deletePetDialog:
+  title: 'Do you want to delete your pet data?'
+  body: 'This action will permanently delete your pet information'
+interactions:
+  emptyState:
+    hint: 'From Monday to Friday between 9am to 4pm '
+    secondaryText: 'You will have unlimited access to certified vets through chat, phone call or video for only 2.5€ / month'
+    mainText: 'You did not yet chat with our vets'
+  consultation(String id): 'Consultation $id'
+  subtitle: 'Here you will see the consultations you made by chat, email or phone '
+  title: 'Phone Consultations'
+clinicalHistorySubtitle(String date): 'Last update: <b>$date</b>'
+petProfileCompletion(int percentage): '$percentage% Completed'
+deletePetButton: 'Delete this Pet Profile'
+feedback:
+  subtitle: Your pet's health depends on you!
+  link(String petName): Tell us, <a>how do you care for $petName's health?</a>
+  title(String petName): 'What do you do on a day-to-day basis so that $petName has good health?'
+petCharacteristicsNewborn:
+  cute: 'Very cute baby-like expression on their face'
+  bigBodyParts: 'Their legs, paws and ears seem a bit too large'
+  playfull: 'Very playful and very curious'
+petCharacteristicsAdult:
+  energetic: 'Energetic and playful'
+  likesToRest: 'Likes to have rest time'
+  balancedBehaviour: 'Balanced behavior'
+assessmentHistory: 'Assessment history'
+consultationsHelp:
+  content(String petName): 'Here you can check all $petName’s consultation reports.\nEach report shows the urgency, the description of the symptoms, and the final result of the evaluation.'
+  title: 'How does it work?'
+reports: 'Reports'
+assessment: 'Assessment'
+catCharacteristicsSenior:
+  notBrightSkin: 'Coat and skin are not so bright, a little dull, matted or greasy'
+  relucantToJump: 'Reluctant to jump to places where they used to be able to'
+  forgetfull: 'May seem forgetful, pace around or vocalize for no reason'
+editPhoto: 'Edit photo'
+buttonsNavigation:
+  assistant: 'Assistant'
+age:
+  friendly(int year, int month): '${ year > 0 ? (year.toString() + '' years'') : (month.toString() + '' months'')} old'
+  born(String formattedDate): 'Born on $formattedDate'
+  dog(String age): '$age dog'
+  cat(String age): '$age cat'
+details: 'Details'
+consultationsTitle: 'Your Consultations'
+clinicalHistory: 'Clinical History'
+consultationsSubtitle(String name): 'Tell us what symptoms $name has. You will receive a detailed vet report'
+camera: 'Camera'
+ageEstimation:
+  title(String species): How do I find out my $species's age?
+clinicalHistoryNoConsultations: 'No consultations available'
+exportData: 'Export Health Data'
+counters:
+  claims: 'Refunds'
+  vet_consultations: 'Phone Consultations'
+  assessments: '24 hours \n consultations'
+petDetails: 'Pet Details'
+uploadPhoto: 'Add photo'
+emptyPets: 'There are no registered pets yet.\nTo add one, start an assessment.'
+title: 'My Pets'
+petDetailsSubtitle: 'Pet profile'
+subtitle: 'Your pet’s profiles'
+createPetHint: 'Create a profile for your Pet here!'
+unknown: 'Unknown'
+breedsNotFound: 'No breeds found'
+newAssessment: 'New assessment'
+consultationsSeeAll: 'See all consultations'
+clinicalHistoryTitle(String petName): 'See $petName’s History'

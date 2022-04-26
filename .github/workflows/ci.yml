@@ -1,0 +1,38 @@
+name: Web Widget CI
+on:
+  pull_request:
+    branches: [master, develop]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Dart SDK Step 1
+        run: sudo apt update
+      - name: Setup Dart SDK Step 2
+        run: sudo apt -y install curl
+      - name: Setup Dart SDK Step 3
+        run: curl -sLO https://storage.googleapis.com/dart-archive/channels/stable/release/2.10.5/linux_packages/dart_2.10.5-1_amd64.deb && sudo dpkg -i dart_2.10.5-1_amd64.deb
+
+      - uses: actions/checkout@v2
+      - uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.COMMON_DEPLOY_KEY }}
+      - name: Forget about Host Verification Check for Github.com
+        run: |
+          ssh -T -oStrictHostKeyChecking=accept-new git@github.com || true
+      - name: Configure build settings
+        run: cp build.example.yaml build.yaml
+      - name: Install dependencies
+        run: PATH="$PATH:/usr/lib/dart/bin" pub get
+      - name: Run tests domain
+        working-directory: ./domain
+        run: |
+          PATH="$PATH:/usr/lib/dart/bin" pub get
+          PATH="$PATH:/usr/lib/dart/bin" pub run test
+      - name: Run tests widget
+        run: PATH="$PATH:/usr/lib/dart/bin" pub run build_runner test --fail-on-severe -- -p chrome
+      - name: Run Dart Analyze
+        run: PATH="$PATH:/usr/lib/dart/bin" dart analyze --fatal-infos
+      - name: Run Dart Format Check
+        run: PATH="$PATH:/usr/lib/dart/bin" find . -name "*.dart" \( -path "./lib/**" -o -path "./test/**" \) ! -name "*.g.dart" | xargs dart format -l 120 --fix -o none --set-exit-if-changed

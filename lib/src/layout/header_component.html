@@ -1,0 +1,19 @@
+<div class="widget-window-header" [class.home-page-modifier]="homeHeader">
+  <div [ngClass]="isHeaderWithoutLogo ? 'widget-window-header-topbar-wihtout-logo' : 'widget-window-header-topbar'">
+    <button class="widget-window-header-close" (click)="closeWindow()" *ngIf="isCloseButtonEnabled">
+      <img src="assets/images/close-icon.svg" [alt]="messages.sharedMessages.altImageText.close"/>
+    </button>
+    <div class="widget-window-header-logo">
+      <a [routerLink]="RoutePaths.home.toUrl()" *ngIf="isGoHomeLinkEnabled">
+        <widget-logo *ngIf="!isHeaderWithoutLogo"></widget-logo>
+        <h1 *ngIf="isHeaderWithoutLogo">{{chatTitle}}</h1>
+      </a>
+      <div *ngIf="!isGoHomeLinkEnabled">
+        <widget-logo *ngIf="!isHeaderWithoutLogo"></widget-logo>
+        <h1 *ngIf="isHeaderWithoutLogo">{{chatTitle}}</h1>
+      </div>
+    </div>
+  </div>
+
+  <ng-content></ng-content>
+</div>

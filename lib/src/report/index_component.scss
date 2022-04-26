@@ -1,0 +1,16 @@
+@import "package:web_widget/src/scss/themes";
+
+span {
+  font-size: $smaller-font-size;
+  border-radius: 50%;
+  text-align: center;
+  height: 1.8rem;
+  width: 1.8rem;
+  line-height: 1.8rem;
+  display: block;
+
+  @include themify($themes) {
+    background-color: rgba(themed('secondary-color'), 0.08);
+    color: themed('primary-color');
+  }
+}

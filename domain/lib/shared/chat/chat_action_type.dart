@@ -1,0 +1,1 @@
+enum ChatActionType { input, output }

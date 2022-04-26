@@ -1,0 +1,12 @@
+@import "package:web_widget/src/scss/themes";
+@import "package:web_widget/src/scss/utility";
+
+.pet-name-title {
+  @extend %ellipsis;
+  max-width: 50vw;
+  vertical-align: bottom;
+}
+
+span[role="img"] {
+  margin-right: $spacing / 2;
+}

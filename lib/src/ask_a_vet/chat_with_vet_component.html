@@ -1,0 +1,37 @@
+<widget-layout>
+  <widget-header>
+    <div class="header-content">
+      <go-back [navigate]="false"
+             (buttonEvents)="onBackButtonClicked()"
+             [title]="messages.chatMessages.chatWithVet.title">
+      </go-back>
+      <template [ngIf]="isChatInitialized && telehealthVideoCapabilityEnabled">
+        <video-stream [videoStreamBloc]="chatBloc.videoStreamBloc"></video-stream>
+      </template>
+    </div>
+  </widget-header>
+
+  <template [ngIf]="isChatInitialized || isChatTerminated">
+    <widget-body [noBottomSpacing]="true">
+      <div class="chat-messages-container">
+        <ask-a-vet-messages [chatState]="chatState"></ask-a-vet-messages>
+        <chat-messages [messagesList]="afterTerminateMessages" *ngIf="isChatTerminated" ></chat-messages>
+      </div>
+    </widget-body>
+
+    <widget-footer>
+      <ask-a-vet-text-input [chatBloc]="chatBloc" *ngIf="!isChatTerminated">
+      </ask-a-vet-text-input>
+      <chat-controls *ngIf="isChatTerminated" [inputViewModel]="afterTerminateInput" (onChatControlEvent)="onChatControlEvent($event)">
+      </chat-controls>
+    </widget-footer>
+  </template>
+
+  <div class="spinner-container" *ngIf="isChatLoading">
+    <spinner></spinner>
+  </div>
+
+  <template [ngIf]="isChatError">
+    <alert type="info"><span [innerHtml]="errorMessage"></span></alert>
+  </template>
+</widget-layout>

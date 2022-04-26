@@ -1,0 +1,10 @@
+<widget-layout>
+  <widget-header>
+    <go-back [navigate]="false"
+             (buttonEvents)="clearSymptomInfo()"
+             [title]="headerTitle"></go-back>
+  </widget-header>
+  <widget-body>
+    <info-body [infoState]="infoState"></info-body>
+  </widget-body>
+</widget-layout>

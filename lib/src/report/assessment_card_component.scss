@@ -1,0 +1,43 @@
+@import "package:web_widget/src/scss/themes";
+
+:host {
+  box-shadow: $card-box-shadow;
+  display: grid;
+  grid-template-columns: 2.5rem auto 2.5rem;
+  border-radius: $border-radius;
+  padding: $spacing * 2;
+
+  @include themify-regular($themes) {
+    background: themed('white-color');
+  }
+}
+
+.name {
+  font-size: $larger-font-size;
+  font-weight: bold;
+  margin-bottom: $spacing;
+
+  @include themify($themes) {
+    color: themed('secondary-color');
+  }
+}
+
+.info {
+  text-align: right;
+}
+
+.description {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  margin-bottom: $spacing;
+  line-height: $larger-font-size;
+
+  @include themify($themes) {
+    color: themed('secondary-color');
+  }
+}
+
+urgency-indicator {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}

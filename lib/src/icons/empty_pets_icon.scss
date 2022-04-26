@@ -1,0 +1,8 @@
+@import "package:web_widget/src/scss/themes";
+
+#Pet-Love {
+  @include themify($themes) {
+    fill: themed('primary-icon-color');
+    stroke: themed('primary-icon-color');
+  }
+}

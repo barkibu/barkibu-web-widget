@@ -1,0 +1,44 @@
+@import "package:web_widget/src/scss/themes";
+
+:host {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+@mixin primary-icon-styles($icon-size) {
+  min-width: $icon-size;
+  width: $icon-size;
+  height: $icon-size;
+}
+
+%primary-icon-styles{
+  display: flex;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 0px;
+  margin-right: $widget-window-spacing;
+}
+
+.icon-background {
+  justify-content: flex-end;
+  @extend %primary-icon-styles;
+  @include primary-icon-styles($big-icon-size);
+  @include themify($themes) {
+    background-color: themed('icon-bg-color');
+  }
+}
+
+.icon-container {
+  align-self: flex-end;
+}
+
+%legacy-icon-styles {
+  justify-content: center;
+  @extend %primary-icon-styles;
+  @include primary-icon-styles($small-icon-size);
+  @include themify($themes) {
+    background-color: themed('bg-color');
+  }
+}

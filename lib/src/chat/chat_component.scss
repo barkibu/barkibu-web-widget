@@ -1,0 +1,60 @@
+@import "package:web_widget/src/scss/themes";
+
+.chat-messages-container {
+  margin-right: -($widget-window-spacing);
+  padding-right: $widget-window-spacing;
+}
+
+.chat-controls-container {
+  min-height: $chat-controls-min-height;
+}
+
+.assessment-report-title {
+  margin-bottom: 0;
+}
+
+.footer-credits {
+  text-align: center;
+  display: block;
+
+  @include themify($themes) {
+    color: rgba(themed('secondary-color'), 0.4);
+  }
+}
+
+  a {
+    font-weight: bold;
+    @include themify($themes) {
+      color: themed('primary-color');
+    }
+  }
+
+.options {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.widget-window-header-close {
+  float: right;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+.assessment-report-buttons {
+  display: flex;
+
+  widget-button {
+    display: block;
+    flex: 1 1 auto;
+
+    &.ask-a-vet-button {
+      margin-right: $spacing * 2;
+    }
+  }
+}

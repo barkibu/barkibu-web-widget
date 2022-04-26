@@ -1,0 +1,72 @@
+@import "package:web_widget/src/scss/variables";
+@import "package:web_widget/src/scss/themes";
+.hidden {
+    display: none;
+}
+
+.video-stream-container {
+    max-width: 100%;
+}
+
+:host ::ng-deep video {
+    max-width: 100%;
+}
+
+.video-button {
+    background-color: transparent;
+    border: none;
+}
+
+.video-call-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $spacing;
+    position: relative;
+    padding-bottom: $base-font-size + $spacing * 2;
+}
+
+[data-title] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-title]:hover::before {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -32px;
+    right: -10px;
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 5px;
+    @include themify($themes) {
+        background: themed('warning-color');
+    }
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Nunito', sans;
+    white-space: nowrap;
+}
+
+[data-title]:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 3px;
+    display: inline-block;
+    color: #fff;
+    border: 8px solid transparent;
+    @include themify($themes) {
+        border-bottom: 12px solid themed('warning-color');
+    }
+}
+
+.card-title {
+    text-align: center;
+    margin-bottom: $spacing * 2;
+}

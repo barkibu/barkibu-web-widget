@@ -1,0 +1,17 @@
+<ul>
+  <li>
+    <button type="button" (click)="confirmYes()" class="select-option">
+      {{messages.sharedMessages.yes}}
+    </button>
+  </li>
+  <li>
+    <button type="button" (click)="confirmNo()" class="select-option">
+      {{messages.sharedMessages.no}}
+    </button>
+  </li>
+  <li *ngIf="yesNoUnkownViewModel != null">
+    <button type="button" (click)="confirmUnknown()" class="select-option">
+      {{messages.sharedMessages.unknown}}
+    </button>
+  </li>
+</ul>

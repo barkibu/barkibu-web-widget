@@ -1,0 +1,5 @@
+@import "package:web_widget/src/scss/form";
+
+form {
+  @extend %widget-form;
+}

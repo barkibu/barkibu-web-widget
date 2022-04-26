@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Client page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Compressed inject script
+    !function(s,o,a,r,c){s.vetChatWidgetName=c,fetch("//"+r+"/assets.json").then(function(e){return e.json()}).then(function(e){s[c].assets=e;var t=o.createElement(a),n=o.getElementsByTagName(a)[0];t.async=!0,t.src="//"+r+"/loader.js?v="+e["loader.js"],n.parentNode.insertBefore(t,n)}),s[c]=s[c]||{send:function(){(s[c].q=s[c].q||[]).push(arguments)},hostName:r}}(window,document,"script","web-widget.herokuapp.com","vetChatWidget");
+    vetChatWidget.send("init",{ client_id: "dummy_prod_page" });
+  </script>
+<body>
+  <h1> Dummy client page with inject script </h1>
+  <button onclick='vetChatWidget.send("open")'>Open widget</button>
+  <button onclick='vetChatWidget.send("close")'>Close widget</button>
+</body>
+</html>

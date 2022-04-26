@@ -1,0 +1,31 @@
+<widget-layout [hidden]="!infoIsEmpty">
+  <widget-header>
+    <go-back [title]="messages.authMessages.auth_home.sign_up('')"
+             [subtitle]="messages.authMessages.sign_up.create_account_email_phone">
+    </go-back>
+  </widget-header>
+  <widget-body>
+    <auth-redirect></auth-redirect>
+    <widget-tabs [showTabButtons]="!(isCodeFormShown || hideEmailForm)">
+      <widget-tab (onActivate)="setEmailForm($event)" [label]="messages.authMessages.sign_up.email_tab" *ngIf="!hideEmailForm">
+        <email-sign-up *ngIf="!isPhoneFormActive"></email-sign-up>
+      </widget-tab>
+      <widget-tab (onActivate)="setPhoneForm($event)" [label]="messages.authMessages.sign_up.phone_tab" *ngIf="!hidePhoneForm">
+        <phone-sign-up *ngIf="isPhoneFormActive"></phone-sign-up>
+      </widget-tab>
+    </widget-tabs>
+  </widget-body>
+
+  <widget-footer>
+    <div class="form-buttons">
+      <widget-button button (click)="submitForm()" [disabled]="isLoading"
+                     [text]="messages.authMessages.sign_up.sign_up">
+      </widget-button>
+      <widget-button link type="secondary" [linkHref]="RoutePaths.signIn.toUrl()"
+                     [text]="messages.authMessages.sign_up.go_to_sign_in" >
+      </widget-button>
+    </div>
+  </widget-footer>
+</widget-layout>
+
+<info-screen *ngIf="!infoIsEmpty" [infoState]="infoState"></info-screen>

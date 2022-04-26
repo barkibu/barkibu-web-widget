@@ -1,0 +1,10 @@
+@import "package:web_widget/src/scss/themes";
+
+:host {
+  border-radius: $border-radius;
+  box-shadow: $card-box-shadow;
+  display: block;
+  @include themify-regular($themes) {
+    background-color: themed('white-color');
+  }
+}

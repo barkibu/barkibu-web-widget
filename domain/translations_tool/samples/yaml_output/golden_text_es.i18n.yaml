@@ -1,0 +1,13 @@
+this_key_should_be_clean: '0 nivel texto'
+this_is_the_first_category:
+  this_is_the_key: '1 nivel texto'
+this_is_second_category:
+  this_is_the_sub_category_moor:
+    this_is_the_key: '2 level texto'
+  this_is_the_sub_category:
+    this_is_the_key: '2 level texto'
+this_is_third_category:
+  this_is_the_sub_category:
+    this_is_the_sub_sub_category:
+      this_is_the_key: '3 nivel texto'
+this_is_the_key: '0 nivel texto'

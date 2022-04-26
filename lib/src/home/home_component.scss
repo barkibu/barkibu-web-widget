@@ -1,0 +1,60 @@
+@import "package:web_widget/src/scss/themes";
+@import "package:web_widget/src/chat/chat_text_input_component.scss";
+@import "package:web_widget/src/scss/accessibility";
+$menu-item-image-size: 40px;
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h2 {
+    margin-bottom: $spacing;
+    margin-top: 0;
+}
+
+.spinner-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-container {
+    height: 100%;
+    &:not(.is-aivet-enabled) {
+        .home-menu-item-link-text-wrapper {
+            flex-basis: calc(100% - (#{$menu-item-image-size} + #{$widget-window-spacing}));
+        }
+        .home-menu-item {
+            flex-wrap: wrap;
+            &:first-of-type {
+                widget-button {
+                    margin-top: 1rem;
+                    flex-basis: 100%;
+                }
+            }
+        }
+    }
+}
+
+%header-subtitle {
+  @include themify($themes) {
+      color: rgba(themed('white-color'), themed('header-subtitle-opacity'));
+  }
+  font-size: $larger-font-size;
+}
+
+%home-body-island {
+  border-radius: $border-radius;
+  padding: $widget-window-spacing;
+  margin-bottom: $widget-window-spacing;
+  box-shadow: $box-shadow;
+  @include themify($themes) {
+      background-color: themed('white-color');
+  }
+}
+
+%home-header {
+  padding-bottom: $home-body-overlap-size;
+}

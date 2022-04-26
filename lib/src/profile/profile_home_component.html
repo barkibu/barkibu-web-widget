@@ -1,0 +1,12 @@
+<widget-layout>
+  <widget-header>
+    <go-back [title]="messages.profileMessages.title"></go-back>
+  </widget-header>
+
+  <widget-body [noBottomSpacing]="true">
+    <spinner-overlay *ngIf="currentUser == null"></spinner-overlay>
+    <template [ngIf]="currentUser != null">
+      <user-card [user]="currentUser"></user-card>
+    </template>
+  </widget-body>
+</widget-layout>

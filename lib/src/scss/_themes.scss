@@ -1,0 +1,82 @@
+@import "package:web_widget/src/scss/variables";
+@import "package:web_widget/src/scss/default_theme";
+@import "package:web_widget/src/scss/alternative_theme";
+
+@function focus-shadow-value($color) {
+  @return 0 0 0 0.2rem rgba(lighten($color, 10%), 0.4);
+}
+
+$themes: (
+  default: (
+    icon-bg-color: $icon-bg-color-default,
+    primary-color: $primary-color-default,
+    secondary-color: $secondary-color-default,
+    link-color: $link-color-default,
+    assistant-color: $assistant-color-default,
+    bg-color: $bg-color-default,
+    white-color: $white-color-default,
+    border-color: rgba($secondary-color-default, 0.16),
+    warning-color: $warning-color-default,
+    danger-color: $danger-color-default,
+    info-color: $danger-color-default,
+    success-color: $success-color-default,
+    received-message-bg-color: rgba($bubbles-color-default, 0.12),
+    received-message-text-color: rgba($secondary-color-default, 0.8),
+    sent-message-bg-color: $bubbles-color-default,
+    sent-message-text-color: $white-color-default,
+    focus-shadow: focus-shadow-value($primary-color-default),
+    primary-icon-color: $primary-color-default,
+    secondary-icon-color: $primary-color-default,
+    button-color: $primary-color-default,
+    font-family: $primary-font-family-default,
+    secondary-font-family: $secondary-font-family-default,
+    header-subtitle-opacity: $header-subtitle-opacity,
+  ),
+  alternative: (
+    icon-bg-color: $primary-color-alternative,
+    primary-color: $primary-color-alternative,
+    secondary-color: $secondary-color-alternative,
+    link-color: $link-color-alternative,
+    assistant-color: $assistant-color-alternative,
+    bg-color: $bg-color-alternative,
+    white-color: $white-color-alternative,
+    border-color: rgba($secondary-color-alternative, 0.12),
+    warning-color: $warning-color-alternative,
+    danger-color: $danger-color-alternative,
+    info-color: $dark-color-default,
+    success-color: $success-color-alternative,
+    received-message-bg-color: rgba($primary-color-alternative, 0.12),
+    received-message-text-color: $secondary-color-alternative,
+    sent-message-bg-color: $assistant-color-alternative,
+    sent-message-text-color: $white-color-alternative,
+    focus-shadow: focus-shadow-value($primary-color-alternative),
+    primary-icon-color: $primary-color-alternative,
+    secondary-icon-color: $primary-color-alternative,
+    button-color: $primary-color-alternative,
+    font-family: $primary-font-family-default,
+    secondary-font-family: $secondary-font-family-default,
+    header-subtitle-opacity: $header-subtitle-opacity,
+  ),
+);
+
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+    $theme-map: map-get($themes, $theme) !global;
+
+    // host-context has to be used inside angular
+    // component styles because they are incapsulated
+    // https://angulardart.dev/guide/component-styles#host-context
+    :host-context([data-theme="#{$theme}"]) & { @content; }
+  }
+}
+
+@mixin themify-regular($themes: $themes) {
+  @each $theme, $map in $themes {
+    $theme-map: map-get($themes, $theme) !global;
+    [data-theme="#{$theme}"] & { @content; }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

@@ -1,0 +1,14 @@
+appBar:
+  subtitle: ''
+  title: ''
+section:
+  title(String type): ''
+  card:
+    warning:
+      invalidDate: ''
+      action: ''
+    lastDate(String date): ''
+list:
+  nextVaccines: ''
+  error: ''
+  empty: ''

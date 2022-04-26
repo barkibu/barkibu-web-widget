@@ -1,0 +1,27 @@
+<div>
+  <button id="video-stream-button" class="video-button" (click)="startVideoStream()" type="button">
+    <div data-title="Note: some browsers may not support video streaming">
+      <img src="assets/images/video-call-icon.svg" [alt]="messages.chatMessages.chatWithVet.videoSharing.startButton" class="video-call-icon"/>
+    </div>
+  </button>
+
+  <modal id="video-stream-modal" [ngClass]="{ hidden: !isVideoStreamActive }">
+    <article class="card-body">
+      <div id="video-stream-container"></div>
+      <div [ngClass]="{ hidden: streamConnected }">
+        <h2 id="modal_title">
+          {{ messages.chatMessages.chatWithVet.videoSharing.loading('') }}
+        </h2>
+        <p id="modal_description" class="card-title">
+          {{ videoStreamState?.toLocalizedString(messages) }}
+        </p>
+      </div>
+      <spinner *ngIf="!streamConnected && !streamTerminated"></spinner>
+      <div class="video-stream-controls">
+        <button *ngIf="streamConnected" (click)="endCall()">End Call</button>
+        <button *ngIf="!streamConnected" (click)="close()">Back</button>
+        <!-- <button (click)="switchCamera()">Switch Camera</button> -->
+      </div>
+    </article>
+  </modal>
+</div>

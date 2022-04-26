@@ -1,0 +1,32 @@
+messages:
+  subtitle: 'Soy tu asistente personal de salud para mascotas'
+  profile: 'Perfil'
+  title(String name): 'Hola $name,'
+  startConcierge: 'Comenzar'
+  virtualVetLearnMoreQuestion: '¿Qué es el Veterinario Virtual'
+  appDownloadLinks(String appName, String iphoneLink, String androidLink): 'También puedes descargar $appName para $iphoneLink y $androidLink'
+  symptomInputLabel: 'Síntoma principal'
+  symptomInputHint: 'Describe el síntoma principal de tu mascota'
+  askAVet:
+    title: 'Habla con un veterinario'
+    subtitle: 'Recibe ayuda y consejo de un equipo veterinario profesional'
+  logout: 'Desconectarse'
+  hello(String name): 'Hola $name'
+  help: '¿Hay algo que pueda hacer para ayudar a tu mascota?'
+  simpleTitle: 'Hola,'
+  virtualVetLearnMoreDescription(String brandName): '¿Tienes una pregunta sobre la salud de tu mascota para el Veterinario Virtual? Type it here and get immediate guidance from our Virtual Vet, which uses an advanced AI knowledge base of symptoms and conditions to provide the answers you’re looking for. If you’d like, you can speak with one of our veterinarians by phone, chat, or email after using the Virtual Vet.'
+  makeConsultation: 'Evalúa síntomas'
+  nutrition:
+    subtitle: 'Consigue la mejor recomendación de comida y snacks para tu mascota'
+    title: 'Comida y Nutrición'
+  findClinics:
+    title: 'Busca una Clínica'
+    subtitle: 'Encuentra la mejor clínica cerca de tí'
+  virtualVetLearnMoreTitle: 'Veterinario Virtual'
+termsOfService:
+  ctaText: 'Consulte nuestros'
+  termsOfService: 'Términos de Servicio'
+navigationButtons:
+  homeButton: 'Inicio'
+  calendarButton: 'Vacunas'
+  myPetsButton: 'Mis mascotas'

@@ -1,0 +1,95 @@
+<form (ngSubmit)="onSubmit()" [ngFormModel]="signUpForm" novalidate autocomplete="off">
+    <phone-sign-up-error [state]="signUpBloc | bloc"></phone-sign-up-error>
+
+    <template [ngIf]="isCodeFormShown">
+    <div class="form-group">
+      <label for="code">{{messages.authMessages.code.code}}</label>
+      <input type="text" class="form-control" id="code" #code="ngForm"
+             maxLength="6" ngControl="code" [(ngModel)]="model.code"
+             [class.is-invalid]="shouldShowCodeError(code)"
+             [placeholder]="messages.authMessages.code.hint"/>
+      <div *ngIf="shouldShowCodeError(code)" class="invalid-feedback">
+        <div *ngFor="let key of code.errors.keys">{{code.errors[key]}}</div>
+      </div>
+    </div>
+
+    <div class="code-resend-hint">
+      {{messages.authMessages.code.resendHint}}
+    </div>
+
+    <div class="code-resend-action">
+      <button (click)="resendCode()" type="button">
+        {{messages.authMessages.code.resendAction}}
+      </button>
+    </div>
+  </template>
+
+    <template [ngIf]="!isCodeFormShown">
+    <div class="form-group">
+      <label for="firstName">{{messages.authMessages.sign_up.name}}*</label>
+      <input type="text" class="form-control" id="firstName" #firstName="ngForm"
+             ngControl="firstName" [(ngModel)]="model.firstName" maxLength="30"
+             [class.is-invalid]="shouldShowError(firstName)"
+             [placeholder]="messages.authMessages.sign_up.name_hint"/>
+
+      <div *ngIf="shouldShowError(firstName)" class="invalid-feedback">
+        <div *ngFor="let key of firstName.errors.keys">{{firstName.errors[key]}}</div>
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf="isLastNameRequired">
+      <label for="firstName">{{messages.authMessages.sign_up.lastname}}*</label>
+      <input type="text" class="form-control" id="lastName" #lastName="ngForm"
+        ngControl="lastName" [(ngModel)]="model.lastName" maxLength="30"
+        [class.is-invalid]="shouldShowError(lastName)"
+        [placeholder]="messages.authMessages.sign_up.lastname_hint" />
+  
+      <div *ngIf="shouldShowError(lastName)" class="invalid-feedback">
+        <div *ngFor="let key of lastName.errors.keys">{{lastName.errors[key]}}
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-input-group">
+      <div class="form-group form-group-prefix">
+        <label for="phoneNumberPrefix">{{messages.authMessages.sign_up.prefix}}*</label>
+        <input type="text" class="form-control" id="phoneNumberPrefix" #phoneNumberPrefix="ngForm"
+               maxLength="4"
+               ngControl="phoneNumberPrefix" [(ngModel)]="model.phoneNumberPrefix"
+               [class.is-invalid]="shouldShowError(phoneNumberPrefix)"
+               placeholder="+00"/>
+      </div>
+
+      <div class="form-group form-group-phone">
+        <label for="phoneNumber">{{messages.authMessages.sign_up.phone_number}}*</label>
+        <input type="text" class="form-control" id="phoneNumber" #phoneNumber="ngForm"
+               ngControl="phoneNumber" [(ngModel)]="model.phoneNumber"
+               [class.is-invalid]="shouldShowError(phoneNumber)"
+               [placeholder]="messages.authMessages.sign_up.phone_number_hint"/>
+
+        <div *ngIf="shouldShowError(phoneNumber)" class="invalid-feedback">
+          <div *ngFor="let key of phoneNumber.errors.keys">{{phoneNumber.errors[key]}}</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <div class="form-check">
+        <label for="checkboxValue" class="form-check-label">
+          <input type="checkbox" class="form-check-input" id="checkboxValue" #checkboxValue="ngForm"
+                 ngControl="checkboxValue" [(ngModel)]="model.checkboxValue"
+                 [class.is-invalid]="shouldShowError(checkboxValue)" />
+          {{messages.authMessages.sign_up.accept_terms}}
+          <button class="terms-of-service" *ngIf="!externalToSEnabled" (click)="showTermsAndConditions()" type="button">{{messages.homeMessages.termsOfService.termsOfService}}</button>
+          <div *ngIf="externalToSEnabled" [innerHtml]="messages.authMessages.sign_up.terms_and_privacy(brandName, terms_and_condition_url, terms_and_privacy_url)"></div>
+        </label>
+      </div>
+
+      <div *ngIf="shouldShowError(checkboxValue)" class="invalid-feedback">
+        <div *ngFor="let key of checkboxValue.errors.keys">{{checkboxValue.errors[key]}}</div>
+      </div>
+    </div>
+  </template>
+    <input type="submit" />
+</form>

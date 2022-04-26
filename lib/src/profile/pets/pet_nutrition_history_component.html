@@ -1,0 +1,63 @@
+<widget-layout *ngIf="!isRecommendationOpened">
+  <template [ngIf]="!isConsultationSelected">
+    <widget-header>
+      <go-back *ngIf="pet != null" [path]="petProfilePath">
+        <h1 class="pet-title"><pet-title [pet]="pet"></pet-title></h1>
+      </go-back>
+    </widget-header>
+
+    <widget-body>
+      <spinner-overlay *ngIf="consultations == null"></spinner-overlay>
+      <div *ngIf="consultations != null">
+        <h2>
+          <span role="text">
+            {{messages.petProfileMessages.history.nutrition.title}} {{messages.petProfileMessages.history.nutrition.subtitle}}
+          </span>
+        </h2>
+
+        <ol>
+          <li *ngFor="let consultation of consultations">
+            <button (click)="selectConsultation(consultation)">
+              <div class="consultation-info">
+                <datetime class="consultation-date">
+                  {{consultation.createdAt | date:dateFormat}}
+                </datetime>
+              </div>
+              <div class="pet-action">
+                <widget-icon iconType="arrow-right">
+                </widget-icon>
+              </div>
+            </button>
+          </li>
+        </ol>
+      </div>
+    </widget-body>
+  </template>
+
+  <template [ngIf]="isConsultationSelected">
+    <widget-header>
+      <go-back *ngIf="pet != null"
+               [navigate]="false"
+               (buttonEvents)="clearSelectedConsultation()">
+
+        <h1 class="pet-title"><pet-title [pet]="pet"></pet-title></h1>
+      </go-back>
+    </widget-header>
+
+    <widget-body>
+      <div class="selected-consultation-date">
+        {{selectedConsultation.createdAt | date:dateFormat}}
+      </div>
+      <h2 class="selected-consultation-title">
+        {{messages.nutribotMessages.reportTitle}}
+      </h2>
+      <ol>
+        <li class="recommendation-item"  *ngFor="let recommendationViewModel of selectedConsultation.recommendationViewModels">
+          <nutribot-recommendation-message [viewModel]="recommendationViewModel"></nutribot-recommendation-message>
+        </li>
+      </ol>
+    </widget-body>
+  </template>
+</widget-layout>
+<nutribot-recommendation-screen *ngIf="isRecommendationOpened" [recommendationState]="recommendationState">
+</nutribot-recommendation-screen>

@@ -1,0 +1,59 @@
+<widget-layout *ngIf="isAivetScreenActive">
+    <widget-header>
+        <go-back *ngIf="isBackButtonEnabled" [title]="chatTitle"></go-back>
+        <h1 *ngIf="!isBackButtonEnabled && !embeddedEmailClientEnabled">{{chatTitle}}</h1>
+    </widget-header>
+    <widget-body [noBottomSpacing]="true">
+        <div *ngIf="isChatInitialized" class="chat-messages-container">
+            <chat-messages [messagesList]="chatState.chatViewModels"></chat-messages>
+        </div>
+    </widget-body>
+
+    <widget-footer>
+        <div class="chat-controls-container">
+            <chat-controls *ngIf="isChatInitialized" [inputViewModel]="chatState?.input" (onChatControlEvent)="onChatControlEvent($event)">
+            </chat-controls>
+        </div>
+    </widget-footer>
+
+    <span *ngIf="isfooterChatCreditsEnabled" class="footer-credits">
+    Powered by
+    <a href="https://www.barkibu.com/">
+      Barkibu
+    </a>
+  </span>
+</widget-layout>
+
+<assessment-report-screen [assessmentIdentification]="assessmentIdentification" *ngIf="isAssessmentReportScreenActive">
+    <widget-header>
+        <h2 class="assessment-report-title">
+            {{messages.assessmentReportMessages.title}}
+        </h2>
+    </widget-header>
+
+    <widget-footer class="assessment-report-buttons">
+        <widget-button type="primary" button (click)="showAskAVetModal = true" *ngIf="isTelehealthEnabled" class="ask-a-vet-button" [text]="messages.assessmentReportMessages.askAVet">
+        </widget-button>
+        <widget-button type="secondary" button (click)="continueAssessment()" [text]="messages.sharedMessages.carryOn">
+        </widget-button>
+    </widget-footer>
+</assessment-report-screen>
+
+<chat-with-vet *ngIf="isChatWithVetScreenActive" [consultationId]="consultationId" (goBackButtonEvents)="closeChatWithVet()">
+</chat-with-vet>
+
+
+
+<info-screen *ngIf="isSymptomInfoScreenActive" [infoState]="infoState"></info-screen>
+
+<ask-a-vet-options-modal id="contactOptions" *ngIf="isAssessmentReportScreenActive" [hidden]="!showAskAVetModal" [schedulePhoneCallLink]="calendlyUrl" (onClosePressed)="close" (onChatWithVetPressed)="startVetChatFromReport" (onSendEmailPressed)="showEmailSenderScreen">
+</ask-a-vet-options-modal>
+
+<email-sender *ngIf="isEmailSenderScreenActive" [user]="user" [emailBody]="emailBody" [pet]="pet" (emailSended)="isEmailSended = $event">
+    <widget-header>
+    </widget-header>
+    <widget-footer>
+        <widget-button type="secondary" button (click)="continueAssessment()" [text]="isEmailSended ? messages.sharedMessages.carryOn : messages.sharedMessages.cancel">
+        </widget-button>
+    </widget-footer>
+</email-sender>

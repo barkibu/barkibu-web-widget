@@ -1,0 +1,14 @@
+appBar:
+  subtitle: 'Vacunación y Desparasitación'
+  title: 'Calendario'
+section:
+  title(String type): 'Próxima $type'
+  card:
+    warning:
+      invalidDate: '¿No es correcta?'
+      action: 'Corrige la fecha'
+    lastDate(String date): 'Anterior: $date'
+list:
+  nextVaccines: 'Siguientes vacunas'
+  error: 'Ha habido un problema cargando tu calendario'
+  empty: 'Tu calendario de vacunación está vacío'

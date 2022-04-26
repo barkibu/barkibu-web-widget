@@ -1,0 +1,7 @@
+@import "package:web_widget/src/scss/themes";
+
+#Med-Square {
+  @include themify($themes) {
+    fill: themed('secondary-color');
+  }
+}

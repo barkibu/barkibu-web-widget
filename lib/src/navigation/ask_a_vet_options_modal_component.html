@@ -1,0 +1,15 @@
+<modal>
+    <h2 id="modal_title">{{title}}</h2>
+    <div class="modal-buttons">
+        <widget-button *ngIf="isChatWithAVetEnabled" id="askAVetButtonModal" type="primary" button (click)="chatWithAVet()" [text]="modalChatWithAVetText">
+        </widget-button>
+        <widget-button *ngIf="isEmailContactEnabled && isEmbeddedEmailClientEnabled" type="primary" button (click)="emailWithAVet" [text]="modalSendEmailText">
+        </widget-button>
+        <widget-button *ngIf="isPhoneContactEnabled && !externalLinksEventsEnabled" type="primary" link externalLink [linkHref]="schedulePhoneCallLink" [text]="modalSchedulePhoneCallText">
+        </widget-button>
+        <widget-button *ngIf="isPhoneContactEnabled && externalLinksEventsEnabled" type="primary" button [text]="modalSchedulePhoneCallText" (click)="notifyPhoneCallOptionSelected()">
+        </widget-button>
+        <widget-button class="close" type="primary" button (click)="close()" [text]="modalCloseButtonText">
+        </widget-button>
+    </div>
+</modal>

@@ -1,0 +1,34 @@
+@import "package:web_widget/src/scss/themes";
+
+.modal-buttons {
+  display: flex;
+  margin: -$widget-window-spacing;
+  margin-top: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: $spacing * 2 0;
+}
+
+button {
+  flex: 0 0 50%;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  padding: $spacing;
+  cursor: pointer;
+
+  @include themify($themes) {
+    border-top: 1px solid themed('border-color');
+    color: themed('link-color');
+
+    &:first-of-type {
+      border-right: 1px solid themed('border-color');
+    }
+  }
+}

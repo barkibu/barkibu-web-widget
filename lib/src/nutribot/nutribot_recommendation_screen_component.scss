@@ -1,0 +1,23 @@
+@import "package:web_widget/src/scss/themes";
+
+nutribot-recommendation-gallery, nutribot-recommendation-item {
+  margin-bottom: $spacing * 2;
+}
+
+h4 {
+  font-size: $larger-font-size;
+  font-weight: bold;
+  margin: $spacing * 2 0;
+  @include themify($themes) {
+    color: themed('secondary-color');
+  }
+}
+
+nutribot-recommendation-gallery {
+  display: flex;
+}
+
+.nutribot-item-wrapper {
+  display: block;
+}
+

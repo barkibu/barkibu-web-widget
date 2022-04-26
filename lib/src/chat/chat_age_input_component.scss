@@ -1,0 +1,37 @@
+@import "package:web_widget/src/scss/themes";
+
+form {
+  display: flex;
+  align-items: flex-end;
+}
+
+widget-age-input {
+  flex: 1;
+  margin-right: $spacing;
+}
+
+button[type="submit"] {
+  height: $form-input-height;
+  width: $form-input-height;
+  border-radius: $border-radius;
+  padding: 0;
+  border: none;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $spacing / 2;
+
+  @include themify($themes) {
+    background-color: themed("assistant-color");
+    color: themed("white-color");
+  }
+
+  &[disabled] {
+    @include themify($themes) {
+      background-color: rgba(themed("assistant-color"), 0.4);
+    }
+    cursor: default;
+  }
+}

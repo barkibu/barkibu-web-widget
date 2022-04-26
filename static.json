@@ -1,0 +1,42 @@
+{
+  "root": "build",
+  "clean_urls": false,
+  "https_only": true,
+  "headers": {
+    "/main.dart.js": {
+      "Cache-Control": "public, max-age=31536000"
+    },
+    "/global.css": {
+      "Cache-Control": "public, max-age=31536000"
+    },
+    "/loader.js": {
+      "Cache-Control": "public, max-age=31536000"
+    },
+    "/loader.css": {
+      "Cache-Control": "public, max-age=31536000"
+    },
+    "/index.html": {
+      "Cache-Control": "public, max-age=31536000"
+    },
+    "/assets/images/*": {
+      "Cache-Control": "public, max-age=31536000"
+    },
+    "/assets.json": {
+      "Cache-Control": "no-store",
+      "Access-Control-Allow-Origin": "*"
+    },
+    "/version": {
+      "Cache-Control": "no-store",
+      "Content-Type": "text/plain"
+    },
+    "/client_page_dev.html": {
+      "Cache-Control": "no-store"
+    },
+    "/client_page_staging.html": {
+      "Cache-Control": "no-store"
+    },
+    "/client_page_prod.html": {
+      "Cache-Control": "no-store"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<widget-layout>
+  <widget-header>
+    <go-back [title]="messages.petProfileMessages.title"></go-back>
+  </widget-header>
+
+  <widget-body [noBottomSpacing]="true">
+    <spinner-overlay *ngIf="!arePetsLoaded()"></spinner-overlay>
+    <template [ngIf]="arePetsLoaded()">
+      <ul class="pets-list" *ngIf="!pets.isEmpty">
+        <li *ngFor="let pet of pets">
+          <pet-card [pet]="pet"></pet-card>
+        </li>
+      </ul>
+      <div *ngIf="pets.isEmpty" class="no-pets">
+        <widget-icon iconType="empty-pets"></widget-icon>
+        <div class="create-pet-hint">{{messages.petProfileMessages.createPetHint}}</div>
+        <img class="button-arrow" src="assets/images/arrow.png" alt=""
+             srcset="assets/images/arrow@2x.png 2x" width="23px" height="64px"/>
+      </div>
+    </template>
+  </widget-body>
+  <widget-footer *ngIf="addPetOptionEnabled">
+    <widget-button type="secondary" link
+                   *ngIf="!externalPetDataEnabled"
+                   [text]="messages.chatMessages.botMessages.addPet"
+                   [linkHref]="RoutePaths.petCreate.toUrl()">
+    </widget-button>
+    <widget-button type="secondary" button
+                   *ngIf="externalPetDataEnabled"
+                   [text]="messages.chatMessages.botMessages.addPet"
+                   (click)="notifyAddPetRequested()">
+    </widget-button>
+  </widget-footer>
+</widget-layout>

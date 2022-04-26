@@ -1,0 +1,5 @@
+<chat-with-vet *ngIf="isComponentActivated"
+               [consultationId]="consultationId"
+               [reconnect]="reconnect"
+               (goBackButtonEvents)="navigateHome()">
+</chat-with-vet>

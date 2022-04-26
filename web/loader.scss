@@ -1,0 +1,119 @@
+@import "package:web_widget/src/scss/themes";
+
+#_vet-chat-root-container {
+  position: absolute;
+}
+
+#_vet-chat-widget-container {
+  position:fixed;
+  bottom: 100px;
+  right: $widget-window-spacing;
+  z-index: 9999;
+  min-width: $widget-window-width + $widget-window-spacing * 2;
+  width: 35vw;
+
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+
+  &._opened {
+    min-height: $widget-window-height + $widget-window-spacing * 2;
+    height: 60vh;
+    display: block !important;
+  }
+
+  iframe {
+    border:none;
+    width:100%;
+    height:100%;
+  }
+}
+
+#_vet-chat-widget-toggle-container {
+  position: fixed;
+  bottom: $widget-window-spacing * 2;
+  right: $widget-window-spacing * 2;
+  z-index: 9999;
+  box-sizing: border-box;
+  display: block !important;
+  width: $widget-toggle-button-size;
+  height: $widget-toggle-button-size;
+
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+
+  &._closed #_vet-chat-close {
+    display: none;
+  }
+
+  &._opened #_vet-chat-open {
+    display: none;
+  }
+
+  button {
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    width: $widget-toggle-button-size;
+    height: $widget-toggle-button-size;
+    padding: 0;
+    transition: background-color 0.2s ease;
+    vertical-align: middle;
+
+    @include themify-regular($themes) {
+      color: themed('white-color');
+      background-color: themed('button-color');
+  
+      &:active, &:focus, &:hover {
+        background-color: darken(themed('button-color'), 10%);
+        outline: none;
+        box-shadow: themed('focus-shadow');
+      }
+    }
+   
+    img {
+      width: 30px;
+      height: 30px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      right: -2px;
+      top: -2px;
+
+      @include themify-regular($themes) {
+        border: 3px solid themed('white-color');
+        background-color: themed('assistant-color');
+      }
+    }
+  }
+}
+
+@media #{$small-screen-media-query} {
+  #_vet-chat-widget-container {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+
+    &._opened {
+      height: 100%;
+    }
+  }
+
+  #_vet-chat-widget-toggle-container {
+    bottom: $widget-window-spacing;
+    right: $widget-window-spacing;
+
+    &._opened {
+      display: none !important;
+    }
+  }
+}

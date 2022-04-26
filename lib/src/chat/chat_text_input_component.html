@@ -1,0 +1,7 @@
+<form (submit)="confirmTextEntered()" >
+  <label for="current-text">{{labelText}}</label>
+  <input type="text" [(ngModel)]="currentText" [placeholder]="placeholderText" id="current-text"/>
+  <button type="submit" [disabled]="currentText?.isEmpty">
+    <img src="assets/images/arrow-right.svg" [alt]="messages.sharedMessages.altImageText.submit">
+  </button>
+</form>

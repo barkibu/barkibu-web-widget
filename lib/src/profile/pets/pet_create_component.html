@@ -1,0 +1,22 @@
+<widget-layout [hidden]="!infoIsEmpty">
+  <widget-header>
+    <go-back [title]="messages.chatMessages.botMessages.addPet"
+             [path]="RoutePaths.myPets.toUrl()">
+    </go-back>
+  </widget-header>
+
+  <widget-body [noBottomSpacing]="true">
+    <pet-form [pet]="pet" (validSubmit)="onValidFormSubmitted($event)"></pet-form>
+  </widget-body>
+  <widget-footer>
+    <widget-button type="secondary" link [linkHref]="RoutePaths.myPets.toUrl()"
+                   [text]="messages.sharedMessages.cancel">
+    </widget-button>
+    <widget-button type="secondary" button (click)="onSaveClicked()"
+                   [loading]="loading" [disabled]="loading"
+                   [text]="messages.sharedMessages.save">
+    </widget-button>
+  </widget-footer>
+</widget-layout>
+
+<info-screen *ngIf="!infoIsEmpty" [infoState]="infoState"></info-screen>

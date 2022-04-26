@@ -1,0 +1,95 @@
+@import "package:web_widget/src/scss/themes";
+@import "package:web_widget/src/scss/utility";
+
+.card-body {
+  padding: $widget-window-spacing;
+  display: block;
+  text-decoration: none;
+  border-radius: $border-radius;
+}
+
+.card-title-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $spacing;
+}
+
+.clinic-link-content {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+
+.clinic-image {
+  max-height: 24px;
+  max-width: 54px;
+}
+
+.clinic-name {
+  flex: 1;
+}
+
+.clinic-name-title {
+  @extend %ellipsis;
+  max-width: 59vw;
+  font-size: 0.8em;
+  vertical-align: bottom;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.complete-line {
+  grid-column: 1 / span 2;
+}
+
+.align-righ {
+  text-align: right;
+}
+
+.toggle-container {
+  display: inline-flex;
+}
+
+h3 {
+  margin-bottom: 0;
+
+  span[role="img"] {
+    display: inline-block;
+    width: $spacing * 3;
+  }
+}
+
+.clinic-main-info {
+  display: grid;
+  grid: auto / auto 3fr auto;
+  width: 100%;
+  margin: 0;
+  grid-gap: $spacing / 2;
+  margin-top: $spacing;
+}
+
+.clinic-hours-info {
+  display: grid;
+  grid: auto / auto auto;
+  width: 100%;
+  margin: 0;
+  grid-gap: $spacing / 2;
+  margin-top: $spacing;
+  @include themify($themes) {
+    color: rgba(themed("secondary-color"), 0.4);
+  }
+}
+
+.clinic-link {
+  @include themify($themes) {
+    color: rgba(themed("secondary-color"), 0.4);
+  }
+}
+
+dd {
+  margin: 0;
+  text-align: right;
+}

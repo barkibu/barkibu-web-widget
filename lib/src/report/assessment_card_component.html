@@ -1,0 +1,15 @@
+<div class="number">
+  <index [index]="index"></index>
+</div>
+
+<div class="name">
+  {{name}}
+</div>
+
+<div class="info">
+  <info *ngIf="hasInformation" (click)="showConditionInfo()"></info>
+</div>
+
+<div *ngIf="hasInformation" class="description">{{shortDescription}}</div>
+
+<urgency-indicator [urgencyLevel]="urgencyLevel"></urgency-indicator>

@@ -1,0 +1,8 @@
+@import "package:web_widget/src/scss/themes";
+
+p {
+  @include themify($themes) {
+    color: themed('secondary-color');
+  }
+  text-align: center;
+}

@@ -1,0 +1,6 @@
+<form (submit)="onAgeConfirmed()" #f="ngForm">
+  <widget-age-input [(ngModel)]="birthdate" required ngControl="birthdate"></widget-age-input>
+  <button type="submit" [disabled]="!f.valid">
+    <img src="assets/images/arrow-right.svg" [alt]="messages.sharedMessages.altImageText.submit">
+  </button>
+</form>

@@ -1,0 +1,40 @@
+<div class="message-container" [ngClass]="messageCssClass()">
+  <template [ngIf]="!isNutribotRecommendation">
+    <template [ngIf]="isMyMessage">
+      <p class="message">
+        <span role="text">
+          <span class="sr-only">{{messages.chatMessages.helperTexts.petParentSays}}</span>
+          <span class="message-body" [innerHtml]="messageRepresentation()"></span>
+        </span>
+      </p>
+    </template>
+
+    <template [ngIf]="!isMyMessage">
+      <div class="message-avatar" aria-hidden="true">
+        <widget-icon iconType="assistant" *ngIf="showMessageSource">
+        </widget-icon>
+      </div>
+      <p class="message">
+        <span role="text">
+          <span class="sr-only">{{messages.chatMessages.helperTexts.botSays(appName)}}</span>
+          <span class="message-body" [innerHtml]="messageRepresentation()"></span>
+        </span>
+      </p>
+    </template>
+  </template>
+
+  <nutribot-recommendation-message *ngIf="isNutribotRecommendation" [viewModel]="viewModel">
+  </nutribot-recommendation-message>
+</div>
+
+<div *ngIf="isMyMessage" class="message-source" aria-hidden="true">
+  {{messages.chatMessages.you}}
+</div>
+
+<div class="message-symptom-info" *ngIf="hasSypmtomInfo">
+  <button (click)="showInfo(viewModel)">
+    <widget-icon iconType="info" *ngIf="showMessageSource">
+    </widget-icon>
+    {{messages.chatMessages.botMessages.showResultsAction}}
+  </button>
+</div>

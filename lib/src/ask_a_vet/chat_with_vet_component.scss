@@ -1,0 +1,18 @@
+@import "package:web_widget/src/chat/chat_component.scss";
+
+.spinner-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+alert {
+  margin: $spacing * 2;
+}

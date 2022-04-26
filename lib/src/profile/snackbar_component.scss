@@ -1,0 +1,38 @@
+@import "package:web_widget/src/scss/themes";
+
+.snackbar-alert {
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  @include themify($themes) {
+    color: themed('danger-color');
+    background-color: rgba(lighten(themed('danger-color'), 10%), 0.12);
+    border-color: rgba(themed('danger-color'), 0.2);
+  }
+}
+
+.snackbar-info {
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  @include themify($themes) {
+    color: themed('primary-color');
+    background-color: rgba(lighten(themed('primary-color'), 10%), 0.12);
+    border-color: rgba(themed('primary-color'), 0.2);
+  }
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: black;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

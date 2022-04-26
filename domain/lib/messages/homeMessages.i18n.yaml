@@ -1,0 +1,32 @@
+messages:
+  subtitle: 'I’m your personal Pet Health Assistant'
+  profile: 'Profile'
+  title(String name): 'Hi $name,'
+  startConcierge: 'Start'
+  virtualVetLearnMoreQuestion: 'What is the Virtual Vet?'
+  appDownloadLinks(String appName, String iphoneLink, String androidLink): 'You can also download <b>$appName</b> for $iphoneLink and $androidLink'
+  symptomInputLabel: 'Main symptom'
+  symptomInputHint: 'Type your pet’s main symptom here'
+  askAVet:
+    title: 'Ask A Vet'
+    subtitle: 'Speak with a licensed vet by phone, chat, or email'
+  logout: 'Log out'
+  hello(String name): 'Hi $name'
+  help: 'Is there anything I can help your pet with?'
+  simpleTitle: 'Hi,'
+  virtualVetLearnMoreDescription(String brandName): 'Have a question about your pet’s health? Type it here and get immediate guidance from our Virtual Vet, which uses an advanced AI knowledge base of symptoms and conditions to provide the answers you’re looking for.\n\nIf you’d like, you can speak with one of our veterinarians by phone, chat, or email after using the Virtual Vet.'
+  makeConsultation: 'Start an assessment'
+  nutrition:
+    subtitle: 'Get food suggestions personalized to your pet'
+    title: 'Food and Nutrition Finder'
+  findClinics:
+    title: 'Find A Clinic'
+    subtitle: 'Find the best clinic closest to you'
+  virtualVetLearnMoreTitle: 'Virtual Vet'
+termsOfService:
+  ctaText: 'See our'
+  termsOfService: 'Terms of Service'
+navigationButtons:
+  homeButton: 'Home'
+  calendarButton: 'Vaccines'
+  myPetsButton: 'My Pets'

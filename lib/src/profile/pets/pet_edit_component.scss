@@ -1,0 +1,23 @@
+@import "package:web_widget/src/scss/themes";
+
+h2 {
+  margin-bottom: $spacing;
+  padding-bottom: $spacing;
+  @include themify($themes) {
+    border-bottom: 1px solid themed('border-color');
+    color: themed('secondary-color');
+  }
+}
+
+widget-footer {
+  display: flex;
+
+  widget-button {
+    display: block;
+    flex: 0.5;
+
+    &:first-of-type {
+      margin-right: $spacing * 2;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<ul>
+  <li *ngFor="let item of viewModel.items">
+    <template [ngIf]="isUrlRedirection(item)">
+      <widget-button type="secondary" link externalLink [text]="itemDescription(item)" [linkHref]="itemUrl(item)"
+          *ngIf="!externalLinksEventsEnabled">
+      </widget-button>
+      <widget-button type="secondary" button [text]="itemDescription(item)" (click)="notifyUrlOption(item)"
+          *ngIf="externalLinksEventsEnabled">
+      </widget-button>
+    </template>
+
+    <template [ngIf]="!isUrlRedirection(item)">
+      <button type="button" class="select-option" (click)="confirmSelectedOption(item)">
+        {{itemDescription(item)}}
+      </button>
+    </template>
+  </li>
+</ul>

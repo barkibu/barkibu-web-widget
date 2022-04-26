@@ -1,0 +1,15 @@
+<form (submit)="sendMessage(messageBody)">
+    <label for="message-body">{{label}}</label>
+    <input id="message-body" type="text" #messageBody placeholder="{{placeholder}}" (keyup)="0" />
+
+    <div class="image-upload" *ngIf="telehealthMediaSharingEnabled">
+        <label class="label-clip" for="media-capture">
+        <img src="assets/images/clip-icon.svg" class="clip-icon" [alt]="messages.sharedMessages.addFile"/>
+      </label>
+        <input type="file" multiple id="media-capture" #mediaCapture accept="*" (change)="uploadFiles(mediaCapture)">
+    </div>
+
+    <button type="submit" [disabled]="messageBody.value.isEmpty">
+      <img src="assets/images/arrow-right.svg" [alt]="messages.sharedMessages.altImageText.submit">
+    </button>
+</form>

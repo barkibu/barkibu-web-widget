@@ -1,0 +1,104 @@
+@import "package:web_widget/src/scss/themes";
+@import "package:web_widget/src/scss/accessibility";
+$item-image-size: 40px;
+
+:host {
+  margin-bottom: $spacing;
+  display: block;
+}
+
+.message-container {
+  display: flex;
+  &.sent {
+    flex-direction: row-reverse;
+  }
+}
+
+.message {
+  position: relative;
+  font-size: $larger-font-size;
+  white-space: pre-line;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: $border-radius;
+  padding: $spacing;
+  margin: 0;
+  @include themify($themes) {
+    color: themed('white-color');
+    font-family: themed('secondary-font-family');
+  }
+}
+
+@font-face{
+  font-family: "FKGrotesk-regular";
+  src: url('/assets/fonts/FKGrotesk-regular/FKGrotesk.woff') format('woff'),
+       url('/assets/fonts/FKGrotesk-regular/FKGrotesk.woff2') format('woff2'),
+       url('/assets/fonts/FKGrotesk-regular/FKGrotesk.ttf') format('truetype'),
+       url('/assets/fonts/FKGrotesk-regular/FKGrotesk.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: "Bogle-regular";
+  src: url('/assets/fonts/Bogle-regular/Bogle-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.message-container.received .message {
+  margin-right: $spacing;
+  border-radius: $received-message-border-radius;
+
+  @include themify($themes) {
+    background-color: themed('received-message-bg-color');
+    color: themed('received-message-text-color');
+  }
+}
+
+.message-container.sent .message {
+  margin-left: $spacing;
+  border-radius: $sent-message-border-radius;
+
+  @include themify($themes) {
+    background-color: themed('sent-message-bg-color');
+    color: themed('sent-message-text-color');
+  }
+}
+
+.message-avatar {
+  place-self: flex-end;
+  margin-right: $spacing;
+  min-width: $item-image-size;
+}
+
+.message-symptom-info {
+  margin-left: 32px + $spacing;
+  padding: $spacing 0;
+
+  button {
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    @include themify($themes) {
+      color: themed('primary-color');
+    }
+
+    widget-icon {
+      margin-right: $spacing / 2;
+      width: 1em;
+      height: 1em;
+    }
+  }
+}
+
+.message-source {
+  text-align: right;
+  @include themify($themes) {
+    color: rgba(themed('secondary-color'), 0.4);
+  }
+}

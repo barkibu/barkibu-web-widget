@@ -1,0 +1,80 @@
+@import "package:web_widget/src/scss/themes";
+
+.pet-title {
+  margin-bottom: 0;
+}
+
+h2 {
+  display: flex;
+  @include themify($themes) {
+    color: themed('secondary-color');
+  }
+  widget-icon {
+    margin-right: $spacing;
+  }
+}
+.pet-medical-data {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: $border-radius;
+  box-shadow: $card-box-shadow;
+  @include themify($themes) {
+    color: themed('white-color');
+  }
+
+  .pet-medical-data-export {
+    font-weight: bold;
+    font-family: inherit;
+    background-color: transparent;
+    padding: $spacing * 2;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: $larger-font-size;
+    display: flex;
+    align-items: center;
+    @include themify($themes) {
+      color: themed('primary-color');
+    }
+
+    widget-icon {
+      margin-right: $spacing;
+    }
+  }
+
+  .pet-medical-data-link {
+    font-weight: bold;
+    cursor: pointer;
+    padding: $spacing * 2;
+    display: flex;
+    text-decoration: none;
+    font-size: $larger-font-size;
+    justify-content: space-between;
+    @include themify($themes) {
+      color: themed('secondary-color');
+    }
+  }
+
+  li {
+    border-radius: $border-radius;
+
+    &:first-of-type {
+      position: relative;
+    }
+
+    &:first-of-type::after {
+      bottom: 0;
+      left: $spacing * 2;
+      right: $spacing * 2;
+      content: " ";
+      font-size: 0;
+      position: absolute;
+      height: 1px;
+      @include themify($themes) {
+        background-color: themed('border-color');
+      }
+    }
+  }
+
+}

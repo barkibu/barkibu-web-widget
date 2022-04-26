@@ -1,0 +1,63 @@
+<form (ngSubmit)="onSubmit()" novalidate>
+  <div class="form-group">
+    <label for="name">{{messages.petProfileMessages.formFieldsTitle.name}}</label>
+    <input type="text" class="form-control" id="name" #name="ngForm" required
+           [(ngModel)]="petForm.name" maxLength="30" ngControl="name"
+           [class.is-invalid]="shouldShowError(name)"
+           [placeholder]="messages.petProfileMessages.formFieldsHint.name"/>
+  </div>
+
+  <div class="form-group">
+    <label for="species">{{messages.petProfileMessages.formFieldsTitle.species}}</label>
+    <select class="form-control" id="species" #species="ngForm" required
+            [(ngModel)]="petForm.species" ngControl="species"
+            [class.is-invalid]="shouldShowError(species)"
+            [class.placeholder]="isDropdownPlaceholderActive(species)">
+      <option value="" disabled selected hidden>{{messages.petProfileMessages.formFieldsHint.species}}</option>
+      <option value="dog">🐶 {{messages.sharedMessages.species.dog}}</option>
+      <option value="cat">🐱 {{messages.sharedMessages.species.cat}}</option>
+    </select>
+  </div>
+
+  <div *ngIf="petBreedEnabled" class="form-group">
+    <label for="species">{{messages.petProfileMessages.formFieldsTitle.breed}}</label>
+    <autocomplete-input type="text" [species] = "petForm.species" (loadBreedData) = "breedData = $event" [(ngModel)]="petForm.breed"></autocomplete-input>
+  </div>
+
+  <div class="form-group">
+    <label for="sex">{{messages.petProfileMessages.formFieldsTitle.sex}}</label>
+    <select class="form-control" id="sex" #sex="ngForm" required
+            [(ngModel)]="petForm.sex" ngControl="sex"
+            [class.is-invalid]="shouldShowError(sex)"
+            [class.placeholder]="isDropdownPlaceholderActive(sex)">
+      <option value="" disabled selected hidden>{{messages.petProfileMessages.formFieldsHint.sex}}</option>
+      <option value="female">{{messages.sharedMessages.sexOption.female}}</option>
+      <option value="male">{{messages.sharedMessages.sexOption.male}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="neutered">{{neuteredLabel}}</label>
+    <select class="form-control" id="neutered" #neutered="ngForm" required
+            [(ngModel)]="petForm.neutered" ngControl="neutered"
+            [class.is-invalid]="shouldShowError(neutered)"
+            [class.placeholder]="isDropdownPlaceholderActive(neutered)">
+      <option value="" disabled selected hidden>{{neuteredPlaceholder}}</option>
+      <option value="true">{{messages.sharedMessages.yes}}</option>
+      <option value="false">{{messages.sharedMessages.no}}</option>
+    </select>
+  </div>
+
+  <div class="form-group age-input-form-group">
+    <widget-age-input id="birthdate" #birthdate="ngForm" required
+                      [(ngModel)]="petForm.birthdate" ngControl="birthdate"
+                      [isInvalid]="shouldShowError(birthdate)">
+    </widget-age-input>
+    <div>
+      <button class="learn-more" (click)="showSymptomInfo()" type="button">
+        <widget-icon iconType="info"></widget-icon>
+        {{messages.chatMessages.botMessages.showResultsAction}}
+      </button>
+    </div>
+  </div>
+</form>

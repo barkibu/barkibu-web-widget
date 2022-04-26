@@ -1,0 +1,37 @@
+<div class="message-container" [ngClass]="messageCssClass()">
+    <template [ngIf]="isMyMessage">
+    <p class="message" [attr.aria-hidden]="isPending" >
+      <span role="text" *ngIf="!hasMediaAttachment">
+        <span class="sr-only">{{messages.chatMessages.helperTexts.petParentSays}}</span>
+        <span class="message-body">{{viewModel.body}}</span>
+      </span>
+      <span *ngIf="isSentMediaMessage">
+        <video class="attachment" [src]="mediaUrl" (load)="notifyMediaLoaded()" *ngIf="isSentMediaMessage && isVideoMediaType" controls alt="Loading video"></video>
+        <img class="attachment" [src]="mediaUrl" (load)="notifyMediaLoaded()"  *ngIf="isSentMediaMessage && isImageMediaType" alt="Loading image"/>
+        <span class="attachment" (load)="notifyMediaLoaded()"  *ngIf="isSentMediaMessage && isAnotherType" alt="Loading file"> {{fileName}}
+        </span>
+      </span>
+      <span *ngIf="isPendingMediaMessage">
+        Uploading file
+      </span>
+    </p>
+    <spinner *ngIf="isPending"></spinner>
+  </template>
+
+    <template [ngIf]="!isMyMessage">
+    <div class="message-avatar" aria-hidden="true">
+      <widget-icon iconType="assistant" *ngIf="showMessageSource">
+      </widget-icon>
+    </div>
+    <p class="message">
+      <span role="text">
+        <span class="sr-only">{{messages.chatMessages.helperTexts.botSays(appName)}}</span>
+        <span class="message-body">{{viewModel.body}}</span>
+      </span>
+    </p>
+  </template>
+</div>
+
+<div *ngIf="isMyMessage && showMessageSource" class="message-source" aria-hidden="true">
+    {{messages.chatMessages.you}}
+</div>

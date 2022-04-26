@@ -1,0 +1,4 @@
+validate:
+  withPattern(String field, String pattern): 'Das $field muss $pattern sein'
+  required(String field): 'Das Feld $field ist erforderlich'
+  emailPasswordIncorrect: 'Die E-Mail oder das Passwort sind falsch'

@@ -1,0 +1,27 @@
+<widget-layout>
+  <widget-header>
+    <go-back [navigate]="false"
+             (buttonEvents)="clearRecommendation()"
+             [title]="recommendationState.title"></go-back>
+  </widget-header>
+  <widget-body whiteBackground>
+    <nutribot-recommendation-gallery [recipeAndTreats]="recipeAndTreats"
+                                     [recipe]="recipe"
+                                     [treats]="treats"
+                                     [petName]="petName"
+                                     (onRecipeSelect)="activateTab($event)">
+    </nutribot-recommendation-gallery>
+
+    <div class="nutribot-item-wrapper" [hidden]="recipe.productId != activeRecipe">
+      <nutribot-recommendation-item [recipeOrTreat]="recipe">
+      </nutribot-recommendation-item>
+    </div>
+
+    <template ngFor let-treat [ngForOf]="treats" let-i="index">
+      <div class="nutribot-item-wrapper" [hidden]="treat.productId != activeRecipe">
+        <nutribot-recommendation-item [recipeOrTreat]="treat">
+        </nutribot-recommendation-item>
+      </div>
+    </template>
+  </widget-body>
+</widget-layout>

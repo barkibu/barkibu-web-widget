@@ -1,0 +1,27 @@
+<widget-layout>
+    <widget-header homeHeader>
+        <div class="home-header">
+            <h2>{{messages.authMessages.auth_home.welcome_title(appName)}}</h2>
+            <div class="header-subtitle">{{messages.authMessages.auth_home.welcome_subtitle(appName)}}</div>
+        </div>
+    </widget-header>
+
+    <widget-body>
+        <div class="home-body-island">
+            <nav>
+                <ul>
+                    <li>
+                        <div class="home-action-hint">{{messages.authMessages.auth_home.sign_in_hint(brandName)}}</div>
+                        <widget-button link size="large" [linkHref]="RoutePaths.signIn.toUrl()" [text]="messages.authMessages.auth_home.sign_in">
+                        </widget-button>
+                    </li>
+                    <li>
+                        <div class="home-action-hint">{{messages.authMessages.auth_home.sign_up_hint}}</div>
+                        <widget-button link size="large" type="secondary" [linkHref]="RoutePaths.signUp.toUrl()" [text]="messages.authMessages.auth_home.sign_up(brandName)">
+                        </widget-button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </widget-body>
+</widget-layout>

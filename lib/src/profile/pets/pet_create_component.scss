@@ -1,0 +1,14 @@
+@import "package:web_widget/src/scss/themes";
+
+widget-footer {
+  display: flex;
+
+  widget-button {
+    display: block;
+    flex: 0.5;
+
+    &:first-of-type {
+      margin-right: $spacing * 2;
+    }
+  }
+}

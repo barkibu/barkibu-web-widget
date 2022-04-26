@@ -1,0 +1,15 @@
+<widget-layout *ngIf="infoIsEmpty">
+  <ng-content select="widget-header"></ng-content>
+  <widget-body>
+    <spinner-overlay *ngIf="isAssessmentLoading"></spinner-overlay>
+    <assessment-report *ngIf="!isAssessmentLoading && !askAVet" [assessmentReport]="assessment" [assessmentTitle]="title"
+      [reportExportLink]="reportExportLink">
+    </assessment-report>
+    <assessment-report-ask-a-vet *ngIf="!isAssessmentLoading && askAVet" [assessmentReport]="assessment"
+      [assessmentTitle]="title" [reportExportLink]="reportExportLink">
+    </assessment-report-ask-a-vet>
+  </widget-body>
+  <ng-content select="widget-footer"></ng-content>
+</widget-layout>
+
+<info-screen *ngIf="!infoIsEmpty" [infoState]="infoState"></info-screen>

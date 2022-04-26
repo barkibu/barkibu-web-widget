@@ -1,0 +1,26 @@
+@import "package:web_widget/src/chat/chat_select_component.scss";
+
+@include chat-select-component();
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  @include themify($themes) {
+    color: rgba(themed('secondary-color'), 0.8);
+    border: 1px solid rgba(themed('secondary-color'), 0.24);
+
+    &:hover, &:active {
+      box-shadow: none;
+    }
+  }
+}
+
+.option-wrapper {
+  display: grid;
+  grid-template-columns: 20px auto;
+  column-gap: $spacing;
+  cursor: pointer;
+}

@@ -1,0 +1,49 @@
+<widget-layout *ngIf="!isReportSelected">
+  <widget-header>
+    <go-back *ngIf="pet != null" [path]="petProfilePath">
+      <h1 class="pet-title"><pet-title [pet]="pet"></pet-title></h1>
+    </go-back>
+  </widget-header>
+
+  <widget-body>
+    <spinner-overlay *ngIf="assessmentReports == null"></spinner-overlay>
+    <div *ngIf="assessmentReports != null">
+      <h2 *ngIf="!isAskAVetHistory">{{messages.petProfileMessages.assessmentHistory}}</h2>
+      <h2 *ngIf="isAskAVetHistory">
+        <span role="text">
+          {{messages.petProfileMessages.history.askAVetDirectly.title}} {{messages.petProfileMessages.history.askAVetDirectly.subtitle}}
+        </span>
+      </h2>
+
+      <ol>
+        <li *ngFor="let report of assessmentReports">
+          <button (click)="selectReport(report)">
+            <div class="assessment-info">
+              <datetime class="assessment-date">
+                {{report.createdAt | date:dateFormat}}
+              </datetime>
+              <div class="assessment-symptom">
+                {{firstSymptom(report)}}
+              </div>
+            </div>
+            <div class="pet-action">
+              <widget-icon iconType="arrow-right">
+              </widget-icon>
+            </div>
+          </button>
+        </li>
+      </ol>
+    </div>
+  </widget-body>
+</widget-layout>
+
+<assessment-report-screen *ngIf="isReportSelected" [askAVet]="isAskAVetHistory" [assessmentIdentification]="selectedReport">
+  <widget-header>
+    <go-back *ngIf="pet != null"
+             [navigate]="false"
+             (buttonEvents)="clearSelectedReport()">   
+      <h1 class="pet-title"><pet-title [pet]="pet"></pet-title></h1>
+    </go-back>
+  </widget-header>
+</assessment-report-screen>
+

@@ -1,0 +1,18 @@
+<ol role="log" aria-live="polite" aria-atomic="false" aria-relevant="additions">
+  <li *ngFor="let viewModel of messagesList; let i=index">
+    <ask-a-vet-message *ngIf="isMessageVisible(viewModel)" [viewModel]="viewModel"
+                       [isMyMessage]="isMyMessage(viewModel)"
+                       [showMessageSource]="hasMessageSourceChanged(i)"
+                       [isPending]="isMessagePending(viewModel)"
+                       (onMediaLoaded)="scrollToTheLastMessage()">
+    </ask-a-vet-message>
+    <ask-a-vet-system-message *ngIf="isBotMessage(viewModel)" [viewModel]="viewModel">
+    </ask-a-vet-system-message>
+  </li>
+  <li>
+    <ask-a-vet-typing *ngIf="isChatConnectSuccess" [chatState]="chatState"></ask-a-vet-typing>
+  </li>
+  <li>
+    <ask-a-vet-terminated *ngIf="isChatConnectTerminated" [chatState]="chatState"></ask-a-vet-terminated>
+  </li>
+</ol>

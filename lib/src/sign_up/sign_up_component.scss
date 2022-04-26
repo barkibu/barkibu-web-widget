@@ -1,0 +1,8 @@
+@import "package:web_widget/src/scss/themes";
+
+.form-buttons {
+  widget-button[button] {
+    display: block;
+    margin-bottom: $spacing;
+  }
+}

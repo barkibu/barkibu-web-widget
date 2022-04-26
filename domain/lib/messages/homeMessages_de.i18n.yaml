@@ -1,0 +1,32 @@
+messages:
+  subtitle: 'Ich bin Ihr persönlicher Tiergesundheitsassistent'
+  profile: 'Profil'
+  title(String name): 'Hallo $name,'
+  startConcierge: 'Start'
+  virtualVetLearnMoreQuestion: 'Was ist der virtuelle Tierarzt?'
+  appDownloadLinks(String appName, String iphoneLink, String androidLink): 'Sie können auch <b>$appName</b> für $iphoneLink und $androidLink herunterladen'
+  symptomInputLabel: 'Hauptsymptom'
+  symptomInputHint: 'Geben Sie hier das Hauptsymptom Ihres Haustieres ein'
+  askAVet:
+    title: 'Fragen Sie einen Tierarzt'
+    subtitle: 'Sprechen Sie mit einem lizenzierten Tierarzt per Telefon, Chat oder E-Mail'
+  logout: 'Ausloggen'
+  hello(String name): 'Hallo $name'
+  help: 'Kann ich Ihrem Haustier bei irgendetwas helfen?'
+  simpleTitle: 'Hallo,'
+  virtualVetLearnMoreDescription(String brandName): 'Haben Sie eine Frage zur Gesundheit Ihres Haustieres? Geben Sie es hier ein und lassen Sie sich sofort von unserem virtuellen Tierarzt beraten, der eine erweiterte KI-Wissensbasis mit Symptomen und Zuständen verwendet, um die gewünschten Antworten zu erhalten. Wenn Sie möchten, können Sie mit einem unserer Tierärzte telefonisch, im Chat oder per E-Mail sprechen, nachdem Sie den virtuellen Tierarzt verwendet haben.'
+  makeConsultation: 'Starten Sie eine Bewertung'
+  nutrition:
+    subtitle: 'Finden Sie Futteroptionen basierend auf Ihrem Haustier'
+    title: 'Lebensmittel- und Ernährungsfinder'
+  findClinics:
+    title: 'Find A Clinic'
+    subtitle: 'Find the best clinic closest to you'
+  virtualVetLearnMoreTitle: 'Virtueller Tierarzt'
+termsOfService:
+  ctaText: 'Sehen Sie unsere'
+  termsOfService: 'Nutzungsbedingungen'
+navigationButtons:
+  homeButton: 'Zuhause'
+  calendarButton: ''
+  myPetsButton: 'Meine Haustiere'
