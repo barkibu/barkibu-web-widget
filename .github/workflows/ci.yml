@@ -15,9 +15,6 @@ jobs:
         run: curl -sLO https://storage.googleapis.com/dart-archive/channels/stable/release/2.10.5/linux_packages/dart_2.10.5-1_amd64.deb && sudo dpkg -i dart_2.10.5-1_amd64.deb
 
       - uses: actions/checkout@v2
-      - uses: webfactory/ssh-agent@v0.4.1
-        with:
-          ssh-private-key: ${{ secrets.COMMON_DEPLOY_KEY }}
       - name: Forget about Host Verification Check for Github.com
         run: |
           ssh -T -oStrictHostKeyChecking=accept-new git@github.com || true
