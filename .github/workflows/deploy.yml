@@ -20,9 +20,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ env.GITHUB_REF }}
-      - uses: webfactory/ssh-agent@v0.4.1
-        with:
-          ssh-private-key: ${{ secrets.COMMON_DEPLOY_KEY }}
       - name: Forget about Host Verification Check for Github.com
         run: |
           ssh -T -oStrictHostKeyChecking=accept-new git@github.com || true
