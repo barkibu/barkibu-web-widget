@@ -314,13 +314,13 @@ pub run build_runner build --output web:build --release --config $DEPLOY_ENV &&
 
 To not deploy it manually and let the machines 🤖🤖🤖🤖 do the work for you remember this:
 
-**Grant access to the dev@barkibu.com account in your current heroku instance**
+**Grant access to your account dev@mail.com account in your current heroku instance**
 
 You can do that by doing the following
 
 1. Go to your widget instance in heroku
 2. Selecting the access tab
-3. Clicking in add member button and adding "dev@barkibu.com" with operate and deploy permissions
+3. Clicking in add member button and adding "dev@mail.com" with operate and deploy permissions
 
 ![Heroku config for Dev barkibu account](./docs/heroku_config.png)
 
