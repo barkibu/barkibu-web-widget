@@ -14,7 +14,8 @@ do
     deploy_app="web-widget-${env}";
   fi
 
-  curl -sL {{ secrets.S3_CONFIG_URL }}/build."$env".yaml > build."$env".yaml
+  #curl -sL {{ secrets.S3_CONFIG_URL }}/build."$env".yaml > build."$env".yaml
+  curl -sL https://barkibu-web-widgets-configurations.s3.eu-west-1.amazonaws.com/build.staging.yaml > build."$env".yaml
 
   pub run build_runner build --output web:build --release --config $env &&
     rm -rf build/packages &&
