@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DEPLOY_ENV=$1
-
+BUILD_FILE_URL={{ secrets.S3_CONFIG_URL }}/build."$env".yaml
 case $DEPLOY_ENV in
       *) ENVS=($DEPLOY_ENV);;
 esac
@@ -14,7 +14,7 @@ do
     deploy_app="web-widget-${env}";
   fi
 
-  curl -sL {{ secrets.S3_CONFIG_URL }}/build."$env".yaml > build."$env".yaml
+  curl -sL $BUILD_FILE_URL > build."$env".yaml
   
   pub run build_runner build --output web:build --release --config $env &&
     rm -rf build/packages &&
