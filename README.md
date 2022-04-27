@@ -302,6 +302,8 @@ else
   DEPLOY_APP="web-widget-${DEPLOY_ENV}";
 fi
 
+curl -sL "$BASE_BUILD_FILE_URL/build.${env}.yaml" > "build.${env}.yaml"
+
 pub run build_runner build --output web:build --release --config $DEPLOY_ENV &&
   rm -rf build/packages &&
   heroku static:deploy --app $DEPLOY_APP
@@ -311,6 +313,8 @@ pub run build_runner build --output web:build --release --config $DEPLOY_ENV &&
 
 1. web-widget-{enviroment}
 2. build.{partner-name}-{staging(or ignore for production)}.yaml
+
+You can use a Secrets Flag in Github actions named `S3_CONFIG_URL` with the base repository where will be stored your Build files. This URL will be used in the script as `BASE_BUILD_FILE_URL` to donwload the corresponding file to the environment and client you want to deploy.  
 
 To not deploy it manually and let the machines 🤖🤖🤖🤖 do the work for you remember this:
 
