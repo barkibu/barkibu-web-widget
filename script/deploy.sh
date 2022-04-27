@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DEPLOY_ENV=$1
-BUILD_FILE_URL={{ secrets.S3_CONFIG_URL }}/build."$env".yaml
+BUILD_FILE_URL={{ secrets.S3_CONFIG_URL }}"/build.${env}.yaml"
 case $DEPLOY_ENV in
       *) ENVS=($DEPLOY_ENV);;
 esac
