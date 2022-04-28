@@ -18,7 +18,7 @@ abstract class SymptomInfoScreenPO {
   @ByCss('table.symptom-info-article')
   PageLoaderElement get _ageTable;
 
-  @ByTagName('article')
+  @ByTagName('terms-of-service-vetinsight')
   PageLoaderElement get _termsOfService;
 
   @ByCss('go-back button')
