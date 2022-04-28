@@ -174,7 +174,7 @@ or it can be passed directly via query, in case inject script is not used:
 https://web-widget-host.com/?theme=theme_name
 ```
 
-To implement a theme you can take a look at one of the already implemented themes: [default](lib/src/scss/_default_theme.scss) or [alternative](lib/src/scss/_alternative_theme.scss). They contain a list of colours that define a base for a theme. Once these colours are defined a theme has to be created in [_themes.scss](lib/src/scss/_themes.scss) file. In case widget is embeded into the web-page using an inject script - you'll need to add an icon for the floating button that opens a widget. Example for [default](web/assets/images/widget-icon-default.svg) themes.
+To implement a theme you can take a look at one of the already implemented themes: [default](lib/src/scss/_default_theme.scss) or [alternative](lib/src/scss/_whitelabel_theme.scss). They contain a list of colours that define a base for a theme. Once these colours are defined a theme has to be created in [_themes.scss](lib/src/scss/_themes.scss) file. In case widget is embeded into the web-page using an inject script - you'll need to add an icon for the floating button that opens a widget. Example for [default](web/assets/images/widget-icon-default.svg) themes.
 
 # How configuration works on Widget project
 

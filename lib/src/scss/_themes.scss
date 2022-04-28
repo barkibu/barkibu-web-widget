@@ -1,10 +1,19 @@
 @import "package:web_widget/src/scss/variables";
 @import "package:web_widget/src/scss/default_theme";
-@import "package:web_widget/src/scss/alternative_theme";
+@import "package:web_widget/src/scss/tsc_theme";
+@import "package:web_widget/src/scss/floof_theme";
+@import "package:web_widget/src/scss/whitelabel_theme";
+@import "package:web_widget/src/scss/iams_dogs_theme";
+@import "package:web_widget/src/scss/iams_cats_theme";
+@import "package:web_widget/src/scss/thewildest_theme";
+@import "package:web_widget/src/scss/walmart_theme";
+@import "package:web_widget/src/scss/greatergood_theme";
+
 
 @function focus-shadow-value($color) {
   @return 0 0 0 0.2rem rgba(lighten($color, 10%), 0.4);
 }
+
 
 $themes: (
   default: (
@@ -32,32 +41,208 @@ $themes: (
     secondary-font-family: $secondary-font-family-default,
     header-subtitle-opacity: $header-subtitle-opacity,
   ),
-  alternative: (
-    icon-bg-color: $primary-color-alternative,
-    primary-color: $primary-color-alternative,
-    secondary-color: $secondary-color-alternative,
-    link-color: $link-color-alternative,
-    assistant-color: $assistant-color-alternative,
-    bg-color: $bg-color-alternative,
-    white-color: $white-color-alternative,
-    border-color: rgba($secondary-color-alternative, 0.12),
-    warning-color: $warning-color-alternative,
-    danger-color: $danger-color-alternative,
+  tsc: (
+    icon-bg-color: $primary-color-tsc,
+    primary-color: $primary-color-tsc,
+    secondary-color: $secondary-color-tsc,
+    link-color: $link-color-tsc,
+    assistant-color: $assistant-color-tsc,
+    bg-color: $bg-color-tsc,
+    white-color: $white-color-tsc,
+    border-color: rgba($secondary-color-tsc, 0.12),
+    warning-color: $warning-color-tsc,
+    danger-color: $danger-color-tsc,
     info-color: $dark-color-default,
-    success-color: $success-color-alternative,
-    received-message-bg-color: rgba($primary-color-alternative, 0.12),
-    received-message-text-color: $secondary-color-alternative,
-    sent-message-bg-color: $assistant-color-alternative,
-    sent-message-text-color: $white-color-alternative,
-    focus-shadow: focus-shadow-value($primary-color-alternative),
-    primary-icon-color: $primary-color-alternative,
-    secondary-icon-color: $primary-color-alternative,
-    button-color: $primary-color-alternative,
+    success-color: $success-color-tsc,
+    received-message-bg-color: rgba($primary-color-tsc, 0.04),
+    received-message-text-color: rgba($secondary-color-tsc, 0.8),
+    sent-message-bg-color: $bubbles-color-tsc,
+    sent-message-text-color: $white-color-tsc,
+    focus-shadow: focus-shadow-value($primary-color-tsc),
+    primary-icon-color: $primary-color-tsc,
+    secondary-icon-color: $primary-color-tsc,
+    button-color: $primary-color-tsc,
     font-family: $primary-font-family-default,
     secondary-font-family: $secondary-font-family-default,
     header-subtitle-opacity: $header-subtitle-opacity,
   ),
+  floof: (
+    icon-bg-color: $deep-navy-floof,
+    primary-color: $deep-navy-floof,
+    secondary-color: $deep-navy-floof,
+    link-color: $deep-navy-floof,
+    assistant-color: $robbins-egg-dark-floof,
+    bg-color: $bg-color-default,
+    white-color: $white-color-default,
+    border-color: rgba($deep-navy-floof, 0.12),
+    warning-color: $marigold-floof,
+    danger-color: $traffic-cone-floof,
+    info-color: $dark-color-default,
+    success-color: $mint-floof,
+    received-message-bg-color: rgba($robbins-egg-dark-floof, 0.04),
+    received-message-text-color: rgba($deep-navy-floof, 0.8),
+    sent-message-bg-color: $robbins-egg-dark-floof,
+    sent-message-text-color: $white-color-default,
+    focus-shadow: focus-shadow-value($robbins-egg-dark-floof),
+    primary-icon-color: $robbins-egg-dark-floof,
+    secondary-icon-color: $robbins-egg-dark-floof,
+    button-color: $robbins-egg-dark-floof,
+    font-family: $primary-font-family-default,
+    secondary-font-family: $secondary-font-family-default,
+    header-subtitle-opacity: $header-subtitle-opacity,
+  ),
+  whitelabel: (
+    icon-bg-color: $primary-color-whitelabel,
+    primary-color: $primary-color-whitelabel,
+    secondary-color: $secondary-color-whitelabel,
+    link-color: $link-color-whitelabel,
+    assistant-color: $assistant-color-whitelabel,
+    bg-color: $bg-color-whitelabel,
+    white-color: $white-color-whitelabel,
+    border-color: rgba($secondary-color-whitelabel, 0.12),
+    warning-color: $warning-color-whitelabel,
+    danger-color: $danger-color-whitelabel,
+    info-color: $dark-color-default,
+    success-color: $success-color-whitelabel,
+    received-message-bg-color: rgba($primary-color-whitelabel, 0.12),
+    received-message-text-color: $secondary-color-whitelabel,
+    sent-message-bg-color: $assistant-color-whitelabel,
+    sent-message-text-color: $white-color-whitelabel,
+    focus-shadow: focus-shadow-value($primary-color-whitelabel),
+    primary-icon-color: $primary-color-whitelabel,
+    secondary-icon-color: $primary-color-whitelabel,
+    button-color: $primary-color-whitelabel,
+    font-family: $primary-font-family-default,
+    secondary-font-family: $secondary-font-family-default,
+    header-subtitle-opacity: $header-subtitle-opacity,
+  ),
+  iams-dogs: (
+    icon-bg-color: $icon-bg-color-iams-dogs,
+    primary-color: $primary-color-iams-dogs,
+    secondary-color: $secondary-color-iams-dogs,
+    link-color: $primary-color-iams-dogs,
+    assistant-color: $assistant-color-default,
+    bg-color: $bg-color-default,
+    white-color: $white-color-default,
+    border-color: rgba($secondary-color-iams-dogs, 0.16),
+    warning-color: $warning-color-default,
+    danger-color: $danger-color-iams,
+    info-color: $dark-color-default,
+    success-color: $success-color-default,
+    received-message-bg-color: rgba($tertiary-color-iams-dogs, 0.04),
+    received-message-text-color: rgba($bot-text-color-iams-cats, 0.8),
+    sent-message-bg-color: $assistant-color-default,
+    sent-message-text-color: $white-color-default,
+    focus-shadow: focus-shadow-value($primary-color-iams-dogs),
+    primary-icon-color: $primary-color-iams-dogs,
+    secondary-icon-color: $primary-color-iams-dogs,
+    button-color: $primary-color-iams-dogs,
+    font-family: $primary-font-family-default,
+    secondary-font-family: $secondary-font-family-default,
+    header-subtitle-opacity: $header-subtitle-opacity,
+  ),
+  thewildest: (
+    icon-bg-color: $primary-color-thewildest,
+    primary-color: $primary-color-thewildest,
+    secondary-color: $secondary-color-thewildest,
+    link-color: $primary-color-thewildest,
+    assistant-color: $primary-color-thewildest,
+    bg-color: $bg-color-default,
+    white-color: $white-color-default,
+    border-color: rgba($secondary-color-thewildest, 0.16),
+    warning-color: $warning-color-default,
+    danger-color: $danger-color-default,
+    info-color: $dark-color-default,
+    success-color: $success-color-default,
+    received-message-bg-color: $tertiary-color-thewildest,
+    received-message-text-color: $primary-color-thewildest,
+    sent-message-bg-color: $tertiary-color-thewildest,
+    sent-message-text-color: $primary-color-thewildest,
+    focus-shadow: focus-shadow-value($primary-color-thewildest),
+    primary-icon-color: $primary-color-thewildest,
+    secondary-icon-color: $primary-color-thewildest,
+    button-color: $primary-color-thewildest,
+    font-family: $primary-font-family-thewildest,
+    secondary-font-family: $secondary-font-family-thewildest,
+    header-subtitle-opacity: $header-subtitle-opacity,
+  ),
+  walmart: (
+    icon-bg-color: $primary-color-walmart,
+    primary-color: $primary-color-walmart,
+    secondary-color: $secondary-color-walmart,
+    link-color: $link-color-walmart,
+    assistant-color: $assistant-color-walmart,
+    bg-color: $bg-color-walmart,
+    white-color: $white-color-default,
+    border-color: rgba($secondary-color-walmart, 0.16),
+    warning-color: $warning-color-default,
+    danger-color: $dark-color-default,
+    info-color: $dark-color-default,
+    success-color: $success-color-default,
+    received-message-bg-color: rgba($primary-color-walmart, 0.04),
+    received-message-text-color: $bot-text-color-walmart,
+    sent-message-bg-color: $primary-color-walmart,
+    sent-message-text-color: $tertiary-color-walmart,
+    focus-shadow: focus-shadow-value($primary-color-walmart),
+    primary-icon-color: $primary-color-walmart,
+    secondary-icon-color: $secondary-icon-color-walmart,
+    button-color: $primary-color-walmart,
+    font-family: $primary-font-family-walmart,
+    secondary-font-family: $secondary-font-family-walmart,
+    header-subtitle-opacity: $header-subtitle-opacity-walmart,
+  ),
+  iams-cats: (
+    icon-bg-color: $icon-bg-color-iams-cats,
+    primary-color: $primary-color-iams-cats,
+    secondary-color: $secondary-color-iams-cats,
+    link-color: $primary-color-iams-cats,
+    assistant-color: $tertiary-color-iams-cats,
+    bg-color: $bg-color-default,
+    white-color: $white-color-default,
+    border-color: rgba($secondary-color-default, 0.16),
+    warning-color: $warning-color-default,
+    danger-color: $danger-color-iams,
+    info-color: $dark-color-default,
+    success-color: $success-color-default,
+    received-message-bg-color: rgba($tertiary-color-iams-cats, 0.12),
+    received-message-text-color: rgba($bot-text-color-iams-cats, 0.8),
+    sent-message-bg-color: $tertiary-color-iams-cats,
+    sent-message-text-color: $white-color-default,
+    focus-shadow: focus-shadow-value($primary-color-iams-cats),
+    primary-icon-color: $primary-color-iams-cats,
+    secondary-icon-color: $primary-color-iams-cats,
+    button-color: $primary-color-iams-cats,
+    font-family: $primary-font-family-default,
+    secondary-font-family: $secondary-font-family-default,
+    header-subtitle-opacity: $header-subtitle-opacity,
+  ),
+  greatergood: (
+    icon-bg-color: $mars-pet-care-blue,
+    primary-color: $mars-pet-care-blue,
+    secondary-color: $mars-pet-care-gray,
+    link-color: $mars-pet-care-blue,
+    assistant-color: $mars-pet-care-red,
+    bg-color: $mars-pet-care-cream,
+    white-color: $mars-pet-care-white,
+    border-color: rgba($mars-pet-care-gray, 0.16),
+    warning-color: $warning-color-default,
+    danger-color: $mars-pet-care-red,
+    info-color: $dark-color-default,
+    success-color: $success-color-default,
+    received-message-bg-color: rgba($mars-pet-care-fawn, 0.12),
+    received-message-text-color:  $bot-text-color-greatergood,
+    sent-message-bg-color: $mars-pet-care-blue,
+    sent-message-text-color: $mars-pet-care-fawn,
+    focus-shadow: focus-shadow-value($mars-pet-care-blue),
+    primary-icon-color: $mars-pet-care-blue,
+    secondary-icon-color: $mars-pet-care-blue,
+    button-color: $mars-pet-care-blue,
+    font-family: $primary-font-family-default,
+    secondary-font-family: $secondary-font-family-default,
+    header-subtitle-opacity: $header-subtitle-opacity,
+  )
 );
+
 
 @mixin themify($themes: $themes) {
   @each $theme, $map in $themes {
@@ -66,14 +251,18 @@ $themes: (
     // host-context has to be used inside angular
     // component styles because they are incapsulated
     // https://angulardart.dev/guide/component-styles#host-context
-    :host-context([data-theme="#{$theme}"]) & { @content; }
+    :host-context([data-theme="#{$theme}"]) & {
+      @content;
+    }
   }
 }
 
 @mixin themify-regular($themes: $themes) {
   @each $theme, $map in $themes {
     $theme-map: map-get($themes, $theme) !global;
-    [data-theme="#{$theme}"] & { @content; }
+    [data-theme="#{$theme}"] & {
+      @content;
+    }
   }
 }
 
