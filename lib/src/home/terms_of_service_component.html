@@ -5,7 +5,8 @@
   </widget-header>
   <widget-body>
     <article>
-      <h1>ADD TERMS & CONDITIONS HERE</h1>
+      <terms-of-service-vetinsight *ngIf="!isWalmartTerms"></terms-of-service-vetinsight>
+      <terms-of-service-walmart *ngIf="isWalmartTerms"></terms-of-service-walmart>
     </article>
   </widget-body>
 </widget-layout>
