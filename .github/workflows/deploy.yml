@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       deployTo:
-        description: 'Deploy env(dev/staging/prod)'
+        description: 'Deploy env(dev/staging/kinship-staging-all/kinship-prod-all/whitelabel/tsc-staging/floof-staging/iams-staging/greatergood-staging/walmart-staging/prod/tsc/floof/iams/greatergood/walmart/thewildest/thewildest-staging)'
         required: true
 
 jobs:
