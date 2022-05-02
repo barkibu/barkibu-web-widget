@@ -1,0 +1,16 @@
+@import "package:web_widget/src/icons/icon_component.scss";
+
+#Pet-Icon {
+  @include themify($themes) {
+    fill: themed('primary-icon-color');
+  }
+}
+
+.icon-container {
+  align-self: center;
+}
+
+.icon-background {
+  @extend %legacy-icon-styles;
+}
+

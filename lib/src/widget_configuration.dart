@@ -168,6 +168,8 @@ class WidgetConfiguration extends Configuration {
         : fallBackTheme;
   }
 
+  String get iconsTheme => _clientIdOverridenValue('iconsTheme') ?? config.iconsTheme;
+
   @override
   int get botPreMessageDelay => _clientIdOverridenValue('botPreMessageDelay') ?? config.botPreMessageDelay;
 
