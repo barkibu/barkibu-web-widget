@@ -1,14 +1,15 @@
 # Web-Widget architecture
 
 ## General overview
-This is an Angular App with a dart based development
+This is an Angular App with a dart based development. And It is made up of two different projects, the main project that manage the Persentation Layer and the Domain, an internal project that manages the logic of the global application. 
 
-- **Data Sources layer:** as name states, here we handle the data sources (local and remote) here is where we make the calls to the backend or database queries
-- **Data Layer or Repository:** In this layer we abstract where the data comes from and provide it to the presentation layer through use cases
-- **UseCase:** In this layer we describe the use cases required by the presentation layer to get the correctly formatted data
+- **Domain**
+  - **Data Sources layer:** as name states, here we handle the data sources (local and remote) here is where we make the calls to the backend or database queries
+  - **Data Layer or Repository:** In this layer we abstract where the data comes from and provide it to the presentation layer through use cases
+  - **UseCase:** In this layer we describe the use cases required by the presentation layer to get the correctly formatted data
 - **Presentation layer:** This layer is separated in two
     - UI layer which are actually Angular components
-    - [BLOC Providers](https://bloclibrary.dev/#/) which are the ones responsible for handling the app's state. State management is handled using Bloc.
+    - [BLOC Providers](https://bloclibrary.dev/#/) which are the ones responsible for handling the app's state. State management is handled using Bloc. It is responsible for communication with the domain.
 
 ```mermaid
 stateDiagram-v2
@@ -20,18 +21,20 @@ stateDiagram-v2
     UseCase --> DataLayer
     UseCase --> Presentation
     Presentation --> UseCase
-    state DataSources {
-        direction RL
-        RemoteDatasource 
-        LocalDatasource
-    }
-    state UseCase {
-        direction RL
-        Datalayer
-    }
-    state DataLayer {
-        direction RL
-        Repository
+    state Domain {
+        state DataSources {
+            direction RL
+            RemoteDatasource 
+            LocalDatasource
+        }
+        state UseCase {
+            direction RL
+            Datalayer
+        }
+        state DataLayer {
+            direction RL
+            Repository
+        }
     }
     state Presentation {
     direction RL
