@@ -1,0 +1,17 @@
+@import "package:web_widget/src/icons/icon_component.scss";
+
+:host {
+  width: 16px;
+  height: 16px;
+  display: block;
+  line-height: 0;
+  margin-right: $small-icon-size;
+}
+
+.icon-container {
+  align-self: center;
+}
+
+.icon-background {
+  @extend %legacy-icon-styles;
+}

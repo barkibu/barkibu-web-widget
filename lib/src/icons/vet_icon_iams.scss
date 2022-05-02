@@ -1,0 +1,15 @@
+@import "package:web_widget/src/icons/icon_component.scss";
+
+#doctor-icon {
+  @include themify($themes) {
+    stroke: themed('primary-icon-color');
+  }
+}
+
+.icon-container {
+  align-self: center;
+}
+
+.icon-background {
+  @extend %legacy-icon-styles;
+}
