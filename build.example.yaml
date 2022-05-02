@@ -1,18 +1,15 @@
-# Just for local development. If you're looking for example file to create a new widget deployment
-# You can copy `./build.dev.yaml`(or any other that is closer to the desired config) and adjust config values
-
 targets:
   $default:
     builders:
       web_widget|config_builder:
         options:
           # Authentication options
-          authByEmailEnabled: true
+          authByEmailEnabled: false
           authByPhoneEnabled: false
           useLegacyAuthDatasource: true
           authServiceAppClientId: null
           authServiceUserPoolId: null
-          externalProfileDataEnabled: false
+          externalProfileDataEnabled: true
 
           # Basic features
           telehealthEnabled: true
@@ -26,62 +23,51 @@ targets:
           conciergeUrl: null
 
           # Customisation
-          externalPetDataEnabled: false
+          externalPetDataEnabled: true
           externalLinksEventsEnabled: false
           embeddedEmailClientEnabled: false
           nutribotRecommendationShortJourneyEnabled: false
           addPetOptionEnabled: true
-          extendedFeedbackEnabled: true
-          closeButtonEnabled: true
+          extendedFeedbackEnabled: false
+          closeButtonEnabled: false
           backButtonEnabled: true
           goHomeLinkEnabled: true
           footerChatCreditsEnabled: false
-          aivetUrgencyOrderEnabled: false
-          skipPrimarySymptomEnabled: false
-          termsOfServiceHomeEnabled: false
+          aivetUrgencyOrderEnabled: true
+          skipPrimarySymptomEnabled: true
+          termsOfServiceHomeEnabled: true
           lastNameRequired: false
           petBreedEnabled: false
-          assessmentDateFormat: dd/MM/yyyy
-          defaultPhonePrefix: null
-          appName: 'Barkibu Assistant'
-          brandName: 'Barkibu'
-          brandLogo: 'barkibu-logo.svg'
-          brandLogoWidth: '165px'
+          assessmentDateFormat: MM/dd/yyyy
+          defaultPhonePrefix: '+1'
+          appName: 'VetInsight Assistant'
+          brandName: 'VETINSIGHT™'
+          brandLogo: 'vetinsight-logo.svg'
+          brandLogoWidth: '70px'
           headerWithoutLogo: false
-          botPreMessageDelay: 2000
-          botPostMessageDelay: 1200
-          useSpecialTranslations: 'default'
-          virtualVetInfoEnabled: false
+          botPreMessageDelay: 1000
+          botPostMessageDelay: 400
+          useSpecialTranslations: 'tsc'
+          virtualVetInfoEnabled: true
           externalToSEnabled: false
 
           # Fallback theme & client_id
-          fallbackTheme: 'default'
-          fallbackClientId: null
+          iconsTheme: 'whitelabel'
+          fallbackTheme: 'whitelabel'
+          fallbackClientId: 'whitelabel'
 
           # Contanct vet options
           chatWithVetEnabled: true
-          chatOnPhoneCallUrl: https://my-calendly-url?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}
-          emailAccount: vet.help@mail.barkibu.com
+          chatOnPhoneCallUrl: https://calendly.com/susie-teran/demo?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}&back=1
+          emailAccount: vet.help@mail.kinship.barkibu.com
 
           # System configuration
-          envName: 'development'
-          apiUrl: 'https://barkibu-app-staging.herokuapp.com/v2'
-          segmentWriteKey: 'segmentWriteKey'
+          envName: 'staging'
+          apiUrl: 'https://whitelabel-ch-staging.herokuapp.com/v2'
+          segmentWriteKey: '0Vc8s8WB69mrDy3Rnve6gSdCA1HDOhZJ'
 
           # Overriden configuration for each client id
-
-          clientIdConfigOverride:
-            # Open widget with ?client_id=some_client_id_1 query to apply custom config
-            some_client_id_1:
-              nutribotEnabled: false
-              aivetEnabled: false
-              appName: 'Some client ID 1'
-              brandName: 'Some client ID 1'
-            # Open widget with ?client_id=some_client_id_2 query to apply custom config
-            some_client_id_2:
-              fallbackTheme: default
-              appName: 'Some client ID 2'
-              brandName: 'Some client ID 2'
+          clientIdConfigOverride: null
 
 builders:
   config_builder:
