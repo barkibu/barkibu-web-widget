@@ -161,8 +161,15 @@ class WidgetConfiguration extends Configuration {
   String _getThemeFromUrl(param) {
     final fallBackTheme = _clientIdOverridenValue('fallbackTheme') ?? config.fallbackTheme;
     return [
+      'tsc',
+      'floof',
       'default',
-      'alternative',
+      'whitelabel',
+      'iams-dogs',
+      'iams-cats',
+      'thewildest',
+      'walmart',
+      'greatergood',
     ].contains(param)
         ? param
         : fallBackTheme;
