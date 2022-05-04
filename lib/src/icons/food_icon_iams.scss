@@ -1,0 +1,15 @@
+@import "package:web_widget/src/icons/icon_component.scss";
+
+#Pet-Food-2 {
+  @include themify($themes) {
+    stroke: themed('primary-icon-color');
+  }
+}
+
+.icon-background {
+  @extend %legacy-icon-styles;
+}
+
+.icon-container {
+  align-self: center;
+}

@@ -10,9 +10,67 @@
 <dropdown-arrow-icon *ngIf="isIconType('dropdown')" [title]="title"></dropdown-arrow-icon>
 <close-dropdown-arrow-icon *ngIf="isIconType('close-dropdown')" [title]="title"></close-dropdown-arrow-icon>
 <arrow-right-icon *ngIf="isIconType('arrow-right')" [title]="title"></arrow-right-icon>
-<assistant-icon *ngIf="isIconType('assistant')" [title]="title"></assistant-icon>
-<my-pets-icon *ngIf="isIconType('my-pets')" [title]="title"></my-pets-icon>
-<profile-icon *ngIf="isIconType('profile')" [title]="title"></profile-icon>
-<vet-icon *ngIf="isIconType('vet')" [title]="title"></vet-icon>
-<food-icon *ngIf="isIconType('food')" [title]="title"></food-icon>
-<find-clinic-icon *ngIf="isIconType('find-clinic')" [title]="title"></find-clinic-icon>
+
+<div *ngIf="isIconTheme('default')">
+  <assistant-icon *ngIf="isIconType('assistant')" [title]="title"></assistant-icon>
+  <my-pets-icon *ngIf="isIconType('my-pets')" [title]="title"></my-pets-icon>
+  <profile-icon *ngIf="isIconType('profile')" [title]="title"></profile-icon>
+  <vet-icon *ngIf="isIconType('vet')" [title]="title"></vet-icon>
+  <food-icon *ngIf="isIconType('food')" [title]="title"></food-icon>
+  <find-clinic-icon *ngIf="isIconType('find-clinic')" [title]="title"></find-clinic-icon>
+</div>
+
+<!-- Customization for icon theme *Kinship* -->
+<div *ngIf="isIconTheme('thewildest')">
+  <thewildest-bot-icon *ngIf="isIconType('assistant')" [title]="title"></thewildest-bot-icon>
+  <my-pets-icon *ngIf="isIconType('my-pets')" [title]="title"></my-pets-icon>
+  <profile-icon *ngIf="isIconType('profile')" [title]="title"></profile-icon>
+  <vet-icon *ngIf="isIconType('vet')" [title]="title"></vet-icon>
+  <food-icon *ngIf="isIconType('food')" [title]="title"></food-icon>
+  <find-clinic-icon *ngIf="isIconType('find-clinic')" [title]="title"></find-clinic-icon>
+</div>
+
+<div *ngIf="isIconTheme('iams')">
+  <vetinsight-bot-icon-iams *ngIf="isIconType('assistant')" [title]="title"></vetinsight-bot-icon-iams>
+  <my-pets-icon-iams *ngIf="isIconType('my-pets')" [title]="title"></my-pets-icon-iams>
+  <profile-icon-iams *ngIf="isIconType('profile')" [title]="title"></profile-icon-iams>
+  <vet-icon-iams *ngIf="isIconType('vet')" [title]="title"></vet-icon-iams>
+  <food-icon-iams *ngIf="isIconType('food')" [title]="title"></food-icon-iams>
+  <find-clinic-icon-iams *ngIf="isIconType('find-clinic')" [title]="title"></find-clinic-icon-iams>
+</div>
+
+<div *ngIf="isIconTheme('tsc')">
+  <vetinsight-bot-icon *ngIf="isIconType('assistant')" [title]="title"></vetinsight-bot-icon>
+  <my-pets-icon *ngIf="isIconType('my-pets')" [title]="title"></my-pets-icon>
+  <profile-icon *ngIf="isIconType('profile')" [title]="title"></profile-icon>
+  <vet-icon *ngIf="isIconType('vet')" [title]="title"></vet-icon>
+  <food-icon *ngIf="isIconType('food')" [title]="title"></food-icon>
+  <find-clinic-icon *ngIf="isIconType('find-clinic')" [title]="title"></find-clinic-icon>
+</div>
+
+<div *ngIf="isIconTheme('walmart')">
+  <vetinsight-bot-icon *ngIf="isIconType('assistant')" [title]="title"></vetinsight-bot-icon>
+  <my-pets-icon *ngIf="isIconType('my-pets')" [title]="title"></my-pets-icon>
+  <profile-icon *ngIf="isIconType('profile')" [title]="title"></profile-icon>
+  <vet-icon *ngIf="isIconType('vet')" [title]="title"></vet-icon>
+  <food-icon *ngIf="isIconType('food')" [title]="title"></food-icon>
+  <find-clinic-icon *ngIf="isIconType('find-clinic')" [title]="title"></find-clinic-icon>
+</div>
+
+<div *ngIf="isIconTheme('greatergood')">
+  <vetinsight-bot-icon *ngIf="isIconType('assistant')" [title]="title"></vetinsight-bot-icon>
+  <my-pets-icon *ngIf="isIconType('my-pets')" [title]="title"></my-pets-icon>
+  <profile-icon *ngIf="isIconType('profile')" [title]="title"></profile-icon>
+  <vet-icon *ngIf="isIconType('vet')" [title]="title"></vet-icon>
+  <food-icon *ngIf="isIconType('food')" [title]="title"></food-icon>
+  <find-clinic-icon *ngIf="isIconType('find-clinic')" [title]="title"></find-clinic-icon>
+</div>
+
+<div *ngIf="isIconTheme('whitelabel')">
+  <vetinsight-bot-icon *ngIf="isIconType('assistant')" [title]="title"></vetinsight-bot-icon>
+  <my-pets-icon *ngIf="isIconType('my-pets')" [title]="title"></my-pets-icon>
+  <profile-icon *ngIf="isIconType('profile')" [title]="title"></profile-icon>
+  <vet-icon *ngIf="isIconType('vet')" [title]="title"></vet-icon>
+  <food-icon *ngIf="isIconType('food')" [title]="title"></food-icon>
+  <find-clinic-icon *ngIf="isIconType('find-clinic')" [title]="title"></find-clinic-icon>
+</div>

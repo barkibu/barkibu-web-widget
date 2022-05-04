@@ -161,12 +161,21 @@ class WidgetConfiguration extends Configuration {
   String _getThemeFromUrl(param) {
     final fallBackTheme = _clientIdOverridenValue('fallbackTheme') ?? config.fallbackTheme;
     return [
+      'tsc',
+      'floof',
       'default',
-      'alternative',
+      'whitelabel',
+      'iams-dogs',
+      'iams-cats',
+      'thewildest',
+      'walmart',
+      'greatergood',
     ].contains(param)
         ? param
         : fallBackTheme;
   }
+
+  String get iconsTheme => _clientIdOverridenValue('iconsTheme') ?? config.iconsTheme;
 
   @override
   int get botPreMessageDelay => _clientIdOverridenValue('botPreMessageDelay') ?? config.botPreMessageDelay;
