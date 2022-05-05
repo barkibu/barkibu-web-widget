@@ -19,20 +19,20 @@ import 'package:web_widget/messages/tsc/shared_messages_tsc.dart';
 class MessagesModelThewildest extends MessagesModel {
   MessagesModelThewildest()
       : super(
-      AuthMessages_tsc(),
-      AssessmentReportMessages_tsc(),
-      ChatMessages_thewildest(),
-      HomeMessages_thewildest(),
-      SharedMessages_tsc(),
-      ValidationMessages(),
-      PetProfileMessages_tsc(),
-      ProfileMessages(),
-      NutribotMessages(),
-      InsuranceMessages(),
-      ContactMessages_thewildest(),
-      HealthPlanMessages(),
-      WorkingFeatureMessages(),
-      OnBoardingMessages(),
-      FaqMessages(),
-      ClinicsFinderMessages());
+            AuthMessages_tsc(),
+            AssessmentReportMessages_tsc(),
+            ChatMessages_thewildest(),
+            HomeMessages_thewildest(),
+            SharedMessages_tsc(),
+            ValidationMessages(),
+            PetProfileMessages_tsc(),
+            ProfileMessages(),
+            NutribotMessages(),
+            InsuranceMessages(),
+            ContactMessages_thewildest(),
+            HealthPlanMessages(),
+            WorkingFeatureMessages(),
+            OnBoardingMessages(),
+            FaqMessages(),
+            ClinicsFinderMessages());
 }

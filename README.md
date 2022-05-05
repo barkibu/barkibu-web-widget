@@ -7,6 +7,9 @@ A web app that uses [AngularDart](https://angulardart.dev)
 
 - [Dart SDK](https://dart.dev/get-dart)
 
+Form stable channel select 2.10.5
+- [Dart SDK 2.10.5](https://dart.dev/get-dart/archive)
+
 ## Configuration
 
 [docs/widget_configuration.md](./docs/widget_configuration.md)
