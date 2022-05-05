@@ -19,20 +19,20 @@ import 'package:web_widget/messages/tsc/shared_messages_tsc.dart';
 class MessagesModelTsc extends MessagesModel {
   MessagesModelTsc()
       : super(
-      AuthMessages_tsc(),
-      AssessmentReportMessages_tsc(),
-      ChatMessages_tsc(),
-      HomeMessages_tsc(),
-      SharedMessages_tsc(),
-      ValidationMessages(),
-      PetProfileMessages_tsc(),
-      ProfileMessages(),
-      NutribotMessages(),
-      InsuranceMessages(),
-      ContactMessages(),
-      HealthPlanMessages(),
-      WorkingFeatureMessages(),
-      OnBoardingMessages(),
-      FaqMessages(),
-      ClinicsFinderMessages());
+            AuthMessages_tsc(),
+            AssessmentReportMessages_tsc(),
+            ChatMessages_tsc(),
+            HomeMessages_tsc(),
+            SharedMessages_tsc(),
+            ValidationMessages(),
+            PetProfileMessages_tsc(),
+            ProfileMessages(),
+            NutribotMessages(),
+            InsuranceMessages(),
+            ContactMessages(),
+            HealthPlanMessages(),
+            WorkingFeatureMessages(),
+            OnBoardingMessages(),
+            FaqMessages(),
+            ClinicsFinderMessages());
 }
