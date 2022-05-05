@@ -9,19 +9,17 @@ import 'package:web_widget/src/route_paths.dart';
 
 import '../widget_configuration.dart';
 
-@Component(
-    selector: 'terms-of-service',
-    templateUrl: 'terms_of_service_component.html',
-    styleUrls: ['terms_of_service_component.css'],
-    directives: [
-      coreDirectives,
-      layoutDirectives,
-      routerDirectives,
-      GoBackComponent,
-      TermsOfServiceVetinsightComponent,
-      TermsOfServiceWalmartComponent
-    ], exports: [
-      RoutePaths
+@Component(selector: 'terms-of-service', templateUrl: 'terms_of_service_component.html', styleUrls: [
+  'terms_of_service_component.css'
+], directives: [
+  coreDirectives,
+  layoutDirectives,
+  routerDirectives,
+  GoBackComponent,
+  TermsOfServiceVetinsightComponent,
+  TermsOfServiceWalmartComponent
+], exports: [
+  RoutePaths
 ])
 class TermsOfServiceComponent {
   final MessagesModel messages;
