@@ -65,7 +65,7 @@ targets:
 
           # System configuration
           envName: 'development'
-          apiUrl: 'https://barkibu-app-staging.herokuapp.com/v2'
+          apiUrl: 'APIURL'
           segmentWriteKey: 'segmentWriteKey'
 
           # Overriden configuration for each client id
