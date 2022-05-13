@@ -6,6 +6,9 @@ abstract class Configuration {
   String brandName;
   String brandLogo;
   String brandLogoWidth = '70px';
+  bool marketingOptInEnabled = false;
+  String marketingBrandName = '';
+  String privacyUrl = '';
   bool headerWithoutLogo = false;
   String emailAccount;
   String supportSpanishAccount;
@@ -14,8 +17,6 @@ abstract class Configuration {
   int vetStartHour;
   int generalVetFinishHour;
   int fridayVetFinishHour;
-  String marketingBrandName;
-  String privacyUrl;
 
   /// Websocket Server url to connect to the Concierge bot
   String conciergeUrl;

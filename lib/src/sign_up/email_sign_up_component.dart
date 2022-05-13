@@ -67,7 +67,7 @@ class EmailSignUpComponent extends SignUpFormComponent implements OnDestroy {
 
   bool get submitAuthorized => model.checkboxValue || marketingBrandName.isNotEmpty;
 
-  bool get marketingOptInEnabled => config.marketingBrandName.isNotEmpty;
+  bool get marketingOptInEnabled => config.marketingOptInEnabled;
 
   SignUpSubmitted buildSubmitEvent() {
     return SignUpSubmitted((b) => (b

@@ -25,8 +25,7 @@
                      [text]="messages.authMessages.sign_up.go_to_sign_in" >
       </widget-button>
     </div>
-
-    <div *ngIf="marketingOptInEnabled" [innerHtml]="messages.authMessages.sign_up.data_privacy_policy(privacyUrl)"></div>
+    <div *ngIf="marketingOptInEnabled" class="marketing-text" [innerHtml]="messages.authMessages.sign_up.data_privacy_policy(privacyUrl)"></div>
 
   </widget-footer>
 </widget-layout>

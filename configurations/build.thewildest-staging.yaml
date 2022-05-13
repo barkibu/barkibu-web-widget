@@ -1,0 +1,89 @@
+targets:
+  $default:
+    sources:
+      include: ["lib/**", "web/**"]
+      exclude: ["lib/builders/**"]
+    builders:
+      web_widget|config_builder:
+        options:
+          # Authentication options
+          authByEmailEnabled: false
+          authByPhoneEnabled: false
+          useLegacyAuthDatasource: true
+          authServiceAppClientId: 3ql2ser61bn9ub3dlpr8a0pj1r
+          authServiceUserPoolId: eu-west-1_iOJbwm0YC
+          externalProfileDataEnabled: true
+
+          # Basic features
+          telehealthEnabled: true
+          telehealthVideoCapabilityEnabled: false
+          telehealthMediaSharingEnabled: false
+          nutribotEnabled: false
+          findAClinicEnabled: false
+          findAClinicAddressApiEnabled: false
+          askAVetDirectlyEnabled: true
+          aivetEnabled: true
+          conciergeUrl: null
+
+          # Customisation
+          externalPetDataEnabled: true
+          externalLinksEventsEnabled: false
+          embeddedEmailClientEnabled: true
+          nutribotRecommendationShortJourneyEnabled: false
+          addPetOptionEnabled: false
+          extendedFeedbackEnabled: false
+          closeButtonEnabled: true
+          backButtonEnabled: false
+          goHomeLinkEnabled: true
+          footerChatCreditsEnabled: false
+          aivetUrgencyOrderEnabled: true
+          skipPrimarySymptomEnabled: true
+          termsOfServiceHomeEnabled: true
+          lastNameRequired: false
+          petBreedEnabled: true
+          assessmentDateFormat: MM/dd/yyyy
+          defaultPhonePrefix: '+1'
+          appName: 'VetInsight Assistant'
+          brandName: 'The Wildest'
+          brandLogo: 'barkibu-logo.svg'
+          brandLogoWidth: '70px'
+          headerWithoutLogo: false
+          botPreMessageDelay: 1000
+          botPostMessageDelay: 400
+          useSpecialTranslations: 'thewildest'
+          virtualVetInfoEnabled: true
+          externalToSEnabled: false
+
+          # Fallback theme & client_id
+          iconsTheme: 'thewildest'
+          fallbackTheme: 'thewildest'
+          fallbackClientId: 'thewildest'
+
+          # Contanct vet options
+          chatWithVetEnabled: false
+          chatOnPhoneCallUrl: null
+          emailAccount: vet.help@mail.kinship.barkibu.com
+
+          # System configuration
+          envName: 'staging'
+          apiUrl: 'https://kinship-ch-staging.herokuapp.com/v2'
+          segmentWriteKey: 'rPPj23gMWicB6Kt2CzQKVuUvnhwsR9wo'
+
+          # Overriden configuration for each client id
+          clientIdConfigOverride: null
+
+      build_web_compilers|entrypoint:
+        options:
+          compiler: dart2js
+          dart2js_args:
+          - -O4
+      build_web_compilers|dart_source_cleanup:
+        release_options:
+          enabled: false
+
+builders:
+  config_builder:
+    import: "package:web_widget/builders/config_builder.dart"
+    builder_factories: ["configBuilder"]
+    build_extensions:
+      "$lib$": ["config.g.dart"]

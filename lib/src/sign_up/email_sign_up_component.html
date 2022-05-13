@@ -53,26 +53,27 @@
   </div>
 
   <div class="form-group" >
-    <div class="form-check" >
-      <label for="checkboxValue" class="form-check-label">
-        <input type="checkbox" class="form-check-input" id="checkboxValue"
-          #checkboxValue="ngForm" ngControl="checkboxValue"
-          [(ngModel)]="model.checkboxValue"
-          [class.is-invalid]="shouldShowError(checkboxValue)" />
-        {{messages.authMessages.sign_up.accept_terms}}
-        <button class="terms-of-service" *ngIf="!externalToSEnabled"
-          (click)="showTermsAndConditions()"
-          type="button">{{messages.homeMessages.termsOfService.termsOfService}}</button>
-          <div *ngIf="externalToSEnabled" [innerHtml]="messages.authMessages.sign_up.terms_and_privacy(brandName, terms_and_condition_url, terms_and_privacy_url)"></div>
-      </label>
+    <div *ngIf="!marketingOptInEnabled" >
+      <div class="form-check">
+        <label for="checkboxValue" class="form-check-label">
+          <input type="checkbox" class="form-check-input" id="checkboxValue"
+            #checkboxValue="ngForm" ngControl="checkboxValue"
+            [(ngModel)]="model.checkboxValue"
+            [class.is-invalid]="shouldShowError(checkboxValue)" />
+          {{messages.authMessages.sign_up.accept_terms}}
+          <button class="terms-of-service" *ngIf="!externalToSEnabled"
+            (click)="showTermsAndConditions()"
+            type="button">{{messages.homeMessages.termsOfService.termsOfService}}</button>
+            <div *ngIf="externalToSEnabled" [innerHtml]="messages.authMessages.sign_up.terms_and_privacy(brandName, terms_and_condition_url, terms_and_privacy_url)"></div>
+        </label>
+      </div>
+      <div *ngIf="shouldShowError(checkboxValue)" class="invalid-feedback">
+        <div *ngFor="let key of checkboxValue.errors.keys">
+          {{checkboxValue.errors[key]}}</div>
+      </div>
     </div>
-
     <div *ngIf="marketingOptInEnabled" [innerHtml]="messages.authMessages.sign_up.marketing_optin_acknowledgement(marketingBrandName)"></div>
 
-    <div *ngIf="shouldShowError(checkboxValue)" class="invalid-feedback">
-      <div *ngFor="let key of checkboxValue.errors.keys">
-        {{checkboxValue.errors[key]}}</div>
-    </div>
   </div>
   <input type="submit" />
 </form>

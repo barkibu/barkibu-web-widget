@@ -1,0 +1,89 @@
+targets:
+  $default:
+    sources:
+      include: ["lib/**", "web/**"]
+      exclude: ["lib/builders/**"]
+    builders:
+      web_widget|config_builder:
+        options:
+          # Authentication options
+          authByEmailEnabled: false
+          authByPhoneEnabled: false
+          useLegacyAuthDatasource: true
+          authServiceAppClientId: 1bbkeqtkl1k4mmgpbg3i9flg6l
+          authServiceUserPoolId: eu-west-1_sBs5eEqy2
+          externalProfileDataEnabled: true
+
+          # Basic features
+          telehealthEnabled: true
+          telehealthVideoCapabilityEnabled: true
+          telehealthMediaSharingEnabled: true
+          nutribotEnabled: true
+          findAClinicEnabled: false
+          findAClinicAddressApiEnabled: false
+          askAVetDirectlyEnabled: true
+          aivetEnabled: true
+          conciergeUrl: null
+
+          # Customisation
+          externalPetDataEnabled: true
+          externalLinksEventsEnabled: false
+          embeddedEmailClientEnabled: true
+          nutribotRecommendationShortJourneyEnabled: false
+          addPetOptionEnabled: false
+          extendedFeedbackEnabled: false
+          closeButtonEnabled: true
+          backButtonEnabled: true
+          goHomeLinkEnabled: true
+          footerChatCreditsEnabled: false
+          aivetUrgencyOrderEnabled: true
+          skipPrimarySymptomEnabled: true
+          termsOfServiceHomeEnabled: true
+          lastNameRequired: false
+          petBreedEnabled: true
+          assessmentDateFormat: MM/dd/yyyy
+          defaultPhonePrefix: '+1'
+          appName: 'VetInsight Assistant'
+          brandName: 'Walmart'
+          brandLogo: 'walmart-logo.svg'
+          brandLogoWidth: '150px'
+          headerWithoutLogo: false
+          useSpecialTranslations: 'tsc'
+          botPreMessageDelay: 1000
+          botPostMessageDelay: 400
+          virtualVetInfoEnabled: true
+          externalToSEnabled: false
+
+          # Fallback theme & client_id
+          iconsTheme: 'walmart'
+          fallbackTheme: 'walmart'
+          fallbackClientId: 'walmart'
+
+          # Contanct vet options
+          chatWithVetEnabled: true
+          chatOnPhoneCallUrl: https://calendly.com/vetinsight-walmart/consult?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}
+          emailAccount: getvethelp@walmart.vetinsight.com
+
+          # System configuration
+          envName: 'production'
+          apiUrl: 'https://walmart-vet-insight.herokuapp.com/v2'
+          segmentWriteKey: '6TXjtAz4ANAdT69M4kFaZU00E95DqHP5'
+
+          # Overriden configuration for each client id
+          clientIdConfigOverride: null
+
+      build_web_compilers|entrypoint:
+        options:
+          compiler: dart2js
+          dart2js_args:
+          - -O4
+      build_web_compilers|dart_source_cleanup:
+        release_options:
+          enabled: false
+
+builders:
+  config_builder:
+    import: "package:web_widget/builders/config_builder.dart"
+    builder_factories: ["configBuilder"]
+    build_extensions:
+      "$lib$": ["config.g.dart"]

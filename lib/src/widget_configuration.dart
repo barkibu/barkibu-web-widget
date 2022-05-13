@@ -59,6 +59,9 @@ class WidgetConfiguration extends Configuration {
   String get brandName => _clientIdOverridenValue('brandName') ?? config.brandName;
 
   @override
+  bool get marketingOptInEnabled => _clientIdOverridenValue('marketingOptInEnabled') ?? config.marketingOptInEnabled;
+
+  @override
   String get marketingBrandName => _clientIdOverridenValue('marketingBrandName') ?? config.marketingBrandName;
 
   @override

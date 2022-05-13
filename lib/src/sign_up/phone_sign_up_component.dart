@@ -82,11 +82,15 @@ class PhoneSignUpComponent extends SignUpFormComponent implements OnDestroy, OnI
 
   String get brandName => config.brandName;
 
+  String get marketingBrandName => config.marketingBrandName;
+
   String get terms_and_condition_url => messages.authMessages.sign_up.terms_and_condition_url;
 
   String get terms_and_privacy_url => messages.authMessages.sign_up.privacy_url;
 
   bool get isLastNameRequired => config.lastNameRequired;
+
+  bool get marketingOptInEnabled => config.marketingOptInEnabled;
 
   bool shouldShowError(AbstractControlDirective control) {
     return !control.valid && (control.touched || isPhoneSubmitted);

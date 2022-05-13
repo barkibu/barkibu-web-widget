@@ -1,0 +1,88 @@
+targets:
+  $default:
+    sources:
+      include: ["lib/**", "web/**"]
+      exclude: ["lib/builders/**"]
+    builders:
+      web_widget|config_builder:
+        options:
+          # Authentication options
+          authByEmailEnabled: false
+          authByPhoneEnabled: false
+          useLegacyAuthDatasource: true
+          authServiceAppClientId: null
+          authServiceUserPoolId: null
+          externalProfileDataEnabled: true
+
+          # Basic features
+          telehealthEnabled: true
+          telehealthVideoCapabilityEnabled: false
+          telehealthMediaSharingEnabled: false
+          nutribotEnabled: true
+          findAClinicEnabled: false
+          findAClinicAddressApiEnabled: false
+          askAVetDirectlyEnabled: true
+          aivetEnabled: true
+          conciergeUrl: null
+
+          # Customisation
+          externalPetDataEnabled: true
+          externalLinksEventsEnabled: true
+          embeddedEmailClientEnabled: true
+          nutribotRecommendationShortJourneyEnabled: false
+          addPetOptionEnabled: true
+          extendedFeedbackEnabled: false
+          closeButtonEnabled: false
+          backButtonEnabled: true
+          goHomeLinkEnabled: false
+          footerChatCreditsEnabled: false
+          aivetUrgencyOrderEnabled: true
+          skipPrimarySymptomEnabled: true
+          termsOfServiceHomeEnabled: true
+          lastNameRequired: false
+          petBreedEnabled: false
+          assessmentDateFormat: MM/dd/yyyy
+          defaultPhonePrefix: '+1'
+          appName: 'VetInsight Assistant'
+          brandName: 'VETINSIGHT™'
+          brandLogo: 'poweredby-vetinsight-tsc.svg'
+          brandLogoWidth: '70px'
+          headerWithoutLogo: true
+          botPostMessageDelay: 400
+          useSpecialTranslations: 'tsc'
+          virtualVetInfoEnabled: true
+          externalToSEnabled: false
+
+          # Fallback theme & client_id
+          iconsTheme: 'tsc'
+          fallbackTheme: 'tsc'
+          fallbackClientId: 'tsc'
+
+          # Contanct vet options
+          chatWithVetEnabled: true
+          chatOnPhoneCallUrl: https://calendly.com/vetinsight/tsc?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}
+          emailAccount: vet.help@tsc-app.vetinsight.com
+
+          # System configuration
+          envName: 'production'
+          apiUrl: 'https://tsc-vet-insight.herokuapp.com/v2'
+          segmentWriteKey: 'LD13NDS3HR8TA5jezxqzb03XGIWRuGuk'
+
+          # Overriden configuration for each client id
+          clientIdConfigOverride: null
+
+      build_web_compilers|entrypoint:
+        options:
+          compiler: dart2js
+          dart2js_args:
+          - -O4
+      build_web_compilers|dart_source_cleanup:
+        release_options:
+          enabled: false
+
+builders:
+  config_builder:
+    import: "package:web_widget/builders/config_builder.dart"
+    builder_factories: ["configBuilder"]
+    build_extensions:
+      "$lib$": ["config.g.dart"]

@@ -78,7 +78,7 @@ class SignUpComponent extends HasInfoScreen implements OnDestroy {
   bool get hideEmailForm => !_config.authByEmailEnabled;
   bool get hidePhoneForm => !_config.authByPhoneEnabled;
   String get privacyUrl => _config.privacyUrl;
-  bool get marketingOptInEnabled => _config.marketingBrandName.isNotEmpty;
+  bool get marketingOptInEnabled => _config.marketingOptInEnabled;
 
   bool get isCodeFormShown {
     return phoneSignUpForm != null && isPhoneFormActive && phoneSignUpForm.isCodeFormShown;

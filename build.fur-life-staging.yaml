@@ -1,0 +1,89 @@
+targets:
+  $default:
+    sources:
+      include: ["lib/**", "web/**"]
+      exclude: ["lib/builders/**"]
+    builders:
+      web_widget|config_builder:
+        options:
+          # Authentication options
+          authByEmailEnabled: false
+          authByPhoneEnabled: false
+          useLegacyAuthDatasource: true
+          authServiceAppClientId: 3ql2ser61bn9ub3dlpr8a0pj1r
+          authServiceUserPoolId: eu-west-1_iOJbwm0YC
+          externalProfileDataEnabled: true
+
+          # Basic features
+          telehealthEnabled: true
+          telehealthVideoCapabilityEnabled: true
+          telehealthMediaSharingEnabled: true
+          nutribotEnabled: true
+          findAClinicEnabled: false
+          findAClinicAddressApiEnabled: false
+          askAVetDirectlyEnabled: true
+          aivetEnabled: true
+          conciergeUrl: null
+
+          # Customisation
+          externalPetDataEnabled: true
+          externalLinksEventsEnabled: false
+          embeddedEmailClientEnabled: true
+          nutribotRecommendationShortJourneyEnabled: true
+          addPetOptionEnabled: false
+          extendedFeedbackEnabled: false
+          closeButtonEnabled: true
+          backButtonEnabled: true
+          goHomeLinkEnabled: true
+          footerChatCreditsEnabled: false
+          aivetUrgencyOrderEnabled: true
+          skipPrimarySymptomEnabled: true
+          termsOfServiceHomeEnabled: true
+          lastNameRequired: false
+          petBreedEnabled: true
+          assessmentDateFormat: MM/dd/yyyy
+          defaultPhonePrefix: '+1'
+          appName: 'VetInsight Assistant'
+          brandName: 'Fur Life'
+          brandLogo: 'fur-life-logo.svg'
+          brandLogoWidth: '70px'
+          headerWithoutLogo: true
+          botPreMessageDelay: 1000
+          botPostMessageDelay: 400
+          useSpecialTranslations: 'tsc'
+          virtualVetInfoEnabled: true
+          externalToSEnabled: false
+
+          # Fallback theme & client_id
+          iconsTheme: 'whitelabel'
+          fallbackTheme: 'fur-life'
+          fallbackClientId: 'furlife'
+
+          # Contanct vet options
+          chatWithVetEnabled: true
+          chatOnPhoneCallUrl: https://calendly.com/susie-teran/?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}
+          emailAccount: getvethelp@furlife-app.vetinsight.com
+
+          # System configuration
+          envName: 'staging'
+          apiUrl: 'https://fur-life-ch-staging.herokuapp.com/v2'
+          segmentWriteKey: '0Oq5YQSrIAVN9w9dFACi22aOOjxcabHT'
+
+          # Overriden configuration for each client id
+          clientIdConfigOverride: null
+
+      build_web_compilers|entrypoint:
+        options:
+          compiler: dart2js
+          dart2js_args:
+          - -O4
+      build_web_compilers|dart_source_cleanup:
+        release_options:
+          enabled: false
+
+builders:
+  config_builder:
+    import: "package:web_widget/builders/config_builder.dart"
+    builder_factories: ["configBuilder"]
+    build_extensions:
+      "$lib$": ["config.g.dart"]
