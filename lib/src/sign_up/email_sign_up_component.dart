@@ -57,18 +57,24 @@ class EmailSignUpComponent extends SignUpFormComponent implements OnDestroy {
 
   String get brandName => config.brandName;
 
+  String get marketingBrandName => config.marketingBrandName;
+
   String get terms_and_condition_url => messages.authMessages.sign_up.terms_and_condition_url;
 
   String get terms_and_privacy_url => messages.authMessages.sign_up.privacy_url;
 
   bool get isLastNameRequired => config.lastNameRequired;
 
+  bool get submitAuthorized => model.checkboxValue || marketingBrandName.isNotEmpty;
+
+  bool get marketingOptInEnabled => config.marketingBrandName.isNotEmpty;
+
   SignUpSubmitted buildSubmitEvent() {
     return SignUpSubmitted((b) => (b
       ..firstName = model.firstName
       ..lastName = model.lastName
       ..email = model.email
-      ..checkboxValue = model.checkboxValue
+      ..checkboxValue = submitAuthorized
       ..password = model.password
       ..passwordRepeat = model.passwordRepeat));
   }

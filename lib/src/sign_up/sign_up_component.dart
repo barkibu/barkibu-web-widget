@@ -1,3 +1,5 @@
+import 'dart:web_gl';
+
 import 'package:angular/angular.dart';
 import 'package:common_barkibu_dart/common_barkibu_dart.dart';
 import 'package:web_widget/src/bloc/chat/info_bloc.dart';
@@ -75,6 +77,8 @@ class SignUpComponent extends HasInfoScreen implements OnDestroy {
   bool get isLoading => activeForm != null && activeForm.isLoading;
   bool get hideEmailForm => !_config.authByEmailEnabled;
   bool get hidePhoneForm => !_config.authByPhoneEnabled;
+  String get privacyUrl => _config.privacyUrl;
+  bool get marketingOptInEnabled => _config.marketingBrandName.isNotEmpty;
 
   bool get isCodeFormShown {
     return phoneSignUpForm != null && isPhoneFormActive && phoneSignUpForm.isCodeFormShown;

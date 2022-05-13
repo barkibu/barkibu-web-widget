@@ -27,6 +27,8 @@ class Sign_upAuthMessages_es extends Sign_upAuthMessages {
 	const Sign_upAuthMessages_es(this._parent):super(_parent);
 	String get phone_number_error => "Escribe un teléfono válido";
 	String terms_and_privacy(String brandName, String termsUrl, String privacyUrl) => "Al continuar, aceptas los <a href='$termsUrl'>Términos y Condiciones de Uso</a> y la <a href='$privacyUrl'>Política de Privacidad</a> de $brandName";
+	String marketing_optin_acknowledgement(String marketingBrandName) => "Clicando en el botón de Registro, estás indicando que te gustaría recibir información comercial de $marketingBrandName y sus afiliados con ofertas especiales, lo último sobre los productos de $marketingBrandName y más.";
+	String data_privacy_policy(String privacyUrl) => "iene que ser mayor de 16 años para suscribirte y poder suscribirte en cualquier momento. Utilizamos tu información para mejorar tu experiencia y la información que te ofrecemos; mira nuestra <a href='$privacyUrl'>Política de Privacidad</a> para ver los detalles de cómo gestionamos tus datos.";
 	String get email => "Email";
 	String get lastname_error => "Escribe un apellido válido";
 	String get lastname_hint => "Escribe tus apellidos";
