@@ -4,7 +4,7 @@ targets:
       web_widget|config_builder:
         options:
           # Authentication options
-          authByEmailEnabled: false
+          authByEmailEnabled: true
           authByPhoneEnabled: false
           useLegacyAuthDatasource: true
           authServiceAppClientId: null
