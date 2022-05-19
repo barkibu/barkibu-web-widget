@@ -1,6 +1,8 @@
 sign_up:
   phone_number_error: 'Geben Sie eine gültige Telefonnummer ein'
   terms_and_privacy(String brandName, String termsUrl, String privacyUrl): Wenn Sie fortfahren, akzeptieren Sie die <a href='$termsUrl'>Allgemeinen Geschäftsbedingungen</a> und die <a href='$privacyUrl'>Datenschutzrichtlinie</a> von $brandName
+  marketing_optin_acknowledgement(String marketingBrandName, String affiliatesUrl): By clicking on Signup, you are indicating you would like to hear from $marketingBrandName and its <a target=_blank href='$affiliatesUrl'>affiliates</a> with special offers, the latest about $marketingBrandName products and more.
+  data_privacy_policy(String privacyUrl): Must be 16 or older to subscribe and may unsubscribe at any time. We may use your data for research to improve our offerings. See ou <a target=_blank href='$privacyUrl'>Privacy Policy</a> for details about how we use your data.
   email: 'Email'
   lastname_error: 'Geben Sie einen gültigen Nachnamen ein'
   lastname_hint: 'Geben Sie Ihren Nachnamen ein'

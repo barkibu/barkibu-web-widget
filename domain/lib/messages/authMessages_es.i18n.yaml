@@ -1,8 +1,8 @@
 sign_up:
   phone_number_error: 'Escribe un teléfono válido'
   terms_and_privacy(String brandName, String termsUrl, String privacyUrl): Al continuar, aceptas los <a href='$termsUrl'>Términos y Condiciones de Uso</a> y la <a href='$privacyUrl'>Política de Privacidad</a> de $brandName
-  marketing_optin_acknowledgement(String marketingBrandName): Clicando en el botón de Registro, estás indicando que te gustaría recibir información comercial de $marketingBrandName y sus afiliados con ofertas especiales, lo último sobre los productos de $marketingBrandName y más.
-  data_privacy_policy(String privacyUrl): Tiene que ser mayor de 16 años para suscribirte y poder suscribirte en cualquier momento. Utilizamos tu información para mejorar tu experiencia y la información que te ofrecemos; mira nuestra <a href='$privacyUrl'>Política de Privacidad</a> para ver los detalles de cómo gestionamos tus datos.
+  marketing_optin_acknowledgement(String marketingBrandName, String affiliatesUrl): Clicando en el botón de Registro, estás indicando que te gustaría recibir información comercial de $marketingBrandName y sus <a target=_blank href='$affiliatesUrl'>afiliados</a> con ofertas especiales, lo último sobre los productos de $marketingBrandName y más.
+  data_privacy_policy(String privacyUrl): Tiene que ser mayor de 16 años para suscribirte y poder suscribirte en cualquier momento. Utilizamos tu información para mejorar tu experiencia y la información que te ofrecemos; mira nuestra <a target=_blank href='$privacyUrl'>Política de Privacidad</a> para ver los detalles de cómo gestionamos tus datos.
   email: 'Email'
   lastname_error: 'Escribe un apellido válido'
   lastname_hint: 'Escribe tus apellidos'

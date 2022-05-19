@@ -48,8 +48,9 @@ targets:
           brandLogo: 'iams-logo.svg'
           brandLogoWidth: '70px'
           marketingOptInEnabled: true
-          marketingBrandName: 'Mars'
-          privacyUrl: ''
+          marketingBrandName: 'Mars Petcare'
+          privacyUrl: 'https://www.mars.com/privacy'
+          affiliatesUrl: 'https://www.mars.com/made-by-mars'
           headerWithoutLogo: false
           botPreMessageDelay: 1000
           botPostMessageDelay: 400

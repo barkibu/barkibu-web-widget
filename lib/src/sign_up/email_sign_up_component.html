@@ -72,7 +72,7 @@
           {{checkboxValue.errors[key]}}</div>
       </div>
     </div>
-    <div *ngIf="marketingOptInEnabled" [innerHtml]="messages.authMessages.sign_up.marketing_optin_acknowledgement(marketingBrandName)"></div>
+    <div *ngIf="marketingOptInEnabled" [innerHtml]="messages.authMessages.sign_up.marketing_optin_acknowledgement(marketingBrandName, affiliatesUrl)"></div>
 
   </div>
   <input type="submit" />

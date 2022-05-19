@@ -9,6 +9,7 @@ abstract class Configuration {
   bool marketingOptInEnabled = false;
   String marketingBrandName = '';
   String privacyUrl = '';
+  String affiliatesUrl = '';
   bool headerWithoutLogo = false;
   String emailAccount;
   String supportSpanishAccount;

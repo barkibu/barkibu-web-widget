@@ -53,6 +53,10 @@ targets:
           useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: true
+          marketingBrandName: ''
+          marketingOptInEnabled: true
+          privacyUrl: ''
+          affiliatesUrl: ''
 
           # Fallback theme & client_id
           iconsTheme: 'default'

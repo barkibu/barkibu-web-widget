@@ -84,6 +84,8 @@ class PhoneSignUpComponent extends SignUpFormComponent implements OnDestroy, OnI
 
   String get marketingBrandName => config.marketingBrandName;
 
+  String get affiliatesUrl => config.affiliatesUrl;
+
   String get terms_and_condition_url => messages.authMessages.sign_up.terms_and_condition_url;
 
   String get terms_and_privacy_url => messages.authMessages.sign_up.privacy_url;

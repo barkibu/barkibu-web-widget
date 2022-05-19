@@ -53,6 +53,10 @@ targets:
           botPostMessageDelay: 400
           virtualVetInfoEnabled: true
           externalToSEnabled: false
+          marketingBrandName: ''
+          marketingOptInEnabled: true
+          privacyUrl: ''
+          affiliatesUrl: ''
 
           # Fallback theme & client_id
           iconsTheme: 'walmart'

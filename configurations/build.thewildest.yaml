@@ -53,6 +53,9 @@ targets:
           useSpecialTranslations: 'thewildest'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
+          marketingBrandName: ''
+          marketingOptInEnabled: true
+          privacyUrl: ''
 
           # Fallback theme & client_id
           iconsTheme: 'thewildest'

@@ -68,6 +68,9 @@ class WidgetConfiguration extends Configuration {
   String get privacyUrl => _clientIdOverridenValue('privacyUrl') ?? config.privacyUrl;
 
   @override
+  String get affiliatesUrl => _clientIdOverridenValue('affiliatesUrl') ?? config.affiliatesUrl;
+
+  @override
   String get brandLogo => _clientIdOverridenValue('brandLogo') ?? config.brandLogo;
 
   @override
