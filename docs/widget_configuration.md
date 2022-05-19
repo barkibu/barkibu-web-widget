@@ -83,6 +83,10 @@ Generated code in `config.g.dart` file is used by [widget_configuration.dart](..
 - `appName` - Defines the application name. Value is inserted in copies instead of placeholders where an application name is mentioned
 - `brandName` - Same as `appName` but for a brand/company name. Used to replace placeholders in copies.
 - `brandLogo` - File name of the apps logo. The file needs to be placed in `assets/images/`
+- `marketingBrandName` - Defines the name of the marketing brand that appears when `marketingOptInEnabled` is activated.
+- `marketingOptInEnabled` - Defines wether the texts relative to marketing opt in is active or not.
+- `privacyUrl` - Defines the url to which user should be redirected to know the privacy terms of the brand.
+- `affiliatesUrl` - Defines the url related to the affiliates link shown if `marketingOptInEnabled` is enabled.
 - `emailAccount` - Defines an email address where pet parents should send their emails in order to contact with a vet
 - `emailNewLineFormat` - Defines a new line separator, used to build a body for an email consultation
 - `chatOnPhoneCallUrl` - Url for external service where pet parent can schedule a phone call with a vet. Used when pet parent selects `Phone` option to connect with a vet
