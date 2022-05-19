@@ -27,6 +27,8 @@ class Sign_upAuthMessages_de extends Sign_upAuthMessages {
 	const Sign_upAuthMessages_de(this._parent):super(_parent);
 	String get phone_number_error => "Geben Sie eine gültige Telefonnummer ein";
 	String terms_and_privacy(String brandName, String termsUrl, String privacyUrl) => "Wenn Sie fortfahren, akzeptieren Sie die <a href='$termsUrl'>Allgemeinen Geschäftsbedingungen</a> und die <a href='$privacyUrl'>Datenschutzrichtlinie</a> von $brandName";
+	String marketing_optin_acknowledgement(String marketingBrandName, String affiliatesUrl) => "By clicking on Signup, you are indicating you would like to hear from $marketingBrandName and its <a target=_blank href='$affiliatesUrl'>affiliates</a> with special offers, the latest about $marketingBrandName products and more.";
+	String data_privacy_policy(String privacyUrl) => "Must be 16 or older to subscribe and may unsubscribe at any time. We may use your data for research to improve our offerings. See ou <a target=_blank href='$privacyUrl'>Privacy Policy</a> for details about how we use your data.";
 	String get email => "Email";
 	String get lastname_error => "Geben Sie einen gültigen Nachnamen ein";
 	String get lastname_hint => "Geben Sie Ihren Nachnamen ein";

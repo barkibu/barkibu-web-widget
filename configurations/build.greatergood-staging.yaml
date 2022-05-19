@@ -1,21 +1,24 @@
 targets:
   $default:
+    sources:
+      include: ["lib/**", "web/**"]
+      exclude: ["lib/builders/**"]
     builders:
       web_widget|config_builder:
         options:
           # Authentication options
-          authByEmailEnabled: true
+          authByEmailEnabled: false
           authByPhoneEnabled: false
           useLegacyAuthDatasource: true
-          authServiceAppClientId: null
-          authServiceUserPoolId: null
+          authServiceAppClientId: 3ql2ser61bn9ub3dlpr8a0pj1r
+          authServiceUserPoolId: eu-west-1_iOJbwm0YC
           externalProfileDataEnabled: true
 
           # Basic features
           telehealthEnabled: true
-          telehealthVideoCapabilityEnabled: false
-          telehealthMediaSharingEnabled: false
-          nutribotEnabled: true
+          telehealthVideoCapabilityEnabled: true
+          telehealthMediaSharingEnabled: true
+          nutribotEnabled: false
           findAClinicEnabled: false
           findAClinicAddressApiEnabled: false
           askAVetDirectlyEnabled: true
@@ -25,11 +28,11 @@ targets:
           # Customisation
           externalPetDataEnabled: true
           externalLinksEventsEnabled: false
-          embeddedEmailClientEnabled: false
+          embeddedEmailClientEnabled: true
           nutribotRecommendationShortJourneyEnabled: false
-          addPetOptionEnabled: true
+          addPetOptionEnabled: false
           extendedFeedbackEnabled: false
-          closeButtonEnabled: false
+          closeButtonEnabled: true
           backButtonEnabled: true
           goHomeLinkEnabled: true
           footerChatCreditsEnabled: false
@@ -41,37 +44,47 @@ targets:
           assessmentDateFormat: MM/dd/yyyy
           defaultPhonePrefix: '+1'
           appName: 'VetInsight Assistant'
-          brandName: 'VETINSIGHT™'
-          brandLogo: 'vetinsight-logo.svg'
-          brandLogoWidth: '70px'
-          marketingBrandName: 'Brand name'
-          marketingOptInEnabled: false
-          privacyUrl: 'https://www.mars.com/made-by-mars'
-          affiliatesUrl: 'https://www.mars.com/made-by-mars'
+          brandName: 'Greater Good'
+          brandLogo: 'logo-ggc.png'
+          brandLogoWidth: '170px'
           headerWithoutLogo: false
+          customBotIcon: true
+          useSpecialTranslations: 'tsc'
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
-          useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
+          marketingBrandName: ''
+          marketingOptInEnabled: true
+          privacyUrl: ''
+          affiliatesUrl: ''
 
           # Fallback theme & client_id
-          iconsTheme: 'whitelabel'
-          fallbackTheme: 'whitelabel'
-          fallbackClientId: 'whitelabel'
+          iconsTheme: 'greatergood'
+          fallbackTheme: 'greatergood'
+          fallbackClientId: 'greatergood'
 
           # Contanct vet options
           chatWithVetEnabled: true
-          chatOnPhoneCallUrl: https://calendly.com/susie-teran/demo?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}&back=1
+          chatOnPhoneCallUrl: https://calendly.com/vetinsight-greater-good/fostertoforever?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}
           emailAccount: vet.help@mail.kinship.barkibu.com
 
           # System configuration
           envName: 'staging'
-          apiUrl: 'https://whitelabel-ch-staging.herokuapp.com/v2'
-          segmentWriteKey: '0Vc8s8WB69mrDy3Rnve6gSdCA1HDOhZJ'
+          apiUrl: 'https://kinship-ch-staging.herokuapp.com/v2'
+          segmentWriteKey: '40zZnN5GpSmn5cRJpU43ZtoDDQMKhEFh'
 
           # Overriden configuration for each client id
           clientIdConfigOverride: null
+
+      build_web_compilers|entrypoint:
+        options:
+          compiler: dart2js
+          dart2js_args:
+          - -O4
+      build_web_compilers|dart_source_cleanup:
+        release_options:
+          enabled: false
 
 builders:
   config_builder:

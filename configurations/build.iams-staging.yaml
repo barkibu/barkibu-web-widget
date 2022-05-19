@@ -1,52 +1,55 @@
 targets:
   $default:
+    sources:
+      include: ["lib/**", "web/**"]
+      exclude: ["lib/builders/**"]
     builders:
       web_widget|config_builder:
         options:
           # Authentication options
           authByEmailEnabled: true
           authByPhoneEnabled: false
-          useLegacyAuthDatasource: true
-          authServiceAppClientId: null
-          authServiceUserPoolId: null
-          externalProfileDataEnabled: true
+          useLegacyAuthDatasource: false
+          authServiceAppClientId: 2mapp17u8ep4pi30kikumlcpuv
+          authServiceUserPoolId: eu-west-1_iOJbwm0YC
+          externalProfileDataEnabled: false
 
           # Basic features
           telehealthEnabled: true
-          telehealthVideoCapabilityEnabled: false
-          telehealthMediaSharingEnabled: false
+          telehealthVideoCapabilityEnabled: true
+          telehealthMediaSharingEnabled: true
           nutribotEnabled: true
-          findAClinicEnabled: false
-          findAClinicAddressApiEnabled: false
+          findAClinicEnabled: true
+          findAClinicAddressApiEnabled: true
           askAVetDirectlyEnabled: true
           aivetEnabled: true
           conciergeUrl: null
 
           # Customisation
-          externalPetDataEnabled: true
+          externalPetDataEnabled: false
           externalLinksEventsEnabled: false
-          embeddedEmailClientEnabled: false
-          nutribotRecommendationShortJourneyEnabled: false
+          embeddedEmailClientEnabled: true
+          nutribotRecommendationShortJourneyEnabled: true
           addPetOptionEnabled: true
           extendedFeedbackEnabled: false
-          closeButtonEnabled: false
+          closeButtonEnabled: true
           backButtonEnabled: true
           goHomeLinkEnabled: true
           footerChatCreditsEnabled: false
           aivetUrgencyOrderEnabled: true
           skipPrimarySymptomEnabled: true
           termsOfServiceHomeEnabled: true
-          lastNameRequired: false
-          petBreedEnabled: false
+          lastNameRequired: true
+          petBreedEnabled: true
           assessmentDateFormat: MM/dd/yyyy
           defaultPhonePrefix: '+1'
           appName: 'VetInsight Assistant'
-          brandName: 'VETINSIGHT™'
-          brandLogo: 'vetinsight-logo.svg'
+          brandName: 'Iams'
+          brandLogo: 'iams-logo.svg'
           brandLogoWidth: '70px'
-          marketingBrandName: 'Brand name'
-          marketingOptInEnabled: false
-          privacyUrl: 'https://www.mars.com/made-by-mars'
+          marketingOptInEnabled: true
+          marketingBrandName: 'Mars Petcare'
+          privacyUrl: 'https://www.mars.com/privacy'
           affiliatesUrl: 'https://www.mars.com/made-by-mars'
           headerWithoutLogo: false
           botPreMessageDelay: 1000
@@ -56,22 +59,31 @@ targets:
           externalToSEnabled: false
 
           # Fallback theme & client_id
-          iconsTheme: 'whitelabel'
-          fallbackTheme: 'whitelabel'
-          fallbackClientId: 'whitelabel'
+          iconsTheme: 'iams'
+          fallbackTheme: 'iams-dogs'
+          fallbackClientId: 'iams'
 
           # Contanct vet options
           chatWithVetEnabled: true
-          chatOnPhoneCallUrl: https://calendly.com/susie-teran/demo?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}&back=1
+          chatOnPhoneCallUrl: https://calendly.com/susie-teran/?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}
           emailAccount: vet.help@mail.kinship.barkibu.com
 
           # System configuration
           envName: 'staging'
-          apiUrl: 'https://whitelabel-ch-staging.herokuapp.com/v2'
-          segmentWriteKey: '0Vc8s8WB69mrDy3Rnve6gSdCA1HDOhZJ'
+          apiUrl: 'https://kinship-ch-staging.herokuapp.com/v2'
+          segmentWriteKey: 'AlmkRCbqMwRgQ3yrIZrvKXfggbQu9dYO'
 
           # Overriden configuration for each client id
           clientIdConfigOverride: null
+
+      build_web_compilers|entrypoint:
+        options:
+          compiler: dart2js
+          dart2js_args:
+          - -O4
+      build_web_compilers|dart_source_cleanup:
+        release_options:
+          enabled: false
 
 builders:
   config_builder:

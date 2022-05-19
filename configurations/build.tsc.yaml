@@ -1,10 +1,13 @@
 targets:
   $default:
+    sources:
+      include: ["lib/**", "web/**"]
+      exclude: ["lib/builders/**"]
     builders:
       web_widget|config_builder:
         options:
           # Authentication options
-          authByEmailEnabled: true
+          authByEmailEnabled: false
           authByPhoneEnabled: false
           useLegacyAuthDatasource: true
           authServiceAppClientId: null
@@ -24,14 +27,14 @@ targets:
 
           # Customisation
           externalPetDataEnabled: true
-          externalLinksEventsEnabled: false
-          embeddedEmailClientEnabled: false
+          externalLinksEventsEnabled: true
+          embeddedEmailClientEnabled: true
           nutribotRecommendationShortJourneyEnabled: false
           addPetOptionEnabled: true
           extendedFeedbackEnabled: false
           closeButtonEnabled: false
           backButtonEnabled: true
-          goHomeLinkEnabled: true
+          goHomeLinkEnabled: false
           footerChatCreditsEnabled: false
           aivetUrgencyOrderEnabled: true
           skipPrimarySymptomEnabled: true
@@ -42,36 +45,44 @@ targets:
           defaultPhonePrefix: '+1'
           appName: 'VetInsight Assistant'
           brandName: 'VETINSIGHT™'
-          brandLogo: 'vetinsight-logo.svg'
+          brandLogo: 'poweredby-vetinsight-tsc.svg'
           brandLogoWidth: '70px'
-          marketingBrandName: 'Brand name'
-          marketingOptInEnabled: false
-          privacyUrl: 'https://www.mars.com/made-by-mars'
-          affiliatesUrl: 'https://www.mars.com/made-by-mars'
-          headerWithoutLogo: false
-          botPreMessageDelay: 1000
+          headerWithoutLogo: true
           botPostMessageDelay: 400
           useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
+          marketingBrandName: ''
+          marketingOptInEnabled: true
+          privacyUrl: ''
+          affiliatesUrl: ''
 
           # Fallback theme & client_id
-          iconsTheme: 'whitelabel'
-          fallbackTheme: 'whitelabel'
-          fallbackClientId: 'whitelabel'
+          iconsTheme: 'tsc'
+          fallbackTheme: 'tsc'
+          fallbackClientId: 'tsc'
 
           # Contanct vet options
           chatWithVetEnabled: true
-          chatOnPhoneCallUrl: https://calendly.com/susie-teran/demo?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}&back=1
-          emailAccount: vet.help@mail.kinship.barkibu.com
+          chatOnPhoneCallUrl: https://calendly.com/vetinsight/tsc?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}
+          emailAccount: vet.help@tsc-app.vetinsight.com
 
           # System configuration
-          envName: 'staging'
-          apiUrl: 'https://whitelabel-ch-staging.herokuapp.com/v2'
-          segmentWriteKey: '0Vc8s8WB69mrDy3Rnve6gSdCA1HDOhZJ'
+          envName: 'production'
+          apiUrl: 'https://tsc-vet-insight.herokuapp.com/v2'
+          segmentWriteKey: 'LD13NDS3HR8TA5jezxqzb03XGIWRuGuk'
 
           # Overriden configuration for each client id
           clientIdConfigOverride: null
+
+      build_web_compilers|entrypoint:
+        options:
+          compiler: dart2js
+          dart2js_args:
+          - -O4
+      build_web_compilers|dart_source_cleanup:
+        release_options:
+          enabled: false
 
 builders:
   config_builder:

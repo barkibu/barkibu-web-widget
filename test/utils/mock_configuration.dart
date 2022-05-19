@@ -44,4 +44,8 @@ void mockConfigDefaultValues(WidgetConfiguration config) {
   when(config.virtualVetInfoEnabled).thenReturn(true);
   when(config.externalToSEnabled).thenReturn(false);
   when(config.headerWithoutLogo).thenReturn(false);
+  when(config.marketingOptInEnabled).thenReturn(false);
+  when(config.marketingBrandName).thenReturn('Brand Name');
+  when(config.affiliatesUrl).thenReturn('');
+  when(config.privacyUrl).thenReturn('');
 }

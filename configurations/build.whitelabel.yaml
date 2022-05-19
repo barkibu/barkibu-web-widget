@@ -1,10 +1,13 @@
 targets:
   $default:
+    sources:
+      include: ["lib/**", "web/**"]
+      exclude: ["lib/builders/**"]
     builders:
       web_widget|config_builder:
         options:
           # Authentication options
-          authByEmailEnabled: true
+          authByEmailEnabled: false
           authByPhoneEnabled: false
           useLegacyAuthDatasource: true
           authServiceAppClientId: null
@@ -44,16 +47,16 @@ targets:
           brandName: 'VETINSIGHT™'
           brandLogo: 'vetinsight-logo.svg'
           brandLogoWidth: '70px'
-          marketingBrandName: 'Brand name'
-          marketingOptInEnabled: false
-          privacyUrl: 'https://www.mars.com/made-by-mars'
-          affiliatesUrl: 'https://www.mars.com/made-by-mars'
           headerWithoutLogo: false
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
           useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
+          marketingBrandName: ''
+          marketingOptInEnabled: true
+          privacyUrl: ''
+          affiliatesUrl: ''
 
           # Fallback theme & client_id
           iconsTheme: 'whitelabel'
@@ -72,6 +75,15 @@ targets:
 
           # Overriden configuration for each client id
           clientIdConfigOverride: null
+
+      build_web_compilers|entrypoint:
+        options:
+          compiler: dart2js
+          dart2js_args:
+          - -O4
+      build_web_compilers|dart_source_cleanup:
+        release_options:
+          enabled: false
 
 builders:
   config_builder:

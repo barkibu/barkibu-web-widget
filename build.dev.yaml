@@ -53,6 +53,10 @@ targets:
           useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
+          marketingBrandName: 'BrandName'
+          marketingOptInEnabled: false
+          privacyUrl: 'https://www.mars.com/made-by-mars'
+          affiliatesUrl: 'https://www.mars.com/made-by-mars'
 
           # Fallback theme & client_id
           iconsTheme: 'whitelabel'
