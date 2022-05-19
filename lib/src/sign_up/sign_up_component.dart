@@ -1,4 +1,3 @@
-import 'dart:web_gl';
 
 import 'package:angular/angular.dart';
 import 'package:angular/security.dart';
