@@ -1,6 +1,7 @@
 import 'dart:web_gl';
 
 import 'package:angular/angular.dart';
+import 'package:angular/security.dart';
 import 'package:common_barkibu_dart/common_barkibu_dart.dart';
 import 'package:web_widget/src/bloc/chat/info_bloc.dart';
 
@@ -41,6 +42,7 @@ import 'package:web_widget/src/widget_configuration.dart';
 class SignUpComponent extends HasInfoScreen implements OnDestroy {
   final MessagesModel messages;
   final WidgetConfiguration _config;
+  final DomSanitizationService _domSanitizationService;
   bool isPhoneFormActive = true;
 
   @ViewChild(EmailSignUpComponent)
@@ -49,7 +51,7 @@ class SignUpComponent extends HasInfoScreen implements OnDestroy {
   @ViewChild(PhoneSignUpComponent)
   PhoneSignUpComponent phoneSignUpForm;
 
-  SignUpComponent(this.messages, this._config, InfoBloc infoBloc) {
+  SignUpComponent(this.messages, this._config, this._domSanitizationService, InfoBloc infoBloc) {
     setInfoBloc(infoBloc);
   }
 
@@ -79,6 +81,9 @@ class SignUpComponent extends HasInfoScreen implements OnDestroy {
   bool get hidePhoneForm => !_config.authByPhoneEnabled;
   String get privacyUrl => _config.privacyUrl;
   bool get marketingOptInEnabled => _config.marketingOptInEnabled;
+
+  SafeHtml get messageDataPrivacyPolicy =>
+      _domSanitizationService.bypassSecurityTrustHtml(messages.authMessages.sign_up.data_privacy_policy(privacyUrl));
 
   bool get isCodeFormShown {
     return phoneSignUpForm != null && isPhoneFormActive && phoneSignUpForm.isCodeFormShown;

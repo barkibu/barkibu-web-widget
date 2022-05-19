@@ -1,4 +1,5 @@
 import 'package:angular/angular.dart';
+import 'package:angular/security.dart';
 import 'package:angular_bloc/angular_bloc.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
@@ -30,13 +31,15 @@ SignUpBloc signUpBlocFactory(AuthBloc authBloc) => ServiceLocator.container<Sign
 class EmailSignUpComponent extends SignUpFormComponent implements OnDestroy {
   SignUpBloc signUpBloc;
   final InfoBloc _infoBloc;
+  final DomSanitizationService _domSanitizationService;
   ControlGroup signUpForm;
   AuthData model = AuthData();
   final WidgetConfiguration config;
   MessagesModel messages;
   bool submitted = false;
 
-  EmailSignUpComponent(this.signUpBloc, this.messages, SignUpForm formBuilder, this.config, this._infoBloc) {
+  EmailSignUpComponent(this.signUpBloc, this.messages, this._domSanitizationService, SignUpForm formBuilder,
+      this.config, this._infoBloc) {
     signUpForm = formBuilder.buildSignUpFormControl();
   }
 
@@ -70,6 +73,12 @@ class EmailSignUpComponent extends SignUpFormComponent implements OnDestroy {
   bool get submitAuthorized => model.checkboxValue || marketingBrandName.isNotEmpty;
 
   bool get marketingOptInEnabled => config.marketingOptInEnabled;
+
+  SafeHtml get messageTermsAndPrivacy => _domSanitizationService.bypassSecurityTrustHtml(
+      messages.authMessages.sign_up.terms_and_privacy(brandName, terms_and_condition_url, terms_and_privacy_url));
+
+  SafeHtml get messageMarketingOptIn => _domSanitizationService.bypassSecurityTrustHtml(
+      messages.authMessages.sign_up.marketing_optin_acknowledgement(marketingBrandName, affiliatesUrl));
 
   SignUpSubmitted buildSubmitEvent() {
     return SignUpSubmitted((b) => (b
