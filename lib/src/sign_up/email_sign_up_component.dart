@@ -40,7 +40,7 @@ class EmailSignUpComponent extends SignUpFormComponent implements OnDestroy {
 
   EmailSignUpComponent(this.signUpBloc, this.messages, this._domSanitizationService, SignUpForm formBuilder,
       this.config, this._infoBloc) {
-    signUpForm = formBuilder.buildSignUpFormControl();
+    signUpForm = formBuilder.buildSignUpFormControl(submitAuthorized: submitAuthorized);
   }
 
   @override
@@ -70,7 +70,7 @@ class EmailSignUpComponent extends SignUpFormComponent implements OnDestroy {
 
   bool get isLastNameRequired => config.lastNameRequired;
 
-  bool get submitAuthorized => model.checkboxValue || marketingBrandName.isNotEmpty;
+  bool get submitAuthorized => model.checkboxValue || marketingOptInEnabled;
 
   bool get marketingOptInEnabled => config.marketingOptInEnabled;
 
