@@ -50,7 +50,7 @@ targets:
           marketingOptInEnabled: true
           marketingBrandName: 'Mars Petcare'
           privacyUrl: 'https://www.mars.com/privacy'
-          affiliatesUrl: 'https://www.mars.com/made-by-mars'
+          affiliatesUrl: 'https://www.mars.com/made-by-mars/petcare'
           headerWithoutLogo: false
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
