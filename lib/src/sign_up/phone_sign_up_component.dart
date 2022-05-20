@@ -37,7 +37,7 @@ class PhoneSignUpComponent extends SignUpFormComponent implements OnDestroy, OnI
 
   PhoneSignUpComponent(this.signUpBloc, this.messages, this._domSanitizationService, SignUpForm formBuilder,
       this.config, this._infoBloc) {
-    signUpForm = formBuilder.buildPhoneSignUpFormControl();
+    signUpForm = formBuilder.buildPhoneSignUpFormControl(submitAuthorized: submitAuthorized);
     signUpBloc.listen(signUpBlocListener);
   }
   @override
@@ -96,6 +96,8 @@ class PhoneSignUpComponent extends SignUpFormComponent implements OnDestroy, OnI
   bool get isLastNameRequired => config.lastNameRequired;
 
   bool get marketingOptInEnabled => config.marketingOptInEnabled;
+
+  bool get submitAuthorized => model.checkboxValue || marketingOptInEnabled;
 
   SafeHtml get messageTermsAndPrivacy => _domSanitizationService.bypassSecurityTrustHtml(
       messages.authMessages.sign_up.terms_and_privacy(brandName, terms_and_condition_url, terms_and_privacy_url));

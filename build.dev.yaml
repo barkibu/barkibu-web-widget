@@ -56,7 +56,7 @@ targets:
           marketingBrandName: 'BrandName'
           marketingOptInEnabled: false
           privacyUrl: 'https://www.mars.com/made-by-mars'
-          affiliatesUrl: 'https://www.mars.com/made-by-mars'
+          affiliatesUrl: 'https://www.mars.com/made-by-mars/petcare'
 
           # Fallback theme & client_id
           iconsTheme: 'whitelabel'

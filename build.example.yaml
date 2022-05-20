@@ -46,8 +46,8 @@ targets:
           brandLogoWidth: '70px'
           marketingBrandName: 'Brand name'
           marketingOptInEnabled: false
-          privacyUrl: 'https://www.mars.com/made-by-mars'
-          affiliatesUrl: 'https://www.mars.com/made-by-mars'
+          privacyUrl: ''
+          affiliatesUrl: ''
           headerWithoutLogo: false
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
