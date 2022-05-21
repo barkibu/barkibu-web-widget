@@ -1,4 +1,5 @@
 import 'package:common_barkibu_dart/common_barkibu_dart.dart';
+import 'package:common_barkibu_dart/services/analytics/events/clinic_finder_event_analytics.dart';
 import 'package:common_barkibu_dart/services/analytics/events/event.dart';
 import 'package:common_barkibu_dart/services/analytics/events/faq_events_analytics.dart';
 import 'package:common_barkibu_dart/services/analytics_service.dart';
@@ -39,4 +40,6 @@ class EventAnalyticsService {
   ActionsEventAnalytics get actions => ActionsEventAnalytics(_analytics);
 
   PetProfileEventAnalytics get petProfile => PetProfileEventAnalytics(_analytics);
+
+  ClinicFinderEventAnalytics get  clinicFinder => ClinicFinderEventAnalytics(_analytics);
 }

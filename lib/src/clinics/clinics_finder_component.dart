@@ -49,13 +49,15 @@ class ClinicsFinderComponent extends AuthGuard implements OnActivate, OnDestroy 
 
   String stateErrorMessage;
   String get errorMessage => stateErrorMessage?.capitalize();
+  final AnalyticsService _analyticsService;
 
   ClinicsFinderComponent(
     this.clinicsFinderBloc,
     this._configuration,
     this.messages,
     this.router,
-    AuthBloc authBloc,
+    this._analyticsService,
+      AuthBloc authBloc,
   ) : super(authBloc, router) {
     state = clinicsFinderBloc.initialState;
     clinicsFinderBloc.listen(clinicsBlocListener);

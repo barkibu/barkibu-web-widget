@@ -30,6 +30,7 @@ import 'package:web_widget/src/widget_window/parent_window_service.dart';
 
 PetRepository petRepositoryFactory() => ServiceLocator.container<PetRepository>();
 PetHealthChatBloc chatBlocFactory() => ServiceLocator.container<PetHealthChatBloc>();
+AssessmentReportBloc reportBlocFactory() => ServiceLocator.container<AssessmentReportBloc>();
 
 @Component(
   selector: 'chat',
@@ -41,6 +42,7 @@ PetHealthChatBloc chatBlocFactory() => ServiceLocator.container<PetHealthChatBlo
     ClassProvider(InfoBloc),
     ClassProvider(ChatMessageTypeMapping),
     ClassProvider(FeedbackForm),
+    FactoryProvider(AssessmentReportBloc, reportBlocFactory)
   ],
   directives: [
     coreDirectives,
@@ -56,9 +58,13 @@ PetHealthChatBloc chatBlocFactory() => ServiceLocator.container<PetHealthChatBlo
     layoutDirectives,
   ],
   pipes: [BlocPipe],
+  exports: [RoutePaths],
+
 )
 class ChatComponent extends AuthGuard with PetDefinitionEventHandler, HasInfoScreen implements OnActivate, OnDestroy {
   final PetHealthChatBloc _chatBloc;
+  final AssessmentReportBloc _reportBloc;
+
   final MessagesModel messages;
   final ChatMessageTypeMapping _messageTypeMapping;
   final FeedbackForm _feedbackForm;
@@ -83,6 +89,9 @@ class ChatComponent extends AuthGuard with PetDefinitionEventHandler, HasInfoScr
   PetHealthChatState chatState;
   AssessmentIdentificationViewModel assessmentIdentification;
   Map<String, String> _currentQueryParams;
+  final AnalyticsService _analyticsService;
+  AssessmentReportViewModel assessment;
+  bool  isUrgent =  false;
 
   ChatComponent(
     this.messages,
@@ -93,7 +102,10 @@ class ChatComponent extends AuthGuard with PetDefinitionEventHandler, HasInfoScr
     this.config,
     this.router,
     this.parentWindow,
-    InfoBloc infoBloc,
+    this._analyticsService,
+    this._reportBloc,
+
+      InfoBloc infoBloc,
     AuthBloc authBloc,
   ) : super(authBloc, router) {
     setInfoBloc(infoBloc);
@@ -114,11 +126,11 @@ class ChatComponent extends AuthGuard with PetDefinitionEventHandler, HasInfoScr
     _question = _currentQueryParams['question'] ?? '';
     _queryPetId = _currentQueryParams['petId'];
     _queryChatType = _currentQueryParams['chatType'];
-
     if (_chatBloc.state is PetHealthChatInitial) {
       _sendChatLaunchedEvent(question: _question, chatType: _chatType, pet: await _preselectedPet);
     }
     _chatBloc.listen(_chatBlocListener);
+    _reportBloc.listen(_reportBlocListener);
   }
 
   PetHealthChatType get _chatType {
@@ -172,6 +184,16 @@ class ChatComponent extends AuthGuard with PetDefinitionEventHandler, HasInfoScr
   void _chatBlocListener(PetHealthChatState state) {
     chatState = state;
     chatMessagesComponent?.scrollToTheLastMessage();
+  }
+  void _reportBlocListener(AssessmentReportState state) {
+    if (state is AssessmentReportLoadSuccessful) {
+      assessment =
+          AssessmentReportViewModel.fromAssessment(pet: assessmentIdentification.pet, assessment: state.assessment);
+      if(assessment.urgency == Urgency.high){
+        isUrgent = true;
+        logFindClinicBtnAppearsAfterAiJourney();
+      }
+    }
   }
 
   @override
@@ -310,6 +332,8 @@ class ChatComponent extends AuthGuard with PetDefinitionEventHandler, HasInfoScr
       _chatBloc.add(ContactVetNoThanksPressed());
     } else if (event.optionType == ChatButtonOptionType.openReport) {
       showAssessmentReport();
+      _reportBloc.add(AssessmentReportStarted(assessmentIdentification.consultationId));
+
     }
   }
 
@@ -317,6 +341,8 @@ class ChatComponent extends AuthGuard with PetDefinitionEventHandler, HasInfoScr
     if (event.buttonViewModel.action == ChatViewModelAction.openReport) {
       assessmentIdentification = event.buttonViewModel.dataResolver();
       showAssessmentReport();
+      _reportBloc.add(AssessmentReportStarted(assessmentIdentification.consultationId));
+
     }
   }
 
@@ -365,4 +391,8 @@ class ChatComponent extends AuthGuard with PetDefinitionEventHandler, HasInfoScr
   void closeChatWithVet() => setCurrentScreen(CurrentChatScreen.aiVet);
 
   bool get isTelehealthEnabled => config.telehealthEnabled;
+
+  void logFindClinicBtnAppearsAfterAiJourney() => _analyticsService.event.clinicFinder.logFindClinicBtnAppearsAfterAiJourney();
+  void logFindClinicAfterAiJourney() => _analyticsService.event.clinicFinder.logFindClinicAfterAiJourney();
+
 }
