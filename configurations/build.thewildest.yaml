@@ -10,15 +10,15 @@ targets:
           authByEmailEnabled: false
           authByPhoneEnabled: false
           useLegacyAuthDatasource: true
-          authServiceAppClientId: null
-          authServiceUserPoolId: null
+          authServiceAppClientId: 31qaqegtccfr74muv4mva34112
+          authServiceUserPoolId: eu-west-1_mBvhLXyqt
           externalProfileDataEnabled: true
 
           # Basic features
           telehealthEnabled: true
           telehealthVideoCapabilityEnabled: false
           telehealthMediaSharingEnabled: false
-          nutribotEnabled: true
+          nutribotEnabled: false
           findAClinicEnabled: false
           findAClinicAddressApiEnabled: false
           askAVetDirectlyEnabled: true
@@ -28,50 +28,49 @@ targets:
           # Customisation
           externalPetDataEnabled: true
           externalLinksEventsEnabled: false
-          embeddedEmailClientEnabled: false
+          embeddedEmailClientEnabled: true
           nutribotRecommendationShortJourneyEnabled: false
-          addPetOptionEnabled: true
+          addPetOptionEnabled: false
           extendedFeedbackEnabled: false
-          closeButtonEnabled: false
-          backButtonEnabled: true
+          closeButtonEnabled: true
+          backButtonEnabled: false
           goHomeLinkEnabled: true
           footerChatCreditsEnabled: false
           aivetUrgencyOrderEnabled: true
           skipPrimarySymptomEnabled: true
           termsOfServiceHomeEnabled: true
           lastNameRequired: false
-          petBreedEnabled: false
+          petBreedEnabled: true
           assessmentDateFormat: MM/dd/yyyy
           defaultPhonePrefix: '+1'
           appName: 'VetInsight Assistant'
-          brandName: 'VETINSIGHT™'
-          brandLogo: 'vetinsight-logo.svg'
+          brandName: 'The Wildest'
+          brandLogo: 'barkibu-logo.svg'
           brandLogoWidth: '70px'
           headerWithoutLogo: false
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
-          useSpecialTranslations: 'tsc'
+          useSpecialTranslations: 'thewildest'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
-          marketingBrandName: 'BrandName'
-          marketingOptInEnabled: false
-          privacyUrl: 'https://www.mars.com/made-by-mars'
-          affiliatesUrl: 'https://www.mars.com/made-by-mars/petcare'
+          marketingBrandName: ''
+          marketingOptInEnabled: true
+          privacyUrl: ''
 
           # Fallback theme & client_id
-          iconsTheme: 'whitelabel'
-          fallbackTheme: 'whitelabel'
-          fallbackClientId: 'whitelabel'
+          iconsTheme: 'thewildest'
+          fallbackTheme: 'thewildest'
+          fallbackClientId: 'thewildest'
 
           # Contanct vet options
-          chatWithVetEnabled: true
-          chatOnPhoneCallUrl: https://calendly.com/susie-teran/demo?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}&back=1
-          emailAccount: vet.help@mail.kinship.barkibu.com
+          chatWithVetEnabled: false
+          chatOnPhoneCallUrl: null
+          emailAccount: getvethelp@thewildest-app.vetinsight.com
 
           # System configuration
-          envName: 'staging'
-          apiUrl: 'https://whitelabel-ch-staging.herokuapp.com/v2'
-          segmentWriteKey: '0Vc8s8WB69mrDy3Rnve6gSdCA1HDOhZJ'
+          envName: 'production'
+          apiUrl: 'https://the-wildest-vet-insight.herokuapp.com/v2'
+          segmentWriteKey: 'Ud1XtGhWcnYlGqSWJjksarQ6v1MCsNLA'
 
           # Overriden configuration for each client id
           clientIdConfigOverride: null
@@ -80,7 +79,7 @@ targets:
         options:
           compiler: dart2js
           dart2js_args:
-            - -O4
+          - -O4
       build_web_compilers|dart_source_cleanup:
         release_options:
           enabled: false

@@ -6,6 +6,10 @@ abstract class Configuration {
   String brandName;
   String brandLogo;
   String brandLogoWidth = '70px';
+  bool marketingOptInEnabled = false;
+  String marketingBrandName = '';
+  String privacyUrl = '';
+  String affiliatesUrl = '';
   bool headerWithoutLogo = false;
   String emailAccount;
   String supportSpanishAccount;

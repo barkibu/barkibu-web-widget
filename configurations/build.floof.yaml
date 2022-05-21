@@ -1,8 +1,8 @@
 targets:
   $default:
     sources:
-      include: ["lib/**", "web/**"]
-      exclude: ["lib/builders/**"]
+      include: [ "lib/**", "web/**" ]
+      exclude: [ "lib/builders/**" ]
     builders:
       web_widget|config_builder:
         options:
@@ -18,11 +18,11 @@ targets:
           telehealthEnabled: true
           telehealthVideoCapabilityEnabled: false
           telehealthMediaSharingEnabled: false
-          nutribotEnabled: true
+          nutribotEnabled: false
           findAClinicEnabled: false
           findAClinicAddressApiEnabled: false
           askAVetDirectlyEnabled: true
-          aivetEnabled: true
+          aivetEnabled: false
           conciergeUrl: null
 
           # Customisation
@@ -30,48 +30,48 @@ targets:
           externalLinksEventsEnabled: false
           embeddedEmailClientEnabled: false
           nutribotRecommendationShortJourneyEnabled: false
-          addPetOptionEnabled: true
+          addPetOptionEnabled: false
           extendedFeedbackEnabled: false
-          closeButtonEnabled: false
+          closeButtonEnabled: true
           backButtonEnabled: true
           goHomeLinkEnabled: true
           footerChatCreditsEnabled: false
           aivetUrgencyOrderEnabled: true
           skipPrimarySymptomEnabled: true
-          termsOfServiceHomeEnabled: true
+          termsOfServiceHomeEnabled: false
           lastNameRequired: false
           petBreedEnabled: false
           assessmentDateFormat: MM/dd/yyyy
           defaultPhonePrefix: '+1'
-          appName: 'VetInsight Assistant'
-          brandName: 'VETINSIGHT™'
-          brandLogo: 'vetinsight-logo.svg'
+          appName: 'FLOOF'
+          brandName: 'FLOOF'
+          brandLogo: 'floof.svg'
           brandLogoWidth: '70px'
           headerWithoutLogo: false
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
           useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
-          externalToSEnabled: false
-          marketingBrandName: 'BrandName'
-          marketingOptInEnabled: false
-          privacyUrl: 'https://www.mars.com/made-by-mars'
-          affiliatesUrl: 'https://www.mars.com/made-by-mars/petcare'
+          externalToSEnabled: true
+          marketingBrandName: ''
+          marketingOptInEnabled: true
+          privacyUrl: ''
+          affiliatesUrl: ''
 
           # Fallback theme & client_id
-          iconsTheme: 'whitelabel'
-          fallbackTheme: 'whitelabel'
-          fallbackClientId: 'whitelabel'
+          iconsTheme: 'default'
+          fallbackTheme: 'floof'
+          fallbackClientId: 'floof'
 
           # Contanct vet options
           chatWithVetEnabled: true
-          chatOnPhoneCallUrl: https://calendly.com/susie-teran/demo?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}&back=1
-          emailAccount: vet.help@mail.kinship.barkibu.com
+          chatOnPhoneCallUrl: null
+          emailAccount: getvethelp@floof-app.vetinsight.com
 
           # System configuration
-          envName: 'staging'
-          apiUrl: 'https://whitelabel-ch-staging.herokuapp.com/v2'
-          segmentWriteKey: '0Vc8s8WB69mrDy3Rnve6gSdCA1HDOhZJ'
+          envName: 'production'
+          apiUrl: 'https://floof-vet-insight.herokuapp.com/v2'
+          segmentWriteKey: 'z4MrFZordz9okqnWg2myoFzBrgGxJEPD'
 
           # Overriden configuration for each client id
           clientIdConfigOverride: null

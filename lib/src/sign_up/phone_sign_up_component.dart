@@ -1,4 +1,5 @@
 import 'package:angular/angular.dart';
+import 'package:angular/security.dart';
 import 'package:angular_bloc/angular_bloc.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
@@ -26,6 +27,7 @@ class PhoneSignUpComponent extends SignUpFormComponent implements OnDestroy, OnI
   PhoneSignUpBloc signUpBloc;
   MessagesModel messages;
   ControlGroup signUpForm;
+  final DomSanitizationService _domSanitizationService;
   AuthData model = AuthData();
   final WidgetConfiguration config;
   final InfoBloc _infoBloc;
@@ -33,8 +35,9 @@ class PhoneSignUpComponent extends SignUpFormComponent implements OnDestroy, OnI
   bool isCodeSubmitted = false;
   bool isCodeFormShown = false;
 
-  PhoneSignUpComponent(this.signUpBloc, this.messages, SignUpForm formBuilder, this.config, this._infoBloc) {
-    signUpForm = formBuilder.buildPhoneSignUpFormControl();
+  PhoneSignUpComponent(this.signUpBloc, this.messages, this._domSanitizationService, SignUpForm formBuilder,
+      this.config, this._infoBloc) {
+    signUpForm = formBuilder.buildPhoneSignUpFormControl(submitAuthorized: submitAuthorized);
     signUpBloc.listen(signUpBlocListener);
   }
   @override
@@ -82,11 +85,25 @@ class PhoneSignUpComponent extends SignUpFormComponent implements OnDestroy, OnI
 
   String get brandName => config.brandName;
 
+  String get marketingBrandName => config.marketingBrandName;
+
+  String get affiliatesUrl => config.affiliatesUrl;
+
   String get terms_and_condition_url => messages.authMessages.sign_up.terms_and_condition_url;
 
   String get terms_and_privacy_url => messages.authMessages.sign_up.privacy_url;
 
   bool get isLastNameRequired => config.lastNameRequired;
+
+  bool get marketingOptInEnabled => config.marketingOptInEnabled;
+
+  bool get submitAuthorized => model.checkboxValue || marketingOptInEnabled;
+
+  SafeHtml get messageTermsAndPrivacy => _domSanitizationService.bypassSecurityTrustHtml(
+      messages.authMessages.sign_up.terms_and_privacy(brandName, terms_and_condition_url, terms_and_privacy_url));
+
+  SafeHtml get messageMarketingOptIn => _domSanitizationService.bypassSecurityTrustHtml(
+      messages.authMessages.sign_up.marketing_optin_acknowledgement(marketingBrandName, affiliatesUrl));
 
   bool shouldShowError(AbstractControlDirective control) {
     return !control.valid && (control.touched || isPhoneSubmitted);
