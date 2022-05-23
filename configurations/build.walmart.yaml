@@ -10,14 +10,14 @@ targets:
           authByEmailEnabled: false
           authByPhoneEnabled: false
           useLegacyAuthDatasource: true
-          authServiceAppClientId: null
-          authServiceUserPoolId: null
+          authServiceAppClientId: 1bbkeqtkl1k4mmgpbg3i9flg6l
+          authServiceUserPoolId: eu-west-1_sBs5eEqy2
           externalProfileDataEnabled: true
 
           # Basic features
           telehealthEnabled: true
-          telehealthVideoCapabilityEnabled: false
-          telehealthMediaSharingEnabled: false
+          telehealthVideoCapabilityEnabled: true
+          telehealthMediaSharingEnabled: true
           nutribotEnabled: true
           findAClinicEnabled: false
           findAClinicAddressApiEnabled: false
@@ -28,11 +28,11 @@ targets:
           # Customisation
           externalPetDataEnabled: true
           externalLinksEventsEnabled: false
-          embeddedEmailClientEnabled: false
+          embeddedEmailClientEnabled: true
           nutribotRecommendationShortJourneyEnabled: false
-          addPetOptionEnabled: true
+          addPetOptionEnabled: false
           extendedFeedbackEnabled: false
-          closeButtonEnabled: false
+          closeButtonEnabled: true
           backButtonEnabled: true
           goHomeLinkEnabled: true
           footerChatCreditsEnabled: false
@@ -40,38 +40,38 @@ targets:
           skipPrimarySymptomEnabled: true
           termsOfServiceHomeEnabled: true
           lastNameRequired: false
-          petBreedEnabled: false
+          petBreedEnabled: true
           assessmentDateFormat: MM/dd/yyyy
           defaultPhonePrefix: '+1'
           appName: 'VetInsight Assistant'
-          brandName: 'VETINSIGHT™'
-          brandLogo: 'vetinsight-logo.svg'
-          brandLogoWidth: '70px'
+          brandName: 'Walmart'
+          brandLogo: 'walmart-logo.svg'
+          brandLogoWidth: '150px'
           headerWithoutLogo: false
+          useSpecialTranslations: 'tsc'
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
-          useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
-          marketingBrandName: 'BrandName'
-          marketingOptInEnabled: false
-          privacyUrl: 'https://www.mars.com/made-by-mars'
-          affiliatesUrl: 'https://www.mars.com/made-by-mars/petcare'
+          marketingBrandName: ''
+          marketingOptInEnabled: true
+          privacyUrl: ''
+          affiliatesUrl: ''
 
           # Fallback theme & client_id
-          iconsTheme: 'whitelabel'
-          fallbackTheme: 'whitelabel'
-          fallbackClientId: 'whitelabel'
+          iconsTheme: 'walmart'
+          fallbackTheme: 'walmart'
+          fallbackClientId: 'walmart'
 
           # Contanct vet options
           chatWithVetEnabled: true
-          chatOnPhoneCallUrl: https://calendly.com/susie-teran/demo?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}&back=1
-          emailAccount: vet.help@mail.kinship.barkibu.com
+          chatOnPhoneCallUrl: https://calendly.com/vetinsight-walmart/consult?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}
+          emailAccount: getvethelp@walmart.vetinsight.com
 
           # System configuration
-          envName: 'staging'
-          apiUrl: 'https://whitelabel-ch-staging.herokuapp.com/v2'
-          segmentWriteKey: '0Vc8s8WB69mrDy3Rnve6gSdCA1HDOhZJ'
+          envName: 'production'
+          apiUrl: 'https://walmart-vet-insight.herokuapp.com/v2'
+          segmentWriteKey: '6TXjtAz4ANAdT69M4kFaZU00E95DqHP5'
 
           # Overriden configuration for each client id
           clientIdConfigOverride: null
@@ -80,7 +80,7 @@ targets:
         options:
           compiler: dart2js
           dart2js_args:
-            - -O4
+          - -O4
       build_web_compilers|dart_source_cleanup:
         release_options:
           enabled: false

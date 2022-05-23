@@ -103,17 +103,17 @@ class SignUpForm {
     }
   }
 
-  ControlGroup buildSignUpFormControl() {
+  ControlGroup buildSignUpFormControl({bool submitAuthorized = false}) {
     return ControlGroup({
       'firstName': Control('', firstNameValidator),
       'lastName': Control('', lastNameValidator),
       'email': Control('', emailValidator),
       'password': Control('', passwordValidator),
-      'checkboxValue': Control('', checkboxValueValidator)
+      'checkboxValue': Control(submitAuthorized.toString(), checkboxValueValidator)
     });
   }
 
-  ControlGroup buildPhoneSignUpFormControl() {
+  ControlGroup buildPhoneSignUpFormControl({bool submitAuthorized = false}) {
     return ControlGroup({
       'firstName': Control('', firstNameValidator),
       'lastName': Control('', lastNameValidator),

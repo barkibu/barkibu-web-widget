@@ -4,7 +4,7 @@ targets:
       web_widget|config_builder:
         options:
           # Authentication options
-          authByEmailEnabled: false
+          authByEmailEnabled: true
           authByPhoneEnabled: false
           useLegacyAuthDatasource: true
           authServiceAppClientId: null
@@ -44,6 +44,10 @@ targets:
           brandName: 'VETINSIGHT™'
           brandLogo: 'vetinsight-logo.svg'
           brandLogoWidth: '70px'
+          marketingBrandName: 'Brand name'
+          marketingOptInEnabled: false
+          privacyUrl: ''
+          affiliatesUrl: ''
           headerWithoutLogo: false
           botPreMessageDelay: 1000
           botPostMessageDelay: 400

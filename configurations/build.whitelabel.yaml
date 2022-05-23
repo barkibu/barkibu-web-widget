@@ -53,10 +53,10 @@ targets:
           useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
-          marketingBrandName: 'BrandName'
-          marketingOptInEnabled: false
-          privacyUrl: 'https://www.mars.com/made-by-mars'
-          affiliatesUrl: 'https://www.mars.com/made-by-mars/petcare'
+          marketingBrandName: ''
+          marketingOptInEnabled: true
+          privacyUrl: ''
+          affiliatesUrl: ''
 
           # Fallback theme & client_id
           iconsTheme: 'whitelabel'
@@ -80,7 +80,7 @@ targets:
         options:
           compiler: dart2js
           dart2js_args:
-            - -O4
+          - -O4
       build_web_compilers|dart_source_cleanup:
         release_options:
           enabled: false
