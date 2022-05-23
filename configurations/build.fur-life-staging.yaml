@@ -1,18 +1,18 @@
 targets:
   $default:
-    sources:
-      include: ["lib/**", "web/**"]
-      exclude: ["lib/builders/**"]
+      sources:
+        include: ["lib/**", "web/**"]
+        exclude: ["lib/builders/**"]
     builders:
       web_widget|config_builder:
         options:
           # Authentication options
-          authByEmailEnabled: true
-          authByPhoneEnabled: true
-          useLegacyAuthDatasource: false
-          authServiceAppClientId: 2mapp17u8ep4pi30kikumlcpuv
-          authServiceUserPoolId: eu-west-1_iOJbwm0YC
-          externalProfileDataEnabled: false
+          authByEmailEnabled: false
+          authByPhoneEnabled: false
+          useLegacyAuthDatasource: true
+          authServiceAppClientId: 
+          authServiceUserPoolId: 
+          externalProfileDataEnabled: true
 
           # Basic features
           telehealthEnabled: true
@@ -26,11 +26,11 @@ targets:
           conciergeUrl: null
 
           # Customisation
-          externalPetDataEnabled: false
+          externalPetDataEnabled: true
           externalLinksEventsEnabled: false
           embeddedEmailClientEnabled: true
           nutribotRecommendationShortJourneyEnabled: true
-          addPetOptionEnabled: true
+          addPetOptionEnabled: false
           extendedFeedbackEnabled: false
           closeButtonEnabled: true
           backButtonEnabled: true
@@ -39,29 +39,29 @@ targets:
           aivetUrgencyOrderEnabled: true
           skipPrimarySymptomEnabled: true
           termsOfServiceHomeEnabled: true
-          lastNameRequired: true
+          lastNameRequired: false
           petBreedEnabled: true
           assessmentDateFormat: MM/dd/yyyy
           defaultPhonePrefix: '+1'
           appName: 'VetInsight Assistant'
-          brandName: 'Iams'
+          brandName: 'Fur Life'
           brandLogo: 'iams-logo.svg'
           brandLogoWidth: '70px'
-          headerWithoutLogo: false
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
           useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
+          headerWithoutLogo: false
           marketingBrandName: ''
           marketingOptInEnabled: false
           privacyUrl: ''
           affiliatesUrl: ''
 
           # Fallback theme & client_id
-          iconsTheme: 'iams'
-          fallbackTheme: 'iams-dogs'
-          fallbackClientId: 'iams'
+          iconsTheme: 'fur-life'
+          fallbackTheme: 'fur-life'
+          fallbackClientId: 'fur-life'
 
           # Contanct vet options
           chatWithVetEnabled: true
@@ -70,7 +70,8 @@ targets:
 
           # System configuration
           envName: 'staging'
-          apiUrl: 'https://kinship-ch-staging.herokuapp.com/v2'
+          apiUrl: 'https://fur-life-ch-staging.herokuapp.com/v2'
+          
           segmentWriteKey: 'AlmkRCbqMwRgQ3yrIZrvKXfggbQu9dYO'
 
           # Overriden configuration for each client id
