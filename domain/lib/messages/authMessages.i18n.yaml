@@ -1,7 +1,7 @@
 sign_up:
   phone_number_error: 'Enter a valid phone number'
   terms_and_privacy(String brandName, String termsUrl, String privacyUrl): By continuing you accept $brandName's <a href='$termsUrl'>Terms and Conditions</a> and <a href='$privacyUrl'>Privacy policy</a>
-  marketing_optin_acknowledgement(String marketingBrandName, String affiliatesUrl): By clicking Sign Up, you are indicating you would like to hear from $marketingBrandName and its <a  href='$affiliatesUrl'>affiliates</a> with special offers, the latest about $marketingBrandName products and more.
+  marketing_optin_acknowledgement(String marketingBrandName, String affiliatesUrl): By clicking \"Sign Up\", you are indicating you would like to hear from $marketingBrandName and its <a  href='$affiliatesUrl'>affiliates</a> with special offers, the latest about $marketingBrandName products and more.
   data_privacy_policy(String privacyUrl): Must be 16 or older to subscribe and may unsubscribe at any time. We may use your data for research to improve our offerings; see our <a  href='$privacyUrl'>Privacy Policy</a> for details about how we use your data.
   email: 'E-mail'
   lastname_error: 'Enter a valid last name'
@@ -15,7 +15,8 @@ sign_up:
   name: 'Name'
   terms_and_condition_url: 'https://www.barkibu.com/en-us/legal-notice'
   phone_not_verified_error: 'There was an error while verifying your phone number'
-  create_account_email_phone: 'Create an account using your email address or mobile number'
+  create_account_email: 'Create an account using your email address'
+  create_account_phone: 'Create an account using your mobile number'
   name_hint: 'Enter your first name'
   general_error: 'An error occured'
   confirm_password_error: 'Passwords doesn’t match'

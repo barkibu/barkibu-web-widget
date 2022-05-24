@@ -26,7 +26,7 @@ class Sign_upAuthMessages {
 	const Sign_upAuthMessages(this._parent);
 	String get phone_number_error => "Enter a valid phone number";
 	String terms_and_privacy(String brandName, String termsUrl, String privacyUrl) => "By continuing you accept $brandName's <a href='$termsUrl'>Terms and Conditions</a> and <a href='$privacyUrl'>Privacy policy</a>";
-	String marketing_optin_acknowledgement(String marketingBrandName, String affiliatesUrl) => "By clicking Sign Up, you are indicating you would like to hear from $marketingBrandName and its <a  href='$affiliatesUrl'>affiliates</a> with special offers, the latest about $marketingBrandName products and more.";
+	String marketing_optin_acknowledgement(String marketingBrandName, String affiliatesUrl) => "By clicking \"Sign Up\", you are indicating you would like to hear from $marketingBrandName and its <a  href='$affiliatesUrl'>affiliates</a> with special offers, the latest about $marketingBrandName products and more.";
 	String data_privacy_policy(String privacyUrl) => "Must be 16 or older to subscribe and may unsubscribe at any time. We may use your data for research to improve our offerings; see our <a  href='$privacyUrl'>Privacy Policy</a> for details about how we use your data.";
 	String get email => "E-mail";
 	String get lastname_error => "Enter a valid last name";
@@ -40,7 +40,8 @@ class Sign_upAuthMessages {
 	String get name => "Name";
 	String get terms_and_condition_url => "https://www.barkibu.com/en-us/legal-notice";
 	String get phone_not_verified_error => "There was an error while verifying your phone number";
-	String get create_account_email_phone => "Create an account using your email address or mobile number";
+	String get create_account_email => "Create an account using your email address";
+	String get create_account_phone => "Create an account using your mobile number";
 	String get name_hint => "Enter your first name";
 	String get general_error => "An error occured";
 	String get confirm_password_error => "Passwords doesn’t match";
