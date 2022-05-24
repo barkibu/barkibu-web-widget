@@ -1,8 +1,8 @@
 targets:
   $default:
-      sources:
-        include: ["lib/**", "web/**"]
-        exclude: ["lib/builders/**"]
+    sources:
+      include: ["lib/**", "web/**"]
+      exclude: ["lib/builders/**"]
     builders:
       web_widget|config_builder:
         options:
@@ -10,8 +10,8 @@ targets:
           authByEmailEnabled: false
           authByPhoneEnabled: false
           useLegacyAuthDatasource: true
-          authServiceAppClientId: 
-          authServiceUserPoolId: 
+          authServiceAppClientId: 2mapp17u8ep4pi30kikumlcpuv
+          authServiceUserPoolId: eu-west-1_iOJbwm0YC
           externalProfileDataEnabled: true
 
           # Basic features
@@ -19,8 +19,8 @@ targets:
           telehealthVideoCapabilityEnabled: true
           telehealthMediaSharingEnabled: true
           nutribotEnabled: true
-          findAClinicEnabled: true
-          findAClinicAddressApiEnabled: true
+          findAClinicEnabled: false
+          findAClinicAddressApiEnabled: false
           askAVetDirectlyEnabled: true
           aivetEnabled: true
           conciergeUrl: null
