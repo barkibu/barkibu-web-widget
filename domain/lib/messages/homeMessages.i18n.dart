@@ -58,8 +58,8 @@ class NutritionMessagesHomeMessages {
 class FindClinicsMessagesHomeMessages {
 	final MessagesHomeMessages _parent;
 	const FindClinicsMessagesHomeMessages(this._parent);
-	String get title => "Find A Clinic";
-	String get subtitle => "Find the best clinic closest to you";
+	String get title => "Find Urgent Pet Care";
+	String get subtitle => "See your closest clinics and hospitals";
 }
 
 class TermsOfServiceHomeMessages {
