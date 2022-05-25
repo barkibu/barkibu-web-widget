@@ -86,7 +86,7 @@ abstract class WidgetPO {
   PageLoaderElement get home;
 
   @ByCss('nav a')
-  @WithInnerText('Find A Clinic')
+  @WithInnerText('Find Urgent Pet Care')
   PageLoaderElement get _clinicsFinderLink;
 
   @ByCss('nav a')
