@@ -41,7 +41,8 @@ class Sign_upAuthMessages_de extends Sign_upAuthMessages {
 	String get name => "Name";
 	String get terms_and_condition_url => "https://www.barkibu.com/en-us/legal-notice";
 	String get phone_not_verified_error => "Beim Überprüfen Ihrer Telefonnummer ist ein Fehler aufgetreten";
-	String get create_account_email_phone => "Erstellen Sie ein Konto mit Ihrer E-Mail-Adresse oder Handynummer";
+	String get create_account_email => "Erstellen Sie ein Konto mit Ihrer E-Mail-Adresse";
+	String get create_account_phone => "Erstellen Sie ein Konto mit Handynummer";
 	String get name_hint => "Geben Sie Ihren Vornamen ein";
 	String get general_error => "Es ist ein Fehler aufgetreten";
 	String get confirm_password_error => "Passwörter stimmen nicht überein";
