@@ -45,14 +45,14 @@ targets:
           defaultPhonePrefix: '+1'
           appName: 'VetInsight Assistant'
           brandName: 'Fur Life'
-          brandLogo: 'iams-logo.svg'
+          brandLogo: ''
           brandLogoWidth: '70px'
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
           useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
-          headerWithoutLogo: false
+          headerWithoutLogo: true
           marketingBrandName: ''
           marketingOptInEnabled: false
           privacyUrl: ''
