@@ -65,7 +65,7 @@ targets:
 
           # Contanct vet options
           chatWithVetEnabled: true
-          chatOnPhoneCallUrl: https://calendly.com/susie-teran/?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}
+          chatOnPhoneCallUrl: https://calendly.com/vetinsight-furlife/vetinsight-fur-life-consult
           emailAccount: vet.help@mail.kinship.barkibu.com
 
           # System configuration
