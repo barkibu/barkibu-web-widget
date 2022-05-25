@@ -80,6 +80,14 @@ class SignUpComponent extends HasInfoScreen implements OnDestroy {
   String get privacyUrl => _config.privacyUrl;
   bool get marketingOptInEnabled => _config.marketingOptInEnabled;
 
+  String get messageCreateAccount => () {
+        if (isPhoneFormActive) {
+          return messages.authMessages.sign_up.create_account_phone;
+        } else {
+          return messages.authMessages.sign_up.create_account_email;
+        }
+      }();
+
   SafeHtml get messageDataPrivacyPolicy =>
       _domSanitizationService.bypassSecurityTrustHtml(messages.authMessages.sign_up.data_privacy_policy(privacyUrl));
 
