@@ -17,7 +17,7 @@ messages:
   virtualVetLearnMoreDescription(String brandName): 'Have a question about your pet’s health? Type it here and get immediate guidance from our Virtual Vet, which uses an advanced AI knowledge base of symptoms and conditions to provide the answers you’re looking for.\n\nIf you’d like, you can speak with one of our veterinarians by phone, chat, or email after using the Virtual Vet.'
   makeConsultation: 'Start an assessment'
   nutrition:
-    subtitle: 'Get food suggestions personalized to your pet'
+    subtitle: 'Get tailored food recommendations for your pet'
     title: 'Food and Nutrition Finder'
   findClinics:
     title: 'Find A Clinic'
