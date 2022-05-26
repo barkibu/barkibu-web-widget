@@ -23,7 +23,7 @@ class ClinicCardComponent {
   final MessagesModel messages;
   bool isContentOpened = false;
 
-  ClinicCardComponent(this.messages,this._analyticsService);
+  ClinicCardComponent(this.messages, this._analyticsService);
 
   String get directionUrl {
     const baseUrl = 'https://www.google.com/maps/search/?api=1&query=';
@@ -53,6 +53,6 @@ class ClinicCardComponent {
   void toggleContent() {
     isContentOpened = !isContentOpened;
   }
-  void logUserClickThroughGoogleMap() => _analyticsService.event.clinicFinder.logUserClickThroughGoogleMap();
 
+  void logUserClickThroughGoogleMap() => _analyticsService.event.clinicFinder.logUserClickThroughGoogleMap();
 }
