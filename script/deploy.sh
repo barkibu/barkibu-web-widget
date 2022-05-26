@@ -4,8 +4,8 @@ DEPLOY_ENV=$1
 BASE_BUILD_FILE_URL=$2
 
 case $DEPLOY_ENV in
-     "kinship-staging-all") ENVS=('tsc-staging' 'iams-staging' 'walmart-staging' 'thewildest-staging' 'greatergood-staging');;
-     "kinship-prod-all") ENVS=('tsc' 'iams' 'walmart' 'thewildest' 'greatergood');;
+     "kinship-staging-all") ENVS=('tsc-staging' 'iams-staging' 'walmart-staging' 'thewildest-staging' 'greatergood-staging', 'fur-life-staging');;
+     "kinship-prod-all") ENVS=('tsc' 'iams' 'walmart' 'thewildest' 'greatergood', 'fur-life');;
       *) ENVS=($DEPLOY_ENV);;
 esac
 

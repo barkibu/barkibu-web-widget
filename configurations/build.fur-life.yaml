@@ -10,15 +10,15 @@ targets:
           authByEmailEnabled: false
           authByPhoneEnabled: false
           useLegacyAuthDatasource: true
-          authServiceAppClientId: 3ql2ser61bn9ub3dlpr8a0pj1r
-          authServiceUserPoolId: eu-west-1_iOJbwm0YC
+          authServiceAppClientId: 
+          authServiceUserPoolId:
           externalProfileDataEnabled: true
 
           # Basic features
           telehealthEnabled: true
-          telehealthVideoCapabilityEnabled: false
-          telehealthMediaSharingEnabled: false
-          nutribotEnabled: false
+          telehealthVideoCapabilityEnabled: true
+          telehealthMediaSharingEnabled: true
+          nutribotEnabled: true
           findAClinicEnabled: false
           findAClinicAddressApiEnabled: false
           askAVetDirectlyEnabled: true
@@ -29,11 +29,11 @@ targets:
           externalPetDataEnabled: true
           externalLinksEventsEnabled: false
           embeddedEmailClientEnabled: true
-          nutribotRecommendationShortJourneyEnabled: false
+          nutribotRecommendationShortJourneyEnabled: true
           addPetOptionEnabled: false
           extendedFeedbackEnabled: false
           closeButtonEnabled: true
-          backButtonEnabled: false
+          backButtonEnabled: true
           goHomeLinkEnabled: true
           footerChatCreditsEnabled: false
           aivetUrgencyOrderEnabled: true
@@ -44,34 +44,34 @@ targets:
           assessmentDateFormat: MM/dd/yyyy
           defaultPhonePrefix: '+1'
           appName: 'VetInsight Assistant'
-          brandName: 'The Wildest'
-          brandLogo: 'barkibu-logo.svg'
+          brandName: 'Fur Life'
+          brandLogo: ''
           brandLogoWidth: '70px'
-          headerWithoutLogo: false
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
-          useSpecialTranslations: 'thewildest'
+          useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
+          headerWithoutLogo: true
           marketingBrandName: ''
           marketingOptInEnabled: false
           privacyUrl: ''
           affiliatesUrl: ''
 
           # Fallback theme & client_id
-          iconsTheme: 'thewildest'
-          fallbackTheme: 'thewildest'
-          fallbackClientId: 'thewildest'
+          iconsTheme: 'fur-life'
+          fallbackTheme: 'fur-life'
+          fallbackClientId: 'fur-life'
 
           # Contanct vet options
-          chatWithVetEnabled: false
-          chatOnPhoneCallUrl: null
-          emailAccount: vet.help@mail.kinship.barkibu.com
+          chatWithVetEnabled: true
+          chatOnPhoneCallUrl: https://calendly.com/vetinsight-furlife/vetinsight-fur-life-consult
+          emailAccount: getvethelp@furlife-app.vetinsight.com
 
           # System configuration
           envName: 'staging'
-          apiUrl: 'https://kinship-ch-staging.herokuapp.com/v2'
-          segmentWriteKey: 'rPPj23gMWicB6Kt2CzQKVuUvnhwsR9wo'
+          apiUrl: 'https://fur-life-vet-insight.herokuapp.com/v2'
+          segmentWriteKey: 'AlmkRCbqMwRgQ3yrIZrvKXfggbQu9dYO'
 
           # Overriden configuration for each client id
           clientIdConfigOverride: null

@@ -92,6 +92,13 @@ app {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Roboto semibold";
+  src: url('/assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 .spinner-container {
   height: 100%;
   display: flex;

@@ -55,7 +55,7 @@ targets:
           virtualVetInfoEnabled: true
           externalToSEnabled: false
           marketingBrandName: ''
-          marketingOptInEnabled: true
+          marketingOptInEnabled: false
           privacyUrl: ''
           affiliatesUrl: ''
 
