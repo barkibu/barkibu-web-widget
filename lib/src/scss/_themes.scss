@@ -8,12 +8,11 @@
 @import "package:web_widget/src/scss/thewildest_theme";
 @import "package:web_widget/src/scss/walmart_theme";
 @import "package:web_widget/src/scss/greatergood_theme";
-
+@import "package:web_widget/src/scss/fur_life_theme";
 
 @function focus-shadow-value($color) {
   @return 0 0 0 0.2rem rgba(lighten($color, 10%), 0.4);
 }
-
 
 $themes: (
   default: (
@@ -230,7 +229,7 @@ $themes: (
     info-color: $dark-color-default,
     success-color: $success-color-default,
     received-message-bg-color: rgba($mars-pet-care-fawn, 0.12),
-    received-message-text-color:  $bot-text-color-greatergood,
+    received-message-text-color: $bot-text-color-greatergood,
     sent-message-bg-color: $mars-pet-care-blue,
     sent-message-text-color: $mars-pet-care-fawn,
     focus-shadow: focus-shadow-value($mars-pet-care-blue),
@@ -240,9 +239,33 @@ $themes: (
     font-family: $primary-font-family-default,
     secondary-font-family: $secondary-font-family-default,
     header-subtitle-opacity: $header-subtitle-opacity,
-  )
+  ),
+  fur-life: (
+    icon-bg-color: $icon-bg-color-fur-life,
+    primary-color: $primary-color-fur-life,
+    secondary-color: $secondary-color-fur-life,
+    link-color: $primary-color-fur-life,
+    assistant-color: $tertiary-color-fur-life,
+    bg-color: $bg-color-default,
+    white-color: $white-color-default,
+    border-color: rgba($secondary-color-default, 0.16),
+    warning-color: $warning-color-default,
+    danger-color: $danger-color-fur-life,
+    info-color: $dark-color-default,
+    success-color: $success-color-default,
+    received-message-bg-color: rgba($tertiary-color-fur-life, 0.12),
+    received-message-text-color: rgba($bot-text-color-fur-life, 0.8),
+    sent-message-bg-color: $tertiary-color-fur-life,
+    sent-message-text-color: $white-color-default,
+    focus-shadow: focus-shadow-value($primary-color-fur-life),
+    primary-icon-color: $primary-color-fur-life,
+    secondary-icon-color: $primary-color-fur-life,
+    button-color: $primary-color-fur-life,
+    font-family: $primary-font-family-fur-life,
+    secondary-font-family: $secondary-font-family-fur-life,
+    header-subtitle-opacity: $header-subtitle-opacity,
+  ),
 );
-
 
 @mixin themify($themes: $themes) {
   @each $theme, $map in $themes {
