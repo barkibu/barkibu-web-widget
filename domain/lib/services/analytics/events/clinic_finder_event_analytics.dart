@@ -14,8 +14,8 @@ class ClinicFinderEventAnalytics {
       _analytics.logEvent('find_a_clinic-after_ai_journey');
 
   void logUserClickThroughGoogleMap() =>
-      _analytics.logEvent('user_click_through_google_map');
+      _analytics.logEvent('find_a_clinic-user_click_through_google_map');
 
   void logUserEnterLocationInfoOnMap() =>
-      _analytics.logEvent('user_enter_location_info_on_map');
+      _analytics.logEvent('find_a_clinic-user_enter_location_info_on_map');
 }
