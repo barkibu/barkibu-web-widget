@@ -51,7 +51,7 @@ class AskAVetMessagesHomeMessages {
 class NutritionMessagesHomeMessages {
 	final MessagesHomeMessages _parent;
 	const NutritionMessagesHomeMessages(this._parent);
-	String get subtitle => "Get tailored food recommendations for your pet";
+	String get subtitle => "Get food suggestions personalized to your pet";
 	String get title => "Food and Nutrition Finder";
 }
 
