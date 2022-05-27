@@ -1,4 +1,5 @@
 import 'package:common_barkibu_dart/messages/messages.dart';
+import 'package:web_widget/messages/furlife/messages_model_furlife.dart';
 import 'package:web_widget/messages/thewildest/messages_model_thewildest.dart';
 import 'package:web_widget/messages/tsc/messages_model_tsc.dart';
 import 'package:web_widget/src/widget_configuration.dart';
@@ -9,6 +10,9 @@ MessagesModel clientMessagesFactory(WidgetConfiguration config) {
     return MessagesModelTsc();
   } else if (config.useSpecialTranslations == 'thewildest') {
     return MessagesModelThewildest();
+  }
+  if (config.useSpecialTranslations == 'fur-life') {
+    return MessagesModelFurLife();
   } else {
     return null; // Default will be used
   }

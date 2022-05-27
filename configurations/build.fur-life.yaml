@@ -49,7 +49,7 @@ targets:
           brandLogoWidth: '70px'
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
-          useSpecialTranslations: 'tsc'
+          useSpecialTranslations: 'fur-life'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
           headerWithoutLogo: true
