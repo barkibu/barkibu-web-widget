@@ -29,7 +29,7 @@ targets:
           externalPetDataEnabled: true
           externalLinksEventsEnabled: false
           embeddedEmailClientEnabled: true
-          nutribotRecommendationShortJourneyEnabled: true
+          nutribotRecommendationShortJourneyEnabled: false
           addPetOptionEnabled: false
           extendedFeedbackEnabled: false
           closeButtonEnabled: true
