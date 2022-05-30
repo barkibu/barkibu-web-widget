@@ -1,3 +1,5 @@
+## 1.1.1
+- Added new icons for fur-life
 ## 1.1.0
 - Added Marketing Opt-in option 
 - Hide Sign up/in with mobile phone
