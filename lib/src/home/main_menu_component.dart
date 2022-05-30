@@ -68,6 +68,7 @@ class MainMenuComponent implements OnInit {
   }
 
   void logAskAVetStarts() => _analyticsService.event.askAVet.logAskAVetStart('askAVet');
+  void logFindClinicOnHome() => _analyticsService.event.clinicFinder.logFindClinicOnHome();
 
   bool get termsOfServiceHomeEnabled => _configuration.termsOfServiceHomeEnabled;
   bool get virtualVetInfoEnabled => _configuration.virtualVetInfoEnabled;
