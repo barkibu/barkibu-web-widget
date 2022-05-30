@@ -45,14 +45,14 @@ targets:
           defaultPhonePrefix: '+1'
           appName: 'VetInsight Assistant'
           brandName: 'Fur Life'
-          brandLogo: ''
+          brandLogo: 'furlife_logo_white.png'
           brandLogoWidth: '70px'
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
           useSpecialTranslations: 'fur-life'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
-          headerWithoutLogo: true
+          headerWithoutLogo: false
           marketingBrandName: ''
           marketingOptInEnabled: false
           privacyUrl: ''
