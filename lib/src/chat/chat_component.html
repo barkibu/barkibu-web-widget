@@ -36,6 +36,12 @@
         </widget-button>
         <widget-button type="secondary" button (click)="continueAssessment()" [text]="messages.sharedMessages.carryOn">
         </widget-button>
+        <widget-button type="secondary" link
+                       [linkHref]="RoutePaths.clinicsFinder.toUrl()"
+                       (click)="logFindClinicAfterAiJourney()"
+                       *ngIf="isUrgent"
+                       [text]="messages.homeMessages.messages.findClinics.title">
+        </widget-button>
     </widget-footer>
 </assessment-report-screen>
 
