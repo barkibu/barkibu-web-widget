@@ -52,7 +52,7 @@ targets:
           useSpecialTranslations: 'fur-life'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
-          headerWithoutLogo: true
+          headerWithoutLogo: false
           marketingBrandName: ''
           marketingOptInEnabled: false
           privacyUrl: ''
