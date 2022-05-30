@@ -13,7 +13,6 @@ class MessagesHomeMessages_furlife extends MessagesHomeMessages_tsc {
 
   @override
   NutritionMessagesHomeMessages_furlife get nutrition => NutritionMessagesHomeMessages_furlife(this);
-
 }
 
 class NutritionMessagesHomeMessages_furlife extends NutritionMessagesHomeMessages {
