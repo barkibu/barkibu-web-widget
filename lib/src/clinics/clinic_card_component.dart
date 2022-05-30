@@ -2,6 +2,7 @@ import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:common_barkibu_dart/messages/messages.dart';
 import 'package:common_barkibu_dart/models/clinic.dart';
+import 'package:common_barkibu_dart/services/analytics_service.dart';
 import 'package:web_widget/src/card/card_component.dart';
 import 'package:web_widget/src/icons/icon_component.dart';
 
@@ -17,10 +18,12 @@ class ClinicCardComponent {
   @Input()
   Clinic clinic;
 
+  final AnalyticsService _analyticsService;
+
   final MessagesModel messages;
   bool isContentOpened = false;
 
-  ClinicCardComponent(this.messages);
+  ClinicCardComponent(this.messages, this._analyticsService);
 
   String get directionUrl {
     const baseUrl = 'https://www.google.com/maps/search/?api=1&query=';
@@ -50,4 +53,6 @@ class ClinicCardComponent {
   void toggleContent() {
     isContentOpened = !isContentOpened;
   }
+
+  void logUserClickThroughGoogleMap() => _analyticsService.event.clinicFinder.logUserClickThroughGoogleMap();
 }

@@ -2,7 +2,7 @@
   <a class="card-body">
     <div class="clinic-link-content" role="text">
       <div class="clinic-name">
-        <a [href]="directionUrl" target="_blank">
+        <a [href]="directionUrl"  (click)="logUserClickThroughGoogleMap()" target="_blank">
           <h3>
             <div class="card-title-container">
               <img class="clinic-image" src="{{iconSrc}}" [alt]="clinic.brand" />
@@ -14,7 +14,7 @@
         <div>
           <dl class="clinic-main-info">
             <dt class="complete-line">
-              <a [href]="directionUrl" class="clinic-link" target="_blank">
+              <a [href]="directionUrl" (click)="logUserClickThroughGoogleMap()" class="clinic-link" target="_blank">
                 {{clinic.address}}<span class="sr-only">.</span>
               </a>
             </dt>
