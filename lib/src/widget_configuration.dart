@@ -202,6 +202,8 @@ class WidgetConfiguration extends Configuration {
 
   bool get externalToSEnabled => _clientIdOverridenValue('externalToSEnabled') ?? config.externalToSEnabled;
 
+  bool get petSexAndSpayedStatus => _clientIdOverridenValue('petSexAndSpayedStatus') ?? config.petSexAndSpayedStatus;
+
   dynamic _clientIdOverridenValue(String configName) {
     if (config.clientIdConfigOverride == null) {
       return;

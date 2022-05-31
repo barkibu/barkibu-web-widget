@@ -6,7 +6,8 @@
           <span role="img" [attr.aria-label]="petSpecies">{{pet | petIcon}}</span><span class="pet-name-title">{{pet.name}}</span>
           <span class="sr-only">.</span>
         </h3>
-        <dl>
+        <dl *ngIf="petSexAndSpayedStatus">
+          {{petSexAndSpayedStatus}}
           <dt>{{messages.sharedMessages.sex}}: </dt>
           <dd>{{petSex}}<span class="sr-only">.</span></dd>
 
