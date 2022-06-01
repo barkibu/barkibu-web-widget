@@ -202,6 +202,8 @@ class WidgetConfiguration extends Configuration {
 
   bool get externalToSEnabled => _clientIdOverridenValue('externalToSEnabled') ?? config.externalToSEnabled;
 
+  bool get findClinicButtonInChat => _clientIdOverridenValue('findClinicButtonInChat') ?? config.findClinicButtonInChat;
+
   dynamic _clientIdOverridenValue(String configName) {
     if (config.clientIdConfigOverride == null) {
       return;
