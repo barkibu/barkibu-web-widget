@@ -2,7 +2,6 @@ import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:common_barkibu_dart/messages/messages.dart';
 import 'package:web_widget/src/home/terms_of_service/vetinsight/terms_of_service_vetinsight_component.dart';
-import 'package:web_widget/src/home/terms_of_service/walmart/terms_of_service_walmart_component.dart';
 import 'package:web_widget/src/layout/layout.dart';
 import 'package:web_widget/src/navigation/go_back_component.dart';
 import 'package:web_widget/src/route_paths.dart';
@@ -15,7 +14,6 @@ import 'package:web_widget/src/route_paths.dart';
   routerDirectives,
   GoBackComponent,
   TermsOfServiceVetinsightComponent,
-  TermsOfServiceWalmartComponent
 ], exports: [
   RoutePaths
 ])
