@@ -1,0 +1,7 @@
+secretsprovider: awskms://alias/pulumi-vetinsight-infra
+encryptedkey: AQICAHi2GJ3+D70PiN+smNu9y/zi9afDwErMlHTxXcEgJK6lnAEkC5Adm78+uKnm/v+TrjQTAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMnmowC8RfbyHp/yiAAgEQgDtk+BKHYfghCrt+NrEvq4wPrws6kz2ACumTJdYWYgLOPAd8AJZlZllRyJyulxUrElnZ2OboKCRn/mNthw==
+config:
+  aws:allowedAccountIds:
+  - "672673849622"
+  aws:region: us-east-1
+  infrastructure:environment: staging
