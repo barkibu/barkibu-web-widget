@@ -71,5 +71,13 @@ class NutribotRecommendationItemComponent {
     );
   }
 
-  void logNutribotClickBuy() => _analyticsService.event.nutribot.logNutribotClickBuy();
+  // void logNutribotClickBuy() => _analyticsService.event.nutribot.logNutribotClickBuy();
+  void logNutribotClickBuy() {
+    print('aaaaaaaaaaaaaaaaaaaaaa');
+    print(recipeOrTreat.buyUrl);
+    print(recipeOrTreat.productName);
+    print(recipeOrTreat.productId);
+
+  }
+
 }

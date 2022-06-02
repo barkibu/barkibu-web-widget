@@ -21,7 +21,7 @@ class NutribotMessages {
 	String get primaryFood => "Primary food";
 	String get treat => "Treat";
 	String get title => "Food and Nutrition Finder";
-	String get buyTreat => "Buy now";
+	String  buyTreat(String productVendor) => "Buy now${productVendor != '' ? (' on ') + productVendor : ''}";
 	String get treatIngredients => "Ingredients";
 	String get treatInfo => "Product Information";
 	String get treatHeader => "Click to view treat recommendations";
