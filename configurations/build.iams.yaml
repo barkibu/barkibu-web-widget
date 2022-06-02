@@ -19,8 +19,8 @@ targets:
           telehealthVideoCapabilityEnabled: true
           telehealthMediaSharingEnabled: true
           nutribotEnabled: true
-          findAClinicEnabled: false
-          findAClinicAddressApiEnabled: false
+          findAClinicEnabled: true
+          findAClinicAddressApiEnabled: true
           askAVetDirectlyEnabled: true
           aivetEnabled: true
           conciergeUrl: null
