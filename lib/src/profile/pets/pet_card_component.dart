@@ -27,7 +27,7 @@ class PetCardComponent {
 
   PetCardComponent(this.messages, this.config);
 
-  bool get petSexAndSpayedStatus => config.petSexAndSpayedStatus;
+  bool get petSexAndSpayedStatusEnabled => config.petSexAndSpayedStatusEnabled;
 
   String get petProfilePath {
     return RoutePaths.petProfile.toUrl(parameters: {'id': pet.id.toString()});

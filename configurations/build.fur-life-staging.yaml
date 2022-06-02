@@ -57,7 +57,7 @@ targets:
           marketingOptInEnabled: false
           privacyUrl: ''
           affiliatesUrl: ''
-          petSexAndSpayedStatus: false
+          petSexAndSpayedStatusEnabled: false
 
           # Fallback theme & client_id
           iconsTheme: 'fur-life'
