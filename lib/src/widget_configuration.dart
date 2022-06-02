@@ -1,6 +1,6 @@
 import 'package:common_barkibu_dart/configuration.dart';
-import 'package:web_widget/src/i18n/current_locale.dart';
 import 'package:web_widget/config.g.dart' as config;
+import 'package:web_widget/src/i18n/current_locale.dart';
 import 'package:web_widget/src/twilio/twilio_video_service.dart';
 
 export 'package:common_barkibu_dart/configuration.dart';
@@ -202,7 +202,8 @@ class WidgetConfiguration extends Configuration {
 
   bool get externalToSEnabled => _clientIdOverridenValue('externalToSEnabled') ?? config.externalToSEnabled;
 
-  bool get findClinicButtonInChat => _clientIdOverridenValue('findClinicButtonInChat') ?? config.findClinicButtonInChat;
+  bool get findClinicButtonInChatEnabled =>
+      _clientIdOverridenValue('findClinicButtonInChatEnabled') ?? config.findClinicButtonInChatEnabled;
 
   dynamic _clientIdOverridenValue(String configName) {
     if (config.clientIdConfigOverride == null) {
