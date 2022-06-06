@@ -1,0 +1,40 @@
+name: web-widget-preview
+on:
+  pull_request:
+    
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_DEFAULT_REGION: us-east-1
+jobs:
+  infra_diff:
+    runs-on: ubuntu-latest
+    if: github.base_ref == 'develop' || github.base_ref == 'master'
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_DEFAULT_REGION }}
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+      - name: Set env vars to be used in deploy steps
+        run: |
+          if [ ${{ github.base_ref }} == 'develop' ]; then
+            echo "stack_name=vetinsight-dev" >> $GITHUB_ENV
+          elif [ ${{ github.base_ref }} == 'master' ]; then
+            echo "stack_name=vetinsight-production" >> $GITHUB_ENV
+          elif [ ${{ github.base_ref }} == 'staging' ]; then
+            echo "stack_name=vetinsight-staging" >> $GITHUB_ENV
+          fi
+      - name: Preview
+        run: |
+          cd infrastructure
+          yarn install
+          pulumi login --cloud-url s3://vetinsight-pulumi-state
+          pulumi stack init $stack_name --secrets-provider="awskms://alias/pulumi-vetinsight-infra" --non-interactive 2> /dev/null || pulumi stack select $stack_name
+          pulumi preview --diff --color always
