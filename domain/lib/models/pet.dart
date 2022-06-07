@@ -2,7 +2,6 @@ import 'package:common_barkibu_dart/common_barkibu_dart.dart';
 import 'package:common_barkibu_dart/extensions/extensions.dart';
 import 'package:common_barkibu_dart/models/features.dart';
 import 'package:common_barkibu_dart/models/food_preferences.dart';
-import 'package:common_barkibu_dart/models/pet_health_plan.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'pet.g.dart';
@@ -25,7 +24,6 @@ class Pet {
   Features _features;
   String fullAge;
   @JsonKey(ignore: true)
-  PetHealthPlan healthPlan;
   String chipNumber;
   int queries = 0;
 
@@ -44,7 +42,6 @@ class Pet {
     this.avatarUrl,
     this.foodPreferences,
     this.fullAge,
-    this.healthPlan,
     this.chipNumber,
     this.birthdate,
   }) {
@@ -124,7 +121,6 @@ class Pet {
       avatarUrl: avatarUrl,
       foodPreferences: foodPreferences,
       fullAge: fullAge,
-      healthPlan: healthPlan,
       chipNumber: chipNumber,
     );
     pet.features = features;
@@ -147,7 +143,6 @@ class Pet {
       avatarUrl: pet.avatarUrl,
       foodPreferences: pet.foodPreferences,
       fullAge: pet.fullAge,
-      healthPlan: pet.healthPlan,
       chipNumber: pet.chipNumber,
     );
 

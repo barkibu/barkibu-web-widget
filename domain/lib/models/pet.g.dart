@@ -27,7 +27,6 @@ Pet _$PetFromJson(Map<String, dynamic> json) {
         : FoodPreferences.fromJson(
             json['foodPreferences'] as Map<String, dynamic>),
     fullAge: json['fullAge'] as String,
-    chipNumber: json['chipNumber'] as String,
     birthdate: json['birthdate'] as String,
   )..queries = json['queries'] as int;
 }
@@ -46,7 +45,6 @@ Map<String, dynamic> _$PetToJson(Pet instance) => <String, dynamic>{
       'birthdate': instance.birthdate,
       'foodPreferences': instance.foodPreferences,
       'fullAge': instance.fullAge,
-      'chipNumber': instance.chipNumber,
       'queries': instance.queries,
       'name': instance.name,
       'features': instance.features,
