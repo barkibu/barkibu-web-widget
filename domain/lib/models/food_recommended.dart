@@ -28,6 +28,10 @@ class RecipeOrTreat {
     this.buyUrl,
     this.productId,
   });
+
+  String vendorName(){
+    return '';
+  }
 }
 
 class FoodRecommendedImage {
