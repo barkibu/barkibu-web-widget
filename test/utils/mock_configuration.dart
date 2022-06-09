@@ -48,6 +48,6 @@ void mockConfigDefaultValues(WidgetConfiguration config) {
   when(config.marketingBrandName).thenReturn('Brand Name');
   when(config.affiliatesUrl).thenReturn('');
   when(config.privacyUrl).thenReturn('');
-  when(config.findClinicButtonInChatEnabled).thenReturn(false);
+  when(config.findClinicButtonInChatEnabled).thenReturn(true);
 
 }
