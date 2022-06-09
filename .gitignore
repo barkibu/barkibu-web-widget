@@ -21,3 +21,6 @@ build.yaml
 .DS_store
 
 .history
+
+# Pulumi
+node_modules
