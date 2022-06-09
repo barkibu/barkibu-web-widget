@@ -12,5 +12,5 @@ class AskAVetEmailTemplateContactMessages_furlife extends AskAVetEmailTemplateCo
 
   @override
   String petDefinition(String petSpecies, String petName, String petSex, String breed, String age, String neutered) =>
-      "My $petSpecies is $petName \nBreed: $breed\nAge: $age\n";
+      'My $petSpecies is $petName \nBreed: $breed\nAge: $age\n';
 }
