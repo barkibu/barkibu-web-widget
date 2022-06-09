@@ -6,48 +6,48 @@ targets:
           # Authentication options
           authByEmailEnabled: true
           authByPhoneEnabled: false
-          useLegacyAuthDatasource: false
-          authServiceAppClientId: 2mapp17u8ep4pi30kikumlcpuv
-          authServiceUserPoolId: eu-west-1_iOJbwm0YC
-          externalProfileDataEnabled: false
+          useLegacyAuthDatasource: true
+          authServiceAppClientId: null
+          authServiceUserPoolId: null
+          externalProfileDataEnabled: true
 
           # Basic features
           telehealthEnabled: true
-          telehealthVideoCapabilityEnabled: true
-          telehealthMediaSharingEnabled: true
+          telehealthVideoCapabilityEnabled: false
+          telehealthMediaSharingEnabled: false
           nutribotEnabled: true
-          findAClinicEnabled: true
-          findAClinicAddressApiEnabled: true
+          findAClinicEnabled: false
+          findAClinicAddressApiEnabled: false
           askAVetDirectlyEnabled: true
           aivetEnabled: true
           conciergeUrl: null
 
           # Customisation
-          externalPetDataEnabled: false
+          externalPetDataEnabled: true
           externalLinksEventsEnabled: false
-          embeddedEmailClientEnabled: true
-          nutribotRecommendationShortJourneyEnabled: true
+          embeddedEmailClientEnabled: false
+          nutribotRecommendationShortJourneyEnabled: false
           addPetOptionEnabled: true
           extendedFeedbackEnabled: false
-          closeButtonEnabled: true
+          closeButtonEnabled: false
           backButtonEnabled: true
           goHomeLinkEnabled: true
           footerChatCreditsEnabled: false
           aivetUrgencyOrderEnabled: true
           skipPrimarySymptomEnabled: true
           termsOfServiceHomeEnabled: true
-          lastNameRequired: true
-          petBreedEnabled: true
+          lastNameRequired: false
+          petBreedEnabled: false
           assessmentDateFormat: MM/dd/yyyy
           defaultPhonePrefix: '+1'
           appName: 'VetInsight Assistant'
-          brandName: 'Iams'
-          brandLogo: 'iams-logo.svg'
+          brandName: 'VETINSIGHT™'
+          brandLogo: 'vetinsight-logo.svg'
           brandLogoWidth: '70px'
-          marketingOptInEnabled: true
-          marketingBrandName: 'Mars Petcare'
-          privacyUrl: 'https://www.mars.com/privacy'
-          affiliatesUrl: 'https://www.mars.com/made-by-mars/petcare'
+          marketingBrandName: 'Brand name'
+          marketingOptInEnabled: false
+          privacyUrl: ''
+          affiliatesUrl: ''
           headerWithoutLogo: false
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
@@ -57,31 +57,22 @@ targets:
           findClinicButtonInChatEnabled: true
 
           # Fallback theme & client_id
-          iconsTheme: 'iams'
-          fallbackTheme: 'iams-dogs'
-          fallbackClientId: 'iams'
+          iconsTheme: 'whitelabel'
+          fallbackTheme: 'whitelabel'
+          fallbackClientId: 'whitelabel'
 
           # Contanct vet options
           chatWithVetEnabled: true
-          chatOnPhoneCallUrl: https://calendly.com/susie-teran/?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}
+          chatOnPhoneCallUrl: https://calendly.com/susie-teran/demo?name={userName}&email={userEmail}&a3={petAge}&a4={petSpecies}&a1={fullPhoneNumber}&back=1
           emailAccount: vet.help@mail.kinship.barkibu.com
 
           # System configuration
           envName: 'staging'
-          apiUrl: 'https://kinship-ch-staging.herokuapp.com/v2'
-          segmentWriteKey: 'AlmkRCbqMwRgQ3yrIZrvKXfggbQu9dYO'
+          apiUrl: 'https://whitelabel-ch-staging.herokuapp.com/v2'
+          segmentWriteKey: '0Vc8s8WB69mrDy3Rnve6gSdCA1HDOhZJ'
 
           # Overriden configuration for each client id
           clientIdConfigOverride: null
-
-      build_web_compilers|entrypoint:
-        options:
-          compiler: dart2js
-          dart2js_args:
-            - -O4
-      build_web_compilers|dart_source_cleanup:
-        release_options:
-          enabled: false
 
 builders:
   config_builder:
