@@ -1,6 +1,5 @@
 import 'package:common_barkibu_dart/datasources/pet/pet_datasource.dart';
 import 'package:common_barkibu_dart/models/features.dart';
-import 'package:common_barkibu_dart/models/health_plan.dart';
 import 'package:common_barkibu_dart/models/models.dart';
 import 'package:common_barkibu_dart/models/pet.dart';
 import 'package:common_barkibu_dart/models/consultation_options.dart';
@@ -42,8 +41,6 @@ abstract class PetRepository {
   Future<List<Assessment>> getAssessments(int petId, {AssessmentFilter filter});
 
   Future<AssessmentPDF> getAssessmentPDF(int petId, String consultationId);
-
-  Future<List<HealthPlan>> getHealthPlans(int petId);
 
   Future<List<PetCounter>> getCounters(int petId);
 
@@ -91,11 +88,6 @@ class PetRepositoryImpl implements PetRepository {
   @override
   Future<Features> getFeatures(int petId) {
     return _petDatasource.getFeatures(petId);
-  }
-
-  @override
-  Future<List<HealthPlan>> getHealthPlans(int petId) {
-    return _petDatasource.getHealthPlans(petId);
   }
 
   @override
