@@ -57,7 +57,7 @@ targets:
           useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
-
+          findClinicButtonInChatEnabled: true
           # Fallback theme & client_id
           iconsTheme: 'iams'
           fallbackTheme: 'iams-dogs'
