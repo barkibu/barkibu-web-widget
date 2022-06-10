@@ -56,6 +56,7 @@ targets:
           marketingBrandName: ''
           marketingOptInEnabled: false
           privacyUrl: ''
+          findClinicButtonInChatEnabled: false
 
           # Fallback theme & client_id
           iconsTheme: 'thewildest'

@@ -14,7 +14,6 @@ void main() {
     'irrelevant',
     'irrelevant',
     'irrelevant',
-    PetHealthPlanResponse(key: 'key', planName: 'Plan Name'),
     'irrelevant',
   );
 
@@ -30,7 +29,6 @@ void main() {
       'size': petResponse.size,
       'name': petResponse.name,
       'birthdate': petResponse.birthdate,
-      'healthPlanDetails': petResponse.healthPlanDetails.toJson(),
       'chipNumber': petResponse.chipNumber,
     }
   };

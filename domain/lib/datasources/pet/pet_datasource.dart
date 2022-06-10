@@ -39,8 +39,6 @@ abstract class PetDatasource {
 
   Future<AssessmentPDF> getAssessmentPDF(int petId, String consultationId);
 
-  Future<List<HealthPlan>> getHealthPlans(int petId);
-
   Future<List<PetCounter>> getCounters(int petId);
 
   Future<List<Interaction>> getInteractions(int petId);
@@ -201,17 +199,6 @@ class PetDatasourceImpl implements PetDatasource {
     final response = await _petApi.getAssessmentPDF(petId, consultationId);
 
     return AssessmentPDF(response.isSuccessful ? response.bodyBytes : Uint8List(0));
-  }
-
-  @override
-  Future<List<HealthPlan>> getHealthPlans(int petId) async {
-    var response = await _petApi.getHealthPlans(petId);
-
-    return response.isSuccessful
-        ? HealthPlansResponse.fromJson(response.body)
-            .map((HealthPlanResponse healthPlan) => healthPlan.toPetHealthPlan())
-            .toList()
-        : [];
   }
 
   @override

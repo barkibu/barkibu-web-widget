@@ -3,7 +3,6 @@ import 'package:common_barkibu_dart/bloc/autocomplete/autocomplete_bloc.dart';
 import 'package:common_barkibu_dart/bloc/clinics_finder/clinics_finder_bloc.dart';
 import 'package:common_barkibu_dart/bloc/email_contact/email_contact_bloc.dart';
 import 'package:common_barkibu_dart/bloc/faq/faq.dart';
-import 'package:common_barkibu_dart/bloc/health_plans/health_plans.dart';
 import 'package:common_barkibu_dart/datasources/api/breeds_api.dart';
 import 'package:common_barkibu_dart/datasources/api/clinic_api.dart';
 import 'package:common_barkibu_dart/datasources/api/email_api.dart';
@@ -18,7 +17,6 @@ import 'package:common_barkibu_dart/datasources/presigned_url/presigned_url_data
 import 'package:common_barkibu_dart/domain/clinic/get_clinics_use_case.dart';
 import 'package:common_barkibu_dart/domain/email/send_email_use_case.dart';
 import 'package:common_barkibu_dart/domain/features/get_features_use_case.dart';
-import 'package:common_barkibu_dart/domain/health_plans/get_health_plans_use_case.dart';
 import 'package:common_barkibu_dart/domain/pet/create_pet_prevention_events_use_case.dart';
 import 'package:common_barkibu_dart/domain/pet/get_breeds_use_case.dart';
 import 'package:common_barkibu_dart/domain/pet/get_pet_counters_use_case.dart';
@@ -249,7 +247,6 @@ class ServiceLocator {
     container.registerSingleton<PhoneSignUpUseCase>(PhoneSignUpUseCaseImpl(container<PhoneSignUpRepository>()));
     container.registerSingleton<PhoneSignInUseCase>(PhoneSignInUseCaseImpl(container<PhoneSignInRepository>()));
     container.registerSingleton<VideoChatUseCase>(VideoChatUseCaseImpl(container<VideoChatRepository>()));
-    container.registerSingleton<GetHealthPlansUseCase>(GetHealthPlansUseCaseImpl(container<PetRepository>()));
 
     container.registerSingleton<UploadImageService>(UploadImageServiceImpl(container<PresignedUrlDatasource>()));
     container.registerSingleton<GetFaqUseCase>(GetFaqUseCaseImpl());
@@ -391,9 +388,6 @@ class ServiceLocator {
               container<VideoChatUseCase>(),
               _streamSharingRequest,
             ));
-
-    container.registerFactory<HealthPlansBloc>(
-        () => HealthPlansBloc(container<AnalyticsService>(), container<GetHealthPlansUseCase>()));
 
     container.registerFactory<ConciergeBloc>(() => ConciergeBloc(container<AuthDatasource>()));
 

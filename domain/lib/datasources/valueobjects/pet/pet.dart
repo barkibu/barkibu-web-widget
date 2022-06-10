@@ -3,7 +3,6 @@ import 'package:common_barkibu_dart/models/health_plan.dart';
 import 'package:common_barkibu_dart/models/interaction.dart';
 import 'package:common_barkibu_dart/models/pet.dart';
 import 'package:common_barkibu_dart/models/pet_counter.dart';
-import 'package:common_barkibu_dart/models/pet_health_plan.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:common_barkibu_dart/service_locator.dart';
 part 'pet.g.dart';
@@ -108,7 +107,6 @@ class PetResponse {
   final String size;
   final String name;
   final String birthdate;
-  final PetHealthPlanResponse healthPlanDetails;
   final String chipNumber;
 
   const PetResponse(
@@ -123,7 +121,6 @@ class PetResponse {
     this.size,
     this.name,
     this.birthdate,
-    this.healthPlanDetails,
     this.chipNumber,
   );
 
@@ -144,7 +141,6 @@ class PetResponse {
         name: name,
         birthdate: birthdate,
         avatarUrl: '${ServiceLocator.container<Configuration>().backendUrl}/pets/${id}/avatar',
-        healthPlan: healthPlanDetails.toPetHealthPlan(),
         chipNumber: chipNumber,
       );
 }
@@ -154,81 +150,6 @@ class PetsResponse {
       json?.map((dynamic pet) => PetResponse.fromJson(pet))?.toList() ?? [];
 }
 
-@JsonSerializable()
-class PetHealthPlanResponse {
-  final String key;
-  final String planName;
-  final PriceResponse price;
-  final String purchaseDate;
-  final String expirationDate;
-
-  PetHealthPlanResponse({
-    this.key,
-    this.planName,
-    this.price,
-    this.purchaseDate,
-    this.expirationDate,
-  });
-
-  factory PetHealthPlanResponse.fromJson(Map<String, dynamic> json) => _$PetHealthPlanResponseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$PetHealthPlanResponseToJson(this);
-
-  PetHealthPlan toPetHealthPlan() => PetHealthPlan(
-        key: key,
-        planName: planName,
-        price: price?.toPrice(),
-        purchaseDate: purchaseDate != null ? DateTime.parse(purchaseDate) : null,
-        expirationDate: purchaseDate != null ? DateTime.parse(expirationDate) : null,
-      );
-}
-
-@JsonSerializable()
-class HealthPlansResponse {
-  static List<HealthPlanResponse> fromJson(List<dynamic> json) =>
-      json?.map((dynamic healthPlan) => HealthPlanResponse.fromJson(healthPlan))?.toList() ?? [];
-}
-
-@JsonSerializable()
-class HealthPlanResponse {
-  final String key;
-  final String planName;
-  final String description;
-  final PriceResponse price;
-  final String type;
-  final int planLifeInMonths;
-  final bool buyable;
-  final String url;
-  final List<BenefitResponse> benefits;
-
-  HealthPlanResponse({
-    this.key,
-    this.planName,
-    this.description,
-    this.price,
-    this.type,
-    this.planLifeInMonths,
-    this.buyable,
-    this.url,
-    this.benefits,
-  });
-
-  factory HealthPlanResponse.fromJson(Map<String, dynamic> json) => _$HealthPlanResponseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$HealthPlanResponseToJson(this);
-
-  HealthPlan toPetHealthPlan() => HealthPlan(
-        key: key,
-        planName: planName,
-        description: description,
-        price: price.toPrice(),
-        type: type,
-        planLifeInMonths: planLifeInMonths,
-        buyable: buyable,
-        url: url,
-        benefits: benefits.map((BenefitResponse benefit) => benefit.toBenefit()).toList(),
-      );
-}
 
 @JsonSerializable()
 class PriceResponse {

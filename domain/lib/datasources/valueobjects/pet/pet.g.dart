@@ -108,10 +108,6 @@ PetResponse _$PetResponseFromJson(Map<String, dynamic> json) {
     json['size'] as String,
     json['name'] as String,
     json['birthdate'] as String,
-    json['healthPlanDetails'] == null
-        ? null
-        : PetHealthPlanResponse.fromJson(
-            json['healthPlanDetails'] as Map<String, dynamic>),
     json['chipNumber'] as String,
   );
 }
@@ -129,72 +125,7 @@ Map<String, dynamic> _$PetResponseToJson(PetResponse instance) =>
       'size': instance.size,
       'name': instance.name,
       'birthdate': instance.birthdate,
-      'healthPlanDetails': instance.healthPlanDetails,
       'chipNumber': instance.chipNumber,
-    };
-
-PetHealthPlanResponse _$PetHealthPlanResponseFromJson(
-    Map<String, dynamic> json) {
-  return PetHealthPlanResponse(
-    key: json['key'] as String,
-    planName: json['planName'] as String,
-    price: json['price'] == null
-        ? null
-        : PriceResponse.fromJson(json['price'] as Map<String, dynamic>),
-    purchaseDate: json['purchaseDate'] as String,
-    expirationDate: json['expirationDate'] as String,
-  );
-}
-
-Map<String, dynamic> _$PetHealthPlanResponseToJson(
-        PetHealthPlanResponse instance) =>
-    <String, dynamic>{
-      'key': instance.key,
-      'planName': instance.planName,
-      'price': instance.price,
-      'purchaseDate': instance.purchaseDate,
-      'expirationDate': instance.expirationDate,
-    };
-
-HealthPlansResponse _$HealthPlansResponseFromJson(Map<String, dynamic> json) {
-  return HealthPlansResponse();
-}
-
-Map<String, dynamic> _$HealthPlansResponseToJson(
-        HealthPlansResponse instance) =>
-    <String, dynamic>{};
-
-HealthPlanResponse _$HealthPlanResponseFromJson(Map<String, dynamic> json) {
-  return HealthPlanResponse(
-    key: json['key'] as String,
-    planName: json['planName'] as String,
-    description: json['description'] as String,
-    price: json['price'] == null
-        ? null
-        : PriceResponse.fromJson(json['price'] as Map<String, dynamic>),
-    type: json['type'] as String,
-    planLifeInMonths: json['planLifeInMonths'] as int,
-    buyable: json['buyable'] as bool,
-    url: json['url'] as String,
-    benefits: (json['benefits'] as List)
-        ?.map((e) => e == null
-            ? null
-            : BenefitResponse.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-  );
-}
-
-Map<String, dynamic> _$HealthPlanResponseToJson(HealthPlanResponse instance) =>
-    <String, dynamic>{
-      'key': instance.key,
-      'planName': instance.planName,
-      'description': instance.description,
-      'price': instance.price,
-      'type': instance.type,
-      'planLifeInMonths': instance.planLifeInMonths,
-      'buyable': instance.buyable,
-      'url': instance.url,
-      'benefits': instance.benefits,
     };
 
 PriceResponse _$PriceResponseFromJson(Map<String, dynamic> json) {
