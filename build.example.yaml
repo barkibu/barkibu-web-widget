@@ -54,8 +54,8 @@ targets:
           useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
-          findClinicButtonInChatEnabled: true
           petSexAndSpayedStatusEnabled: false
+          findClinicButtonInChatEnabled: true
 
           # Fallback theme & client_id
           iconsTheme: 'whitelabel'
