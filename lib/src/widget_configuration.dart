@@ -205,6 +205,9 @@ class WidgetConfiguration extends Configuration {
   bool get petSexAndSpayedStatusEnabled =>
       _clientIdOverridenValue('petSexAndSpayedStatusEnabled') ?? config.petSexAndSpayedStatusEnabled;
 
+  bool get findClinicButtonInChatEnabled =>
+      _clientIdOverridenValue('findClinicButtonInChatEnabled') ?? config.findClinicButtonInChatEnabled;
+
   dynamic _clientIdOverridenValue(String configName) {
     if (config.clientIdConfigOverride == null) {
       return;

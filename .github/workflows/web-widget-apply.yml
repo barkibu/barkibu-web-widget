@@ -1,0 +1,66 @@
+name: web-widget-apply
+on:
+  push:
+    branches:
+      - master
+      - develop
+      - staging
+    # paths:
+    # - infrastructure
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_DEFAULT_REGION: us-east-1
+  DEVOPS_CHANNEL_SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_DEVOPS_CHANNEL }}
+  # TEAM_CHANNEL_SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_SAC_INTERNAL_CHANNEL }}
+jobs:
+  infra_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_DEFAULT_REGION }}
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+      - name: Get branch names
+        id: branch-name
+        uses: tj-actions/branch-names@v2.2
+      - name: Set env vars to be used in deploy steps
+        run: |
+          if [ ${{ steps.branch-name.outputs.current_branch }} == 'develop' ]; then
+            echo "environment=dev" >> $GITHUB_ENV
+            echo "stack_name=vetinsight-dev" >> $GITHUB_ENV
+          elif [ ${{ steps.branch-name.outputs.current_branch }} == 'master' ]; then
+            echo "environment=production" >> $GITHUB_ENV
+            echo "stack_name=vetinsight-production" >> $GITHUB_ENV
+          elif [ ${{ steps.branch-name.outputs.current_branch }} == 'staging' ]; then
+            echo "environment=staging" >> $GITHUB_ENV
+            echo "stack_name=vetinsight-staging" >> $GITHUB_ENV
+          fi
+      - name: Apply
+        run: |
+          cd infrastructure
+          yarn install
+          pulumi login --cloud-url s3://vetinsight-pulumi-state
+          pulumi stack init $stack_name --secrets-provider="awskms://alias/pulumi-vetinsight-infra" --non-interactive 2> /dev/null || pulumi stack select $stack_name
+          pulumi up --yes --diff --color always
+      - name: Slack notification devops channel
+        if: ${{ success() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ env.DEVOPS_CHANNEL_SLACK_WEBHOOK }}
+          SLACK_MESSAGE: 'vetinsight-infra ${{ env.environment }} deployment succeeded'
+          SLACK_COLOR: '#00FF00'
+      - name: Slack notification devops channel
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ env.DEVOPS_CHANNEL_SLACK_WEBHOOK }}
+          SLACK_MESSAGE: 'vetinsight-infra ${{ env.environment }} deployment failed'
+          SLACK_COLOR: '#FF0000'

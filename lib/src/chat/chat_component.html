@@ -34,13 +34,13 @@
     <widget-footer class="assessment-report-buttons">
         <widget-button type="primary" button (click)="showAskAVetModal = true" *ngIf="isTelehealthEnabled" class="ask-a-vet-button" [text]="messages.assessmentReportMessages.askAVet">
         </widget-button>
-        <widget-button type="secondary" button (click)="continueAssessment()" [text]="messages.sharedMessages.carryOn">
-        </widget-button>
         <widget-button type="secondary" link
                        [linkHref]="RoutePaths.clinicsFinder.toUrl()"
                        (click)="logFindClinicAfterAiJourney()"
-                       *ngIf="isUrgent"
+                       *ngIf="isUrgent && findClinicButtonInChatEnabled"
                        [text]="messages.homeMessages.messages.findClinics.title">
+        </widget-button>
+        <widget-button type="secondary" button (click)="continueAssessment()" [text]="messages.sharedMessages.carryOn">
         </widget-button>
     </widget-footer>
 </assessment-report-screen>

@@ -58,6 +58,7 @@ targets:
           virtualVetInfoEnabled: true
           externalToSEnabled: false
           petSexAndSpayedStatusEnabled: true
+          findClinicButtonInChatEnabled: true
 
           # Fallback theme & client_id
           iconsTheme: 'iams'

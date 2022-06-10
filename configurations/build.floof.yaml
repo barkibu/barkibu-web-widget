@@ -24,6 +24,7 @@ targets:
           askAVetDirectlyEnabled: true
           aivetEnabled: false
           conciergeUrl: null
+          findClinicButtonInChatEnabled: false
 
           # Customisation
           externalPetDataEnabled: true
