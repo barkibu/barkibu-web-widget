@@ -24,7 +24,6 @@ targets:
           askAVetDirectlyEnabled: true
           aivetEnabled: false
           conciergeUrl: null
-          findClinicButtonInChatEnabled: false
 
           # Customisation
           externalPetDataEnabled: true
@@ -58,6 +57,8 @@ targets:
           marketingOptInEnabled: false
           privacyUrl: ''
           affiliatesUrl: ''
+          findClinicButtonInChatEnabled: false
+          petSexAndSpayedStatusEnabled: true
 
           # Fallback theme & client_id
           iconsTheme: 'default'

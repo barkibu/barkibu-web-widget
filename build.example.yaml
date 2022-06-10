@@ -55,6 +55,7 @@ targets:
           virtualVetInfoEnabled: true
           externalToSEnabled: false
           findClinicButtonInChatEnabled: true
+          petSexAndSpayedStatusEnabled: false
 
           # Fallback theme & client_id
           iconsTheme: 'whitelabel'
