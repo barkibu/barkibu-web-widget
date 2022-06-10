@@ -48,7 +48,7 @@ void mockConfigDefaultValues(WidgetConfiguration config) {
   when(config.marketingBrandName).thenReturn('Brand Name');
   when(config.affiliatesUrl).thenReturn('');
   when(config.privacyUrl).thenReturn('');
+  when(config.petSexAndSpayedStatusEnabled).thenReturn(false);
   when(config.findClinicButtonInChatEnabled).thenReturn(true);
   when(config.buyNowWithVendorNameEnabled).thenReturn(false);
-
 }

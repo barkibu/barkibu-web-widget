@@ -202,12 +202,14 @@ class WidgetConfiguration extends Configuration {
 
   bool get externalToSEnabled => _clientIdOverridenValue('externalToSEnabled') ?? config.externalToSEnabled;
 
+  bool get petSexAndSpayedStatusEnabled =>
+      _clientIdOverridenValue('petSexAndSpayedStatusEnabled') ?? config.petSexAndSpayedStatusEnabled;
+
   bool get findClinicButtonInChatEnabled =>
       _clientIdOverridenValue('findClinicButtonInChatEnabled') ?? config.findClinicButtonInChatEnabled;
 
   bool get buyNowWithVendorNameEnabled =>
       _clientIdOverridenValue('buyNowWithVendorNameEnabled') ?? config.buyNowWithVendorNameEnabled;
-
 
   dynamic _clientIdOverridenValue(String configName) {
     if (config.clientIdConfigOverride == null) {

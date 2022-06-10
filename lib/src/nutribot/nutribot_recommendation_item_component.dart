@@ -19,7 +19,7 @@ import 'package:web_widget/src/widget_window/parent_window_service.dart';
     pipes: [
       EllipsisPipe
     ])
-class NutribotRecommendationItemComponent implements AfterChanges{
+class NutribotRecommendationItemComponent implements AfterChanges {
   final MessagesModel messages;
   final WidgetConfiguration _config;
   final ParentWindowService _parentWindow;
@@ -34,16 +34,12 @@ class NutribotRecommendationItemComponent implements AfterChanges{
 
   @override
   void ngAfterChanges() {
+    // this will change after modifying the backend to get vendor name
     var vendorName = '';
-    print('aldmlafdalmdal');
-    print(_config.buyNowWithVendorNameEnabled );
-
     if (_config.buyNowWithVendorNameEnabled && recipeOrTreat != null) {
       vendorName = 'Walmart.com';
     }
     recipeOrTreat.setVendorName = vendorName;
-    print(recipeOrTreat.vendorName);
-
   }
 
   int get cutOff => 220;
@@ -86,5 +82,4 @@ class NutribotRecommendationItemComponent implements AfterChanges{
   }
 
   void logNutribotClickBuy() => _analyticsService.event.nutribot.logNutribotClickBuy();
-
 }

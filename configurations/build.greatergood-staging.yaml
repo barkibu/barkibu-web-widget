@@ -60,6 +60,8 @@ targets:
           affiliatesUrl: ''
           findClinicButtonInChatEnabled: false
           buyNowWithVendorNameEnabled: false
+          petSexAndSpayedStatusEnabled: true
+
 
           # Fallback theme & client_id
           iconsTheme: 'greatergood'

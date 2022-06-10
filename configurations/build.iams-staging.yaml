@@ -57,6 +57,7 @@ targets:
           useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
+          petSexAndSpayedStatusEnabled: true
           findClinicButtonInChatEnabled: true
           buyNowWithVendorNameEnabled: false
 

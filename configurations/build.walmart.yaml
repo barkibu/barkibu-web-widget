@@ -59,6 +59,8 @@ targets:
           affiliatesUrl: ''
           findClinicButtonInChatEnabled: false
           buyNowWithVendorNameEnabled: true
+          petSexAndSpayedStatusEnabled: true
+
           # Fallback theme & client_id
           iconsTheme: 'walmart'
           fallbackTheme: 'walmart'

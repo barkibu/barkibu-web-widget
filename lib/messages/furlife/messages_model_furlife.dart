@@ -7,8 +7,8 @@ import 'package:common_barkibu_dart/messages/profileMessages.i18n.dart';
 import 'package:common_barkibu_dart/messages/validationMessages.i18n.dart';
 import 'package:common_barkibu_dart/messages/nutribotMessages.i18n.dart';
 import 'package:common_barkibu_dart/messages/insuranceMessages.i18n.dart';
-import 'package:common_barkibu_dart/messages/contactMessages.i18n.dart';
 import 'package:common_barkibu_dart/messages/workingFeatureMessages.i18n.dart';
+import 'package:web_widget/messages/furlife/contact_messages_furlife.dart';
 import 'package:web_widget/messages/furlife/home_messages_furlife.dart';
 import 'package:web_widget/messages/tsc/auth_messages_tsc.dart';
 import 'package:web_widget/messages/tsc/pet_profile_messages_tsc.dart';
@@ -29,7 +29,7 @@ class MessagesModelFurLife extends MessagesModel {
             ProfileMessages(),
             NutribotMessages(),
             InsuranceMessages(),
-            ContactMessages(),
+            ContactMessages_furlife(),
             HealthPlanMessages(),
             WorkingFeatureMessages(),
             OnBoardingMessages(),
