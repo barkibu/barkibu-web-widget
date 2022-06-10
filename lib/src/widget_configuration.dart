@@ -202,6 +202,9 @@ class WidgetConfiguration extends Configuration {
 
   bool get externalToSEnabled => _clientIdOverridenValue('externalToSEnabled') ?? config.externalToSEnabled;
 
+  bool get petSexAndSpayedStatusEnabled =>
+      _clientIdOverridenValue('petSexAndSpayedStatusEnabled') ?? config.petSexAndSpayedStatusEnabled;
+
   bool get findClinicButtonInChatEnabled =>
       _clientIdOverridenValue('findClinicButtonInChatEnabled') ?? config.findClinicButtonInChatEnabled;
 
