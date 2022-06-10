@@ -1,11 +1,12 @@
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
-import 'package:common_barkibu_dart/models/pet.dart';
 import 'package:common_barkibu_dart/messages/messages.dart';
-import 'package:web_widget/src/route_paths.dart';
+import 'package:common_barkibu_dart/models/pet.dart';
 import 'package:web_widget/src/card/card_component.dart';
-import 'package:web_widget/src/pipes/pet_pipes.dart';
 import 'package:web_widget/src/icons/icon_component.dart';
+import 'package:web_widget/src/pipes/pet_pipes.dart';
+import 'package:web_widget/src/route_paths.dart';
+import 'package:web_widget/src/widget_configuration.dart';
 
 @Component(selector: 'pet-card', templateUrl: 'pet_card_component.html', styleUrls: [
   'pet_card_component.css'
@@ -22,8 +23,11 @@ class PetCardComponent {
   Pet pet;
 
   final MessagesModel messages;
+  final WidgetConfiguration config;
 
-  PetCardComponent(this.messages);
+  PetCardComponent(this.messages, this.config);
+
+  bool get petSexAndSpayedStatusEnabled => config.petSexAndSpayedStatusEnabled;
 
   String get petProfilePath {
     return RoutePaths.petProfile.toUrl(parameters: {'id': pet.id.toString()});
