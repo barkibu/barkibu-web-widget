@@ -205,6 +205,10 @@ class WidgetConfiguration extends Configuration {
   bool get findClinicButtonInChatEnabled =>
       _clientIdOverridenValue('findClinicButtonInChatEnabled') ?? config.findClinicButtonInChatEnabled;
 
+  bool get buyNowWithVendorNameEnabled =>
+      _clientIdOverridenValue('buyNowWithVendorNameEnabled') ?? config.buyNowWithVendorNameEnabled;
+
+
   dynamic _clientIdOverridenValue(String configName) {
     if (config.clientIdConfigOverride == null) {
       return;

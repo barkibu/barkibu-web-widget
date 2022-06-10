@@ -12,7 +12,10 @@
         <p [innerHtml]="cardDescription"></p>
     </div>
 
-    <widget-button class="buy-button" link [linkHref]="recipe.buyUrl" [externalLink]="true" (click)="logNutribotClickBuy()" [text]="messages.nutribotMessages.buyTreat('Walmart.com')" *ngIf="!isNutribotLinkExternalEvent && isShortenNutribotJourneyEnabled">
+    <widget-button class="buy-button" link [linkHref]="recipe.buyUrl" [externalLink]="true"
+                   (click)="logNutribotClickBuy()"
+                   [text]="messages.nutribotMessages.buyTreat(recipe.vendorName)"
+                   *ngIf="!isNutribotLinkExternalEvent && isShortenNutribotJourneyEnabled">
     </widget-button>
 
     <div class="treats-description" *ngIf="treats.isNotEmpty">

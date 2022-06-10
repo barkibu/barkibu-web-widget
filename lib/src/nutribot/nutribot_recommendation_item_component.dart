@@ -1,9 +1,9 @@
 import 'package:angular/angular.dart';
 import 'package:common_barkibu_dart/common_barkibu_dart.dart';
 import 'package:web_widget/src/navigation/widget_button_component.dart';
+import 'package:web_widget/src/pipes/ellipsis_pipe.dart';
 import 'package:web_widget/src/widget_configuration.dart';
 import 'package:web_widget/src/widget_window/parent_window_service.dart';
-import 'package:web_widget/src/pipes/ellipsis_pipe.dart';
 
 @Component(
     selector: 'nutribot-recommendation-item',
@@ -19,7 +19,7 @@ import 'package:web_widget/src/pipes/ellipsis_pipe.dart';
     pipes: [
       EllipsisPipe
     ])
-class NutribotRecommendationItemComponent {
+class NutribotRecommendationItemComponent implements AfterChanges{
   final MessagesModel messages;
   final WidgetConfiguration _config;
   final ParentWindowService _parentWindow;
@@ -31,6 +31,20 @@ class NutribotRecommendationItemComponent {
 
   @Input()
   RecipeOrTreat recipeOrTreat;
+
+  @override
+  void ngAfterChanges() {
+    var vendorName = '';
+    print('aldmlafdalmdal');
+    print(_config.buyNowWithVendorNameEnabled );
+
+    if (_config.buyNowWithVendorNameEnabled && recipeOrTreat != null) {
+      vendorName = 'Walmart.com';
+    }
+    recipeOrTreat.setVendorName = vendorName;
+    print(recipeOrTreat.vendorName);
+
+  }
 
   int get cutOff => 220;
 
@@ -71,13 +85,6 @@ class NutribotRecommendationItemComponent {
     );
   }
 
-  // void logNutribotClickBuy() => _analyticsService.event.nutribot.logNutribotClickBuy();
-  void logNutribotClickBuy() {
-    print('aaaaaaaaaaaaaaaaaaaaaa');
-    print(recipeOrTreat.buyUrl);
-    print(recipeOrTreat.productName);
-    print(recipeOrTreat.productId);
-
-  }
+  void logNutribotClickBuy() => _analyticsService.event.nutribot.logNutribotClickBuy();
 
 }

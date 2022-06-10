@@ -40,7 +40,18 @@ class NutribotRecommendationMessageComponent {
   NutribotRecommendationViewModel viewModel;
 
   FoodRecommended get foodRecommended => viewModel.data;
-  RecipeOrTreat get recipe => foodRecommended.recipe;
+  RecipeOrTreat get recipe {
+    var vendorName = '';
+
+    print('aldmlafdalmdal');
+    print(_config.buyNowWithVendorNameEnabled);
+
+    if (_config.buyNowWithVendorNameEnabled) {
+      vendorName = 'Walmart.com';
+    }
+    foodRecommended.recipe.setVendorName = vendorName;
+    return foodRecommended.recipe;
+  }
 
   bool isContentOpened = false;
 

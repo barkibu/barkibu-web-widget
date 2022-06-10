@@ -49,4 +49,6 @@ void mockConfigDefaultValues(WidgetConfiguration config) {
   when(config.affiliatesUrl).thenReturn('');
   when(config.privacyUrl).thenReturn('');
   when(config.findClinicButtonInChatEnabled).thenReturn(true);
+  when(config.buyNowWithVendorNameEnabled).thenReturn(false);
+
 }

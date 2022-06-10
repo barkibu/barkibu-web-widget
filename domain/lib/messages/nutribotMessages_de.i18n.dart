@@ -22,7 +22,6 @@ class NutribotMessages_de extends NutribotMessages {
 	String get primaryFood => "";
 	String get treat => "";
 	String get title => "";
-	// String get buyTreat => "";
 	String  buyTreat(String productVendor) => "";
 
 	String get treatIngredients => "";

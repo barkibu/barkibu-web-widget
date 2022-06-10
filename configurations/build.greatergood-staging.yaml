@@ -59,6 +59,7 @@ targets:
           privacyUrl: ''
           affiliatesUrl: ''
           findClinicButtonInChatEnabled: false
+          buyNowWithVendorNameEnabled: false
 
           # Fallback theme & client_id
           iconsTheme: 'greatergood'
