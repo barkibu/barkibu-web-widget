@@ -41,4 +41,4 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: |
           heroku plugins:install heroku-cli-static
-          script/deploy.sh ${{ github.event.inputs.deployTo }} ${{ secrets.S3_CONFIG_URL }}
+          script/deploy.sh ${{ github.event.inputs.deployTo }}
