@@ -48,7 +48,8 @@ targets:
           brandLogo: 'poweredby-vetinsight-tsc.svg'
           brandLogoWidth: '70px'
           headerWithoutLogo: true
-          botPostMessageDelay: 400
+          botPreMessageDelay: 400
+          botPostMessageDelay: 50
           useSpecialTranslations: 'tsc'
           virtualVetInfoEnabled: true
           externalToSEnabled: false
