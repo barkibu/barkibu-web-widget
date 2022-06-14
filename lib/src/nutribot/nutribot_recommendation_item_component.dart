@@ -19,7 +19,7 @@ import 'package:web_widget/src/widget_window/parent_window_service.dart';
     pipes: [
       EllipsisPipe
     ])
-class NutribotRecommendationItemComponent{
+class NutribotRecommendationItemComponent {
   final MessagesModel messages;
   final WidgetConfiguration _config;
   final ParentWindowService _parentWindow;
@@ -36,6 +36,7 @@ class NutribotRecommendationItemComponent{
   // should be like recipeOrTreat.vendorName !=null ?
   // recipeOrTreat.vendorName : _config.buyNowWithVendorName
   String get vendorName => _config.buyNowWithVendorName;
+
   int get cutOff => 220;
 
   void toggleDescriptionExpanded() => descriptionExpanded = !descriptionExpanded;
