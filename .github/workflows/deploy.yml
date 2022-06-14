@@ -3,8 +3,24 @@ on:
   workflow_dispatch:
     inputs:
       deployTo:
+        type: choice
         description: 'Deploy env(dev/staging/kinship-staging-all/kinship-prod-all/whitelabel/tsc-staging/floof-staging/iams-staging/greatergood-staging/walmart-staging/fur-life-staging/prod/tsc/floof/iams/greatergood/walmart/fur-life/thewildest/thewildest-staging)'
         required: true
+        options:
+          - tsc-staging
+          - iams-staging
+          - walmart-staging
+          - thewildest-staging
+          - greatergood-staging
+          - fur-life-staging
+          - tsc
+          - iams
+          - walmart
+          - thewildest
+          - greatergood
+          - fur-life
+          - kinship-staging-all
+          - kinship-prod-all
 
 jobs:
   deploy:
