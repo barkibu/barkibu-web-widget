@@ -14,7 +14,7 @@
 
     <widget-button class="buy-button" link [linkHref]="recipe.buyUrl" [externalLink]="true"
                    (click)="logNutribotClickBuy()"
-                   [text]="messages.nutribotMessages.buyTreat(recipe.vendorName)"
+                   [text]="messages.nutribotMessages.buyTreat(vendorName)"
                    *ngIf="!isNutribotLinkExternalEvent && isShortenNutribotJourneyEnabled">
     </widget-button>
 

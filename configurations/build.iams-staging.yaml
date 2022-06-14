@@ -59,7 +59,7 @@ targets:
           externalToSEnabled: false
           petSexAndSpayedStatusEnabled: true
           findClinicButtonInChatEnabled: true
-          buyNowWithVendorNameEnabled: false
+          buyNowWithVendorName: ''
 
           # Fallback theme & client_id
           iconsTheme: 'iams'

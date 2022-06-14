@@ -56,7 +56,7 @@ targets:
           externalToSEnabled: false
           petSexAndSpayedStatusEnabled: false
           findClinicButtonInChatEnabled: true
-          buyNowWithVendorNameEnabled: false
+          buyNowWithVendorName: 'Walmart.com'
 
           # Fallback theme & client_id
           iconsTheme: 'whitelabel'

@@ -17,7 +17,6 @@ class RecipeOrTreat {
   final FoodRecommendedImage backImage;
   final String buyUrl;
   final String productId;
-  String vendorName;
 
   RecipeOrTreat({
     this.id,
@@ -29,10 +28,6 @@ class RecipeOrTreat {
     this.buyUrl,
     this.productId,
   });
-
-  set setVendorName(String name) {
-    vendorName = name;
-  }
 
 }
 

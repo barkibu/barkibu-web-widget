@@ -59,8 +59,7 @@ targets:
           privacyUrl: ''
           affiliatesUrl: ''
           findClinicButtonInChatEnabled: false
-          buyNowWithVendorNameEnabled: false
-          petSexAndSpayedStatusEnabled: true
+          buyNowWithVendorName: ''
 
 
           # Fallback theme & client_id

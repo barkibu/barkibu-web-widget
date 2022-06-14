@@ -19,7 +19,7 @@ import 'package:web_widget/src/widget_window/parent_window_service.dart';
     pipes: [
       EllipsisPipe
     ])
-class NutribotRecommendationItemComponent implements AfterChanges {
+class NutribotRecommendationItemComponent{
   final MessagesModel messages;
   final WidgetConfiguration _config;
   final ParentWindowService _parentWindow;
@@ -32,16 +32,10 @@ class NutribotRecommendationItemComponent implements AfterChanges {
   @Input()
   RecipeOrTreat recipeOrTreat;
 
-  @override
-  void ngAfterChanges() {
-    // this will change after modifying the backend to get vendor name
-    var vendorName = '';
-    if (_config.buyNowWithVendorNameEnabled && recipeOrTreat != null) {
-      vendorName = 'Walmart.com';
-    }
-    recipeOrTreat.setVendorName = vendorName;
-  }
-
+  // this will change after modifying the backend to get vendor name
+  // should be like recipeOrTreat.vendorName !=null ?
+  // recipeOrTreat.vendorName : _config.buyNowWithVendorName
+  String get vendorName => _config.buyNowWithVendorName;
   int get cutOff => 220;
 
   void toggleDescriptionExpanded() => descriptionExpanded = !descriptionExpanded;

@@ -40,19 +40,12 @@ class NutribotRecommendationMessageComponent {
   NutribotRecommendationViewModel viewModel;
 
   FoodRecommended get foodRecommended => viewModel.data;
-  RecipeOrTreat get recipe {
-    var vendorName = '';
+  RecipeOrTreat get recipe => foodRecommended.recipe;
 
-    print('aldmlafdalmdal');
-    print(_config.buyNowWithVendorNameEnabled);
-
-    if (_config.buyNowWithVendorNameEnabled) {
-      vendorName = 'Walmart.com';
-    }
-    foodRecommended.recipe.setVendorName = vendorName;
-    return foodRecommended.recipe;
-  }
-
+  // this will change after modifying the backend to get vendor name
+  // should be like recipeOrTreat.vendorName !=null ?
+  // recipeOrTreat.vendorName : _config.buyNowWithVendorName
+  String get vendorName => _config.buyNowWithVendorName;
   bool isContentOpened = false;
 
   bool get isBackImageNotEmpty => foodRecommended.recipe.backImage.full?.isNotEmpty;

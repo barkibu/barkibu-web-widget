@@ -59,7 +59,7 @@ targets:
           affiliatesUrl: ''
           petSexAndSpayedStatusEnabled: false
           findClinicButtonInChatEnabled: false
-          buyNowWithVendorNameEnabled: false
+          buyNowWithVendorName: ''
 
           # Fallback theme & client_id
           iconsTheme: 'fur-life'

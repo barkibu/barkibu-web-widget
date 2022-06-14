@@ -1,10 +1,10 @@
 <h5 class="product-name">{{recipeOrTreat.productName}}</h5>
 
 <widget-button link [linkHref]="recipeOrTreat.buyUrl" [externalLink]="true" (click)="logNutribotClickBuy()"
-               [text]="messages.nutribotMessages.buyTreat(recipeOrTreat.vendorName)" *ngIf="!isNutribotLinkExternalEvent">
+               [text]="messages.nutribotMessages.buyTreat(vendorName)" *ngIf="!isNutribotLinkExternalEvent">
 </widget-button>
 <widget-button button (click)="notifyNutribotProductRequested()"
-               [text]="messages.nutribotMessages.buyTreat(recipeOrTreat.vendorName)" *ngIf="isNutribotLinkExternalEvent && isProductIdPresent">
+               [text]="messages.nutribotMessages.buyTreat(vendorName)" *ngIf="isNutribotLinkExternalEvent && isProductIdPresent">
 </widget-button>
 
 <h5>{{messages.nutribotMessages.treatInfo}}</h5>
