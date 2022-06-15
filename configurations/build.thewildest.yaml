@@ -55,6 +55,7 @@ targets:
           externalToSEnabled: false
           marketingBrandName: ''
           marketingOptInEnabled: false
+          affiliatesUrl: ''
           privacyUrl: ''
           findClinicButtonInChatEnabled: false
           petSexAndSpayedStatusEnabled: true
