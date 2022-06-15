@@ -9,9 +9,9 @@ targets:
           # Authentication options
           authByEmailEnabled: true
           authByPhoneEnabled: false
-          useLegacyAuthDatasource: false
-          authServiceAppClientId: 2mapp17u8ep4pi30kikumlcpuv
-          authServiceUserPoolId: eu-west-1_iOJbwm0YC
+          useLegacyAuthDatasource: true
+          authServiceAppClientId: null
+          authServiceUserPoolId: null
           externalProfileDataEnabled: false
 
           # Basic features
