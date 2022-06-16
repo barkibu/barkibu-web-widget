@@ -58,3 +58,39 @@ jobs:
         run: |
           heroku plugins:install heroku-cli-static
           script/deploy.sh ${{ github.event.inputs.deployTo }}
+      - name: Slack notification devops channel
+        if: ${{ success() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_DEVOPS_CHANNEL }}
+          SLACK_MESSAGE: 'Vet Insight ${{ github.event.inputs.deployTo }} deployment succeeded'
+          SLACK_COLOR: '#00FF00'
+          SLACK_USERNAME: 'Github Actions'
+          SLACK_ICON_EMOJI: ':github_actions:'
+      - name: Slack notification devops channel
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_DEVOPS_CHANNEL }}
+          SLACK_MESSAGE: 'Vet Insight ${{ github.event.inputs.deployTo }} deployment failed'
+          SLACK_COLOR: '#FF0000'
+          SLACK_USERNAME: 'Github Actions'
+          SLACK_ICON_EMOJI: ':github_actions:'
+      - name: Slack notification team channel
+        if: ${{ success() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_VI_CHANNEL }}
+          SLACK_MESSAGE: 'Vet Insight ${{ github.event.inputs.deployTo }} deployment succeeded'
+          SLACK_COLOR: '#00FF00'
+          SLACK_USERNAME: 'Github Actions'
+          SLACK_ICON_EMOJI: ':github_actions:'
+      - name: Slack notification team channel
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_VI_CHANNEL }}
+          SLACK_MESSAGE: 'Vet Insight ${{ github.event.inputs.deployTo }} deployment failed'
+          SLACK_COLOR: '#FF0000'
+          SLACK_USERNAME: 'Github Actions'
+          SLACK_ICON_EMOJI: ':github_actions:'
