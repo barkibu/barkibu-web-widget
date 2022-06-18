@@ -3,7 +3,7 @@
 DEPLOY_ENV=$1
 
 case $DEPLOY_ENV in
-     "kinship-staging-all") ENVS=('tsc-staging' 'iams-staging' 'walmart-staging' 'thewildest-staging' 'greatergood-staging', 'fur-life-staging');;
+     "kinship-staging-all") ENVS=('tsc-staging' 'iams-staging' 'walmart-staging' 'thewildest-staging' 'greatergood-staging' 'wildestpack-staging', 'fur-life-staging');;
      "kinship-prod-all") ENVS=('tsc' 'iams' 'walmart' 'thewildest' 'greatergood', 'fur-life');;
       *) ENVS=($DEPLOY_ENV);;
 esac
