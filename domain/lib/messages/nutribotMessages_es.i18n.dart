@@ -22,7 +22,8 @@ class NutribotMessages_es extends NutribotMessages {
 	String get primaryFood => "Comida principal";
 	String get treat => "Tratamiento";
 	String get title => "Ayudante de nutrición";
-	String get buyTreat => "Comprar ahora";
+	String  buyTreat(String productVendor) => "Comprar ahora${productVendor != '' ? (' en ') + productVendor : ''}";
+
 	String get treatIngredients => "Ingredientes";
 	String get treatInfo => "Información de producto";
 }

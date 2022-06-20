@@ -57,6 +57,7 @@ targets:
           marketingOptInEnabled: false
           privacyUrl: ''
           affiliatesUrl: ''
+          buyNowWithVendorName: ''
           findClinicButtonInChatEnabled: false
           petSexAndSpayedStatusEnabled: true
 

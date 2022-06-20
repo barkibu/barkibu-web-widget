@@ -28,4 +28,5 @@ enum NutribotChatMessageType {
   chat,
   noThanks,
   channelChoice,
+  buyTreat
 }

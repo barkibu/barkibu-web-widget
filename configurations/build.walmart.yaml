@@ -58,8 +58,8 @@ targets:
           privacyUrl: ''
           affiliatesUrl: ''
           findClinicButtonInChatEnabled: false
+          buyNowWithVendorName: 'Walmart.com'
           petSexAndSpayedStatusEnabled: true
-
 
           # Fallback theme & client_id
           iconsTheme: 'walmart'

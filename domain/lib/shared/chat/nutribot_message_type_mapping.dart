@@ -68,6 +68,8 @@ class NutribotMessageTypeMapping {
         return _messagesModel.sharedMessages.noThanks;
       case NutribotChatMessageType.channelChoice:
         return _messagesModel.nutribotMessages.botMessages.channelChoice;
+      case NutribotChatMessageType.buyTreat:
+        return _messagesModel.nutribotMessages.buyTreat(data['productVendor']);
       default:
         return '';
     }
