@@ -50,4 +50,5 @@ void mockConfigDefaultValues(WidgetConfiguration config) {
   when(config.privacyUrl).thenReturn('');
   when(config.petSexAndSpayedStatusEnabled).thenReturn(false);
   when(config.findClinicButtonInChatEnabled).thenReturn(true);
+  when(config.buyNowWithVendorName).thenReturn('');
 }

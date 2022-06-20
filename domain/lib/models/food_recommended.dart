@@ -28,6 +28,7 @@ class RecipeOrTreat {
     this.buyUrl,
     this.productId,
   });
+
 }
 
 class FoodRecommendedImage {

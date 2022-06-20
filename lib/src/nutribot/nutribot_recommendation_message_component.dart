@@ -42,6 +42,10 @@ class NutribotRecommendationMessageComponent {
   FoodRecommended get foodRecommended => viewModel.data;
   RecipeOrTreat get recipe => foodRecommended.recipe;
 
+  // this will change after modifying the backend to get vendor name
+  // should be like recipeOrTreat.vendorName !=null ?
+  // recipeOrTreat.vendorName : _config.buyNowWithVendorName
+  String get vendorName => _config.buyNowWithVendorName;
   bool isContentOpened = false;
 
   bool get isBackImageNotEmpty => foodRecommended.recipe.backImage.full?.isNotEmpty;

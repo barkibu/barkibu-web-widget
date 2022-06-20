@@ -1,9 +1,9 @@
 import 'package:angular/angular.dart';
 import 'package:common_barkibu_dart/common_barkibu_dart.dart';
 import 'package:web_widget/src/navigation/widget_button_component.dart';
+import 'package:web_widget/src/pipes/ellipsis_pipe.dart';
 import 'package:web_widget/src/widget_configuration.dart';
 import 'package:web_widget/src/widget_window/parent_window_service.dart';
-import 'package:web_widget/src/pipes/ellipsis_pipe.dart';
 
 @Component(
     selector: 'nutribot-recommendation-item',
@@ -31,6 +31,11 @@ class NutribotRecommendationItemComponent {
 
   @Input()
   RecipeOrTreat recipeOrTreat;
+
+  // this will change after modifying the backend to get vendor name
+  // should be like recipeOrTreat.vendorName !=null ?
+  // recipeOrTreat.vendorName : _config.buyNowWithVendorName
+  String get vendorName => _config.buyNowWithVendorName;
 
   int get cutOff => 220;
 
