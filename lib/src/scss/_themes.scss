@@ -9,6 +9,7 @@
 @import "package:web_widget/src/scss/walmart_theme";
 @import "package:web_widget/src/scss/greatergood_theme";
 @import "package:web_widget/src/scss/fur_life_theme";
+@import "package:web_widget/src/scss/thewildest_pack_theme";
 
 @function focus-shadow-value($color) {
   @return 0 0 0 0.2rem rgba(lighten($color, 10%), 0.4);
@@ -163,6 +164,31 @@ $themes: (
     button-color: $primary-color-thewildest,
     font-family: $primary-font-family-thewildest,
     secondary-font-family: $secondary-font-family-thewildest,
+    header-subtitle-opacity: $header-subtitle-opacity,
+  ),
+  thewildest-pack: (
+    icon-bg-color: $primary-color-thewildest-pack,
+    primary-color: $primary-color-thewildest-pack,
+    secondary-color: $secondary-color-thewildest-pack,
+    link-color: $primary-color-thewildest-pack,
+    assistant-color: $primary-color-thewildest-pack,
+    bg-color: $bg-color-default,
+    white-color: $white-color-default,
+    border-color: rgba($secondary-color-thewildest-pack, 0.16),
+    warning-color: $warning-color-default,
+    danger-color: $danger-color-default,
+    info-color: $dark-color-default,
+    success-color: $success-color-default,
+    received-message-bg-color: $tertiary-color-thewildest-pack,
+    received-message-text-color: $primary-color-thewildest-pack,
+    sent-message-bg-color: $tertiary-color-thewildest-pack,
+    sent-message-text-color: $primary-color-thewildest-pack,
+    focus-shadow: focus-shadow-value($primary-color-thewildest-pack),
+    primary-icon-color: $primary-color-thewildest-pack,
+    secondary-icon-color: $primary-color-thewildest-pack,
+    button-color: $primary-color-thewildest-pack,
+    font-family: $primary-font-family-thewildest-pack,
+    secondary-font-family: $secondary-font-family-thewildest-pack,
     header-subtitle-opacity: $header-subtitle-opacity,
   ),
   walmart: (
