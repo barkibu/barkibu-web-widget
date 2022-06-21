@@ -4,7 +4,7 @@ class AssessmentReportMessages_tsc extends AssessmentReportMessages {
   const AssessmentReportMessages_tsc();
 
   @override
-  String get title => 'Virtual vet report';
+  String get title => 'Virtual Vet Report';
 
   @override
   String get urgentBodyCondition =>
