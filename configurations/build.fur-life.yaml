@@ -74,7 +74,7 @@ targets:
           # System configuration
           envName: 'staging'
           apiUrl: 'https://fur-life-vet-insight.herokuapp.com/v2'
-          segmentWriteKey: 'AlmkRCbqMwRgQ3yrIZrvKXfggbQu9dYO'
+          segmentWriteKey: '3ZaEDeAX5GEPCTd4GHptgFPihuDFSTyi'
 
           # Overriden configuration for each client id
           clientIdConfigOverride: null
