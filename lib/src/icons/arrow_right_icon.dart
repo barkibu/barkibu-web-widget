@@ -6,7 +6,7 @@ import 'package:angular/angular.dart';
   styleUrls: ['arrow_right_icon.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 )
-class ArrowRightIcon  {
+class ArrowRightIcon {
   @Input()
   String title;
 }
