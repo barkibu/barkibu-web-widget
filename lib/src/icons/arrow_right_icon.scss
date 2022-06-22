@@ -5,3 +5,10 @@
     fill: themed('secondary-icon-color');
   }
 }
+.food-finder-arrow {
+  #Arrow {
+    @include themify($themes) {
+      fill: themed('food-finder-arrow');
+    }
+  }
+}
