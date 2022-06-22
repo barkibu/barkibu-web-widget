@@ -45,8 +45,8 @@ targets:
           defaultPhonePrefix: '+1'
           appName: 'VetInsight Assistant'
           brandName: 'The Wildest'
-          brandLogo: 'barkibu-logo.svg'
-          brandLogoWidth: '70px'
+          brandLogo: 'wildest-logo.png'
+          brandLogoWidth: '170px'
           headerWithoutLogo: false
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
