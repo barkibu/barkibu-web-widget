@@ -160,6 +160,7 @@ class ChatComponent extends AuthGuard with PetDefinitionEventHandler, HasInfoScr
   bool get embeddedEmailClientEnabled => config.embeddedEmailClientEnabled ?? false;
   bool get isConciergeFlow => _queryChatType == conciergeFlow;
   bool get findClinicButtonInChatEnabled => config.findClinicButtonInChatEnabled;
+  bool get askVetTitleEnabled => config.iconsTheme == 'thewildest' && isAskAVetFlow;
 
   String get chatTitle {
     if (isAskAVetFlow) {

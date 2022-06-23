@@ -45,9 +45,9 @@ targets:
           defaultPhonePrefix: '+1'
           appName: 'VetInsight Assistant'
           brandName: 'The Wildest'
-          brandLogo: 'wildest-logo.png'
-          brandLogoWidth: '170px'
-          headerWithoutLogo: false
+          brandLogo: ''
+          brandLogoWidth: '70px'
+          headerWithoutLogo: true
           botPreMessageDelay: 1000
           botPostMessageDelay: 400
           useSpecialTranslations: 'thewildest'

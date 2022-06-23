@@ -1,7 +1,7 @@
 <widget-layout *ngIf="isAivetScreenActive">
     <widget-header>
         <go-back *ngIf="isBackButtonEnabled" [title]="chatTitle"></go-back>
-        <h1 *ngIf="!isBackButtonEnabled && !embeddedEmailClientEnabled">{{chatTitle}}</h1>
+        <h1 *ngIf="!isBackButtonEnabled && !embeddedEmailClientEnabled || askVetTitleEnabled">{{chatTitle}}</h1>
     </widget-header>
     <widget-body [noBottomSpacing]="true">
         <div *ngIf="isChatInitialized" class="chat-messages-container">
